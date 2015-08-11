@@ -1,0 +1,104 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans     
+        http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context-3.2.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd">
+
+    <context:component-scan base-package="co.gapx.lugaresvp.controller" />
+
+    <mvc:annotation-driven />
+    
+    <!-- Handles HTTP GET requests for /img/** by efficiently serving up static resources in the ${webappRoot}/images directory -->
+    <mvc:resources mapping="/img/**" location="/img/" />   
+    <!-- Handles HTTP GET requests for /img/** by efficiently serving up static resources in the ${webappRoot}/images directory -->
+    <mvc:resources mapping="/css/**" location="/css/" />   
+    <mvc:resources mapping="/assets/**" location="/assets/" />  
+    <mvc:resources mapping="/bootstrap/**" location="/bootstrap/" /> 
+    <mvc:resources mapping="/fonts/**" location="/fonts/" /> 
+    <mvc:resources mapping="/less/**" location="/less/" /> 
+    <mvc:resources mapping="/js/**" location="/js/" /> 
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix">
+            <value>/WEB-INF/pages/</value>
+            <!--<value>/</value> -->
+        </property>
+        <property name="suffix">
+            <value></value>
+        </property>
+                
+    </bean>
+        <!--
+     
+      
+    <bean id="contentNegotiationManagerFactoryBean"
+          class="org.springframework.web.accept.ContentNegotiationManagerFactoryBean">
+        <property name="favorPathExtension" value="false"></property>
+        <property name="mediaTypes">
+            <map>
+                <entry key="json" value="application/json" />
+                <entry key="xml" value="text/xml" />
+                <entry key="htm" value="text/html" />
+            </map>
+        </property>
+    </bean>
+
+
+    <mvc:annotation-driven
+        content-negotiation-manager="contentNegotiationManagerFactoryBean">
+    </mvc:annotation-driven>
+
+    <bean
+        class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
+        <property name="contentNegotiationManager" ref="contentNegotiationManagerFactoryBean"></property>
+        <property name="viewResolvers">
+            <list>
+                <bean class="org.springframework.web.servlet.view.BeanNameViewResolver" />
+            </list>
+        </property>
+
+        <property name="defaultViews">
+            <list>
+                <bean
+                    class="org.springframework.web.servlet.view.json.MappingJackson2JsonView" />
+            </list>
+        </property>
+
+    </bean>
+
+    <bean id="requestMappingHandlerAdapter"
+      class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
+        <property name="customArgumentResolvers">
+            <list>
+                <bean
+                    class="org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor">
+                    <constructor-arg>
+                        <list>
+                            <bean
+                                class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+                            </bean>
+                        </list>
+                    </constructor-arg>
+                </bean>
+            </list>
+        </property>
+        <property name="customReturnValueHandlers">
+            <list>
+                <bean
+                    class="org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor">
+                    <constructor-arg>
+                        <list>
+                            <bean
+                                class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+                            </bean>
+                        </list>
+                    </constructor-arg>
+                </bean>
+            </list>
+        </property>
+    </bean>-->
+</beans>

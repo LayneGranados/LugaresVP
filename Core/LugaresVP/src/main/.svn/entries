@@ -1,0 +1,42 @@
+10
+
+dir
+0
+svn+ssh://svn.code.sf.net/p/comparendosambi/code-0/LugaresVP/src/main
+svn+ssh://svn.code.sf.net/p/comparendosambi/code-0
+add
+
+
+
+
+
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+894ce6de-723e-48a4-8893-0c3f6269c514
+
+java
+dir
+
+
+
+add
+
+webapp
+dir
+
+
+
+add
+
