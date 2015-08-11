@@ -1,0 +1,29 @@
+{
+  "name": "angularlugaresvp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "connect-history-api-fallback": "^1.1.0",
+    "gulp": "^3.8.11",
+    "gulp-connect": "^2.2.0",
+    "gulp-if": "^1.2.5",
+    "gulp-minify-css": "^1.1.1",
+    "gulp-stylus": "^2.0.2",
+    "gulp-uglify": "^1.2.0",
+    "gulp-useref": "^1.1.2",
+    "nib": "^1.1.0",
+    "gulp-jshint": "^1.11.0"
+  },
+  "devDependencies": {
+    "gulp-inject": "^1.2.0",
+    "gulp-webserver": "^0.9.1",
+    "jshint-stylish": "^2.0.0",
+    "wiredep": "^2.2.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
