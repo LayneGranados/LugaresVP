@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+    			xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/bg_layout"
+                android:fitsSystemWindows="false"
+                android:background="@drawable/detail_background"
+                tools:context="com.special.TransitionDetailActivity">
+
+    <RelativeLayout
+    	android:layout_width="match_parent"
+    	android:layout_height="fill_parent"
+        android:layout_marginTop="30dp">
+
+        <TextView
+           android:id="@+id/title"
+                	android:layout_width="fill_parent"
+                	android:layout_height="wrap_content"
+                	android:fontFamily="sans-serif-light" 
+                	android:gravity="center"
+                	android:paddingLeft="16dp"
+                	android:paddingTop="10dp"
+                	android:paddingRight="16dp"
+                	android:text="@string/detail_title_placeholder"
+                	android:textSize="@dimen/textsize_xlarge"
+                	android:layout_below="@+id/image_view"
+                	android:textColor="@android:color/white"/>
+
+       			<TextView
+       				    android:id="@+id/sumary"
+       				    android:layout_below="@+id/title"
+       				    android:layout_width="match_parent"
+       				    android:layout_height="wrap_content"
+       				    android:layout_gravity="center_vertical"
+       				    android:fontFamily="sans-serif-light"
+       				    android:gravity="center"
+       				    android:paddingBottom="16dp"
+       				    android:text="@string/sumary_placeholder"
+       				    android:textColor="@color/white_transparent"
+       				    android:textSize="@dimen/textsize_medium_small" />
+    </RelativeLayout>
+
+    <RelativeLayout
+         android:orientation="vertical"
+         android:layout_width="fill_parent"
+         android:layout_height="wrap_content"
+         android:id="@+id/layout_navigation">
+       				 
+     			<LinearLayout
+     			    android:id="@+id/layout_navigation_buttonholder"
+    				android:layout_width="match_parent"
+    				android:layout_height="wrap_content"
+    				android:fitsSystemWindows = "true"
+       				android:layout_centerHorizontal="true"
+        			android:gravity="right"
+        			android:layout_marginTop="30dp"> 
+        		
+					<com.special.utils.UICircularImage
+    					android:id="@+id/action1"
+    					android:layout_width="60dp"
+    					android:layout_height="60dp"
+    					android:layout_marginRight="10dp"
+    					android:src="@drawable/ic_conversation"
+    					android:paddingRight="10dp"
+    					app:padding="20dp"
+    					app:line_width="1dp"
+    					app:line_color="@android:color/white"
+    					app:line_color_press="@color/theme_color"
+        				app:background_color="@color/theme_color"/> 
+     		
+    		</LinearLayout>
+
+   	 </RelativeLayout>
+    
+</RelativeLayout>

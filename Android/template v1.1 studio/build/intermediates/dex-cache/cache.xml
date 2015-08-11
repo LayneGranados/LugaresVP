@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/laynegranadosmogollon/Documents/Archivar/codecanyon-8687058-clear-ui-template-for-android/template v1.1 studio/app/libs/android-support-v4.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="605c447c20ca216b5556af9f215af5d4bba1b117">
+        <dex dex="/Users/laynegranadosmogollon/Documents/Archivar/codecanyon-8687058-clear-ui-template-for-android/template v1.1 studio/app/build/intermediates/pre-dexed/debug/android-support-v4-57bb2d9b87a7b2c16f0490d1bd54c8ac0ce88163.jar" />
+    </item>
+    <item
+        jar="/Users/laynegranadosmogollon/Documents/LAYNE/Proyectos/CC VENTURA PLAZA/LUGARES_MOVIL/template v1.1 studio/app/build/intermediates/exploded-aar/template v1.1 studio/zBarScannerLibrary/unspecified/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="ae6dd5b4f4baed18ead989f9ec5564e5df8e7f51">
+        <dex dex="/Users/laynegranadosmogollon/Documents/LAYNE/Proyectos/CC VENTURA PLAZA/LUGARES_MOVIL/template v1.1 studio/app/build/intermediates/pre-dexed/debug/classes-97fb982562b385fac129e756e007227d714a3fe7.jar" />
+    </item>
+    <item
+        jar="/Users/laynegranadosmogollon/Documents/LAYNE/Proyectos/CC VENTURA PLAZA/LUGARES_MOVIL/template v1.1 studio/app/libs/android-support-v4.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="605c447c20ca216b5556af9f215af5d4bba1b117">
+        <dex dex="/Users/laynegranadosmogollon/Documents/LAYNE/Proyectos/CC VENTURA PLAZA/LUGARES_MOVIL/template v1.1 studio/app/build/intermediates/pre-dexed/debug/android-support-v4-8889a5c5461040fa287ea71be177fe580251438a.jar" />
+    </item>
+    <item
+        jar="/Users/laynegranadosmogollon/Documents/LAYNE/Proyectos/CC VENTURA PLAZA/LUGARES_MOVIL/template v1.1 studio/app/libs/renderscript-v8.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="19d54695d29d5ca94dda30368a7df0b33ffc17d7">
+        <dex dex="/Users/laynegranadosmogollon/Documents/LAYNE/Proyectos/CC VENTURA PLAZA/LUGARES_MOVIL/template v1.1 studio/app/build/intermediates/pre-dexed/debug/renderscript-v8-731b497a51068393fd0cd01fd6bfa20050f64e8c.jar" />
+    </item>
+    <item
+        jar="/Users/laynegranadosmogollon/Documents/LAYNE/Proyectos/CC VENTURA PLAZA/LUGARES_MOVIL/template v1.1 studio/app/libs/nineoldandroids-library-2.4.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
+        <dex dex="/Users/laynegranadosmogollon/Documents/LAYNE/Proyectos/CC VENTURA PLAZA/LUGARES_MOVIL/template v1.1 studio/app/build/intermediates/pre-dexed/debug/nineoldandroids-library-2.4.0-9e9dd96f6546ec6add2e2371e29867fab9c14163.jar" />
+    </item>
+    <item
+        jar="/Users/laynegranadosmogollon/Documents/LAYNE/Proyectos/CC VENTURA PLAZA/LUGARES_MOVIL/template v1.1 studio/app/build/intermediates/exploded-aar/template v1.1 studio/zBarScannerLibrary/unspecified/libs/zbar.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="7bbdf7ba57a8a157c0cad51e455609c70887812e">
+        <dex dex="/Users/laynegranadosmogollon/Documents/LAYNE/Proyectos/CC VENTURA PLAZA/LUGARES_MOVIL/template v1.1 studio/app/build/intermediates/pre-dexed/debug/zbar-52f07b4b27120b0b3bd53f03dc34810f9fd8dcfd.jar" />
+    </item>
+    <item
+        jar="/Users/laynegranadosmogollon/Documents/Archivar/codecanyon-8687058-clear-ui-template-for-android/template v1.1 studio/app/libs/nineoldandroids-library-2.4.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
+        <dex dex="/Users/laynegranadosmogollon/Documents/Archivar/codecanyon-8687058-clear-ui-template-for-android/template v1.1 studio/app/build/intermediates/pre-dexed/debug/nineoldandroids-library-2.4.0-c92509b307267d722d1775c6f7e8b4ba5e702b04.jar" />
+    </item>
+    <item
+        jar="/Users/laynegranadosmogollon/Documents/Archivar/codecanyon-8687058-clear-ui-template-for-android/template v1.1 studio/app/libs/renderscript-v8.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="19d54695d29d5ca94dda30368a7df0b33ffc17d7">
+        <dex dex="/Users/laynegranadosmogollon/Documents/Archivar/codecanyon-8687058-clear-ui-template-for-android/template v1.1 studio/app/build/intermediates/pre-dexed/debug/renderscript-v8-9f173bc4cc0a30700ed9ce6ec13eed889721c0c6.jar" />
+    </item>
+
+</items>

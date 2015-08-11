@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/Users/laynegranadosmogollon/Documents/LAYNE/Proyectos/CC%20VENTURA%20PLAZA/LUGARES_MOVIL/template%20v1.1%20studio/app/src/main/res/values/colors.xml -->
+    <eat-comment/>
+    <color name="bar_color">#676767</color>
+    <color name="bar_color_transparent">#86676767</color>
+    <color name="bar_separator_color">#ebebeb</color>
+    <color name="black">#000000</color>
+    <color name="gray">#1F1F21</color>
+    <color name="gray_transparent">#A61F1F21</color>
+    <color name="green">#FF99CC00</color>
+    <color name="red">#FF0000</color>
+    <color name="servicio_list">#d9ffc897</color>
+    <color name="sub_color">#cccccc</color>
+    <color name="theme_color">#ffb85c20</color>
+    <color name="transparent">@android:color/transparent</color>
+    <color name="white_transparent">#D9FFFFFF</color>
+    <declare-styleable name="UICircularImage"><attr format="dimension" name="line_width"/><attr format="color" name="line_color"/><attr format="dimension" name="padding"/><attr format="color" name="line_color_press"/><attr format="color" name="background_color"/></declare-styleable>
+    <declare-styleable name="UIParallaxScroll"><attr format="integer" name="headerView"/><attr format="integer" name="backgroundView"/></declare-styleable>
+    <!-- From: file:/Users/laynegranadosmogollon/Documents/LAYNE/Proyectos/CC%20VENTURA%20PLAZA/LUGARES_MOVIL/template%20v1.1%20studio/app/src/main/res/values/dimens.xml -->
+    <eat-comment/>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="list_horizontal_margin">20dp</dimen>
+    <dimen name="textsize_large">24dp</dimen>
+    <dimen name="textsize_medium">18sp</dimen>
+    <dimen name="textsize_medium_large">20dp</dimen>
+    <dimen name="textsize_medium_small">15sp</dimen>
+    <dimen name="textsize_medium_small_layne">30sp</dimen>
+    <dimen name="textsize_medium_small_static">15dp</dimen>
+    <dimen name="textsize_small">14sp</dimen>
+    <dimen name="textsize_xlarge">28dp</dimen>
+    <dimen name="textsize_xsmall">10sp</dimen>
+    <dimen name="theme_corner_radius">5dp</dimen>
+    <!-- From: file:/Users/laynegranadosmogollon/Documents/LAYNE/Proyectos/CC%20VENTURA%20PLAZA/LUGARES_MOVIL/template%20v1.1%20studio/app/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <string name="action_settings">Settings</string>
+    <!-- From: file:/Users/laynegranadosmogollon/Documents/LAYNE/Proyectos/CC%20VENTURA%20PLAZA/LUGARES_MOVIL/template%20v1.1%20studio/app/src/main/res/values/strings_activity_login.xml -->
+    <eat-comment/>
+    <string name="action_sign_in">Iniciar Sesión</string>
+    <string name="action_sign_in_short">Iniciar Sesión</string>
+    <!-- From: file:/Users/laynegranadosmogollon/Documents/LAYNE/Proyectos/CC%20VENTURA%20PLAZA/LUGARES_MOVIL/template%20v1.1%20studio/app/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <string name="app_name">Ventura Plaza Centro Comercial</string>
+    <string name="app_title">Lugares - CC Ventura Plaza</string>
+    <string name="button_placeholder_text">Button</string>
+    <string name="buy">"  Buy  "</string>
+    <string name="checkbox">CheckBox</string>
+    <string name="contact_placeholder">Super useful contact info here I guess.\n\nProfile image is from FreePik.com</string>
+    <string name="crear_supervisión">Realizar Nueva Supervisión</string>
+    <string name="dashed_area_text">Para iniciar una revisión y ver el listado de las revisiones realizadas a este lugar, por favor, escanee el código QR que se encuentra en el lugar que desea calificar</string>
+    <string name="description_placeholder">Description</string>
+    <string name="description_tab_1">Wall</string>
+    <string name="description_tab_2">Contact</string>
+    <string name="description_title_placeholder">Cool Title Of Some Movie</string>
+    <string name="detail_title_placeholder">Cool Title Of Some Movie</string>
+    <string name="dialog_button_text">" Cancel "</string>
+    <string name="dialog_text_placeholder">With Custom loader (loader is also usable separately)</string>
+    <string name="dialog_title_placeholder">Styled Dialog</string>
+    <string name="direccion_recogida">Dirección:</string>
+    <!-- From: file:/Users/laynegranadosmogollon/Documents/LAYNE/Proyectos/CC%20VENTURA%20PLAZA/LUGARES_MOVIL/template%20v1.1%20studio/app/src/main/res/values/strings_activity_login.xml -->
+    <eat-comment/>
+    <string name="error_field_required">This field is required</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <!-- From: file:/Users/laynegranadosmogollon/Documents/LAYNE/Proyectos/CC%20VENTURA%20PLAZA/LUGARES_MOVIL/template%20v1.1%20studio/app/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <string name="estado">Estado: </string>
+    <string name="explore">Explore</string>
+    <string name="fecha_hora">Fecha y Hora:</string>
+    <string name="followers">Followers</string>
+    <string name="followers_placeholder">503</string>
+    <string name="four">Four</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="hidden_view_text">Click Me</string>
+    <string name="image_description">Image Description</string>
+    <string name="like">Like</string>
+    <string name="list_description_placeholder">Cool Content Description of Item</string>
+    <string name="list_number_placeholder">27</string>
+    <string name="list_number_text_placeholder">Characters</string>
+    <string name="list_title_placeholder">Amazing Title</string>
+    <string name="off">Off</string>
+    <string name="on">On</string>
+    <string name="one">One</string>
+    <string name="placeholder_views">16 Thousand</string>
+    <!-- From: file:/Users/laynegranadosmogollon/Documents/LAYNE/Proyectos/CC%20VENTURA%20PLAZA/LUGARES_MOVIL/template%20v1.1%20studio/app/src/main/res/values/strings_activity_login.xml -->
+    <eat-comment/>
+    <string name="prompt_email">Usuario</string>
+    <string name="prompt_password">Contraseña</string>
+    <!-- From: file:/Users/laynegranadosmogollon/Documents/LAYNE/Proyectos/CC%20VENTURA%20PLAZA/LUGARES_MOVIL/template%20v1.1%20studio/app/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <string name="reply">Reply</string>
+    <string name="servicios_asignados">Servicios Asignados</string>
+    <string name="servicios_por_asignar">Servicios Por Asignar</string>
+    <string name="show">Escanear Código QR</string>
+    <string name="show_dialog_text">Show a Custom Dialog and Loader</string>
+    <string name="social_1_placeholder">4.8</string>
+    <string name="social_1_placeholder_nr">15</string>
+    <string name="social_2_placeholder">Hotels &amp; Clubs</string>
+    <string name="social_3_placeholder">From 2 PM</string>
+    <string name="sumary_placeholder">Summary</string>
+    <string name="text_input_hint">text input</string>
+    <string name="three">Three</string>
+    <string name="title_activity_detail_view">DetailView</string>
+    <!-- From: file:/Users/laynegranadosmogollon/Documents/LAYNE/Proyectos/CC%20VENTURA%20PLAZA/LUGARES_MOVIL/template%20v1.1%20studio/app/src/main/res/values/strings_activity_login.xml -->
+    <eat-comment/>
+    <string name="title_activity_login">Iniciar Sesión</string>
+    <!-- From: file:/Users/laynegranadosmogollon/Documents/LAYNE/Proyectos/CC%20VENTURA%20PLAZA/LUGARES_MOVIL/template%20v1.1%20studio/app/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <string name="title_activity_options">OptionsActivity</string>
+    <string name="two">Two</string>
+    <string name="views">Views</string>
+    <!-- From: file:/Users/laynegranadosmogollon/Documents/LAYNE/Proyectos/CC%20VENTURA%20PLAZA/LUGARES_MOVIL/template%20v1.1%20studio/app/src/main/res/values/styles.xml -->
+    <eat-comment/>
+    <style name="AppTheme" parent="android:Theme.Light.NoTitleBar">
+	</style>
+    <style name="AppThemeTrans" parent="@style/AppTheme">
+	     <item name="android:windowIsTranslucent">true</item>
+    	 <item name="android:windowBackground">@android:color/transparent</item>
+	</style>
+    <style name="UIButton">
+        <item name="android:textColor">@drawable/button_selector_text_inverse</item>
+        <item name="android:background">@drawable/button_selector</item>
+        <item name="android:minHeight">33dp</item>
+        <item name="android:minWidth">70dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:button">@null</item>
+        <item name="android:paddingLeft">5dp</item>
+        <item name="android:paddingRight">5dp</item>
+    </style>
+    <style name="UIButtonInverse">
+        <item name="android:textColor">@drawable/button_selector_text</item>
+        <item name="android:background">@drawable/button_selector_inverse</item>
+        <item name="android:minHeight">50dp</item>
+        <item name="android:minWidth">170dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:button">@null</item>
+        <item name="android:paddingLeft">5dp</item>
+        <item name="android:paddingRight">5dp</item>
+    </style>
+    <style name="UITabs">
+        <item name="android:textColor">@drawable/button_selector_text</item>
+        <item name="android:minHeight">33dp</item>
+        <item name="android:minWidth">70dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:button">@null</item>
+        <item name="android:paddingLeft">5dp</item>
+        <item name="android:paddingRight">5dp</item>
+    </style>
+    <style name="UITextInverse">
+        <item name="android:textColor">@drawable/button_selector_text</item>
+        <item name="android:background">@drawable/button_selector_inverse</item>
+        <item name="android:minHeight">50dp</item>
+        <item name="android:minWidth">120dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginLeft">20sp</item>
+        <item name="android:layout_marginRight">20sp</item>
+    </style>
+    <style name="fragment_text">
+        <item name="android:textColor">#ffacacac</item>
+        <item name="android:textSize">25sp</item>
+    </style>
+</resources>

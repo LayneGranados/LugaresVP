@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@android:color/white"
+
+    tools:context="com.special.MenuActivity$HomeFragment">
+
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+            
+
+        <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:contentDescription="@string/image_description"
+                android:src="@drawable/logotrans"/>
+    	
+    	<LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center">
+        
+        <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/UIButtonInverse"
+                android:text="@string/explore"
+                android:textSize="@dimen/textsize_medium"
+                android:padding="12dp"
+                android:id="@+id/btn_open_menu"
+                android:layout_gravity="center"
+                android:layout_margin="4dp"/>
+        
+        <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/UIButtonInverse"
+                android:text="@string/buy"
+                android:textSize="@dimen/textsize_medium"
+                android:padding="12dp"
+                android:id="@+id/btn_open_site"
+                android:layout_gravity="center"
+                android:layout_margin="4dp"/>
+        
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>
+

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+       xmlns:android="http://schemas.android.com/apk/res/android"
+       android:fitsSystemWindows="true"
+       android:layout_width="fill_parent"
+       android:layout_height="fill_parent">
+       
+    <FrameLayout
+       android:id="@+id/main"
+       android:layout_width="fill_parent"
+       android:layout_height="fill_parent">
+            
+            <ImageView
+                android:id="@+id/actionbar"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/image_description"
+                android:background="@color/bar_color_transparent" />
+            
+			<LinearLayout 
+              	android:orientation="vertical"
+              	android:layout_width="match_parent"
+              	android:layout_height="match_parent">
+
+                <LinearLayout
+            		android:orientation="vertical"
+            		android:layout_width="fill_parent"
+            		android:layout_height="wrap_content"
+            		android:id="@+id/layout_top">
+
+     				<FrameLayout
+                		android:layout_width="fill_parent"
+                		android:layout_height="wrap_content">
+                
+            			<Button
+                    		android:layout_width="25dp"
+                    		android:layout_height="25dp"
+                    		android:background="@drawable/titlebar_menu_selector"
+                    		android:id="@+id/title_bar_left_menu"
+                    		android:layout_gravity="left|center_vertical"
+                    		android:layout_marginLeft="10dp"/>
+
+            			<TextView
+                    		android:layout_width="wrap_content"
+                    		android:layout_height="wrap_content"
+                    		android:padding="7dp"
+                    		android:fontFamily="sans-serif-light" 
+                    		android:text="@string/app_title"
+                   			android:textSize="@dimen/textsize_large"
+                    		android:textColor="@android:color/white"
+                    		android:layout_gravity="center"/>
+
+       				 </FrameLayout>
+
+        			<ImageView
+               			 android:layout_width="match_parent"
+                		 android:layout_height="3dp"
+                		 android:contentDescription="@string/image_description"
+                		 android:background="@color/bar_separator_color"/>
+
+   				 </LinearLayout>
+
+    			<FrameLayout
+            		android:layout_width="match_parent"
+            		android:layout_height="match_parent"
+            		android:orientation="vertical"
+            		android:id="@+id/main_fragment">
+    			</FrameLayout>
+
+		   </LinearLayout>
+    </FrameLayout>
+</FrameLayout>

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+       xmlns:android="http://schemas.android.com/apk/res/android"
+       android:layout_height="wrap_content"
+       android:layout_width="fill_parent"
+       android:paddingTop="10dp"
+       android:paddingBottom="10dp"
+       xmlns:app="http://schemas.android.com/apk/res-auto"
+       xmlns:tools="http://schemas.android.com/tools">	
+       		
+					<RelativeLayout
+       				    android:layout_width="fill_parent"
+       				    android:layout_height="wrap_content"
+       				    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+    					android:layout_marginRight="@dimen/activity_horizontal_margin"
+       				    android:orientation="vertical" >
+    			
+       				   <RelativeLayout
+       				        android:id="@+id/above_divider"
+       				        android:layout_marginLeft="60dp"
+       				        android:layout_marginBottom="-23dp"
+       				        android:layout_width="match_parent"
+       				        android:layout_height="wrap_content" >
+
+       				        <TextView
+       				            android:id="@+id/name"
+       				            android:layout_width="match_parent"
+       				            android:layout_height="wrap_content"
+       				            android:fontFamily="sans-serif-light"
+       				            android:text="Marcel Stroblov"
+       				            android:textColor="@color/theme_color"
+       				            android:textSize="@dimen/textsize_medium" />
+       				    </RelativeLayout>
+       				        
+       				    <RelativeLayout
+       				        android:id="@+id/imagedivider"
+       				        android:layout_below="@+id/above_divider"
+       				        android:layout_width="match_parent"
+       				        android:layout_height="wrap_content"
+       				        android:orientation="horizontal">
+       				        
+       				        <com.special.utils.UICircularImage
+       			            android:id="@+id/profile"
+       			            android:layout_width="50dp"
+       			            android:layout_height="50dp"
+       			            android:src="@drawable/ph_1"
+       			            app:line_color="@color/theme_color"
+       			            app:line_color_press="@color/green"
+       			            app:line_width="1dp"
+       			            app:padding="0dp" />
+
+       				        <View
+       				        android:layout_width="fill_parent"
+       				        android:layout_height="0.5dp"
+       				        android:layout_centerVertical="true"
+       				        android:id="@+id/divider"
+       				        android:layout_toRightOf="@+id/profile"
+       				        android:background="@color/theme_color" />
+       				        
+       				    </RelativeLayout>
+       				    
+       				    <TextView
+       				        android:id="@+id/comment"
+       				        android:layout_width="match_parent"
+       				        android:layout_height="wrap_content"
+       				        android:layout_marginLeft="60dp"
+       				        android:layout_marginTop="-23dp"
+       				        android:layout_below="@+id/imagedivider"
+       				        android:fontFamily="sans-serif-light"
+       				        android:text="Long boring status update with information about what all happened recently, and for this reason it is very long"
+       				        android:textSize="@dimen/textsize_medium_small" />
+
+       				      <TextView
+       				          android:id="@+id/time"
+       				          android:layout_width="50dp"
+       				          android:layout_height="wrap_content"
+       				          android:layout_alignParentLeft="true"
+       				          android:layout_below="@+id/imagedivider"
+       				          android:layout_marginTop="5dp"
+       				          android:gravity="center"
+       				          android:fontFamily="sans-serif-light"
+       				          android:textSize="@dimen/textsize_xsmall"
+       				          android:text="Today\n9:03" />
+       				      
+       				      <LinearLayout
+       				          android:id="@+id/button1"
+       				          style="@style/UIButton"
+       				          android:layout_width="wrap_content"
+       				          android:layout_height="wrap_content"
+       				          android:layout_alignLeft="@+id/comment"
+       				          android:layout_below="@+id/comment"
+       				          android:clickable="true"
+       				          android:layout_marginTop="5dp" >
+
+       				          <ImageView
+       				              android:id="@+id/imageView1"
+       				              android:layout_width="30dp"
+       				              android:layout_height="25dp"
+       				              android:adjustViewBounds="true"
+       				              android:paddingTop="5dp"
+       				              android:paddingBottom="5dp"
+       				              android:src="@drawable/ic_like" />
+       				          
+       				      	<TextView
+       				      	    android:layout_width="wrap_content"
+       				      	    android:layout_height="wrap_content"
+       				      	    android:layout_marginRight="5dp"
+       				      	    android:text="@string/like"
+       				      	    android:textColor="@drawable/button_selector_text_inverse" />
+       				      
+       				      </LinearLayout>
+
+       				      <LinearLayout
+       				          android:id="@+id/button2"
+       				          style="@style/UIButtonInverse"
+       				          android:layout_width="wrap_content"
+       				          android:layout_height="wrap_content"
+       				          android:layout_below="@+id/comment"
+       				          android:layout_marginLeft="5dp"
+       				          android:layout_marginTop="5dp"
+       				          android:clickable="true"
+       				          android:layout_toRightOf="@+id/button1" >
+
+       				          <ImageView
+       				              android:id="@+id/imageView1"
+       				              android:layout_width="30dp"
+       				              android:layout_height="25dp"
+       				              android:adjustViewBounds="true"
+       				              android:paddingBottom="5dp"
+       				              android:paddingTop="5dp"
+       				              android:tint="@color/theme_color"
+       				              android:src="@drawable/ic_conversation" />
+
+       				          <TextView
+       				              android:layout_width="wrap_content"
+       				              android:layout_height="wrap_content"
+       				              android:layout_marginRight="5dp"
+       				              android:text="@string/reply"
+       				              android:textColor="@drawable/button_selector_text" />
+
+       				      </LinearLayout>
+       				      
+       				</RelativeLayout>
+</LinearLayout>

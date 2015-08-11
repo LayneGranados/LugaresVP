@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="UICircularImage">
+        <attr name="line_width" format="dimension" />
+        <attr name="line_color" format="color" />
+        <attr name="padding" format="dimension"/>
+        <attr name="line_color_press" format="color"/>
+        <attr name="background_color" format="color"/>
+    </declare-styleable>
+    <declare-styleable name="UIParallaxScroll">
+        <attr name="headerView" format="integer"/>
+        <attr name="backgroundView" format="integer"/>
+    </declare-styleable>
+</resources>

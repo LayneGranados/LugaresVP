@@ -1,0 +1,3 @@
+<set android:interpolator="@android:anim/linear_interpolator" xmlns:android="http://schemas.android.com/apk/res/android">
+  <alpha android:duration="1000" android:fromAlpha="0.0" android:toAlpha="1.0">
+</alpha></set><!-- From: file:/Users/laynegranadosmogollon/Documents/LAYNE/Proyectos/CC%20VENTURA%20PLAZA/LUGARES_MOVIL/template%20v1.1%20studio/app/src/main/res/anim/fadein.xml -->

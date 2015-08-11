@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Ventura Plaza Centro Comercial</string>
+    <string name="title_activity_detail_view">DetailView</string>
+    <string name="button_placeholder_text">Button</string>
+    <string name="checkbox">CheckBox</string>
+    <string name="dashed_area_text">Para iniciar una revisión y ver el listado de las revisiones realizadas a este lugar, por favor, escanee el código QR que se encuentra en el lugar que desea calificar</string>
+    <string name="show">Escanear Código QR</string>
+    <string name="crear_supervisión">Realizar Nueva Supervisión</string>
+    <string name="show_dialog_text">Show a Custom Dialog and Loader</string>
+    <string name="text_input_hint">text input</string>
+    <string name="four">Four</string>
+    <string name="three">Three</string>
+    <string name="two">Two</string>
+    <string name="one">One</string>
+    <string name="off">Off</string>
+    <string name="on">On</string>
+    <string name="like">Like</string>
+    <string name="reply">Reply</string>
+    <string name="detail_title_placeholder">Cool Title Of Some Movie</string>
+    <string name="contact_placeholder">Super useful contact info here I guess.\n\nProfile image is from FreePik.com</string>
+    <string name="social_1_placeholder">4.8</string>
+    <string name="social_1_placeholder_nr">15</string>
+    <string name="sumary_placeholder">Summary</string>
+    <string name="description_placeholder">Description</string>
+    <string name="description_tab_1">Wall</string>
+    <string name="description_tab_2">Contact</string>
+    <string name="image_description">Image Description</string>
+    <string name="description_title_placeholder">Cool Title Of Some Movie</string>
+    <string name="social_2_placeholder">Hotels &amp; Clubs</string>
+    <string name="social_3_placeholder">From 2 PM</string>
+    <string name="app_title">Lugares - CC Ventura Plaza</string>
+    <string name="explore">Explore</string>
+    <string name="buy">"  Buy  "</string>
+    <string name="hidden_view_text">Click Me</string>
+    <string name="list_title_placeholder">Amazing Title</string>
+    <string name="list_description_placeholder">Cool Content Description of Item</string>
+    <string name="list_number_text_placeholder">Characters</string>
+    <string name="list_number_placeholder">27</string>
+    <string name="dialog_text_placeholder">With Custom loader (loader is also usable separately)</string>
+    <string name="dialog_title_placeholder">Styled Dialog</string>
+    <string name="dialog_button_text">" Cancel "</string>
+    <string name="placeholder_views">16 Thousand</string>
+    <string name="views">Views</string>
+    <string name="followers_placeholder">503</string>
+    <string name="followers">Followers</string>
+    <string name="title_activity_options">OptionsActivity</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="servicios_asignados">Servicios Asignados</string>
+    <string name="servicios_por_asignar">Servicios Por Asignar</string>
+    <string name="action_settings">Settings</string>
+    <string name="estado">Estado: </string>
+    <string name="fecha_hora">Fecha y Hora:</string>
+    <string name="direccion_recogida">Dirección:</string>
+
+
+
+</resources>
