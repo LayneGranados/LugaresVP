@@ -12,34 +12,16 @@
    <properties>
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <zk.version>7.0.3</zk.version>
         <spring.version>3.2.0.RELEASE</spring.version>
       <netbeans.hint.deploy.server>gfv3ee6</netbeans.hint.deploy.server>
    </properties>
-    <pluginRepositories>
-        <pluginRepository>
-            <id>zkmaven</id>
-            <name>ZK Maven Plugin Repository</name>
-            <url>http://mavensync.zkoss.org/maven2/</url>
-        </pluginRepository>
-    </pluginRepositories>
     <repositories>
-        <repository>
-            <id>ZK CE</id>
-            <name>ZK CE Repository</name>
-            <url>http://mavensync.zkoss.org/maven2</url>
-        </repository>
         
 
         <repository>
             <id>unknown-jars-temp-repo</id>
             <name>A temporary repository created by NetBeans for libraries and jars it could not identify. Please replace the dependencies in this repository with correct ones and delete this repository.</name>
             <url>file:${project.basedir}/lib</url>
-        </repository>
-        <repository>
-            <id>ckez</id>
-            <name> repository for ckez </name>
-            <url> http://mavensync.zkoss.org/maven2/org/zkoss/zkforge/ckez/</url>
         </repository>
     </repositories>
     <dependencies>
@@ -88,40 +70,7 @@
             <artifactId>javaee-web-api</artifactId>
             <version>6.0</version>
             <scope>provided</scope>
-        </dependency>
-        <!-- ZK -->
-        <dependency>
-            <groupId>org.zkoss.zkforge</groupId>
-            <artifactId>ckez</artifactId>
-            <version>4.3.3.0</version>
-        </dependency>
-        <dependency>
-            <groupId>org.zkoss.zk</groupId>
-            <artifactId>zk</artifactId>
-            <version>7.0.3</version>
-            <type>jar</type>
-        </dependency>
-        <dependency>
-            <groupId>org.zkoss.zk</groupId>
-            <artifactId>zkplus</artifactId>
-            <version>7.0.3</version>
-            <type>jar</type>
-        </dependency>
-        <dependency>
-            <groupId>org.zkoss.zk</groupId>
-            <artifactId>zhtml</artifactId>
-            <version>${zk.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.zkoss.zk</groupId>
-            <artifactId>zkbind</artifactId>
-            <version>${zk.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.zkoss.zk</groupId>
-            <artifactId>zul</artifactId>
-            <version>${zk.version}</version>
-        </dependency>
+        </dependency>   
         <dependency>
             <groupId>commons-logging</groupId>
             <artifactId>commons-logging</artifactId>
@@ -193,11 +142,6 @@
         </dependency>
         <!-- Compile LESS To DSP --> 
         <dependency>
-            <groupId>org.zkoss.maven</groupId>
-            <artifactId>zkless-servlet</artifactId>
-            <version>0.8.3</version>
-        </dependency>    
-        <dependency>
             <groupId>com.google.zxing</groupId>
             <artifactId>core</artifactId>
             <version>3.2.0</version>
@@ -253,26 +197,6 @@
                                     <type>jar</type>
                                 </artifactItem>
                             </artifactItems>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <!-- LESS pluggin -->
-                <groupId>org.zkoss.maven</groupId>
-                <artifactId>zkless-engine-maven-plugin</artifactId>
-                <version>0.8.3</version>
-                <executions>
-                    <execution>
-                        <id>compile-less</id>
-                        <goals>
-                            <goal>lessc</goal>
-                        </goals>
-                        <configuration>
-                            <!-- LESS source folder-->
-                            <sourceDirectory>${project.basedir}/src/main/webapp/less</sourceDirectory> 
-                            <!-- *.CSS.DSP output folder -->
-                            <outputDirectory>${project.basedir}/src/main/webapp/less</outputDirectory>
                         </configuration>
                     </execution>
                 </executions>
