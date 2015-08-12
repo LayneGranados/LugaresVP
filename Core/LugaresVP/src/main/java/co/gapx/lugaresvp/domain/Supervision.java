@@ -9,7 +9,7 @@ import javax.persistence.*;
  * @author Layne Granados Mogollon<layne0205@gmail.com>
  */
 @Entity
-@Table(name = "supervision", catalog = "lugares_ventura_plaza", schema = "public" )
+@Table(name = "supervision", catalog = "lugaresventuraplaza", schema = "public" )
 
 public class Supervision implements Serializable{
     
