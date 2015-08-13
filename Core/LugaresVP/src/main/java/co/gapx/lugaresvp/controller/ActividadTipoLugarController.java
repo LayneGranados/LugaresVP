@@ -48,8 +48,10 @@ public class ActividadTipoLugarController {
             map.put("id", c.getId());
             this.crudS.refresh(c.getActividad());
             this.crudS.refresh(c.getTipoLugar());
-            map.put("actividad", c.getActividad().getNombre());
-            map.put("tipolugar", c.getTipoLugar().getNombre());           
+            map.put("actividadnombre", c.getActividad().getNombre());
+            map.put("actividadid", c.getActividad().getId());
+            map.put("tipolugarnombre", c.getTipoLugar().getNombre());
+            map.put("tipolugarid", c.getTipoLugar().getId());           
             l.add(map);
         }
         return l;
