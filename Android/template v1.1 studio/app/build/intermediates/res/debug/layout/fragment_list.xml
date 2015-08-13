@@ -15,4 +15,4 @@
     	android:layout_marginLeft="@dimen/list_horizontal_margin"
         android:divider="@null" />
     
-</FrameLayout><!-- From: file:/Users/laynegranadosmogollon/Documents/LAYNE/Proyectos/CC%20VENTURA%20PLAZA/LUGARES_MOVIL/template%20v1.1%20studio/app/src/main/res/layout/fragment_list.xml -->
+</FrameLayout><!-- From: file:/Users/laygrana/Documents/Layne/Proyectos/Git/LugaresVP/Android/template%20v1.1%20studio/app/src/main/res/layout/fragment_list.xml -->

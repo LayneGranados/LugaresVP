@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/Users/laynegranadosmogollon/Documents/LAYNE/Proyectos/CC%20VENTURA%20PLAZA/LUGARES_MOVIL/template%20v1.1%20studio/app/src/main/res/values-v21/styles.xml -->
+    <!-- From: file:/Users/laygrana/Documents/Layne/Proyectos/Git/LugaresVP/Android/template%20v1.1%20studio/app/src/main/res/values-v21/styles.xml -->
     <eat-comment/>
     <style name="AppTheme" parent="android:Theme.Material.Light.NoActionBar">
     	<item name="android:windowTranslucentStatus">false</item>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/Users/laynegranadosmogollon/Documents/LAYNE/Proyectos/CC%20VENTURA%20PLAZA/LUGARES_MOVIL/template%20v1.1%20studio/app/src/main/res/values/colors.xml -->
+    <!-- From: file:/Users/laygrana/Documents/Layne/Proyectos/Git/LugaresVP/Android/template%20v1.1%20studio/app/src/main/res/values/colors.xml -->
     <eat-comment/>
     <color name="bar_color">#676767</color>
     <color name="bar_color_transparent">#86676767</color>
@@ -17,7 +17,7 @@
     <color name="white_transparent">#D9FFFFFF</color>
     <declare-styleable name="UICircularImage"><attr format="dimension" name="line_width"/><attr format="color" name="line_color"/><attr format="dimension" name="padding"/><attr format="color" name="line_color_press"/><attr format="color" name="background_color"/></declare-styleable>
     <declare-styleable name="UIParallaxScroll"><attr format="integer" name="headerView"/><attr format="integer" name="backgroundView"/></declare-styleable>
-    <!-- From: file:/Users/laynegranadosmogollon/Documents/LAYNE/Proyectos/CC%20VENTURA%20PLAZA/LUGARES_MOVIL/template%20v1.1%20studio/app/src/main/res/values/dimens.xml -->
+    <!-- From: file:/Users/laygrana/Documents/Layne/Proyectos/Git/LugaresVP/Android/template%20v1.1%20studio/app/src/main/res/values/dimens.xml -->
     <eat-comment/>
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
@@ -32,14 +32,14 @@
     <dimen name="textsize_xlarge">28dp</dimen>
     <dimen name="textsize_xsmall">10sp</dimen>
     <dimen name="theme_corner_radius">5dp</dimen>
-    <!-- From: file:/Users/laynegranadosmogollon/Documents/LAYNE/Proyectos/CC%20VENTURA%20PLAZA/LUGARES_MOVIL/template%20v1.1%20studio/app/src/main/res/values/strings.xml -->
+    <!-- From: file:/Users/laygrana/Documents/Layne/Proyectos/Git/LugaresVP/Android/template%20v1.1%20studio/app/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="action_settings">Settings</string>
-    <!-- From: file:/Users/laynegranadosmogollon/Documents/LAYNE/Proyectos/CC%20VENTURA%20PLAZA/LUGARES_MOVIL/template%20v1.1%20studio/app/src/main/res/values/strings_activity_login.xml -->
+    <!-- From: file:/Users/laygrana/Documents/Layne/Proyectos/Git/LugaresVP/Android/template%20v1.1%20studio/app/src/main/res/values/strings_activity_login.xml -->
     <eat-comment/>
     <string name="action_sign_in">Iniciar Sesión</string>
     <string name="action_sign_in_short">Iniciar Sesión</string>
-    <!-- From: file:/Users/laynegranadosmogollon/Documents/LAYNE/Proyectos/CC%20VENTURA%20PLAZA/LUGARES_MOVIL/template%20v1.1%20studio/app/src/main/res/values/strings.xml -->
+    <!-- From: file:/Users/laygrana/Documents/Layne/Proyectos/Git/LugaresVP/Android/template%20v1.1%20studio/app/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="app_name">Ventura Plaza Centro Comercial</string>
     <string name="app_title">Lugares - CC Ventura Plaza</string>
@@ -58,13 +58,13 @@
     <string name="dialog_text_placeholder">With Custom loader (loader is also usable separately)</string>
     <string name="dialog_title_placeholder">Styled Dialog</string>
     <string name="direccion_recogida">Dirección:</string>
-    <!-- From: file:/Users/laynegranadosmogollon/Documents/LAYNE/Proyectos/CC%20VENTURA%20PLAZA/LUGARES_MOVIL/template%20v1.1%20studio/app/src/main/res/values/strings_activity_login.xml -->
+    <!-- From: file:/Users/laygrana/Documents/Layne/Proyectos/Git/LugaresVP/Android/template%20v1.1%20studio/app/src/main/res/values/strings_activity_login.xml -->
     <eat-comment/>
     <string name="error_field_required">This field is required</string>
     <string name="error_incorrect_password">This password is incorrect</string>
     <string name="error_invalid_email">This email address is invalid</string>
     <string name="error_invalid_password">This password is too short</string>
-    <!-- From: file:/Users/laynegranadosmogollon/Documents/LAYNE/Proyectos/CC%20VENTURA%20PLAZA/LUGARES_MOVIL/template%20v1.1%20studio/app/src/main/res/values/strings.xml -->
+    <!-- From: file:/Users/laygrana/Documents/Layne/Proyectos/Git/LugaresVP/Android/template%20v1.1%20studio/app/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="estado">Estado: </string>
     <string name="explore">Explore</string>
@@ -84,11 +84,11 @@
     <string name="on">On</string>
     <string name="one">One</string>
     <string name="placeholder_views">16 Thousand</string>
-    <!-- From: file:/Users/laynegranadosmogollon/Documents/LAYNE/Proyectos/CC%20VENTURA%20PLAZA/LUGARES_MOVIL/template%20v1.1%20studio/app/src/main/res/values/strings_activity_login.xml -->
+    <!-- From: file:/Users/laygrana/Documents/Layne/Proyectos/Git/LugaresVP/Android/template%20v1.1%20studio/app/src/main/res/values/strings_activity_login.xml -->
     <eat-comment/>
     <string name="prompt_email">Usuario</string>
     <string name="prompt_password">Contraseña</string>
-    <!-- From: file:/Users/laynegranadosmogollon/Documents/LAYNE/Proyectos/CC%20VENTURA%20PLAZA/LUGARES_MOVIL/template%20v1.1%20studio/app/src/main/res/values/strings.xml -->
+    <!-- From: file:/Users/laygrana/Documents/Layne/Proyectos/Git/LugaresVP/Android/template%20v1.1%20studio/app/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="reply">Reply</string>
     <string name="servicios_asignados">Servicios Asignados</string>
@@ -103,15 +103,15 @@
     <string name="text_input_hint">text input</string>
     <string name="three">Three</string>
     <string name="title_activity_detail_view">DetailView</string>
-    <!-- From: file:/Users/laynegranadosmogollon/Documents/LAYNE/Proyectos/CC%20VENTURA%20PLAZA/LUGARES_MOVIL/template%20v1.1%20studio/app/src/main/res/values/strings_activity_login.xml -->
+    <!-- From: file:/Users/laygrana/Documents/Layne/Proyectos/Git/LugaresVP/Android/template%20v1.1%20studio/app/src/main/res/values/strings_activity_login.xml -->
     <eat-comment/>
     <string name="title_activity_login">Iniciar Sesión</string>
-    <!-- From: file:/Users/laynegranadosmogollon/Documents/LAYNE/Proyectos/CC%20VENTURA%20PLAZA/LUGARES_MOVIL/template%20v1.1%20studio/app/src/main/res/values/strings.xml -->
+    <!-- From: file:/Users/laygrana/Documents/Layne/Proyectos/Git/LugaresVP/Android/template%20v1.1%20studio/app/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="title_activity_options">OptionsActivity</string>
     <string name="two">Two</string>
     <string name="views">Views</string>
-    <!-- From: file:/Users/laynegranadosmogollon/Documents/LAYNE/Proyectos/CC%20VENTURA%20PLAZA/LUGARES_MOVIL/template%20v1.1%20studio/app/src/main/res/values/styles.xml -->
+    <!-- From: file:/Users/laygrana/Documents/Layne/Proyectos/Git/LugaresVP/Android/template%20v1.1%20studio/app/src/main/res/values/styles.xml -->
     <eat-comment/>
     <style name="AppTheme" parent="android:Theme.Light.NoTitleBar">
 	</style>

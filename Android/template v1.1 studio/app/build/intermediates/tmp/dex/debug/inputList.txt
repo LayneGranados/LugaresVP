@@ -1,6 +1,6 @@
-/Users/laynegranadosmogollon/Documents/LAYNE/Proyectos/CC VENTURA PLAZA/LUGARES_MOVIL/template v1.1 studio/app/build/intermediates/classes/debug
-/Users/laynegranadosmogollon/Documents/LAYNE/Proyectos/CC VENTURA PLAZA/LUGARES_MOVIL/template v1.1 studio/app/build/intermediates/pre-dexed/debug/zbar-52f07b4b27120b0b3bd53f03dc34810f9fd8dcfd.jar
-/Users/laynegranadosmogollon/Documents/LAYNE/Proyectos/CC VENTURA PLAZA/LUGARES_MOVIL/template v1.1 studio/app/build/intermediates/pre-dexed/debug/classes-97fb982562b385fac129e756e007227d714a3fe7.jar
-/Users/laynegranadosmogollon/Documents/LAYNE/Proyectos/CC VENTURA PLAZA/LUGARES_MOVIL/template v1.1 studio/app/build/intermediates/pre-dexed/debug/nineoldandroids-library-2.4.0-9e9dd96f6546ec6add2e2371e29867fab9c14163.jar
-/Users/laynegranadosmogollon/Documents/LAYNE/Proyectos/CC VENTURA PLAZA/LUGARES_MOVIL/template v1.1 studio/app/build/intermediates/pre-dexed/debug/renderscript-v8-731b497a51068393fd0cd01fd6bfa20050f64e8c.jar
-/Users/laynegranadosmogollon/Documents/LAYNE/Proyectos/CC VENTURA PLAZA/LUGARES_MOVIL/template v1.1 studio/app/build/intermediates/pre-dexed/debug/android-support-v4-8889a5c5461040fa287ea71be177fe580251438a.jar
+/Users/laygrana/Documents/Layne/Proyectos/Git/LugaresVP/Android/template v1.1 studio/app/build/intermediates/classes/debug
+/Users/laygrana/Documents/Layne/Proyectos/Git/LugaresVP/Android/template v1.1 studio/app/build/intermediates/pre-dexed/debug/zbar-93dd0f39c59638fbe278cf1f29c5933be2b79e84.jar
+/Users/laygrana/Documents/Layne/Proyectos/Git/LugaresVP/Android/template v1.1 studio/app/build/intermediates/pre-dexed/debug/classes-1a0c468774dfad8a27a5a270bb47375ea4372283.jar
+/Users/laygrana/Documents/Layne/Proyectos/Git/LugaresVP/Android/template v1.1 studio/app/build/intermediates/pre-dexed/debug/nineoldandroids-library-2.4.0-44cad587b609d65f35ea25cc4a38123115f9bcca.jar
+/Users/laygrana/Documents/Layne/Proyectos/Git/LugaresVP/Android/template v1.1 studio/app/build/intermediates/pre-dexed/debug/renderscript-v8-911cd219680fed7eee54f28a1bf0dc0a14f5d55e.jar
+/Users/laygrana/Documents/Layne/Proyectos/Git/LugaresVP/Android/template v1.1 studio/app/build/intermediates/pre-dexed/debug/android-support-v4-5faed308d31dc8684f64d8859bf27cbd5532f0d8.jar

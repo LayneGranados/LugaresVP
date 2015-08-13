@@ -1,0 +1,38 @@
+<div>ACTIVIDAD TIPO LUGAR</div>
+<div id="wrapper" ng-controller="ActividadTipoLugarCreateController as actitiluCreateCtrl">
+  <form name="paisCreate" role="form" ng-submit="actitiluCreateCtrl.create()">
+    <fieldset class="form-group">
+      <label>Actividades:
+        <select class="js-example-basic-single" id="categ" style="width: 100%" ng-controller="ActividadListController as actiListCtrl" ng-model="actitiluCreateCtrl.actividad.actividad_id">
+   	    <option ng-repeat="acti in actiListCtrl.actividades" value="{{acti.id}}">{{acti.nombre}}</option>
+      </select></label>
+    </fieldset>
+    <fieldset class="form-group">
+      <label>Tipo Lugar:
+        <select class="js-example-basic-single" id="categ" style="width: 100%" ng-controller="TipoLugarListController as tiluListCtrl" ng-model="actitiluCreateCtrl.tipolugar.tipolugar_id">
+   	    <option ng-repeat="tilu in tiluListCtrl.tipos" value="{{tilu.id}}">{{tilu.nombre}}</option>
+      </select></label>
+    </fieldset>
+
+    <button class="btn btn-primary btn-lg" type="submit" >
+      Guardar
+    </button>
+  </form>
+</div>
+<hr>
+<table class="table table-condensed" ng-controller="ActividadTipoLugarListController as actitiluListCtrl">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Actividad</th>
+      <th>TipoLugar</th>
+    </tr>
+  <thead>
+  <tbody>
+  <tr ng-repeat="cat in actitiluListCtrl.actividadTipoLugares">
+    <td ng-bind="cat.id"></td>
+    <td ng-bind="cat.actividadnombre"></td>
+    <td ng-bind="cat.tipolugarnombre"></td>
+  </tr>
+  <tbody>
+</table>

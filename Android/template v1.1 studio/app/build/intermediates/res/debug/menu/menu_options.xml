@@ -3,4 +3,4 @@
     <item android:id="@+id/action_settings" android:title="@string/action_settings"
         android:orderInCategory="100" android:showAsAction="never" />
 </menu>
-<!-- From: file:/Users/laynegranadosmogollon/Documents/LAYNE/Proyectos/CC%20VENTURA%20PLAZA/LUGARES_MOVIL/template%20v1.1%20studio/app/src/main/res/menu/menu_options.xml -->
+<!-- From: file:/Users/laygrana/Documents/Layne/Proyectos/Git/LugaresVP/Android/template%20v1.1%20studio/app/src/main/res/menu/menu_options.xml -->

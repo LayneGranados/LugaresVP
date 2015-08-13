@@ -4,4 +4,4 @@
     <item android:state_pressed="true" android:drawable="@drawable/ic_menu_grey600_24dp" />
     <item android:state_focused="true" android:drawable="@drawable/ic_menu_white_24dp" />
     <item android:drawable="@drawable/ic_menu_white_24dp" />
-</selector><!-- From: file:/Users/laynegranadosmogollon/Documents/LAYNE/Proyectos/CC%20VENTURA%20PLAZA/LUGARES_MOVIL/template%20v1.1%20studio/app/src/main/res/drawable/titlebar_menu_selector.xml -->
+</selector><!-- From: file:/Users/laygrana/Documents/Layne/Proyectos/Git/LugaresVP/Android/template%20v1.1%20studio/app/src/main/res/drawable/titlebar_menu_selector.xml -->

@@ -4,4 +4,4 @@
     android:padding="10dp">
     <!-- you can use any color you want I used here gray color-->
     <solid android:color="@color/theme_color" />
-</shape><!-- From: file:/Users/laynegranadosmogollon/Documents/LAYNE/Proyectos/CC%20VENTURA%20PLAZA/LUGARES_MOVIL/template%20v1.1%20studio/app/src/main/res/drawable/tab_active_middle.xml -->
+</shape><!-- From: file:/Users/laygrana/Documents/Layne/Proyectos/Git/LugaresVP/Android/template%20v1.1%20studio/app/src/main/res/drawable/tab_active_middle.xml -->

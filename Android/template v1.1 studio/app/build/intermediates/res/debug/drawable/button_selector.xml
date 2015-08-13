@@ -4,4 +4,4 @@
     <item android:state_pressed="true" android:drawable="@drawable/tab_default" />
     <item android:state_focused="true" android:drawable="@drawable/tab_active_default" />
     <item android:drawable="@drawable/tab_active_default" />
-</selector><!-- From: file:/Users/laynegranadosmogollon/Documents/LAYNE/Proyectos/CC%20VENTURA%20PLAZA/LUGARES_MOVIL/template%20v1.1%20studio/app/src/main/res/drawable/button_selector.xml -->
+</selector><!-- From: file:/Users/laygrana/Documents/Layne/Proyectos/Git/LugaresVP/Android/template%20v1.1%20studio/app/src/main/res/drawable/button_selector.xml -->

@@ -5,4 +5,4 @@
     <item android:state_checked="true" android:drawable="@drawable/trottle_active" />
     <item android:state_checked="false" android:drawable="@drawable/trottle" />
     <item android:drawable="@drawable/trottle" />
-</selector><!-- From: file:/Users/laynegranadosmogollon/Documents/LAYNE/Proyectos/CC%20VENTURA%20PLAZA/LUGARES_MOVIL/template%20v1.1%20studio/app/src/main/res/drawable/checkbox.xml -->
+</selector><!-- From: file:/Users/laygrana/Documents/Layne/Proyectos/Git/LugaresVP/Android/template%20v1.1%20studio/app/src/main/res/drawable/checkbox.xml -->
