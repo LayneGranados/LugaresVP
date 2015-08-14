@@ -1,19 +1,17 @@
-<div>SUPERVISION</div>
+<div>Evaluacion</div>
 <table class="table table-condensed" ng-controller="SupervisionListController as supListCtrl">
   <thead>
     <tr>
       <th>Id</th>
-      <th>Lugar</th>
-      <th>Supervisor</th>
-      <th>Fecha</th>
+      <th>Actividad</th>
+      <th>Calificacion</th>
     </tr>
   <thead>
   <tbody>
   <tr ng-repeat="sup in supListCtrl.supervisiones | orderBy:'name'">
     <td ng-bind="sup.id"></td>
-    <td ng-bind="sup.lugar"></td>
-    <td ng-bind="sup.supervisor"></td>
-    <td ng-bind="sup.fecha"></td>
+    <td ng-bind="sup.actividad"></td>
+    <td ng-bind="sup.calificacion"></td>
   </tr>
   <tbody>
 </table>
