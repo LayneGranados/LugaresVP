@@ -5,9 +5,6 @@
       <config />
     </shared>
   </component>
-  <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
-  </component>
   <component name="ChangeListManager">
     <list default="true" id="ed4649ee-f0fe-48a7-b003-c1cf5c4f8fbf" name="Default" comment="" />
     <ignored path="template v1.1 studio.iws" />
@@ -60,11 +57,12 @@
       <file leaf-file-name="DetailListAdapter.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/special/DetailListAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4552058">
-              <caret line="47" column="62" selection-start-line="47" selection-start-column="62" selection-end-line="47" selection-end-column="62" />
+            <state vertical-scroll-proportion="0.6731235">
+              <caret line="53" column="9" selection-start-line="53" selection-start-column="9" selection-end-line="53" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1360#1368#0" expanded="true" />
+                <element signature="e#1515#1523#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -2790,11 +2788,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/special/DetailListAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4552058">
-          <caret line="47" column="62" selection-start-line="47" selection-start-column="62" selection-end-line="47" selection-end-column="62" />
+        <state vertical-scroll-proportion="0.6731235">
+          <caret line="53" column="9" selection-start-line="53" selection-start-column="9" selection-end-line="53" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1360#1368#0" expanded="true" />
+            <element signature="e#1515#1523#0" expanded="true" />
           </folding>
         </state>
       </provider>
