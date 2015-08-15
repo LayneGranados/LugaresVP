@@ -3,10 +3,10 @@ package co.gapx.lugaresvp.controller;
 import co.gapx.lugaresvp.business.CRUDService;
 import co.gapx.lugaresvp.business.LugarBusiness;
 import co.gapx.lugaresvp.business.SupervisionBusiness;
-import co.gapx.lugaresvp.business.SupervisorBusiness;
+import co.gapx.lugaresvp.business.EmpleadoBusiness;
 import co.gapx.lugaresvp.domain.Lugar;
 import co.gapx.lugaresvp.domain.Supervision;
-import co.gapx.lugaresvp.domain.Supervisor;
+import co.gapx.lugaresvp.domain.Empleado;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -35,7 +35,7 @@ public class SupervisionController {
     @Autowired
     private SupervisionBusiness supervisionB;
     @Autowired
-    private SupervisorBusiness supervisorB;
+    private EmpleadoBusiness supervisorB;
     @Autowired
     private LugarBusiness lugarB;
     @Autowired
@@ -66,7 +66,7 @@ public class SupervisionController {
         Map obj=(Map) JSONValue.parse(json);
         Supervision cv = new Supervision();
         Lugar l = this.lugarB.get(((Long)obj.get("lugar")).intValue());
-        Supervisor s = this.supervisorB.get(((Long)obj.get("supervisor")).intValue());
+        Empleado s = this.supervisorB.get(((Long)obj.get("supervisor")).intValue());
         cv.setLugar(l);
         cv.setSupervisor(s);
         cv.setFecha(new Date((String)obj.get("fecha")));
@@ -81,7 +81,7 @@ public class SupervisionController {
         int id = Integer.parseInt((String)obj.get("id"));
         Supervision update =this.supervisionB.get(id); 
         Lugar l = this.lugarB.get(((Long)obj.get("lugar")).intValue());
-        Supervisor s = this.supervisorB.get(((Long)obj.get("supervisor")).intValue());
+        Empleado s = this.supervisorB.get(((Long)obj.get("supervisor")).intValue());
         update.setLugar(l);
         update.setSupervisor(s);
         update.setFecha(new Date((String)obj.get("fecha")));

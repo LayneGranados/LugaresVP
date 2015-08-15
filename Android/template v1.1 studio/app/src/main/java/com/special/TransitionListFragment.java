@@ -66,6 +66,7 @@ public class TransitionListFragment extends Fragment {
 
             @Override
             public void onClick(View arg0) {
+                //Intent pasar = new Intent(getActivity(), CreateSupervisionActivity.class);
                 Intent pasar = new Intent(getActivity(), CreateSupervisionActivity.class);
                 startActivity(pasar);
             }

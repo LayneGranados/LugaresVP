@@ -1,6 +1,5 @@
 package com.special;
 
-import com.special.domain.Servicio;
 import com.special.menu.ResideMenu;
 import com.special.menu.ResideMenuItem;
 
@@ -31,7 +30,6 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
     private ResideMenuItem itemElements;
     private ResideMenuItem itemList1;
     private ResideMenuItem itemList2;
-    public ArrayList<Servicio> servicios;
   
     @SuppressLint("NewApi")
 	@Override

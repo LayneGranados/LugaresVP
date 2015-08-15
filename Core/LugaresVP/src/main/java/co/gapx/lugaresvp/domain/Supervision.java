@@ -22,7 +22,7 @@ public class Supervision implements Serializable{
     
     @JoinColumn(name = "supervisor_id", referencedColumnName = "id")
     @ManyToOne(fetch = FetchType.LAZY)
-    private Supervisor supervisor;
+    private Empleado supervisor;
     
     @JoinColumn(name = "lugar_id", referencedColumnName = "id")
     @ManyToOne(fetch = FetchType.LAZY)
@@ -45,11 +45,11 @@ public class Supervision implements Serializable{
         this.id = id;
     }
 
-    public Supervisor getSupervisor() {
+    public Empleado getSupervisor() {
         return supervisor;
     }
 
-    public void setSupervisor(Supervisor supervisor) {
+    public void setSupervisor(Empleado supervisor) {
         this.supervisor = supervisor;
     }
 

@@ -54,10 +54,10 @@ public class CreateSupervisionActivity extends Activity {
     String title;
     int imgId;
 
-    String lor1 = "Pellentesque in luctus dui, non egestas nisl. Donec sapien ante, faucibus a sem at, tincidunt dictum quam. Sed vel blandit neque. Maecenas tincidunt at sem vel sodales. Nullam dignissim eros id tellus commodo, eu vulputate massa accumsan.<br><br>Ut eget volutpat turpis. Praesent ac auctor nisi, sed imperdiet augue. Aenean consequat est vel odio molestie pellentesque. Suspendisse rhoncus velit dolor, at ultrices nulla ullamcorper a. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vivamus nec felis elit. Mauris at erat euismod leo sagittis gravida in id magna.";
-    String lor2 = "Donec ornare eleifend turpis. Cras consectetur at neque sit amet bibendum. Nulla metus dui, porta vel mollis vitae, ornare sit amet lectus. Integer imperdiet quam eleifend nisl dictum vehicula. Suspendisse pharetra aliquet porttitor. Maecenas nec pharetra purus. Sed scelerisque suscipit faucibus. Etiam hendrerit tellus risus, et interdum tortor facilisis quis.";
-    String lor3 = "Etiam tristique, sapien non rhoncus vestibulum, erat augue suscipit velit, vestibulum viverra justo nibh ut nibh. Vivamus pulvinar pharetra scelerisque. Curabitur ullamcorper tristique lacus.";
-    String lor4 = "Maecenas id tortor sed purus ultricies tempor. In vulputate feugiat iaculis. Phasellus sem turpis, adipiscing sit amet lacus in, aliquet aliquet eros. Integer euismod, orci et tincidunt iaculis, odio odio vulputate lectus, sed rutrum sapien odio eget sem.";
+    String lor1 = "lor1";
+    String lor3 = "lor2";
+    String lor2 = "lor3";
+    String lor4 = "lor4";
 
     @SuppressLint("NewApi")
     @Override
@@ -88,13 +88,13 @@ public class CreateSupervisionActivity extends Activity {
 
         Bundle bundle = getIntent().getExtras();
 
-        final int top = bundle.getInt(PACKAGE + ".top");
-        final int left = bundle.getInt(PACKAGE + ".left");
-        final int width = bundle.getInt(PACKAGE + ".width");
-        final int height = bundle.getInt(PACKAGE + ".height");
-        title = bundle.getString("title");
-        String sum = bundle.getString("descr");
-        imgId = bundle.getInt("img");
+        final int top = 0;//bundle.getInt(PACKAGE + ".top");
+        final int left = 0;//bundle.getInt(PACKAGE + ".left");
+        final int width = 0;//bundle.getInt(PACKAGE + ".width");
+        final int height = 0;//bundle.getInt(PACKAGE + ".height");
+        title = "title";//bundle.getString("title");
+        String sum = "desc";//bundle.getString("descr");
+        imgId = 1;//bundle.getInt("img");
 
         //Our Animation initialization
 

@@ -5,10 +5,14 @@ import com.special.utils.UICircularImage;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 import android.widget.TextView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class DetailListAdapter{
  
@@ -20,19 +24,34 @@ public class DetailListAdapter{
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
  
             // 2. Get rowView from inflater
-            View rowView = inflater.inflate(R.layout.comment, null, false);
+            View rowView = inflater.inflate(R.layout.fragment_list_item, null, false);
  
             // 3. Get the two text view from the rowView
-            TextView labelView = (TextView) rowView.findViewById(R.id.name);
-            TextView valueView = (TextView) rowView.findViewById(R.id.comment);
-            UICircularImage imageview = (UICircularImage) rowView.findViewById(R.id.profile);
+            TextView labelView = (TextView) rowView.findViewById(R.id.item_tipoServicio);
+            //TextView valueView = (TextView) rowView.findViewById(R.id.item_rol);
+
+
  
             // 4. Set the text for textView 
             labelView.setText(item.getTitle());
-            valueView.setText(Html.fromHtml(item.getDesc()));
+            //valueView.setText(Html.fromHtml(item.getDesc()));
 
             // 5. retrn rowView
+
+
+
+        Spinner spinner2 = (Spinner) rowView.findViewById(R.id.calificaciones);
+        List<String> list = new ArrayList<String>();
+        list.add("list 1");
+        list.add("list 2");
+        list.add("list 3");
+        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(context, android.R.layout.simple_spinner_item, list);
+
+        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner2.setAdapter(dataAdapter);
+
             return rowView;
         }
-       
+
+
 }

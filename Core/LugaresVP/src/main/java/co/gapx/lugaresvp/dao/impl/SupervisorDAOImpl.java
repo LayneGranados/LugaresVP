@@ -2,7 +2,7 @@ package co.gapx.lugaresvp.dao.impl;
 
 import co.gapx.lugaresvp.dao.SupervisorDAO;
 import co.gapx.lugaresvp.dao.HibernateUtil;
-import co.gapx.lugaresvp.domain.Supervisor;
+import co.gapx.lugaresvp.domain.Empleado;
 import java.io.Serializable;
 import java.util.List;
 import org.apache.commons.logging.Log;
@@ -34,7 +34,7 @@ public class SupervisorDAOImpl implements SupervisorDAO, Serializable{
     
     @Override
     @Transactional
-    public boolean save(Supervisor supervisor) {
+    public boolean save(Empleado supervisor) {
         boolean x=false;
         try {
             this.getCurrentSession().saveOrUpdate(supervisor);
@@ -51,7 +51,7 @@ public class SupervisorDAOImpl implements SupervisorDAO, Serializable{
 
     @Override
     @Transactional
-    public List<Supervisor> listALl() {
+    public List<Empleado> listALl() {
         List lista = getCurrentSession().createQuery("from Supervisor p").list();
         this.evictUnProxy(lista);
         return lista;
@@ -59,8 +59,8 @@ public class SupervisorDAOImpl implements SupervisorDAO, Serializable{
 
     @Override
     @Transactional
-    public Supervisor get(int id) {
-        Supervisor supervisor= (Supervisor) getCurrentSession().createQuery("from Supervisor e where e.id= :id").setParameter("id", id).list().get(0);
+    public Empleado get(int id) {
+        Empleado supervisor= (Empleado) getCurrentSession().createQuery("from Supervisor e where e.id= :id").setParameter("id", id).list().get(0);
         this.evictUnProxy(supervisor);
         return supervisor;
     }

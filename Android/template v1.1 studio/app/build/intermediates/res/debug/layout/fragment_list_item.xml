@@ -7,138 +7,27 @@
 
     <LinearLayout
         android:id="@+id/relativelayout"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-
-
-        <RelativeLayout
-            android:orientation="horizontal"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/white_transparent" >
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:background="@color/white_transparent" >
 
             <TextView
                 android:id="@+id/item_tipoServicio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
+                android:paddingLeft="5dp"
                 android:text="@string/list_title_placeholder"
                 android:fontFamily="sans-serif-light"
                 android:textSize="@dimen/textsize_medium_large"
                 android:textColor="@color/gray"/>
 
-            <TextView
-                android:id="@+id/item_rol"
+            <Spinner
+                android:id="@+id/calificaciones"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_alignParentRight="true"
-                android:fontFamily="sans-serif-light"
-                android:padding="5dp"
-                android:text="@string/list_number_text_placeholder"
-                android:textColor="@color/gray"
-                android:textSize="@dimen/textsize_medium_small_static" />
-
-        </RelativeLayout>
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/servicio_list" >
-
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:padding="10dp"
-                    android:text="@string/estado"
-                    android:fontFamily="sans-serif-light"
-                    android:textSize="@dimen/textsize_medium_large"
-                    android:textColor="@color/gray"/>
-
-                <TextView
-                    android:id="@+id/item_estado"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:padding="10dp"
-                    android:fontFamily="sans-serif-light"
-                    android:textSize="@dimen/textsize_medium_large"
-                    android:textColor="@color/gray"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content" >
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:padding="10dp"
-                    android:layout_centerVertical="true"
-                    android:fontFamily="sans-serif-light"
-                    android:text="@string/fecha_hora"
-                    android:textColor="@color/gray"
-                    android:textSize="@dimen/textsize_medium_large">
-
-                </TextView>
-
-                <TextView
-                    android:id="@+id/item_fechaHora"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:padding="10dp"
-                    android:layout_centerVertical="true"
-                    android:fontFamily="sans-serif-light"
-                    android:textColor="@color/gray"
-                    android:textSize="@dimen/textsize_medium_large">
-
-                </TextView>
-
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_alignParentRight="true"
-                    android:fontFamily="sans-serif-light"
-                    android:padding="10dp"
-                    android:text="@string/direccion_recogida"
-                    android:textColor="@color/gray"
-                    android:textSize="@dimen/textsize_medium_large">
-
-                </TextView>
-
-                <TextView
-                    android:id="@+id/direccion_recogida"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_alignParentRight="true"
-                    android:fontFamily="sans-serif-light"
-                    android:padding="10dp"
-                    android:textColor="@color/gray"
-                    android:textSize="@dimen/textsize_medium_large">
-
-                </TextView>
-            </LinearLayout>
-
-        </LinearLayout>
+                android:gravity="left"/>
 
     </LinearLayout>
 

@@ -15,7 +15,8 @@ import android.widget.AdapterView.OnItemClickListener;
 import java.util.ArrayList;
 
 import com.special.R;
-import com.special.domain.Servicio;
+import com.special.domain.Calificacion;
+import com.special.domain.CalificacionActividad;
 
 public class ListFragment extends Fragment {
 
@@ -51,11 +52,11 @@ public class ListFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 
-                Servicio item = (Servicio) listView.getAdapter().getItem(i);
+                CalificacionActividad item = (CalificacionActividad) listView.getAdapter().getItem(i);
                 
                 Intent intent = new Intent(getActivity(), DetailActivity.class);
-                intent.putExtra("tipo_servicio", item.getTipoServicio());
-                intent.putExtra("reserva", item.getCodigoReserva());
+                intent.putExtra("tipo_servicio", item.getActividadId());
+                intent.putExtra("reserva", item.getNombreActividad());
                 intent.putExtra("descr", "layne granados");
                 System.out.println("Hizo clic en uno de los de la lista");
                 startActivity(intent);
@@ -63,24 +64,32 @@ public class ListFragment extends Fragment {
         });
     }
 
-    private ArrayList<Servicio> getListData(){
-        ArrayList<Servicio> servicios=  (ArrayList<Servicio>)this.getActivity().getIntent().getExtras().getSerializable("servicios");
-        System.out.println("TAMAÑO DE LOS SERVICIOS EN FRAGMENT: "+servicios.size());
+    private ArrayList<CalificacionActividad> getListData(){
+        //ArrayList<CalificacionActividad> servicios=  (ArrayList<CalificacionActividad>)this.getActivity().getIntent().getExtras().getSerializable("servicios");
+        //System.out.println("TAMAÑO DE LOS SERVICIOS EN FRAGMENT: "+servicios.size());
 
-        /*ArrayList<ListItem> listData = new ArrayList<ListItem>();
-        listData.add(new ListItem(R.drawable.ph_hotel, "Airport Hotel",        "Large hotel located next to the Airport Terminal", "5", "Rooms Available"));
-        listData.add(new ListItem(R.drawable.ph_hotel, "Select Hotel",         "Small hotel near the City", "3", "Rooms Available" ));
-        listData.add(new ListItem(R.drawable.ph_hotel, "Beach Hotel",          "Located next to a white sand beach", "3", "Stars"));
-        listData.add(new ListItem(R.drawable.ph_hotel, "Dance and Party Club", "Ideal for teens", "10+", "Rooms Available"));
-        listData.add(new ListItem(R.drawable.ph_hotel, "Royal City Resort",    "Enjoy luxery in the City", "5", "Stars"));
-        listData.add(new ListItem(R.drawable.ph_hotel, "Safari Lodge",         "Relax in the Wild", "4.5", "Guest Rating"));
-        listData.add(new ListItem(R.drawable.ph_hotel, "Central Park",         "The famous Park Hotel","10+", "Rooms Available"));
-        listData.add(new ListItem(R.drawable.ph_hotel, "Tropical by WorldClub","Located in South Africa", "4.8", "Guest Rating"));
-        listData.add(new ListItem(R.drawable.ph_hotel, "Ski Hotel",            "Located next to the Lifts", "All", "Inclusive"));
-        listData.add(new ListItem(R.drawable.ph_hotel, "Relax by WorldClub",   "Affordable Luxery", "3", "Rooms Available"));
-        listData.add(new ListItem(R.drawable.ph_hotel, "Road Motel",           "Make a stop worth waiting", "No", "Reservation Needed"));
-        listData.add(new ListItem(R.drawable.ph_hotel, "Alpine Lodge",         "Located in the Alps", "Full", "Pension"));
-        return listData;*/
-        return servicios;
+        ArrayList<CalificacionActividad> listData = new ArrayList<CalificacionActividad>();
+
+        CalificacionActividad ca1 = new CalificacionActividad();
+        ArrayList<Calificacion> cs1 = new ArrayList<Calificacion>();
+        Calificacion c1 = new Calificacion();
+        c1.setId(1);
+        c1.setNombre("Completo");
+        Calificacion c2 = new Calificacion();
+        c2.setId(1);
+        c2.setNombre("Incompleto");
+        cs1.add(c1);
+        cs1.add(c2);
+
+        ca1.setCalifaciones(cs1);
+        ca1.setActividadId(1);
+        ca1.setNombreActividad("acti");
+
+
+
+
+        listData.add(ca1);
+        return listData;
+
     }
 }

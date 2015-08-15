@@ -8,17 +8,19 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
-import com.special.domain.Servicio;
+
+import com.special.domain.CalificacionActividad;
+
 class ListAdapter extends BaseAdapter {
 	
 	   ViewHolder viewHolder;
 
-        private ArrayList<Servicio> mItems = new ArrayList<Servicio>();
+        private ArrayList<CalificacionActividad> mItems = new ArrayList<CalificacionActividad>();
         private Context mContext;
         @SuppressWarnings("unused")
 		private int mScreenWidth;
 
-        public ListAdapter(Context context, ArrayList<Servicio> list, Integer screenWidth) {
+        public ListAdapter(Context context, ArrayList<CalificacionActividad> list, Integer screenWidth) {
             mContext = context;
             mItems = list;
             mScreenWidth = screenWidth;           
@@ -53,23 +55,22 @@ class ListAdapter extends BaseAdapter {
                 // well set up the ViewHolder
                 viewHolder = new ViewHolder();
                 viewHolder.tipoServicio = (TextView) v.findViewById(R.id.item_tipoServicio);
-                viewHolder.rol= (TextView) v.findViewById(R.id.item_rol);
+                /*viewHolder.rol= (TextView) v.findViewById(R.id.item_rol);
+
                 viewHolder.estado = (TextView) v.findViewById(R.id.item_estado);
                 viewHolder.fechaHora = (TextView) v.findViewById(R.id.item_fechaHora);
-                viewHolder.direccionRecogida = (TextView) v.findViewById(R.id.direccion_recogida);
- 
-                // store the holder with the view.
+                viewHolder.direccionRecogida = (TextView) v.findViewById(R.id.direccion_recogida);*/
                 v.setTag(viewHolder);
                  
             }else{
                 viewHolder = (ViewHolder) convertView.getTag();
                 //viewHolder.image.setImageResource(0);
             }
-            final String tipoServicio = mItems.get(position).getTipoServicio();
-            final String rol = mItems.get(position).getPasajero();
-            final String estado = mItems.get(position).getEstado();
-            final String fechaHora = mItems.get(position).getHoraInicio();
-            final String direccionRecogida = mItems.get(position).getLugarRecogida();
+            final String tipoServicio = String.valueOf(mItems.get(position).getActividadId());
+            final String rol = mItems.get(position).getNombreActividad();
+            final String estado = String.valueOf(mItems.get(position).getCalifaciones().get(0).getId());
+            final String fechaHora = mItems.get(position).getCalifaciones().get(0).getNombre();
+            final String direccionRecogida = "Prueba de layne";
 
             viewHolder.tipoServicio.setText(estado);
             viewHolder.direccionRecogida.setText(direccionRecogida);

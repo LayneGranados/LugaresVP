@@ -1,6 +1,6 @@
 package co.gapx.lugaresvp.dao;
 
-import co.gapx.lugaresvp.domain.Supervisor;
+import co.gapx.lugaresvp.domain.Empleado;
 import java.util.List;
 
 /**
@@ -9,10 +9,10 @@ import java.util.List;
  */
 public interface SupervisorDAO {
     
-    public List<Supervisor> listALl();
+    public List<Empleado> listALl();
     
-    public boolean save(Supervisor supervisor);
+    public boolean save(Empleado supervisor);
     
-    public Supervisor get(int id);
+    public Empleado get(int id);
     
 }
