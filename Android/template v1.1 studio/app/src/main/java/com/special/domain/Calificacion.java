@@ -1,14 +1,21 @@
 package com.special.domain;
 
+import java.io.Serializable;
+
 /**
  * Created by laygrana on 14/08/15.
  */
-public class Calificacion {
+public class Calificacion implements Serializable {
 
     private int id;
     private String nombre;
 
     public Calificacion() {
+    }
+
+    public Calificacion(int id, String nombre) {
+        this.id = id;
+        this.nombre = nombre;
     }
 
     public int getId() {

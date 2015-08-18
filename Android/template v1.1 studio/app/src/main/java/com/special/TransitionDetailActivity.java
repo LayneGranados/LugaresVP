@@ -189,7 +189,12 @@ public class TransitionDetailActivity extends Activity {
     
     private ArrayList<ListItem> generateData(){
         ArrayList<ListItem> items = new ArrayList<ListItem>();
-        items.add(new ListItem(title, lor2, null, null));
+        ArrayList<String> str = new ArrayList<>();
+        items.add(new ListItem("a", str));
+        items.add(new ListItem("s", str));
+        items.add(new ListItem("d", str));
+        items.add(new ListItem("f", str));
+        /*items.add(new ListItem(title, lor2, null, null));
         items.add(new ListItem(title, lor1, null, null));
         if (imgId != R.drawable.ph_1)
         	items.add(new ListItem("Henry Smith", "<font color='"+ getResources().getColor(R.color.theme_color) +"'>@" + title + "</font> " + lor3, null, null));
@@ -201,7 +206,7 @@ public class TransitionDetailActivity extends Activity {
         else 
         	items.add(new ListItem("Ella Smith", "<font color='"+ getResources().getColor(R.color.theme_color) +"'>@" + title + "</font> " + lor3, null, null));
         items.add(new ListItem(title, lor3, null, null));
-        items.add(new ListItem(title, lor4, null, null));
+        items.add(new ListItem(title, lor4, null, null));*/
  
         return items;
     }

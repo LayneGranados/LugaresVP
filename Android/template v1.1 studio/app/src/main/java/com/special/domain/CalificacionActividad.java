@@ -1,11 +1,12 @@
 package com.special.domain;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  * Created by laygrana on 14/08/15.
  */
- public class CalificacionActividad {
+ public class CalificacionActividad implements Serializable {
 
     private ArrayList<Calificacion> califaciones;
     private int actividadId;

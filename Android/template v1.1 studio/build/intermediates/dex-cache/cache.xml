@@ -2,39 +2,39 @@
 <items version="2" >
 
     <item
-        jar="/Users/laygrana/Documents/Layne/Proyectos/Git/LugaresVP/Android/template v1.1 studio/app/libs/android-support-v4.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="605c447c20ca216b5556af9f215af5d4bba1b117">
-        <dex dex="/Users/laygrana/Documents/Layne/Proyectos/Git/LugaresVP/Android/template v1.1 studio/app/build/intermediates/pre-dexed/debug/android-support-v4-5faed308d31dc8684f64d8859bf27cbd5532f0d8.jar" />
-    </item>
-    <item
-        jar="/Users/laygrana/Documents/Layne/Proyectos/Git/LugaresVP/Android/template v1.1 studio/app/build/intermediates/exploded-aar/template v1.1 studio/zBarScannerLibrary/unspecified/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="072fa3a6963c84fb81b09ecfcd8f65dca58574df">
-        <dex dex="/Users/laygrana/Documents/Layne/Proyectos/Git/LugaresVP/Android/template v1.1 studio/app/build/intermediates/pre-dexed/debug/classes-1a0c468774dfad8a27a5a270bb47375ea4372283.jar" />
-    </item>
-    <item
-        jar="/Users/laygrana/Documents/Layne/Proyectos/Git/LugaresVP/Android/template v1.1 studio/app/build/intermediates/exploded-aar/template v1.1 studio/zBarScannerLibrary/unspecified/libs/zbar.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="7bbdf7ba57a8a157c0cad51e455609c70887812e">
-        <dex dex="/Users/laygrana/Documents/Layne/Proyectos/Git/LugaresVP/Android/template v1.1 studio/app/build/intermediates/pre-dexed/debug/zbar-93dd0f39c59638fbe278cf1f29c5933be2b79e84.jar" />
-    </item>
-    <item
-        jar="/Users/laygrana/Documents/Layne/Proyectos/Git/LugaresVP/Android/template v1.1 studio/app/libs/renderscript-v8.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="19d54695d29d5ca94dda30368a7df0b33ffc17d7">
-        <dex dex="/Users/laygrana/Documents/Layne/Proyectos/Git/LugaresVP/Android/template v1.1 studio/app/build/intermediates/pre-dexed/debug/renderscript-v8-911cd219680fed7eee54f28a1bf0dc0a14f5d55e.jar" />
-    </item>
-    <item
-        jar="/Users/laygrana/Documents/Layne/Proyectos/Git/LugaresVP/Android/template v1.1 studio/app/libs/nineoldandroids-library-2.4.0.jar"
+        jar="/Users/laynegranadosmogollon/Documents/Proyectos/Git/LugaresVP/Android/template v1.1 studio/app/libs/nineoldandroids-library-2.4.0.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
-        <dex dex="/Users/laygrana/Documents/Layne/Proyectos/Git/LugaresVP/Android/template v1.1 studio/app/build/intermediates/pre-dexed/debug/nineoldandroids-library-2.4.0-44cad587b609d65f35ea25cc4a38123115f9bcca.jar" />
+        <dex dex="/Users/laynegranadosmogollon/Documents/Proyectos/Git/LugaresVP/Android/template v1.1 studio/app/build/intermediates/pre-dexed/debug/nineoldandroids-library-2.4.0-d61c789d85ccd3b3af9ca0298f5d65663dc9cd8c.jar" />
+    </item>
+    <item
+        jar="/Users/laynegranadosmogollon/Documents/Proyectos/Git/LugaresVP/Android/template v1.1 studio/app/build/intermediates/exploded-aar/template v1.1 studio/zBarScannerLibrary/unspecified/jars/libs/zbar.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="7bbdf7ba57a8a157c0cad51e455609c70887812e">
+        <dex dex="/Users/laynegranadosmogollon/Documents/Proyectos/Git/LugaresVP/Android/template v1.1 studio/app/build/intermediates/pre-dexed/debug/zbar-422052a4861ca0241994805618f15928818b0d66.jar" />
+    </item>
+    <item
+        jar="/Users/laynegranadosmogollon/Documents/Proyectos/Git/LugaresVP/Android/template v1.1 studio/app/build/intermediates/exploded-aar/template v1.1 studio/zBarScannerLibrary/unspecified/jars/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="eaf31e6add5882a76e90c18454610581950c5938">
+        <dex dex="/Users/laynegranadosmogollon/Documents/Proyectos/Git/LugaresVP/Android/template v1.1 studio/app/build/intermediates/pre-dexed/debug/classes-55806173d16dd172d7289cef3aa4cda79e8f115b.jar" />
+    </item>
+    <item
+        jar="/Users/laynegranadosmogollon/Documents/Proyectos/Git/LugaresVP/Android/template v1.1 studio/app/libs/renderscript-v8.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="19d54695d29d5ca94dda30368a7df0b33ffc17d7">
+        <dex dex="/Users/laynegranadosmogollon/Documents/Proyectos/Git/LugaresVP/Android/template v1.1 studio/app/build/intermediates/pre-dexed/debug/renderscript-v8-52059fcb77df2170e325b38764a4c3c39bacdc4d.jar" />
+    </item>
+    <item
+        jar="/Users/laynegranadosmogollon/Documents/Proyectos/Git/LugaresVP/Android/template v1.1 studio/app/libs/android-support-v4.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="605c447c20ca216b5556af9f215af5d4bba1b117">
+        <dex dex="/Users/laynegranadosmogollon/Documents/Proyectos/Git/LugaresVP/Android/template v1.1 studio/app/build/intermediates/pre-dexed/debug/android-support-v4-a1584d82e4efc4d174b36b455cf4679bca3ff61a.jar" />
     </item>
 
 </items>

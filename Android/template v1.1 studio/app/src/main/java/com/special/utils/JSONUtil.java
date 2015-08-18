@@ -32,11 +32,6 @@ public class JSONUtil {
 
 	public static final String TAG = "JSONUtils";
 
-	public static Object[] home(String username) {
-		HttpGet httpget = new HttpGet(ConstantsUtils.URL_HOME);
-		return getJSON(httpget);
-	}
-	
 	public static Object[] login(String username, String password) {
         HttpPost post = new HttpPost(ConstantsUtils.URL_LOGIN);
         try {
@@ -118,36 +113,6 @@ public class JSONUtil {
         return sb.toString();
     }
 
-    public static Object[] servicios1(String username) {
-        List<NameValuePair> params = new LinkedList<NameValuePair>();
-        params.add(new BasicNameValuePair("personalTipoProveedor", username));
-        String paramString = URLEncodedUtils.format(params, "utf-8");
-        HttpGet httpget = new HttpGet(ConstantsUtils.URL_SERVICIOS1+"?"+paramString);
-        return getJSON(httpget);
-    }
-
-    public static Object[] listAllEstados(String empresa) {
-        List<NameValuePair> params = new LinkedList<NameValuePair>();
-        params.add(new BasicNameValuePair("empresa", empresa));
-        String paramString = URLEncodedUtils.format(params, "utf-8");
-        HttpGet httpget = new HttpGet(ConstantsUtils.URL_ESTADOS+"?"+paramString);
-        return getJSON(httpget);
-    }
-
-    public static Object[] getConfiguracion(String empresa) {
-        List<NameValuePair> params = new LinkedList<NameValuePair>();
-        params.add(new BasicNameValuePair("empresa", empresa));
-        String paramString = URLEncodedUtils.format(params, "utf-8");
-        HttpGet httpget = new HttpGet(ConstantsUtils.URL_CONFIGURACION+"?"+paramString);
-        return getJSON(httpget);
-    }
-
-	public static Object[] getListServicios(String username) {
-		//HttpGet httpget = new HttpGet("http://192.168.0.3:8080/rest/test/rest/servicios.json/"+1,"01/05/2015");
-        HttpGet httpget = new HttpGet("http://190.147.83.66:35001/vyvtest2/rest/test/home4.json/"+username);
-		Object[] x =getJSON(httpget);
-		return x;
-	}
 	
 	/*
 	 * Metodo que permite hacer una peticion de archivo json

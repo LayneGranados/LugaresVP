@@ -3,8 +3,10 @@ package com.special;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +17,7 @@ import android.view.animation.DecelerateInterpolator;
 import android.widget.*;
 import android.widget.AdapterView.OnItemClickListener;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import com.nineoldandroids.animation.Animator;
@@ -22,11 +25,16 @@ import com.nineoldandroids.animation.AnimatorListenerAdapter;
 import com.nineoldandroids.animation.ObjectAnimator;
 import com.nineoldandroids.view.ViewHelper;
 import com.special.R;
+import com.special.domain.CalificacionActividad;
+import com.special.domain.Globales;
 import com.special.menu.ResideMenu;
+import com.special.utils.JSONUtil;
 import com.special.utils.UICircularImage;
 import com.special.utils.UIParallaxScroll;
 import com.special.utils.UISwipableList;
 import com.special.utils.UITabs;
+
+import org.json.JSONObject;
 
 import static com.nineoldandroids.view.ViewPropertyAnimator.animate;
 
@@ -45,7 +53,7 @@ public class CreateSupervisionActivity extends Activity {
     private Button mNavigationBackBtn;
     private TextView mTitleView;
     private UICircularImage mShare;
-
+    ArrayList<CalificacionActividad> calificaciones;
     //Vars
     private int delta_top;
     private int delta_left;
@@ -67,7 +75,10 @@ public class CreateSupervisionActivity extends Activity {
             getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
         }
         setContentView(R.layout.crear_supervision);
+        Intent myIntent = getIntent(); // gets the previously created intent
+        calificaciones = (ArrayList<CalificacionActividad>)getIntent().getSerializableExtra("calificaciones"); // will return "FirstKeyValue"
 
+        String secondKeyName= myIntent.getStringExtra("secondKeyName");
         ((UIParallaxScroll) findViewById(R.id.scroller)).setOnScrollChangedListener(mOnScrollChangedListener);
 
         mImageView = (UICircularImage) findViewById(R.id.image_view);
@@ -123,15 +134,15 @@ public class CreateSupervisionActivity extends Activity {
 
         final LinearLayout listView = (LinearLayout) findViewById(R.id.listView);
         ArrayList<ListItem> data = generateData();
-        for (int i = 0; i < data.size(); i++) {
-            View v = DetailListAdapter.getView(data.get(i), this);
+        for (int i = 0; i < calificaciones.size(); i++) {
+            View v = DetailListAdapterCrearSupervision.getView(calificaciones.get(i), this);
             listView.addView(v);
         }
 
 
         mTitleView.setText(title);
         mSum.setText(sum);
-        mImageView.setImageResource(imgId);
+        //mImageView.setImageResource(imgId);
         mNavigationTitle.setText(title);
 
         mNavigationBackBtn.setOnClickListener(new View.OnClickListener(){
@@ -187,20 +198,11 @@ public class CreateSupervisionActivity extends Activity {
 
     private ArrayList<ListItem> generateData(){
         ArrayList<ListItem> items = new ArrayList<ListItem>();
-        items.add(new ListItem(title, lor2, null, null));
-        items.add(new ListItem(title, lor1, null, null));
-        if (imgId != R.drawable.ph_1)
-            items.add(new ListItem("Henry Smith", "<font color='"+ getResources().getColor(R.color.theme_color) +"'>@" + title + "</font> " + lor3, null, null));
-        else
-            items.add(new ListItem("Ella Smith", "<font color='"+ getResources().getColor(R.color.theme_color) +"'>@" + title + "</font> " + lor3, null, null));
-        items.add(new ListItem(title, lor2, null, null));
-        if (imgId != R.drawable.ph_3)
-            items.add(new ListItem("Olivier Smith", "<font color='"+ getResources().getColor(R.color.theme_color) +"'>@" + title + "</font> " + lor4, null, null));
-        else
-            items.add(new ListItem("Ella Smith", "<font color='"+ getResources().getColor(R.color.theme_color) +"'>@" + title + "</font> " + lor3, null, null));
-        items.add(new ListItem(title, lor3, null, null));
-        items.add(new ListItem(title, lor4, null, null));
-
+        ArrayList<String> str = new ArrayList<>();
+        items.add(new ListItem("a", str));
+        items.add(new ListItem("s", str));
+        items.add(new ListItem("d", str));
+        items.add(new ListItem("f", str));
         return items;
     }
 
@@ -287,6 +289,9 @@ public class CreateSupervisionActivity extends Activity {
 
         }
     };
+
+
+
 
 
 }

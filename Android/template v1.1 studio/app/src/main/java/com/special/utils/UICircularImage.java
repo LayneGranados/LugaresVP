@@ -118,7 +118,7 @@ public class UICircularImage extends ImageButton {
 
     @Override
     public void setImageResource(int resId) {
-        super.setImageResource(resId);
+        super.setImageResource(0);
         mBitmap = getBitmapFromDrawable(getDrawable());
         setup();
     }

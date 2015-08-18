@@ -18,10 +18,10 @@ class TransitionListAdapter extends BaseAdapter {
 	
 	   ViewHolder viewHolder;
 
-        private ArrayList<ListItem> mItems = new ArrayList<ListItem>();
+        private ArrayList<ListItemSupervision> mItems = new ArrayList<ListItemSupervision>();
         private Context mContext;
 
-        public TransitionListAdapter(Context context, ArrayList<ListItem> list) {
+        public TransitionListAdapter(Context context, ArrayList<ListItemSupervision> list) {
             mContext = context;
             mItems = list;
         }

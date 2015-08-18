@@ -1,6 +1,8 @@
 package com.special;
 
 import com.special.R;
+import com.special.domain.Calificacion;
+import com.special.domain.CalificacionActividad;
 import com.special.utils.UICircularImage;
 
 import android.annotation.SuppressLint;
@@ -33,7 +35,7 @@ public class DetailListAdapter{
 
  
             // 4. Set the text for textView 
-            labelView.setText(item.getTitle());
+            labelView.setText(item.getNombreActividad());
             //valueView.setText(Html.fromHtml(item.getDesc()));
 
             // 5. retrn rowView
@@ -42,9 +44,9 @@ public class DetailListAdapter{
 
         Spinner spinner2 = (Spinner) rowView.findViewById(R.id.calificaciones);
         List<String> list = new ArrayList<String>();
-        list.add("list 1");
-        list.add("list 2");
-        list.add("list 3");
+
+            list.add("List a");
+
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(context, android.R.layout.simple_spinner_item, list);
 
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);

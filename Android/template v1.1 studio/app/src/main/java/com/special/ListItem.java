@@ -1,38 +1,32 @@
 package com.special;
 
+import java.util.ArrayList;
+
 public class ListItem {
-	private String title;
-	private String desc;
-	private String nr;
-	private String nrtxt;
-	
-	public ListItem(String title, String desc, String nr, String nrtxt) {
-		this.title = title;
-		this.desc = desc;
-		this.nr = nr;
-		this.nrtxt = nrtxt;
+	private String nombreActividad;
+	private ArrayList<String> calificacion;
+
+	public ListItem() {
 	}
 
-	public String getDesc() {
-		return desc;
+	public ListItem(String nombreActividad, ArrayList<String> calificacion) {
+		this.nombreActividad = nombreActividad;
+		this.calificacion = calificacion;
 	}
-	public void setDesc(String desc) {
-		this.desc = desc;
+
+	public String getNombreActividad() {
+		return nombreActividad;
 	}
-	public String getTitle() {
-		return title;
+
+	public void setNombreActividad(String nombreActividad) {
+		this.nombreActividad = nombreActividad;
 	}
-	public void setTitle(String title) {
-		this.title = title;
+
+	public ArrayList<String> getCalificacion() {
+		return calificacion;
 	}
-	public String getNr(){
-		return nr;
+
+	public void setCalificacion(ArrayList<String> calificacion) {
+		this.calificacion = calificacion;
 	}
-	public String getNrTxt(){
-		return nrtxt;
-	}
-	@Override
-	public String toString() {
-		return title + "\n" + desc;
-	}	
 }

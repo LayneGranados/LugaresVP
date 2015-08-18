@@ -20,7 +20,7 @@ public class Supervision implements Serializable{
     @Column(name = "id", nullable = false)
     private Integer id;
     
-    @JoinColumn(name = "supervisor_id", referencedColumnName = "id")
+    @JoinColumn(name = "empleado_id", referencedColumnName = "id")
     @ManyToOne(fetch = FetchType.LAZY)
     private Empleado supervisor;
     

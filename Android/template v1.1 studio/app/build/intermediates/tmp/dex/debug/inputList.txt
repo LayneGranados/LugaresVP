@@ -1,6 +1,0 @@
-/Users/laygrana/Documents/Layne/Proyectos/Git/LugaresVP/Android/template v1.1 studio/app/build/intermediates/classes/debug
-/Users/laygrana/Documents/Layne/Proyectos/Git/LugaresVP/Android/template v1.1 studio/app/build/intermediates/pre-dexed/debug/zbar-93dd0f39c59638fbe278cf1f29c5933be2b79e84.jar
-/Users/laygrana/Documents/Layne/Proyectos/Git/LugaresVP/Android/template v1.1 studio/app/build/intermediates/pre-dexed/debug/classes-1a0c468774dfad8a27a5a270bb47375ea4372283.jar
-/Users/laygrana/Documents/Layne/Proyectos/Git/LugaresVP/Android/template v1.1 studio/app/build/intermediates/pre-dexed/debug/nineoldandroids-library-2.4.0-44cad587b609d65f35ea25cc4a38123115f9bcca.jar
-/Users/laygrana/Documents/Layne/Proyectos/Git/LugaresVP/Android/template v1.1 studio/app/build/intermediates/pre-dexed/debug/renderscript-v8-911cd219680fed7eee54f28a1bf0dc0a14f5d55e.jar
-/Users/laygrana/Documents/Layne/Proyectos/Git/LugaresVP/Android/template v1.1 studio/app/build/intermediates/pre-dexed/debug/android-support-v4-5faed308d31dc8684f64d8859bf27cbd5532f0d8.jar
