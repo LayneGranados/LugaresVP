@@ -25,7 +25,9 @@ import com.nineoldandroids.animation.AnimatorListenerAdapter;
 import com.nineoldandroids.animation.ObjectAnimator;
 import com.nineoldandroids.view.ViewHelper;
 import com.special.R;
+import com.special.domain.Calificacion;
 import com.special.domain.CalificacionActividad;
+import com.special.domain.CalificacionActividadSave;
 import com.special.domain.Globales;
 import com.special.menu.ResideMenu;
 import com.special.utils.JSONUtil;
@@ -59,13 +61,8 @@ public class CreateSupervisionActivity extends Activity {
     private int delta_left;
     private float scale_width;
     private float scale_height;
-    String title;
     int imgId;
-
-    String lor1 = "lor1";
-    String lor3 = "lor2";
-    String lor2 = "lor3";
-    String lor4 = "lor4";
+    ArrayList<CalificacionActividadSave> evaluacion;
 
     @SuppressLint("NewApi")
     @Override
@@ -76,7 +73,7 @@ public class CreateSupervisionActivity extends Activity {
         }
         setContentView(R.layout.crear_supervision);
         Intent myIntent = getIntent(); // gets the previously created intent
-        calificaciones = (ArrayList<CalificacionActividad>)getIntent().getSerializableExtra("calificaciones"); // will return "FirstKeyValue"
+        calificaciones = (ArrayList<CalificacionActividad>)getIntent().getSerializableExtra("calificaciones");
 
         String secondKeyName= myIntent.getStringExtra("secondKeyName");
         ((UIParallaxScroll) findViewById(R.id.scroller)).setOnScrollChangedListener(mOnScrollChangedListener);
@@ -88,14 +85,37 @@ public class CreateSupervisionActivity extends Activity {
         mLayoutContainer = (RelativeLayout) findViewById(R.id.bg_layout);
         mTitleView = (TextView) findViewById(R.id.title);
         mNavigationBackBtn = (Button) findViewById(R.id.title_bar_left_menu);
-        TextView mSum = (TextView) findViewById(R.id.sumary);
-        mShare = (UICircularImage) findViewById(R.id.action1);
+        final LinearLayout listView = (LinearLayout) findViewById(R.id.listView);
+        //TextView mSum = (TextView) findViewById(R.id.sumary);
+        //mShare = (UICircularImage) findViewById(R.id.action1);
         UITabs tab = (UITabs) findViewById(R.id.toggle);
 
         mNavigationTop.getBackground().setAlpha(0);
         mNavigationTitle.setVisibility(View.INVISIBLE);
 
         mImageView.bringToFront();
+        Button btnGuardarEvaluacion = (Button) findViewById(R.id.buttonGuardarEvaluacion);
+        btnGuardarEvaluacion.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+
+                evaluacion = new ArrayList<CalificacionActividadSave>();
+                for(int i = 0;i<listView.getChildCount();i++){
+                    System.out.println("Child count: " + listView.getChildCount());
+                    View v = listView.getChildAt(i);
+                    TextView labelViewNombre = (TextView) v.findViewById(R.id.item_id_actividad);
+                    Spinner spinner = (Spinner)v.findViewById(R.id.calificaciones);
+                    String nombreCalificacion =  String.valueOf(spinner.getSelectedItem());
+                    String x = (String) labelViewNombre.getText();
+                    evaluacion.add(new CalificacionActividadSave(Integer.parseInt(x), nombreCalificacion));
+                }
+            new evaluacionJson().execute();
+            }
+
+        });
+
+
 
         Bundle bundle = getIntent().getExtras();
 
@@ -103,7 +123,7 @@ public class CreateSupervisionActivity extends Activity {
         final int left = 0;//bundle.getInt(PACKAGE + ".left");
         final int width = 0;//bundle.getInt(PACKAGE + ".width");
         final int height = 0;//bundle.getInt(PACKAGE + ".height");
-        title = "title";//bundle.getString("title");
+
         String sum = "desc";//bundle.getString("descr");
         imgId = 1;//bundle.getInt("img");
 
@@ -132,18 +152,19 @@ public class CreateSupervisionActivity extends Activity {
         });
 
 
-        final LinearLayout listView = (LinearLayout) findViewById(R.id.listView);
+
         ArrayList<ListItem> data = generateData();
         for (int i = 0; i < calificaciones.size(); i++) {
-            View v = DetailListAdapterCrearSupervision.getView(calificaciones.get(i), this);
+            getApplicationContext();
+            View v = DetailListAdapterCrearSupervision.getView(calificaciones.get(i), this,getApplicationContext());
             listView.addView(v);
         }
 
 
-        mTitleView.setText(title);
-        mSum.setText(sum);
+        //mTitleView.setText(title);
+        //mSum.setText(sum);
         //mImageView.setImageResource(imgId);
-        mNavigationTitle.setText(title);
+
 
         mNavigationBackBtn.setOnClickListener(new View.OnClickListener(){
 
@@ -153,12 +174,12 @@ public class CreateSupervisionActivity extends Activity {
             }
         });
 
-        mShare.setOnClickListener(new View.OnClickListener(){
+        /*mShare.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View arg0) {
                 Toast.makeText(CreateSupervisionActivity.this, "Clicked Share", Toast.LENGTH_SHORT).show();
             }
-        });
+        });*/
 
         tab.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
         {
@@ -289,6 +310,54 @@ public class CreateSupervisionActivity extends Activity {
 
         }
     };
+
+
+    class evaluacionJson extends AsyncTask<Void, Void, Object[]> implements Serializable {
+        private Intent pasar;
+
+        protected void onPostExecute(Object[] result) {
+
+            Boolean res = (Boolean) result[3];
+            String msg = (String)result[1];
+            /*if (res) {
+                pasar = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(pasar);
+            } else {
+                Toast.makeText(CreateSupervisionActivity.this, "Usuario y/ Contraseña Incorrectos. Por favor, intentelo nuevamente.", Toast.LENGTH_SHORT).show();
+            }*/
+        }
+
+        @Override
+        protected Object[] doInBackground(Void... arg0) {
+            Object[] res = new Object[5];
+            // VERIFICACION DE USUARIO Y PASSWORD CORRECTO
+            res[0] = false;
+            try {
+                final Globales globales = (Globales) getApplicationContext();
+                String usuario = globales.getUsuario();
+                JSONObject obj = null;
+
+                Object[] observaciones = JSONUtil.supervisionesDeLugar("1");
+                String x = String.valueOf(observaciones[0]);
+                x = x.replace("\n", "");
+                System.out.println("Json devuelto de login: "+x);
+                res[1] = String.valueOf(observaciones[1]);
+
+                if(x.equalsIgnoreCase("true")) {
+                    res[3] = true;
+                }
+                else {
+                    res[3] = false;
+                }
+
+
+            } catch (Exception e) {
+                Log.i("valores", "Error al leer el json");
+                e.printStackTrace();
+            }
+            return res;
+        }
+    }
 
 
 

@@ -29,7 +29,7 @@ public class DetailListAdapter{
             View rowView = inflater.inflate(R.layout.fragment_list_item, null, false);
  
             // 3. Get the two text view from the rowView
-            TextView labelView = (TextView) rowView.findViewById(R.id.item_tipoServicio);
+            TextView labelView = null;//(TextView) rowView.findViewById(R.id.item_tipoServicio);
             //TextView valueView = (TextView) rowView.findViewById(R.id.item_rol);
 
 

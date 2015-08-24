@@ -55,7 +55,8 @@
         </activity>
         <activity
             android:name=".CreateSupervisionActivity"
-            android:label="@string/title_activity_options" >
+            android:label="@string/title_activity_options"
+            android:theme="@android:style/Theme.NoTitleBar">>
         </activity>
     </application>
 

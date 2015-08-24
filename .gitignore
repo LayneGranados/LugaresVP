@@ -2,3 +2,6 @@ Core/LugaresVP/target/*
 Android/template v1.1 studio/zBarScannerLibrary/build/*
 Android/template v1.1 studio/app/build/*
 Android/template v1.1 studio/build/*
+Android/template v1.1 studio/local.properties
+Android/template v1.1 studio/.idea/*
+Android/template v1.1 studio/.gradle/*

@@ -13,9 +13,11 @@ import java.util.ArrayList;
 public class Globales extends Application {
 
     String usuario;
+    ArrayList<CalificacionActividadSave> seleccionados;
 
 
     public Globales() {
+        seleccionados = new ArrayList<CalificacionActividadSave>();
     }
 
     public String getUsuario()
@@ -26,5 +28,13 @@ public class Globales extends Application {
     public void setUsuario(String usuario)
     {
         this.usuario = usuario;
+    }
+
+    public ArrayList<CalificacionActividadSave> getSeleccionados() {
+        return seleccionados;
+    }
+
+    public void setSeleccionados(ArrayList<CalificacionActividadSave> seleccionados) {
+        this.seleccionados = seleccionados;
     }
 }

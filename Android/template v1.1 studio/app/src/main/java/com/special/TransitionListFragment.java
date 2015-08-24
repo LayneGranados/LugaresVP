@@ -130,6 +130,7 @@ public class TransitionListFragment extends Fragment {
 
                 Object[] respuesta = JSONUtil.supervisionesDeLugar(lugar);
                 String x = String.valueOf(respuesta[0]); // datos json
+                System.out.println("json en transitionListFragment x: "+x);
                 x = x.replace("\n", "");
                 JSONArray array = new JSONArray(x);
                 boolean ya=false;

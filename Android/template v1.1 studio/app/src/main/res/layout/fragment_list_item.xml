@@ -11,9 +11,18 @@
         android:layout_height="match_parent"
         android:orientation="horizontal"
         android:background="@color/white_transparent" >
-
+        <TextView
+            android:id="@+id/item_id_actividad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:paddingLeft="5dp"
+            android:text="@string/list_title_placeholder"
+            android:fontFamily="sans-serif-light"
+            android:textSize="@dimen/textsize_medium_large"
+            android:textColor="@color/gray"/>
             <TextView
-                android:id="@+id/item_tipoServicio"
+                android:id="@+id/item_nombre_actividad"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
@@ -27,7 +36,8 @@
                 android:id="@+id/calificaciones"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="left"/>
+                android:layout_gravity="center_vertical|right"
+                style="@style/UIButton" />
 
     </LinearLayout>
 

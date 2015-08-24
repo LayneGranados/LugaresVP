@@ -54,7 +54,7 @@ class ListAdapter extends BaseAdapter {
                  
                 // well set up the ViewHolder
                 viewHolder = new ViewHolder();
-                viewHolder.tipoServicio = (TextView) v.findViewById(R.id.item_tipoServicio);
+                viewHolder.tipoServicio = (TextView) v.findViewById(R.id.item_nombre_actividad);
                 /*viewHolder.rol= (TextView) v.findViewById(R.id.item_rol);
 
                 viewHolder.estado = (TextView) v.findViewById(R.id.item_estado);

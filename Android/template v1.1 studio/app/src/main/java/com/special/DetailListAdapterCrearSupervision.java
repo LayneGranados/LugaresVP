@@ -5,6 +5,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -15,9 +16,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DetailListAdapterCrearSupervision {
- 
-        @SuppressLint("InflateParams")
-		public static View getView(CalificacionActividad item, Context context) {
+
+
+
+    @SuppressLint("InflateParams")
+		public static View getView(CalificacionActividad item, Context context, Context app) {
  
             // 1. Create inflater 
             LayoutInflater inflater = (LayoutInflater) context
@@ -27,20 +30,20 @@ public class DetailListAdapterCrearSupervision {
             View rowView = inflater.inflate(R.layout.fragment_list_item, null, false);
  
             // 3. Get the two text view from the rowView
-            TextView labelView = (TextView) rowView.findViewById(R.id.item_tipoServicio);
+            TextView labelViewNombre = (TextView) rowView.findViewById(R.id.item_nombre_actividad);
+            TextView labelViewId = (TextView) rowView.findViewById(R.id.item_id_actividad);
             //TextView valueView = (TextView) rowView.findViewById(R.id.item_rol);
 
 
  
             // 4. Set the text for textView 
-            labelView.setText(item.getNombreActividad());
-            //valueView.setText(Html.fromHtml(item.getDesc()));
-
-            // 5. retrn rowView
+            labelViewNombre.setText(item.getNombreActividad());
+            labelViewId.setText(String.valueOf(item.getActividadId()));
 
 
 
-        Spinner spinner2 = (Spinner) rowView.findViewById(R.id.calificaciones);
+
+        Spinner cals = (Spinner) rowView.findViewById(R.id.calificaciones);
         List<String> list = new ArrayList<String>();
         for(Calificacion c: item.getCalifaciones()){
             list.add(c.getNombre());
@@ -48,10 +51,9 @@ public class DetailListAdapterCrearSupervision {
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(context, android.R.layout.simple_spinner_item, list);
 
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner2.setAdapter(dataAdapter);
+        cals.setAdapter(dataAdapter);
+        cals.setOnItemSelectedListener(new CustomOnItemSelectedListener(item.getActividadId(),app));
 
             return rowView;
         }
-
-
 }

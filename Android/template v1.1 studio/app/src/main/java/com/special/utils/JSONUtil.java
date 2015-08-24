@@ -1,9 +1,12 @@
 package com.special.utils;
 
+import com.special.domain.CalificacionActividadSave;
+
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.SocketTimeoutException;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -89,6 +92,23 @@ public class JSONUtil {
             post.setHeader("content-type", "application/json");
             JSONObject dato = new JSONObject();
             dato.put("idlugar", idlugar);
+            StringEntity entity = new StringEntity(dato.toString());
+            post.setEntity(entity);
+
+        } catch (Exception E) {
+            E.printStackTrace();
+        }
+        return getJSON(post);
+    }
+
+    public static Object[] guardarEvaluacion(String idlugar, String usuario, ArrayList<CalificacionActividadSave> evaluacion) {
+        HttpPost post = new HttpPost(ConstantsUtils.URL_CALIFICACIONACTIVIDADPORLUGAR);
+        try {
+            post.setHeader("content-type", "application/json");
+            JSONObject dato = new JSONObject();
+            dato.put("idlugar", idlugar);
+            dato.put("usuario", idlugar);
+            dato.put("evaluacion", evaluacion);
             StringEntity entity = new StringEntity(dato.toString());
             post.setEntity(entity);
 
