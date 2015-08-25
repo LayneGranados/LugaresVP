@@ -65,8 +65,15 @@ public class EvaluacionController {
     @RequestMapping(value = "/evaluacion", method = RequestMethod.POST)
     @Transactional
     public @ResponseBody boolean save(@RequestBody String json, HttpServletResponse response) {
+        System.out.println("json: "+json);
         Map obj=(Map) JSONValue.parse(json);
         Evaluacion cv = new Evaluacion();
+        String idlugar = (String)obj.get("idlugar");
+        String usuario = (String)obj.get("usuario");
+        ArrayList<Object> objs = (ArrayList<Object>)obj.get("evaluacion");
+        for(Object o : objs){
+            System.out.println("o: "+o);
+        }
      // aqui sacar los parametros del json y setearlo en el nuevo objeto
         boolean saved = this.evaluacionB.save(cv);
         return saved;

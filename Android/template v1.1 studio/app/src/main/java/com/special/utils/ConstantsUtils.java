@@ -11,5 +11,6 @@ public class ConstantsUtils {
     public static final String URL_SUPERVISIONDELUGAR= URL_GENERIC+"supervision/lugar";
     public static final String URL_LUGARPORID= URL_GENERIC+"lugar/identificador";
     public static final String URL_CALIFICACIONACTIVIDADPORLUGAR= URL_GENERIC+"calificacionActividad/lugar";
+    public static final String URL_EVALUACION= URL_GENERIC+"evaluacion";
 
 }

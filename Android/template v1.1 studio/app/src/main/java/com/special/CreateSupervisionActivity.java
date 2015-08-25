@@ -36,6 +36,8 @@ import com.special.utils.UIParallaxScroll;
 import com.special.utils.UISwipableList;
 import com.special.utils.UITabs;
 
+import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import static com.nineoldandroids.view.ViewPropertyAnimator.animate;
@@ -62,7 +64,8 @@ public class CreateSupervisionActivity extends Activity {
     private float scale_width;
     private float scale_height;
     int imgId;
-    ArrayList<CalificacionActividadSave> evaluacion;
+    //ArrayList<CalificacionActividadSave> evaluacion;
+    JSONArray arrayevaluaciones;
 
     @SuppressLint("NewApi")
     @Override
@@ -100,7 +103,8 @@ public class CreateSupervisionActivity extends Activity {
             @Override
             public void onClick(View arg0) {
 
-                evaluacion = new ArrayList<CalificacionActividadSave>();
+                //evaluacion = new ArrayList<CalificacionActividadSave>();
+                arrayevaluaciones = new JSONArray();
                 for(int i = 0;i<listView.getChildCount();i++){
                     System.out.println("Child count: " + listView.getChildCount());
                     View v = listView.getChildAt(i);
@@ -108,7 +112,15 @@ public class CreateSupervisionActivity extends Activity {
                     Spinner spinner = (Spinner)v.findViewById(R.id.calificaciones);
                     String nombreCalificacion =  String.valueOf(spinner.getSelectedItem());
                     String x = (String) labelViewNombre.getText();
-                    evaluacion.add(new CalificacionActividadSave(Integer.parseInt(x), nombreCalificacion));
+                    JSONObject obj = new JSONObject();
+                    try {
+                        obj.put("idactividad", x);
+                        obj.put("nombrecalificacion", nombreCalificacion);
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                    arrayevaluaciones.put(obj);
+                    //evaluacion.add(new CalificacionActividadSave(Integer.parseInt(x), nombreCalificacion));
                 }
             new evaluacionJson().execute();
             }
@@ -337,7 +349,7 @@ public class CreateSupervisionActivity extends Activity {
                 String usuario = globales.getUsuario();
                 JSONObject obj = null;
 
-                Object[] observaciones = JSONUtil.supervisionesDeLugar("1");
+                Object[] observaciones = JSONUtil.guardarEvaluacion("1", "admin", arrayevaluaciones);
                 String x = String.valueOf(observaciones[0]);
                 x = x.replace("\n", "");
                 System.out.println("Json devuelto de login: "+x);

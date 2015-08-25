@@ -26,6 +26,7 @@ import org.apache.http.params.BasicHttpParams;
 import org.apache.http.params.HttpConnectionParams;
 import org.apache.http.params.HttpParams;
 import org.apache.http.util.EntityUtils;
+import org.json.JSONArray;
 import org.json.JSONObject;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -101,14 +102,15 @@ public class JSONUtil {
         return getJSON(post);
     }
 
-    public static Object[] guardarEvaluacion(String idlugar, String usuario, ArrayList<CalificacionActividadSave> evaluacion) {
-        HttpPost post = new HttpPost(ConstantsUtils.URL_CALIFICACIONACTIVIDADPORLUGAR);
+    public static Object[] guardarEvaluacion(String idlugar, String usuario, JSONArray evaluacion) {
+        HttpPost post = new HttpPost(ConstantsUtils.URL_EVALUACION);
+
         try {
             post.setHeader("content-type", "application/json");
             JSONObject dato = new JSONObject();
             dato.put("idlugar", idlugar);
             dato.put("usuario", idlugar);
-            dato.put("evaluacion", evaluacion);
+            dato.put("evaluacion", evaluacion.toString());
             StringEntity entity = new StringEntity(dato.toString());
             post.setEntity(entity);
 
