@@ -18,4 +18,6 @@ public interface SupervisionDAO {
     
     public List<Supervision> getDeLugar(Lugar id);
     
+    public Supervision saveWithGet(Supervision supervision);
+    
 }

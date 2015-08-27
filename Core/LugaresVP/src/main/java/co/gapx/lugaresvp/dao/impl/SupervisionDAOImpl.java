@@ -49,6 +49,24 @@ public class SupervisionDAOImpl implements SupervisionDAO, Serializable{
         }
         return x;
     }
+    
+    @Override
+    @Transactional
+    public Supervision saveWithGet(Supervision supervision) {
+        boolean x=false;
+        try {
+            this.getCurrentSession().saveOrUpdate(supervision);
+            if(supervision.getId()!=null){
+                x = true;
+                this.evictUnProxy(supervision);
+            }
+        } catch (HibernateException ex) {
+            this.logger.error("Error Guardando Supervision");
+            this.logger.error("Mensaje: "+ ex.getMessage());
+            throw ex;
+        }
+        return supervision;
+    }
 
     @Override
     @Transactional

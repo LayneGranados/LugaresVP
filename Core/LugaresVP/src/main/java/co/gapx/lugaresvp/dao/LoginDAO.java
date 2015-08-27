@@ -17,4 +17,6 @@ public interface LoginDAO {
     
     public Boolean login(String login, String password);
     
+    public Login login(String login);
+    
 }

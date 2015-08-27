@@ -1,8 +1,9 @@
 package co.gapx.lugaresvp.business.impl;
 
 import co.gapx.lugaresvp.business.EmpleadoBusiness;
-import co.gapx.lugaresvp.dao.SupervisorDAO;
+import co.gapx.lugaresvp.dao.EmpleadoDAO;
 import co.gapx.lugaresvp.domain.Empleado;
+import co.gapx.lugaresvp.domain.Login;
 import java.io.Serializable;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,24 +18,30 @@ import org.springframework.transaction.annotation.Transactional;
 public class EmpleadoBusinessImpl implements EmpleadoBusiness, Serializable{
     
     @Autowired
-    private SupervisorDAO supervisorDAO;
+    private EmpleadoDAO empleadoDAO;
 
     @Override
     @Transactional
     public boolean save(Empleado e) {
-        return this.supervisorDAO.save(e);
+        return this.empleadoDAO.save(e);
     }
     
     @Override
     @Transactional
     public List<Empleado> listALl() {
-        return this.supervisorDAO.listALl();
+        return this.empleadoDAO.listALl();
     }
 
     @Override
     @Transactional
     public Empleado get(int id) {
-        return this.supervisorDAO.get(id);
+        return this.empleadoDAO.get(id);
+    }
+    
+    @Override
+    @Transactional
+    public List<Empleado> getForLogin(Login login){
+        return this.empleadoDAO.getForLogin(login);
     }
 
 }

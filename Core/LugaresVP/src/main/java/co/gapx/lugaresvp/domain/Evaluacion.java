@@ -31,13 +31,7 @@ public class Evaluacion implements Serializable{
     @JoinColumn(name = "calificacion_actividad_id", referencedColumnName = "id")
     @ManyToOne(fetch = FetchType.LAZY)
     private CalificacionActividad calificacionActividad;
-    
-    @Basic(optional = false)
-    @Column(name = "fecha", nullable = false)
-    @Temporal(javax.persistence.TemporalType.TIMESTAMP)
-    private Date fecha;
-    
-
+        
     public Evaluacion() {
     }
 
@@ -73,14 +67,5 @@ public class Evaluacion implements Serializable{
         this.calificacionActividad = calificacionActividad;
     }
 
-    public Date getFecha() {
-        return fecha;
-    }
-
-    public void setFecha(Date fecha) {
-        this.fecha = fecha;
-    }
-    
-    
-    
+  
 }

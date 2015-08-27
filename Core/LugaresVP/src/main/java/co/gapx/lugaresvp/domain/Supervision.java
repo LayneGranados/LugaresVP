@@ -22,7 +22,7 @@ public class Supervision implements Serializable{
     
     @JoinColumn(name = "empleado_id", referencedColumnName = "id")
     @ManyToOne(fetch = FetchType.LAZY)
-    private Empleado supervisor;
+    private Empleado empleado;
     
     @JoinColumn(name = "lugar_id", referencedColumnName = "id")
     @ManyToOne(fetch = FetchType.LAZY)
@@ -45,14 +45,6 @@ public class Supervision implements Serializable{
         this.id = id;
     }
 
-    public Empleado getSupervisor() {
-        return supervisor;
-    }
-
-    public void setSupervisor(Empleado supervisor) {
-        this.supervisor = supervisor;
-    }
-
     public Lugar getLugar() {
         return lugar;
     }
@@ -68,6 +60,16 @@ public class Supervision implements Serializable{
     public void setFecha(Date fecha) {
         this.fecha = fecha;
     }
+
+    public Empleado getEmpleado() {
+        return empleado;
+    }
+
+    public void setEmpleado(Empleado empleado) {
+        this.empleado = empleado;
+    }
+    
+    
     
     
 }

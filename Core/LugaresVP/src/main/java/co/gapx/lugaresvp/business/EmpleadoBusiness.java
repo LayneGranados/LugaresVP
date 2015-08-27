@@ -1,6 +1,7 @@
 package co.gapx.lugaresvp.business;
 
 import co.gapx.lugaresvp.domain.Empleado;
+import co.gapx.lugaresvp.domain.Login;
 import java.util.List;
 
 /**
@@ -15,4 +16,5 @@ public interface EmpleadoBusiness {
     
     public Empleado get(int id);
     
+    public List<Empleado> getForLogin(Login login);
 }

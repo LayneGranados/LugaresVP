@@ -73,15 +73,7 @@ public class CalificacionActividadDAOImpl implements CalificacionActividadDAO, S
         this.evictUnProxy(calificacionActividad);
         return calificacionActividad;
     }
-    /*
-     * SELECT L.ID, L.NOMBRE, AC.ID, AC.NOMBRE, CA.NOMBRE
-FROM ACTIVIDAD AC 
-INNER JOIN ACTIVIDAD_TIPO_LUGAR ATL ON AC.ID = ATL.ACTIVIDAD_ID 
-INNER JOIN TIPO_LUGAR TL ON ATL.TIPO_LUGAR_ID = TL.ID
-INNER JOIN LUGAR L ON L.TIPO_LUGAR_ID = TL.ID
-INNER JOIN CALIFICACION_ACTIVIDAD CA ON CA.ACTIVIDAD_ID= AC.ID
-WHERE L.ID=1;
-     */
+
     @Transactional
     public CalificacionActividad getDeLugar(int id) {
         CalificacionActividad calificacionActividad= (CalificacionActividad) getCurrentSession().createQuery(""

@@ -2,6 +2,7 @@ package co.gapx.lugaresvp.business.impl;
 
 import co.gapx.lugaresvp.business.ActividadTipoLugarBusiness;
 import co.gapx.lugaresvp.dao.ActividadTipoLugarDAO;
+import co.gapx.lugaresvp.domain.Actividad;
 import co.gapx.lugaresvp.domain.ActividadTipoLugar;
 import co.gapx.lugaresvp.domain.TipoLugar;
 import java.io.Serializable;
@@ -42,6 +43,12 @@ public class ActividadTipoLugarBusinessImpl implements ActividadTipoLugarBusines
     @Transactional
     public List<ActividadTipoLugar> getDeTipoLugar(TipoLugar id) {
         return this.actividadTipoLugarDAO.getDeTipoLugar(id);
+    }
+    
+    @Override
+    @Transactional
+    public ActividadTipoLugar getDeTipoLugarActividad(TipoLugar tipoLugar, Actividad actividad){
+        return this.actividadTipoLugarDAO.getDeTipoLugarActividad(tipoLugar, actividad);
     }
 
 }

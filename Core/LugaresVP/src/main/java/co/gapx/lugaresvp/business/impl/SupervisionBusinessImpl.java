@@ -43,5 +43,11 @@ public class SupervisionBusinessImpl implements SupervisionBusiness, Serializabl
     public List<Supervision> getDeLugar(Lugar id) {
         return this.supervisionDAO.getDeLugar(id);
     }
+    
+    @Override
+    @Transactional
+    public Supervision saveWithGet(Supervision supervision){
+        return this.supervisionDAO.saveWithGet(supervision);
+    }
 
 }

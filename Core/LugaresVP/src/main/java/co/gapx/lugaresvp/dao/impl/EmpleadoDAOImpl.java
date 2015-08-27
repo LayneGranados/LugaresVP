@@ -1,8 +1,9 @@
 package co.gapx.lugaresvp.dao.impl;
 
-import co.gapx.lugaresvp.dao.SupervisorDAO;
+import co.gapx.lugaresvp.dao.EmpleadoDAO;
 import co.gapx.lugaresvp.dao.HibernateUtil;
 import co.gapx.lugaresvp.domain.Empleado;
+import co.gapx.lugaresvp.domain.Login;
 import java.io.Serializable;
 import java.util.List;
 import org.apache.commons.logging.Log;
@@ -19,7 +20,7 @@ import org.springframework.transaction.annotation.Transactional;
  * @author laynegranadosmogollon
  */
 @Repository
-public class SupervisorDAOImpl implements SupervisorDAO, Serializable{
+public class EmpleadoDAOImpl implements EmpleadoDAO, Serializable{
     
     @Autowired
     SessionFactory sessionFactory;
@@ -63,6 +64,14 @@ public class SupervisorDAOImpl implements SupervisorDAO, Serializable{
         Empleado supervisor= (Empleado) getCurrentSession().createQuery("from Supervisor e where e.id= :id").setParameter("id", id).list().get(0);
         this.evictUnProxy(supervisor);
         return supervisor;
+    }
+    
+    @Override
+    @Transactional
+    public List<Empleado> getForLogin(Login login) {
+        List<Empleado> empleados= (List<Empleado>) getCurrentSession().createQuery("from Empleado e where e.login= :login").setParameter("login", login).list();
+        this.evictUnProxy(empleados);
+        return empleados;
     }
     
     private void evictUnProxy(List lista) {

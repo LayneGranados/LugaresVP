@@ -83,6 +83,17 @@ public class LoginDAOImpl implements LoginDAO, Serializable{
             return false;
     }
     
+    @Override
+    @Transactional
+    public Login login(String login) {
+        Login log= (Login) getCurrentSession().createQuery("from Login e where e.login= :login").setParameter("login", login).list().get(0);
+        if(log!=null){
+            return log;
+        }
+        else
+            return null;
+    }
+    
     private void evictUnProxy(List lista) {
         for (int i = 0; i < lista.size(); getCurrentSession().evict(lista.get(i)), ++i);
         for (int i = 0; i < lista.size(); hibernateUtil.initializeAndUnproxy(lista.get(i)), ++i);

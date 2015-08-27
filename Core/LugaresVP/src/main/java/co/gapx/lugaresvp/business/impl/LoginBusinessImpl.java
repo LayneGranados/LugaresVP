@@ -38,8 +38,15 @@ public class LoginBusinessImpl implements LoginBusiness, Serializable{
     }
 
     @Override
+    @Transactional
     public Boolean login(String login, String password) {
         return this.loginDAO.login(login, password);
+    }
+    
+    @Override
+    @Transactional
+    public Login login(String login){
+        return this.loginDAO.login(login);
     }
 
 }

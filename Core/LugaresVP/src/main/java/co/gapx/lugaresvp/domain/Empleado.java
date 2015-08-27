@@ -26,6 +26,10 @@ public class Empleado implements Serializable{
     @JoinColumn(name = "login_id", referencedColumnName = "id")
     @ManyToOne(fetch = FetchType.LAZY)
     private Login login;
+    
+    @JoinColumn(name = "tipo_empleado_id", referencedColumnName = "id")
+    @ManyToOne(fetch = FetchType.LAZY)
+    private TipoEmpleado tipoEmpleado;
 
     public Empleado() {
     }
@@ -53,6 +57,16 @@ public class Empleado implements Serializable{
     public void setLogin(Login login) {
         this.login = login;
     }
+
+    public TipoEmpleado getTipoEmpleado() {
+        return tipoEmpleado;
+    }
+
+    public void setTipoEmpleado(TipoEmpleado tipoEmpleado) {
+        this.tipoEmpleado = tipoEmpleado;
+    }
+    
+    
     
     
 }

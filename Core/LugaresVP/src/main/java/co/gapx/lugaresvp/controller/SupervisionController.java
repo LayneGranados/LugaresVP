@@ -51,9 +51,9 @@ public class SupervisionController {
             map.put("id", c.getId());
             this.crudS.refresh(c.getLugar());
             map.put("lugar", c.getLugar().getNombre());
-            this.crudS.refresh(c.getSupervisor());
-            this.crudS.refresh(c.getSupervisor().getPersona());
-            map.put("supervisor", c.getSupervisor().getPersona().getNombres() + " "+ c.getSupervisor().getPersona().getApellidos());
+            this.crudS.refresh(c.getEmpleado());
+            this.crudS.refresh(c.getEmpleado().getPersona());
+            map.put("supervisor", c.getEmpleado().getPersona().getNombres() + " "+ c.getEmpleado().getPersona().getApellidos());
             map.put("fecha", c.getFecha().toString());            
             l.add(map);
         }
@@ -68,7 +68,7 @@ public class SupervisionController {
         Lugar l = this.lugarB.get(((Long)obj.get("lugar")).intValue());
         Empleado s = this.supervisorB.get(((Long)obj.get("supervisor")).intValue());
         cv.setLugar(l);
-        cv.setSupervisor(s);
+        cv.setEmpleado(s);
         cv.setFecha(new Date((String)obj.get("fecha")));
         boolean saved = this.supervisionB.save(cv);
         return saved;
@@ -83,7 +83,7 @@ public class SupervisionController {
         Lugar l = this.lugarB.get(((Long)obj.get("lugar")).intValue());
         Empleado s = this.supervisorB.get(((Long)obj.get("supervisor")).intValue());
         update.setLugar(l);
-        update.setSupervisor(s);
+        update.setEmpleado(s);
         update.setFecha(new Date((String)obj.get("fecha")));
         boolean saved = this.supervisionB.save(update);
         return saved;
@@ -108,9 +108,9 @@ public class SupervisionController {
             this.crudS.refresh(c.getLugar());
             map.put("lugartitle", c.getLugar().getNombre());
             map.put("lugardesc", c.getLugar().getDescripcion());
-            this.crudS.refresh(c.getSupervisor());
-            this.crudS.refresh(c.getSupervisor().getPersona());
-            map.put("supervisor", c.getSupervisor().getPersona().getNombres() + " "+ c.getSupervisor().getPersona().getApellidos());
+            this.crudS.refresh(c.getEmpleado());
+            this.crudS.refresh(c.getEmpleado().getPersona());
+            map.put("supervisor", c.getEmpleado().getPersona().getNombres() + " "+ c.getEmpleado().getPersona().getApellidos());
             map.put("fecha", dateFormatter.format(c.getFecha()));            
             l.add(map);
         }

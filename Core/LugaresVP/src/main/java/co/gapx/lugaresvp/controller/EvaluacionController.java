@@ -4,14 +4,28 @@ import co.gapx.lugaresvp.business.ActividadBusiness;
 import co.gapx.lugaresvp.business.ActividadTipoLugarBusiness;
 import co.gapx.lugaresvp.business.CRUDService;
 import co.gapx.lugaresvp.business.CalificacionActividadBusiness;
+import co.gapx.lugaresvp.business.EmpleadoBusiness;
 import co.gapx.lugaresvp.business.EvaluacionBusiness;
+import co.gapx.lugaresvp.business.LoginBusiness;
+import co.gapx.lugaresvp.business.LugarBusiness;
 import co.gapx.lugaresvp.business.SupervisionBusiness;
+import co.gapx.lugaresvp.business.TipoLugarBusiness;
+import co.gapx.lugaresvp.domain.Actividad;
+import co.gapx.lugaresvp.domain.ActividadTipoLugar;
+import co.gapx.lugaresvp.domain.CalificacionActividad;
+import co.gapx.lugaresvp.domain.Empleado;
 import co.gapx.lugaresvp.domain.Evaluacion;
+import co.gapx.lugaresvp.domain.Login;
+import co.gapx.lugaresvp.domain.Lugar;
+import co.gapx.lugaresvp.domain.Supervision;
+import java.lang.ProcessBuilder.Redirect.Type;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import javax.servlet.http.HttpServletResponse;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
 import org.json.simple.JSONValue;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -20,6 +34,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import com.google.gson.*;
+import java.util.Date;
 
 /**
  *
@@ -37,6 +53,16 @@ public class EvaluacionController {
     @Autowired
     private ActividadTipoLugarBusiness actividadTipoLugarB;
     @Autowired
+    private TipoLugarBusiness tipoLugarB;
+    @Autowired
+    private LugarBusiness lugarB;
+    @Autowired
+    private LoginBusiness loginB;
+    @Autowired
+    private ActividadBusiness actividadB;
+    @Autowired
+    private EmpleadoBusiness empleadoB;
+    @Autowired
     private CalificacionActividadBusiness calificacionActividadB;
     @Autowired
     private CRUDService crudS;
@@ -50,7 +76,7 @@ public class EvaluacionController {
             Map<String, Object> map = new HashMap();
             map.put("id", c.getId());
             this.crudS.refresh(map);
-            map.put("supervisor", c.getSupervision().getSupervisor().getPersona().getNombres() + " " + c.getSupervision().getSupervisor().getPersona().getApellidos());
+            map.put("supervisor", c.getSupervision().getEmpleado().getPersona().getNombres() + " " + c.getSupervision().getEmpleado().getPersona().getApellidos());
             map.put("lugar", c.getSupervision().getLugar().getNombre());
             map.put("tipolugar", c.getSupervision().getLugar().getTipoLugar().getNombre());
             map.put("actividadtipolugar", c.getId());
@@ -66,16 +92,52 @@ public class EvaluacionController {
     @Transactional
     public @ResponseBody boolean save(@RequestBody String json, HttpServletResponse response) {
         System.out.println("json: "+json);
+        
         Map obj=(Map) JSONValue.parse(json);
-        Evaluacion cv = new Evaluacion();
+        Evaluacion eva = new Evaluacion();
         String idlugar = (String)obj.get("idlugar");
+        
+        Lugar lugar = this.lugarB.get(Integer.parseInt(idlugar)) ;
+        this.crudS.refresh(lugar.getTipoLugar());
         String usuario = (String)obj.get("usuario");
-        ArrayList<Object> objs = (ArrayList<Object>)obj.get("evaluacion");
-        for(Object o : objs){
-            System.out.println("o: "+o);
+        Login login = this.loginB.login(usuario);
+        
+        List<Empleado> empleados =  this.empleadoB.getForLogin(login);
+        Empleado em = new Empleado();
+        for(Empleado e: empleados){
+            this.crudS.refresh(e.getTipoEmpleado());
+            if(e.getTipoEmpleado().getNombre().equalsIgnoreCase("supervisor")){
+                em = e;
+            }
         }
-     // aqui sacar los parametros del json y setearlo en el nuevo objeto
-        boolean saved = this.evaluacionB.save(cv);
+        
+        Supervision supervision = new Supervision();
+        supervision.setFecha(new Date());
+        supervision.setLugar(lugar);
+        supervision.setEmpleado(em);
+        
+        Supervision sup = this.supervisionB.saveWithGet(supervision);
+        eva.setSupervision(sup);
+        
+        String cadenaEvaluacion = (String)obj.get("evaluacion");
+        JsonParser parser = new JsonParser();
+        JsonElement element = parser.parse(cadenaEvaluacion);
+        JsonArray jasonArray = element.getAsJsonArray();
+        
+        for(Object j : jasonArray){
+            Map ca = (Map) JSONValue.parse(String.valueOf(j));
+            Actividad acti = this.actividadB.get(Integer.parseInt((String)ca.get("idactividad")));
+            ActividadTipoLugar atl = this.actividadTipoLugarB.getDeTipoLugarActividad(lugar.getTipoLugar(), acti);
+            eva.setActividadTipoLugar(atl);
+            
+            List<CalificacionActividad> calificaciones = this.calificacionActividadB.getDeActividad(acti);
+            for(CalificacionActividad cali: calificaciones){
+                if(cali.getNombre().equalsIgnoreCase((String)ca.get("nombrecalificacion"))){
+                    eva.setCalificacionActividad(cali);
+                }
+            }
+        }
+        boolean saved = this.evaluacionB.save(eva);
         return saved;
     }
     

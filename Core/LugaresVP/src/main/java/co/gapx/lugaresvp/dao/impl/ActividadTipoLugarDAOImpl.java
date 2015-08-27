@@ -2,6 +2,7 @@ package co.gapx.lugaresvp.dao.impl;
 
 import co.gapx.lugaresvp.dao.ActividadTipoLugarDAO;
 import co.gapx.lugaresvp.dao.HibernateUtil;
+import co.gapx.lugaresvp.domain.Actividad;
 import co.gapx.lugaresvp.domain.ActividadTipoLugar;
 import co.gapx.lugaresvp.domain.TipoLugar;
 import java.io.Serializable;
@@ -70,6 +71,14 @@ public class ActividadTipoLugarDAOImpl implements ActividadTipoLugarDAO, Seriali
     @Transactional
     public List<ActividadTipoLugar> getDeTipoLugar(TipoLugar id) {
         List<ActividadTipoLugar> actividadTipoLugar = (List<ActividadTipoLugar>) getCurrentSession().createQuery("from ActividadTipoLugar e where e.tipoLugar= :id").setParameter("id", id).list();
+        this.evictUnProxy(actividadTipoLugar);
+        return actividadTipoLugar;
+    }
+    
+    @Override
+    @Transactional
+    public ActividadTipoLugar getDeTipoLugarActividad(TipoLugar tipoLugar, Actividad actividad) {
+        ActividadTipoLugar actividadTipoLugar = (ActividadTipoLugar) getCurrentSession().createQuery("from ActividadTipoLugar e where e.tipoLugar= :tipoLugar and e.actividad= :actividad").setParameter("tipoLugar", tipoLugar).setParameter("actividad", actividad).list().get(0);
         this.evictUnProxy(actividadTipoLugar);
         return actividadTipoLugar;
     }

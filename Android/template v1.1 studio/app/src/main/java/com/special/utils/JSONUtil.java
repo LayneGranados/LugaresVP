@@ -109,7 +109,7 @@ public class JSONUtil {
             post.setHeader("content-type", "application/json");
             JSONObject dato = new JSONObject();
             dato.put("idlugar", idlugar);
-            dato.put("usuario", idlugar);
+            dato.put("usuario", usuario);
             dato.put("evaluacion", evaluacion.toString());
             StringEntity entity = new StringEntity(dato.toString());
             post.setEntity(entity);
