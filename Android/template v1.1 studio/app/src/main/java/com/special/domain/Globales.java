@@ -13,6 +13,7 @@ import java.util.ArrayList;
 public class Globales extends Application {
 
     String usuario;
+    int lugar;
     ArrayList<CalificacionActividadSave> seleccionados;
 
 
@@ -36,5 +37,13 @@ public class Globales extends Application {
 
     public void setSeleccionados(ArrayList<CalificacionActividadSave> seleccionados) {
         this.seleccionados = seleccionados;
+    }
+
+    public int getLugar() {
+        return lugar;
+    }
+
+    public void setLugar(int lugar) {
+        this.lugar = lugar;
     }
 }

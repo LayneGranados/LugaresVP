@@ -5,40 +5,39 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.view.animation.DecelerateInterpolator;
-import android.widget.*;
-import android.widget.AdapterView.OnItemClickListener;
-
-import java.io.Serializable;
-import java.util.ArrayList;
+import android.widget.Button;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import android.widget.RadioGroup;
+import android.widget.RelativeLayout;
+import android.widget.ScrollView;
+import android.widget.Spinner;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.nineoldandroids.animation.Animator;
 import com.nineoldandroids.animation.AnimatorListenerAdapter;
 import com.nineoldandroids.animation.ObjectAnimator;
 import com.nineoldandroids.view.ViewHelper;
-import com.special.R;
-import com.special.domain.Calificacion;
 import com.special.domain.CalificacionActividad;
-import com.special.domain.CalificacionActividadSave;
 import com.special.domain.Globales;
-import com.special.menu.ResideMenu;
 import com.special.utils.JSONUtil;
 import com.special.utils.UICircularImage;
 import com.special.utils.UIParallaxScroll;
-import com.special.utils.UISwipableList;
 import com.special.utils.UITabs;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.io.Serializable;
+import java.util.ArrayList;
 
 import static com.nineoldandroids.view.ViewPropertyAnimator.animate;
 
@@ -64,7 +63,7 @@ public class CreateSupervisionActivity extends Activity {
     private float scale_width;
     private float scale_height;
     int imgId;
-    //ArrayList<CalificacionActividadSave> evaluacion;
+
     JSONArray arrayevaluaciones;
 
     @SuppressLint("NewApi")
@@ -75,7 +74,7 @@ public class CreateSupervisionActivity extends Activity {
             getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
         }
         setContentView(R.layout.crear_supervision);
-        Intent myIntent = getIntent(); // gets the previously created intent
+        Intent myIntent = getIntent();
         calificaciones = (ArrayList<CalificacionActividad>)getIntent().getSerializableExtra("calificaciones");
 
         String secondKeyName= myIntent.getStringExtra("secondKeyName");
@@ -89,8 +88,6 @@ public class CreateSupervisionActivity extends Activity {
         mTitleView = (TextView) findViewById(R.id.title);
         mNavigationBackBtn = (Button) findViewById(R.id.title_bar_left_menu);
         final LinearLayout listView = (LinearLayout) findViewById(R.id.listView);
-        //TextView mSum = (TextView) findViewById(R.id.sumary);
-        //mShare = (UICircularImage) findViewById(R.id.action1);
         UITabs tab = (UITabs) findViewById(R.id.toggle);
 
         mNavigationTop.getBackground().setAlpha(0);
@@ -103,16 +100,15 @@ public class CreateSupervisionActivity extends Activity {
             @Override
             public void onClick(View arg0) {
 
-                //evaluacion = new ArrayList<CalificacionActividadSave>();
                 arrayevaluaciones = new JSONArray();
                 for(int i = 0;i<listView.getChildCount();i++){
-                    System.out.println("Child count: " + listView.getChildCount());
                     View v = listView.getChildAt(i);
                     TextView labelViewNombre = (TextView) v.findViewById(R.id.item_id_actividad);
                     Spinner spinner = (Spinner)v.findViewById(R.id.calificaciones);
                     String nombreCalificacion =  String.valueOf(spinner.getSelectedItem());
                     String x = (String) labelViewNombre.getText();
                     JSONObject obj = new JSONObject();
+
                     try {
                         obj.put("idactividad", x);
                         obj.put("nombrecalificacion", nombreCalificacion);
@@ -120,7 +116,6 @@ public class CreateSupervisionActivity extends Activity {
                         e.printStackTrace();
                     }
                     arrayevaluaciones.put(obj);
-                    //evaluacion.add(new CalificacionActividadSave(Integer.parseInt(x), nombreCalificacion));
                 }
             new evaluacionJson().execute();
             }
@@ -131,13 +126,13 @@ public class CreateSupervisionActivity extends Activity {
 
         Bundle bundle = getIntent().getExtras();
 
-        final int top = 0;//bundle.getInt(PACKAGE + ".top");
-        final int left = 0;//bundle.getInt(PACKAGE + ".left");
-        final int width = 0;//bundle.getInt(PACKAGE + ".width");
-        final int height = 0;//bundle.getInt(PACKAGE + ".height");
+        final int top = 0;
+        final int left = 0;
+        final int width = 0;
+        final int height = 0;
 
-        String sum = "desc";//bundle.getString("descr");
-        imgId = 1;//bundle.getInt("img");
+        String sum = "desc";
+        imgId = 1;
 
         //Our Animation initialization
 
@@ -163,20 +158,11 @@ public class CreateSupervisionActivity extends Activity {
             }
         });
 
-
-
-        ArrayList<ListItem> data = generateData();
         for (int i = 0; i < calificaciones.size(); i++) {
             getApplicationContext();
             View v = DetailListAdapterCrearSupervision.getView(calificaciones.get(i), this,getApplicationContext());
             listView.addView(v);
         }
-
-
-        //mTitleView.setText(title);
-        //mSum.setText(sum);
-        //mImageView.setImageResource(imgId);
-
 
         mNavigationBackBtn.setOnClickListener(new View.OnClickListener(){
 
@@ -185,13 +171,6 @@ public class CreateSupervisionActivity extends Activity {
                 onBackPressed();
             }
         });
-
-        /*mShare.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View arg0) {
-                Toast.makeText(CreateSupervisionActivity.this, "Clicked Share", Toast.LENGTH_SHORT).show();
-            }
-        });*/
 
         tab.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener()
         {
@@ -228,17 +207,6 @@ public class CreateSupervisionActivity extends Activity {
         super.finish();
         overridePendingTransition(0, 0);
     }
-
-    private ArrayList<ListItem> generateData(){
-        ArrayList<ListItem> items = new ArrayList<ListItem>();
-        ArrayList<String> str = new ArrayList<>();
-        items.add(new ListItem("a", str));
-        items.add(new ListItem("s", str));
-        items.add(new ListItem("d", str));
-        items.add(new ListItem("f", str));
-        return items;
-    }
-
 
     private void runEnterAnimation() {
 
@@ -296,12 +264,10 @@ public class CreateSupervisionActivity extends Activity {
         ObjectAnimator bg_anim = ObjectAnimator.ofFloat(mLayoutContainer, "alpha", 1f, 0f);
         bg_anim.setDuration(DURATION);
         bg_anim.start();
-
     }
 
     private UIParallaxScroll.OnScrollChangedListener mOnScrollChangedListener = new UIParallaxScroll.OnScrollChangedListener() {
         public void onScrollChanged(ScrollView who, int l, int t, int oldl, int oldt) {
-            //Difference between the heights, important to not add margin or remove mNavigationTitle.
             final float headerHeight = ViewHelper.getY(mTitleView) - (mNavigationTop.getHeight() - mTitleView.getHeight());
             final float ratio = (float) Math.min(Math.max(t, 0), headerHeight) / headerHeight;
             final int newAlpha = (int) (ratio * 255);
@@ -309,7 +275,6 @@ public class CreateSupervisionActivity extends Activity {
 
             Animation animationFadeIn = AnimationUtils.loadAnimation(CreateSupervisionActivity.this, R.anim.fadein);
             Animation animationFadeOut = AnimationUtils.loadAnimation(CreateSupervisionActivity.this,R.anim.fadeout);
-
 
             if (newAlpha == 255 && mNavigationTitle.getVisibility() != View.VISIBLE && !animationFadeIn.hasStarted()){
                 mNavigationTitle.setVisibility(View.VISIBLE);
@@ -319,7 +284,6 @@ public class CreateSupervisionActivity extends Activity {
                 mNavigationTitle.setVisibility(View.INVISIBLE);
 
             }
-
         }
     };
 
@@ -331,28 +295,27 @@ public class CreateSupervisionActivity extends Activity {
 
             Boolean res = (Boolean) result[3];
             String msg = (String)result[1];
-            /*if (res) {
+            if (res) {
                 pasar = new Intent(getApplicationContext(), MainActivity.class);
+                final Globales globales = (Globales) getApplicationContext();
+                pasar.putExtra("escaneado", String.valueOf(globales.getLugar()));
                 startActivity(pasar);
             } else {
                 Toast.makeText(CreateSupervisionActivity.this, "Usuario y/ Contraseña Incorrectos. Por favor, intentelo nuevamente.", Toast.LENGTH_SHORT).show();
-            }*/
+            }
         }
 
         @Override
         protected Object[] doInBackground(Void... arg0) {
             Object[] res = new Object[5];
-            // VERIFICACION DE USUARIO Y PASSWORD CORRECTO
+
             res[0] = false;
             try {
                 final Globales globales = (Globales) getApplicationContext();
-                String usuario = globales.getUsuario();
-                JSONObject obj = null;
 
-                Object[] observaciones = JSONUtil.guardarEvaluacion("1", "admin", arrayevaluaciones);
+                Object[] observaciones = JSONUtil.guardarEvaluacion(String.valueOf(globales.getLugar()), globales.getUsuario(), arrayevaluaciones);
                 String x = String.valueOf(observaciones[0]);
                 x = x.replace("\n", "");
-                System.out.println("Json devuelto de login: "+x);
                 res[1] = String.valueOf(observaciones[1]);
 
                 if(x.equalsIgnoreCase("true")) {
@@ -361,8 +324,6 @@ public class CreateSupervisionActivity extends Activity {
                 else {
                     res[3] = false;
                 }
-
-
             } catch (Exception e) {
                 Log.i("valores", "Error al leer el json");
                 e.printStackTrace();

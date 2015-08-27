@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import com.dm.zbar.android.scanner.ZBarConstants;
 import com.dm.zbar.android.scanner.ZBarScannerActivity;
+import com.special.domain.Globales;
 import com.special.menu.ResideMenu;
 
 import net.sourceforge.zbar.Symbol;
@@ -32,13 +33,7 @@ public class CodeScanner extends Activity {
             Intent intent = new Intent(this, ZBarScannerActivity.class);
             intent.putExtra(ZBarConstants.SCAN_MODES, new int[]{Symbol.QRCODE});
             startActivityForResult(intent, ZBAR_SCANNER_REQUEST);
-        } else {
-            Toast.makeText(this, "Rear Facing Camera Unavailable", Toast.LENGTH_SHORT).show();
         }
-    }
-
-    public void launchQRScanner() {
-
     }
 
     public boolean isCameraAvailable() {
@@ -54,12 +49,15 @@ public class CodeScanner extends Activity {
                 if (resultCode == RESULT_OK) {
                     finish();
                     Intent returnIntent = new Intent(getApplicationContext(), MainActivity.class);
-                    returnIntent.putExtra("escaneado",data.getStringExtra(ZBarConstants.SCAN_RESULT));
+                    String lugar = data.getStringExtra(ZBarConstants.SCAN_RESULT);
+                    returnIntent.putExtra("escaneado", lugar);
+                    final Globales globales = (Globales) getApplicationContext();
+                    globales.setLugar(Integer.parseInt(lugar));
                     startActivity(returnIntent);
                 } else if(resultCode == RESULT_CANCELED && data != null) {
                     String error = data.getStringExtra(ZBarConstants.ERROR_INFO);
                     if(!TextUtils.isEmpty(error)) {
-                        System.out.println("error");
+
                     }
                 }
                 break;

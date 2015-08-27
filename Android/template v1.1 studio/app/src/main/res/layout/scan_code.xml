@@ -11,7 +11,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="fill_parent"
+        android:layout_height="wrap_content"
         android:padding="19dp"
         android:layout_marginRight="@dimen/list_horizontal_margin"
         android:layout_marginLeft="@dimen/list_horizontal_margin"
@@ -40,16 +40,14 @@
             android:text="@string/show"
             android:textSize="@dimen/textsize_large"
             style="@style/UIButtonInverse" />
-            <!--android:onClick="launchQRScanner"-->
 
         <ImageView
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="fill_parent"
             android:layout_gravity="center"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="1dp"
             android:contentDescription="@string/image_description"
-            android:src="@drawable/qrexample"
-            />
+            android:src="@drawable/qrexample" />
 
 
     </LinearLayout>

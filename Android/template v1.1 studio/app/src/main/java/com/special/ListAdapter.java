@@ -47,27 +47,18 @@ class ListAdapter extends BaseAdapter {
             
             if(convertView==null){
                 
-                // inflate the layout
             	LayoutInflater vi = (LayoutInflater) mContext
                         .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 v = vi.inflate(R.layout.fragment_list_item, null);
-                 
-                // well set up the ViewHolder
+
                 viewHolder = new ViewHolder();
                 viewHolder.tipoServicio = (TextView) v.findViewById(R.id.item_nombre_actividad);
-                /*viewHolder.rol= (TextView) v.findViewById(R.id.item_rol);
-
-                viewHolder.estado = (TextView) v.findViewById(R.id.item_estado);
-                viewHolder.fechaHora = (TextView) v.findViewById(R.id.item_fechaHora);
-                viewHolder.direccionRecogida = (TextView) v.findViewById(R.id.direccion_recogida);*/
                 v.setTag(viewHolder);
                  
             }else{
                 viewHolder = (ViewHolder) convertView.getTag();
-                //viewHolder.image.setImageResource(0);
             }
-            final String tipoServicio = String.valueOf(mItems.get(position).getActividadId());
-            final String rol = mItems.get(position).getNombreActividad();
+
             final String estado = String.valueOf(mItems.get(position).getCalifaciones().get(0).getId());
             final String fechaHora = mItems.get(position).getCalifaciones().get(0).getNombre();
             final String direccionRecogida = "Prueba de layne";

@@ -31,8 +31,6 @@ public class ScanCode extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         final ScrollView v =  (ScrollView) inflater.inflate(R.layout.scan_code, container, false);
 
-        MainActivity parentActivity = (MainActivity) getActivity();
-
         btn = (Button) v.findViewById(R.id.buttonDialog);
         btn.setOnClickListener(new View.OnClickListener() {
 
@@ -41,7 +39,6 @@ public class ScanCode extends Fragment {
 
                 try {
                     Intent i = new Intent(getActivity(), CodeScanner.class);
-                    i.putExtra("helloString", "hello");
                     getActivity().startActivityForResult(i, 1);
                 } catch (Exception e) {
                 }
@@ -56,11 +53,6 @@ public class ScanCode extends Fragment {
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         getActivity();
-        if(requestCode == 1 && resultCode == Activity.RESULT_OK) {
-            System.out.println("Imprimir el codigo capturado: "+data.getIntExtra("result",-1)+"");
-
-
-        }
     }
 
 
