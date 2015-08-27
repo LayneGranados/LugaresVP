@@ -52,7 +52,7 @@ public class JSONUtil {
         } catch (Exception E) {
             E.printStackTrace();
         }
-		return getJSON(post);
+		return getJSON(post,2);
 	}
 
     public static Object[] supervisionesDeLugar(String idlugar) {
@@ -68,7 +68,7 @@ public class JSONUtil {
         } catch (Exception E) {
             E.printStackTrace();
         }
-        return getJSON(post);
+        return getJSON(post,2);
     }
 
     public static Object[] lugarPorId(String idlugar) {
@@ -84,7 +84,7 @@ public class JSONUtil {
         } catch (Exception E) {
             E.printStackTrace();
         }
-        return getJSON(post);
+        return getJSON(post,2);
     }
 
     public static Object[] calificacionActividadPorlugar(String idlugar) {
@@ -99,7 +99,7 @@ public class JSONUtil {
         } catch (Exception E) {
             E.printStackTrace();
         }
-        return getJSON(post);
+        return getJSON(post,2);
     }
 
     public static Object[] guardarEvaluacion(String idlugar, String usuario, JSONArray evaluacion) {
@@ -117,7 +117,7 @@ public class JSONUtil {
         } catch (Exception E) {
             E.printStackTrace();
         }
-        return getJSON(post);
+        return getJSON(post,2);
     }
 
 
@@ -142,7 +142,14 @@ public class JSONUtil {
 	 * @return retorna un vector de 2 posiciones Object[]. En la primer posicion [0] guarda el String del archivo JSON 
 	 * y en la segunda[1] guarda el tipo de error que se presento si existieron problemas al hacer la petición
 	 */
-	public static Object[] getJSON(HttpGet httpget) {
+	public static Object[] getJSON(Object http, int type) {
+        HttpGet get = new HttpGet();
+        HttpPost post = new HttpPost();
+        if(type==1){
+            get = (HttpGet)http;
+        }else{
+            post = (HttpPost)http;
+        }
 		Object[] res = new Object[2];
 		boolean error = false;
 		InputStream is = null;
@@ -151,7 +158,12 @@ public class JSONUtil {
 			HttpConnectionParams.setConnectionTimeout(httpParameters, 5000);
 			HttpConnectionParams.setSoTimeout(httpParameters, 5000);
 			HttpClient httpclient = new DefaultHttpClient(httpParameters);
-			HttpResponse response = httpclient.execute(httpget);
+            HttpResponse response;
+            if(type==1){
+                response = httpclient.execute(get);
+            }else {
+                response = httpclient.execute(post);
+            }
 			HttpEntity entity = response.getEntity();
 			is = entity.getContent();
 		} catch (HttpHostConnectException e) {
@@ -188,51 +200,6 @@ public class JSONUtil {
 	}
 
 
-    public static Object[] getJSON(HttpPost httpPost) {
-        Object[] res = new Object[2];
-        boolean error = false;
-        InputStream is = null;
-        try {
-            HttpParams httpParameters = new BasicHttpParams();
-            HttpConnectionParams.setConnectionTimeout(httpParameters, 5000);
-            HttpConnectionParams.setSoTimeout(httpParameters, 5000);
-            HttpClient httpclient = new DefaultHttpClient(httpParameters);
-            HttpResponse response = httpclient.execute(httpPost);
-            HttpEntity entity = response.getEntity();
-            is = entity.getContent();
-        } catch (HttpHostConnectException e) {
-            res[1] = "No es posible acceder al Servidor, por favor revise su conexión";
-            error = true;
-        } catch (SocketTimeoutException e) {
-            res[1] = "No es posible acceder al Servidor, por favor revise su conexión";
-            error = true;
-        } catch (ConnectTimeoutException e) {
-            res[1] = "No es posible acceder al Servidor, por favor revise su conexión";
-            error = true;
-        } catch (Exception e) {
-            System.out.println("Error haciendo Http Get:"+e.getMessage());
-        }
 
-        if (!error) {
-            res[1] = null;
-            try {
-                BufferedReader reader = new BufferedReader(
-                        new InputStreamReader(is, "iso-8859-1"), 8);
-                StringBuilder sb = new StringBuilder();
-                String line = null;
-                while ((line = reader.readLine()) != null) {
-                    sb.append(line + "\n");
-                }
-                is.close();
-                res[0] = sb.toString();
-            } catch (Exception e) {
-                System.out.println("Error leyendo linea");
-            }
-        }
-        return res;
-    }
-
-
-	
 
 }
