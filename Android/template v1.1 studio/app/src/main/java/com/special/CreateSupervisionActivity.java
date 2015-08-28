@@ -181,10 +181,6 @@ public class CreateSupervisionActivity extends Activity {
                         mTextView.setVisibility(View.GONE);
                         listView.setVisibility(LinearLayout.VISIBLE);
                         return;
-                    case R.id.toggle2:
-                        mTextView.setVisibility(View.VISIBLE);
-                        listView.setVisibility(LinearLayout.GONE);
-                        return;
                 }
             }
         });
@@ -298,7 +294,7 @@ public class CreateSupervisionActivity extends Activity {
             if (res) {
                 pasar = new Intent(getApplicationContext(), MainActivity.class);
                 final Globales globales = (Globales) getApplicationContext();
-                pasar.putExtra("escaneado", String.valueOf(globales.getLugar()));
+                //pasar.putExtra("escaneado", String.valueOf(globales.getLugar()));
                 startActivity(pasar);
             } else {
                 Toast.makeText(CreateSupervisionActivity.this, "Usuario y/ Contraseña Incorrectos. Por favor, intentelo nuevamente.", Toast.LENGTH_SHORT).show();

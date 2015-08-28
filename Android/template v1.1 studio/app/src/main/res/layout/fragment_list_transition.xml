@@ -26,7 +26,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-light"
-            android:text="@string/detail_title_placeholder"
             android:layout_margin="5dp"
             android:padding="5dp"
             android:paddingTop="15dp"
@@ -40,7 +39,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-light"
-            android:text="@string/sumary_placeholder"
             android:layout_margin="5dp"
             android:padding="5dp"
             android:paddingTop="5dp"
@@ -65,17 +63,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginTop="15dp">
+        android:background="@drawable/listview_corners">
 
         <com.special.utils.UISwipableList
             android:id="@+id/listView"
             android:layout_width="match_parent"
             android:divider="@drawable/divider"
-            android:background="@drawable/listview_corners"
-            android:dividerHeight="0.3dp"
+            android:dividerHeight="0.5dp"
             android:layout_height="match_parent"
-            android:layout_marginRight="@dimen/list_horizontal_margin"
-            android:layout_marginLeft="@dimen/list_horizontal_margin"/>
+            />
     </LinearLayout>
 
     </LinearLayout>

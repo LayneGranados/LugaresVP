@@ -6,7 +6,17 @@
     </style>
     
     <style name="UITabs">
-        <item name="android:textColor">@drawable/button_selector_text</item>
+        <item name="android:textColor">@drawable/button_selector_text_tabs</item>
+        <item name="android:minHeight">33dp</item>
+        <item name="android:minWidth">70dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:button">@null</item>
+        <item name="android:paddingLeft">5dp</item>
+        <item name="android:paddingRight">5dp</item>
+    </style>
+
+    <style name="UITabsSupervision">
+        <item name="android:textColor">@drawable/button_selector_text_tabs</item>
         <item name="android:minHeight">33dp</item>
         <item name="android:minWidth">70dp</item>
         <item name="android:gravity">center</item>
@@ -18,6 +28,17 @@
     <style name="UIButton">
         <item name="android:textColor">@drawable/button_selector_text_inverse</item>
         <item name="android:background">@drawable/button_selector</item>
+        <item name="android:minHeight">33dp</item>
+        <item name="android:minWidth">70dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:button">@null</item>
+        <item name="android:paddingLeft">5dp</item>
+        <item name="android:paddingRight">5dp</item>
+    </style>
+
+    <style name="UIButtonSupervision">
+        <item name="android:textColor">@drawable/button_selector_text_inverse_supervision</item>
+        <item name="android:background">@drawable/button_selector_supervision</item>
         <item name="android:minHeight">33dp</item>
         <item name="android:minWidth">70dp</item>
         <item name="android:gravity">center</item>

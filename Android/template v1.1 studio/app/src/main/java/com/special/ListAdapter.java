@@ -46,7 +46,7 @@ class ListAdapter extends BaseAdapter {
             View v = convertView;
             
             if(convertView==null){
-                
+
             	LayoutInflater vi = (LayoutInflater) mContext
                         .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 v = vi.inflate(R.layout.fragment_list_item, null);

@@ -7,8 +7,8 @@
     <string name="checkbox">CheckBox</string>
     <string name="dashed_area_text">Para iniciar una revisión y ver el listado de las revisiones realizadas a este lugar, por favor, escanee el código QR que se encuentra en el lugar que desea calificar</string>
     <string name="show">Escanear Código QR</string>
-    <string name="crear_supervisión">Realizar Nueva Supervisión</string>
-    <string name="guardar_supervisión">Guardar</string>
+    <string name="crear_supervisión">Nueva Supervisión</string>
+    <string name="guardar_supervisión">Guardar Calificaciones</string>
     <string name="show_dialog_text">Show a Custom Dialog and Loader</string>
     <string name="text_input_hint">text input</string>
     <string name="four">Four</string>

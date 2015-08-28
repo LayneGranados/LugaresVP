@@ -60,7 +60,7 @@ public class UITabs extends RadioGroup {
             }
             createBackground(getChildAt(count - 1), R.drawable.tab_active_right, R.drawable.tab_right);
         } else if (count == 1) {
-            createBackground(getChildAt(0), R.drawable.tab_active_default, R.drawable.tab_default);
+            createBackground(getChildAt(0), R.drawable.tab_active_default_supervision, R.drawable.tab_default);
         }
     }
 

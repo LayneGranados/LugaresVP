@@ -5,6 +5,7 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="list_horizontal_margin">20dp</dimen>
+    <dimen name="list_top_botton_margin">5dp</dimen>
     
     <!-- SP adjusts according the users setting, DP is static -->
     <dimen name="textsize_xlarge">28dp</dimen>

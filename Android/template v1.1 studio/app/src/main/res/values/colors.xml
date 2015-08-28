@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="theme_color">#ffb85c20</color><!--  Main color, used for buttons & layouts as default -->
+    <color name="button_theme_color">#ffd57d1d</color><!--  Main color, used for buttons & layouts as default -->
     <color name="sub_color">#cccccc</color><!--  Color used in the bar below the title, with actions -->
     <color name="bar_color">#676767</color>
     <color name="bar_color_transparent">#86676767</color>

@@ -82,19 +82,19 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         resideMenu.setScaleValue(0.6f);
 
         itemHome     = new ResideMenuItem(this, R.drawable.ic_home,     "Menu Principal");
-        itemElements  = new ResideMenuItem(this, R.drawable.ic_elements_alternative,  "Elements");
-        itemList1 = new ResideMenuItem(this, R.drawable.ic_list_2, "List 1");
-        itemList2 = new ResideMenuItem(this, R.drawable.ic_list_1, "List 2");
+        //itemElements  = new ResideMenuItem(this, R.drawable.ic_elements_alternative,  "Elements");
+        //itemList1 = new ResideMenuItem(this, R.drawable.ic_list_2, "List 1");
+        //itemList2 = new ResideMenuItem(this, R.drawable.ic_list_1, "List 2");
 
         itemHome.setOnClickListener(this);
-        itemElements.setOnClickListener(this);
-        itemList1.setOnClickListener(this);
-        itemList2.setOnClickListener(this);
+        //itemElements.setOnClickListener(this);
+        //itemList1.setOnClickListener(this);
+        //itemList2.setOnClickListener(this);
 
         resideMenu.addMenuItem(itemHome);
-        resideMenu.addMenuItem(itemElements);
-        resideMenu.addMenuItem(itemList1);
-        resideMenu.addMenuItem(itemList2);
+        //resideMenu.addMenuItem(itemElements);
+        //resideMenu.addMenuItem(itemList1);
+        //resideMenu.addMenuItem(itemList2);
 
         
         findViewById(R.id.title_bar_left_menu).setOnClickListener(new View.OnClickListener() {
@@ -118,11 +118,11 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
             //changeFragment(new HomeFragment());
             changeFragment(new ScanCode());
         }else if (view == itemElements){
-            changeFragment(new ElementsFragment());
+            //changeFragment(new ElementsFragment());
         }else if (view == itemList1){
-            changeFragment(new ListFragment());
+            //changeFragment(new ListFragment());
         }else if (view == itemList2){
-            changeFragment(new TransitionListFragment());
+            //changeFragment(new TransitionListFragment());
         }
 
         resideMenu.closeMenu();
@@ -228,8 +228,10 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
     		 int orientation = getResources().getConfiguration().orientation;
     		 int resourceId;
     		 if (isTablet(c)){
+                 System.out.println("is tablet");
     			 resourceId = resources.getIdentifier(orientation == Configuration.ORIENTATION_PORTRAIT ? "navigation_bar_height" : "navigation_bar_height_landscape", "dimen", "android");
     		 }  else {
+                 System.out.println("is not a tablet");
     			 resourceId = resources.getIdentifier(orientation == Configuration.ORIENTATION_PORTRAIT ? "navigation_bar_height" : "navigation_bar_width", "dimen", "android");	 
     		 }
          
