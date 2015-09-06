@@ -12,28 +12,22 @@
         ng-model="tipCreateCtrl.tipoEmpleado.descripcion">
     </fieldset>
 
-    <button class="btn btn-primary btn-lg" type="submit" href="/tipoEmpleado.html" >
+    <button class="btn btn-primary btn-lg" type="submit"  >
       Guardar
     </button>
 
-  </form>
-
+  </form> 
+  <button class="btn btn-primary btn-lg" type="button" ng-click="tipCreateCtrl.editar()" >Editar</button>
+      
+  <div ui-grid="tipCreateCtrl.gridOptions1" ui-grid-selection ui-grid-pagination class="myGrid"></div>
 </div>
 
-<hr>
-<table class="table table-condensed" ng-controller="TipoEmpleadoListController as tipListCtrl">
-  <thead>
-    <tr>
-      <th>Id</th>
-      <th>Nombre</th>
-      <th>Descripcion</th>
-    </tr>
-  </thead>
-  <tbody>
-  <tr ng-repeat="tipol in tipListCtrl.tipos | orderBy:'name'">
-    <td ng-bind="tipol.id"></td>
-    <td ng-bind="tipol.nombre"></td>
-    <td ng-bind="tipol.descripcion"></td>
-  </tr>
-</tbody>
-</table>
+
+
+
+
+  
+
+
+
+
