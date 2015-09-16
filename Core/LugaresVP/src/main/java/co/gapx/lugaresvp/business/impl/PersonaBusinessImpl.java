@@ -21,7 +21,7 @@ public class PersonaBusinessImpl implements PersonaBusiness, Serializable{
 
     @Override
     @Transactional
-    public boolean save(Persona e) {
+    public Persona save(Persona e) {
         return this.personaDAO.save(e);
     }
     

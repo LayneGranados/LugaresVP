@@ -38,13 +38,13 @@ public class LoginDAOImpl implements LoginDAO, Serializable{
     
     @Override
     @Transactional
-    public boolean save(Login login) {
-        boolean x=false;
+    public Login save(Login login) {
+        Login x=new Login();
         try {
             login.setPassword(this.encriptar(login.getPassword()));
             this.getCurrentSession().saveOrUpdate(login);
             if(login.getId()!=null){
-                x = true;
+                x = login;
             }
         } catch (HibernateException ex) {
             this.logger.error("Error Guardando Login");

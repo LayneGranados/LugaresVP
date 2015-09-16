@@ -34,12 +34,12 @@ public class PersonaDAOImpl implements PersonaDAO, Serializable{
     
     @Override
     @Transactional
-    public boolean save(Persona persona) {
-        boolean x=false;
+    public Persona save(Persona persona) {
+        Persona x=new Persona();
         try {
             this.getCurrentSession().saveOrUpdate(persona);
             if(persona.getId()!=null){
-                x = true;
+                x = persona;
             }
         } catch (HibernateException ex) {
             this.logger.error("Error Guardando Persona");

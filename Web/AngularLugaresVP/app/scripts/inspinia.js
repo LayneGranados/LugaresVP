@@ -35,24 +35,24 @@ $(document).ready(function () {
 
     // minimalize menu
     $('.navbar-minimalize').click(function () {
-        $("body").toggleClass("mini-navbar");
+        $('body').toggleClass('mini-navbar');
         SmoothlyMenu();
-    })
+    });
 
     // tooltips
     $('.tooltip-demo').tooltip({
-        selector: "[data-toggle=tooltip]",
-        container: "body"
-    })
+        selector: '[data-toggle=tooltip]',
+        container: 'body'
+    });
 
     // Move modal to body
     // Fix Bootstrap backdrop issu with animation.css
-    $('.modal').appendTo("body")
+    $('.modal').appendTo('body');
 
     // Full height of sidebar
     function fix_height() {
-        var heightWithoutNavbar = $("body > #wrapper").height() - 61;
-        $(".sidebard-panel").css("min-height", heightWithoutNavbar + "px");
+        var heightWithoutNavbar = $('body > #wrapper').height() - 61;
+        $('.sidebard-panel').css('min-height', heightWithoutNavbar + 'px');
     }
     fix_height();
 
@@ -67,15 +67,15 @@ $(document).ready(function () {
             //        }
             //    })
 
-    $(window).bind("load resize click scroll", function() {
-        if(!$("body").hasClass('body-small')) {
+    $(window).bind('load resize click scroll', function() {
+        if(!$('body').hasClass('body-small')) {
             fix_height();
         }
-    })
+    });
 
-    $("[data-toggle=popover]")
+    $('[data-toggle=popover]')
         .popover();
-});
+    });
 
 
 // For demo purpose - animation css script
@@ -95,14 +95,14 @@ function animationHover(element, animation){
 
 // Minimalize menu when screen is less than 768px
 $(function() {
-    $(window).bind("load resize", function() {
+    $(window).bind('load resize', function() {
         if ($(this).width() < 769) {
-            $('body').addClass('body-small')
+            $('body').addClass('body-small');
         } else {
-            $('body').removeClass('body-small')
+            $('body').removeClass('body-small');
         }
-    })
-})
+    });
+});
 
 function SmoothlyMenu() {
     if (!$('body').hasClass('mini-navbar') || $('body').hasClass('body-small')) {
@@ -127,9 +127,9 @@ function SmoothlyMenu() {
 
 // Dragable panels
 function WinMove() {
-    var element = "[class*=col]";
-    var handle = ".ibox-title";
-    var connect = "[class*=col]";
+    var element = '[class*=col]';
+    var handle = '.ibox-title';
+    var connect = '[class*=col]';
     $(element).sortable(
         {
             handle: handle,
@@ -139,4 +139,4 @@ function WinMove() {
             opacity: 0.8,
         })
         .disableSelection();
-};
+}

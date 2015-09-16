@@ -11,7 +11,7 @@ public interface LoginBusiness {
     
     public List<Login> listALl();
     
-    public boolean save(Login login);
+    public Login save(Login login);
     
     public Login get(int id);
 

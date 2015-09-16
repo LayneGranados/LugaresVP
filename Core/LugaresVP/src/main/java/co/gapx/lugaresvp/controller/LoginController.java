@@ -48,24 +48,24 @@ public class LoginController {
     
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     @Transactional
-    public @ResponseBody boolean save(@RequestBody String json, HttpServletResponse response) {
+    public @ResponseBody int save(@RequestBody String json, HttpServletResponse response) {
         Map obj=(Map) JSONValue.parse(json);
         Login cv = new Login();
         cv.setLogin((String)obj.get("login"));
         cv.setPassword((String)obj.get("password"));
-        boolean saved = this.loginB.save(cv);
-        return saved;
+        Login saved = this.loginB.save(cv);
+        return saved.getId();
     }
     
     @RequestMapping(value = "/login", method = RequestMethod.PUT)
     @Transactional
-    public @ResponseBody boolean put(@RequestBody String json, HttpServletResponse response) {
+    public @ResponseBody int put(@RequestBody String json, HttpServletResponse response) {
         Map obj=(Map) JSONValue.parse(json);
         Login update =this.loginB.get(((Long)obj.get("id")).intValue()); 
         update.setLogin((String)obj.get("login"));
         update.setPassword((String)obj.get("password"));
-        boolean saved = this.loginB.save(update);
-        return saved;
+        Login saved = this.loginB.save(update);
+        return saved.getId();
     }
     
     @RequestMapping(value = "/login/inicio", method = RequestMethod.POST)

@@ -21,7 +21,7 @@ public class LoginBusinessImpl implements LoginBusiness, Serializable{
 
     @Override
     @Transactional
-    public boolean save(Login e) {
+    public Login save(Login e) {
         return this.loginDAO.save(e);
     }
     
