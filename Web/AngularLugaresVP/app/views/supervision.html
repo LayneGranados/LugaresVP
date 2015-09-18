@@ -1,19 +1,17 @@
-<div>SUPERVISION</div>
-<table class="table table-condensed" ng-controller="SupervisionListController as supListCtrl">
-  <thead>
-    <tr>
-      <th>Id</th>
-      <th>Lugar</th>
-      <th>Supervisor</th>
-      <th>Fecha</th>
-    </tr>
-  <thead>
-  <tbody>
-  <tr ng-repeat="sup in supListCtrl.supervisiones | orderBy:'name'">
-    <td ng-bind="sup.id"></td>
-    <td ng-bind="sup.lugar"></td>
-    <td ng-bind="sup.supervisor"></td>
-    <td ng-bind="sup.fecha"></td>
-  </tr>
-  <tbody>
-</table>
+<div id="wrapper" ng-controller="SupervisionListController as actiCreateCtrl">
+  
+  <form name="actividadCreate" role="form" >
+    </br>
+      <div align="center" style="font-size:20px;">SUPERVISIONES REALIZADAS</div>
+    </br>
+
+  </form> 
+  
+  </br>
+      
+  <div ui-grid="actiCreateCtrl.gridOptions1" ui-grid-selection ui-grid-pagination class="myGrid"></div>
+  </br>
+  <a href class="btn btn-primary btn-lg" ng-click="showComplex()">
+      Ver Calificaciones
+  </a>
+</div>
