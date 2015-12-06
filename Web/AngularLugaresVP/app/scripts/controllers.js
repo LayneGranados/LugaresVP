@@ -338,9 +338,12 @@
 
   function LoginController($location) {
     this.login = function() {
-        $location.path('actividad');
+      $location.path('actividad');
     }
 
+    this.logout = function() {
+      $location.path('login/');
+    }
   }
 
   function PersonaCreateController(Persona, uiGridConstants) {
