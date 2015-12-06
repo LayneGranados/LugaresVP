@@ -9,7 +9,7 @@ import javax.persistence.*;
  */
 
 @Entity
-@Table(name = "tipo_lugar", catalog = "lugaresventuraplaza", schema = "public" )
+@Table(name = "tipo_lugar", schema = "public" )
 
 public class TipoLugar implements Serializable{
     

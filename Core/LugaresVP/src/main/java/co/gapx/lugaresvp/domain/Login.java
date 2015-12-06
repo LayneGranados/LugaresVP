@@ -8,7 +8,7 @@ import javax.persistence.*;
  * @author Layne Granados Mogollon<layne0205@gmail.com>
  */
 @Entity
-@Table(name = "login", catalog = "lugaresventuraplaza", schema = "public" )
+@Table(name = "login", schema = "public" )
 
 public class Login implements Serializable{
     
