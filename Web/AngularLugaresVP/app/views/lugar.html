@@ -1,1 +1,28 @@
-<div id="wrapper" ng-controller="LugarCreateController as lugCreateCtrl">  <form name="paisCreate" role="form" ng-submit="lugCreateCtrl.create()">    </br>      <div align="center" style="font-size:20px;">LUGARES</div>    </br>    <fieldset class="form-group">      <label>Nombre del Lugar:</label>      <input class="form-control input-lg" type="text" placeholder="Nombre del Lugar"        ng-model="lugCreateCtrl.lugar.nombre">    </fieldset>    <fieldset class="form-group">      <label>Descripción: </label><input class="form-control input-lg" type="text" placeholder="Descripción del Lugar"        ng-model="lugCreateCtrl.lugar.descripcion">    </fieldset>    <fieldset class="form-group">      <label>Tipo de Lugar:        <select class="js-example-basic-single" id="categ" style="width: 100%" ng-controller="TipoLugarListController as tipoLugarListCtrl" ng-model="lugCreateCtrl.lugar.tipo_lugar_id">   	    <option ng-repeat="tip in tipoLugarListCtrl.tipos" value="{{tip.id}}">{{tip.nombre}}</option>      </select></label>    </fieldset>    <button class="btn btn-primary btn-lg" type="submit" >      Guardar    </button>      </br>        <div ui-grid="lugCreateCtrl.gridOptions1" ui-grid-selection ui-grid-pagination class="myGrid"></div>  </br>  <button class="btn btn-primary btn-lg" type="button" ng-click="lugCreateCtrl.editar()">Editar</button>  <button class="btn btn-primary btn-lg" type="button" ng-click="lugCreateCtrl.editar()">Eliminar</button>  <button class="btn btn-primary btn-lg" type="button" ng-click="lugCreateCtrl.editar()">Generar Código QR</button>  </form></div>
+<div ng-include="'views/common/sidemenu.tpl.html'"></div>
+<div class="gray-bg dashbard-1" id="page-wrapper">
+  <div ng-include="'views/common/topbar.tpl.html'"></div>
+  <div class="container-fluid" id="wrapper" ng-controller="LugarCreateController as lugCreateCtrl">
+    <div class="row">
+      <form name="paisCreate" ng-submit="lugCreateCtrl.create()" role="form">
+        <div align="center" style="font-size:20px;">LUGARES</div>
+        <fieldset class="form-group">
+          <label>Nombre del Lugar:</label>
+          <input class="form-control input-lg" ng-model="lugCreateCtrl.lugar.nombre" placeholder="Nombre del Lugar" type="text">
+          <label>Descripción:</label>
+          <input class="form-control input-lg" ng-model="lugCreateCtrl.lugar.descripcion" placeholder="Descripción del Lugar" type="text">
+          <label>Tipo de Lugar:</label>
+          <select class="js-example-basic-single form-control" id="categ" ng-controller="TipoLugarListController as tipoLugarListCtrl" ng-model="lugCreateCtrl.lugar.tipo_lugar_id" style="width: 100%">
+            <option ng-repeat="tip in tipoLugarListCtrl.tipos" value="{{tip.id}}">{{tip.nombre}}</option>
+          </select>
+          <button class="btn btn-primary btn-lg" type="submit">Guardar</button>
+        </fieldset>
+      </form>
+    </div>
+    <div class="row">
+      <div class="myGrid" ui-grid-pagination ui-grid-selection ui-grid="lugCreateCtrl.gridOptions1"></div>
+      <button class="btn btn-primary btn-lg" ng-click="lugCreateCtrl.editar()" type="button">Editar</button>
+      <button class="btn btn-primary btn-lg" ng-click="lugCreateCtrl.editar()" type="button">Eliminar</button>
+      <button class="btn btn-primary btn-lg" ng-click="lugCreateCtrl.editar()" type="button">Generar Código QR</button>
+    </div>
+  </div>
+</div>
