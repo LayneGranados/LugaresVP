@@ -1,4 +1,5 @@
 // Custom scripts
+'use strict';
 $(document).ready(function () {
 
     // MetsiMenu

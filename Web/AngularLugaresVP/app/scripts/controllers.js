@@ -1,28 +1,6 @@
 (function() {
   'use strict';
-  angular
-    .module('blog.controllers', ['blog.services', 'angularModalService'])
-    .controller('ActividadCreateController', ActividadCreateController)
-    .controller('ActividadListController', ActividadListController)
-    .controller('ActividadTipoLugarListController', ActividadTipoLugarListController)
-    .controller('ActividadTipoLugarCreateController', ActividadTipoLugarCreateController)
-    .controller('CalificacionActividadListController', CalificacionActividadListController)
-    .controller('CalificacionActividadCreateController', CalificacionActividadCreateController)
-    .controller('CategoriaVehiculoCreateController', CategoriaVehiculoCreateController)
-    .controller('CategoriaVehiculoListController', CategoriaVehiculoListController)
-    .controller('EvaluacionListController', EvaluacionListController)
-    .controller('LoginController', LoginController)
-    .controller('LugarCreateController', LugarCreateController)
-    .controller('LugarListController', LugarListController)
-    .controller('PersonaCreateController', PersonaCreateController)
-    .controller('PersonaListController', PersonaListController)
-    .controller('SupervisionListController', SupervisionListController)
-    .controller('TipoLugarCreateController', TipoLugarCreateController)
-    .controller('TipoLugarListController', TipoLugarListController)
-    .controller('TipoIdentificacionCreateController', TipoIdentificacionCreateController)
-    .controller('TipoIdentificacionListController', TipoIdentificacionListController)
-    .controller('TipoEmpleadoCreateController', TipoEmpleadoCreateController)
-    .controller('TipoEmpleadoListController', TipoEmpleadoListController)
+
 
   function ActividadTipoLugarListController(ActividadTipoLugar) {
     this.actividadTipoLugares = ActividadTipoLugar.query();
@@ -33,9 +11,9 @@
     var self = this;
     this.create =
       function() {
-        var actividadTipoLugar = new ActividadTipoLugar;
-        actividadTipoLugar.actividad = parseInt(self.actividad.actividad_id, 10);
-        actividadTipoLugar.tipolugar = parseInt(self.tipolugar.tipolugar_id, 10);
+        var actividadTipoLugar = new ActividadTipoLugar();
+        actividadTipoLugar.actividad = parseInt(self.actividad.actividadId, 10);
+        actividadTipoLugar.tipolugar = parseInt(self.tipolugar.tipolugarId, 10);
         actividadTipoLugar.$save();
       };
   }
@@ -73,9 +51,9 @@
         modal.element.modal();
         modal.close.then(function(result) {
           $scope.complexResult = 'Name: ' + result.name + ', age: ' + result.age;
-          var calificacion = new CalificacionActividad;
+          var calificacion = new CalificacionActividad();
           calificacion.nombre = result.name;
-          calificacion.actividad_id = 1;
+          calificacion.actividadId = 1;
           calificacion.$save();
           self.gridOptions1.data.push({
             'nombre': self.actividad.nombre,
@@ -113,7 +91,7 @@
     self.create =
       function() {
 
-        var actividad = new Actividad;
+        var actividad = new Actividad();
         actividad.nombre = self.actividad.nombre;
         actividad.descripcion = self.actividad.descripcion;
 
@@ -180,7 +158,7 @@
 
     self.create =
       function() {
-        var calificacion = new CalificacionActividad;
+        var calificacion = new CalificacionActividad();
         calificacion.nombre = self.calificacion.nombre;
         calificacion.actividad = parseInt(self.calificacion.actividad, 10);
         calificacion.id = self.calificacion.id;
@@ -246,14 +224,15 @@
     this.create =
       function() {
 
-        var categoria = new CategoriaVehiculo;
+        var categoria = new CategoriaVehiculo();
         categoria.nombre = self.categoria.nombre;
         categoria.descripcion = self.categoria.descripcion;
         categoria.calendario = self.categoria.calendario;
-        if (self.categoria.nivel_servicio_id == undefined)
+        if (self.categoria.nivel_servicio_id === undefined) {
           categoria.nivel_servicio_id = false;
-        else
+        } else {
           categoria.nivel_servicio_id = self.categoria.nivel_servicio_id;
+        }
         categoria.incluyeProtocolo = self.categoria.incluyeProtocolo;
         categoria.$save();
       };
@@ -269,7 +248,7 @@
 
     self.create =
       function() {
-        var lugar = new Lugar;
+        var lugar = new Lugar();
         lugar.nombre = self.lugar.nombre;
         lugar.descripcion = self.lugar.descripcion;
         lugar.tipolugar = parseInt(self.lugar.tipo_lugar_id, 10);
@@ -282,7 +261,7 @@
           self.filas[0].tipolugar = lugar.tipolugar;
           self.filas = null;
         } else {
-          tipoLugar.$save();
+          lugar.$save();
           self.gridOptions1.data.push({
             'nombre': lugar.nombre,
             'descripcion': lugar.descripcion,
@@ -338,23 +317,23 @@
 
   function LoginController($location) {
     this.login = function() {
-        $location.path('actividad');
-    }
+      $location.path('actividad');
+    };
 
   }
 
   function PersonaCreateController(Persona, uiGridConstants) {
 
     var self = this;
-
+    this.registarUsuario = true;
     self.create =
       function() {
 
-        var persona = new Persona;
+        var persona = new Persona();
         persona.identificacion = self.persona.identificacion;
         persona.nombres = self.persona.nombres;
         persona.apellidos = self.persona.apellidos;
-        persona.tipoidentificacion = parseInt(self.persona.tipo_identificacion_id, 10);
+        persona.tipoidentificacion = parseInt(self.persona.tipoIdentificacionId, 10);
         persona.tipoempleado = parseInt(self.persona.tipoempleado, 10);
         persona.usuario = self.persona.usuario;
         persona.password = self.persona.password;
@@ -420,17 +399,18 @@
     this.create =
       function() {
 
-        var persona = new Persona;
+        var persona = new Persona();
         persona.identificacion = self.persona.identificacion;
         persona.nombres = self.persona.nombres;
         persona.apellidos = self.persona.apellidos;
-        persona.tipoidentificacion = parseInt(self.persona.tipo_identificacion_id, 10);
+        persona.tipoidentificacion = parseInt(self.persona.tipoIdentificacionId, 10);
         persona.tipoempleado = parseInt(self.persona.tipoempleado, 10);
         persona.usuario = self.persona.usuario;
         persona.password = self.persona.password;
         persona.passwordrep = self.persona.passwordrep;
         persona.$save();
       };
+
   }
 
   function PersonaListController(Persona) {
@@ -466,7 +446,7 @@
         modal.element.modal();
         modal.close.then(function(result) {
           $scope.complexResult = 'Name: ' + result.name + ', age: ' + result.age;
-          var calificacion = new CalificacionActividad;
+          var calificacion = new Supervision();
           calificacion.nombre = result.name;
           calificacion.actividad_id = 1;
           calificacion.$save();
@@ -503,12 +483,9 @@
     };
 
 
-    self.create =
-      function() {
+    self.create=function() {
 
-        var supervision = new Supervision;
-
-      };
+    };
 
     this.supervisiones = Supervision.query();
 
@@ -553,7 +530,7 @@
         }
       }).then(function(modal) {
         modal.element.modal();
-        modal.close.then(function(result) {
+        modal.close.then(function() {
 
         });
       });
@@ -561,13 +538,13 @@
 
     self.create =
       function() {
-        var tipoLugar = new TipoLugar;
+        var tipoLugar = new TipoLugar();
         tipoLugar.nombre = self.tipoLugar.nombre;
         tipoLugar.descripcion = self.tipoLugar.descripcion;
         tipoLugar.id = self.tipoLugar.id;
 
         if (tipoLugar.id !== undefined) {
-          tipoEmpleado.$update();
+          tipoLugar.$update();
           self.filas[0].nombre = tipoLugar.nombre;
           self.filas[0].descripcion = tipoLugar.descripcion;
           self.filas = null;
@@ -626,7 +603,7 @@
 
     self.create =
       function() {
-        var tipoEmpleado = new TipoEmpleado;
+        var tipoEmpleado = new TipoEmpleado();
         tipoEmpleado.nombre = self.tipoEmpleado.nombre;
         tipoEmpleado.descripcion = self.tipoEmpleado.descripcion;
         tipoEmpleado.id = self.tipoEmpleado.id;
@@ -690,7 +667,7 @@
     var self = this;
     self.create =
       function() {
-        var tipoIdentificacion = new TipoIdentificacion;
+        var tipoIdentificacion = new TipoIdentificacion();
         tipoIdentificacion.nombre = self.tipoIdentificacion.nombre;
         tipoIdentificacion.codigo = self.tipoIdentificacion.codigo;
         tipoIdentificacion.$save();
@@ -701,5 +678,28 @@
     this.tipos = TipoIdentificacion.query();
   }
 
+  angular
+    .module('blog.controllers', ['blog.services', 'angularModalService'])
+    .controller('ActividadCreateController', ActividadCreateController)
+    .controller('ActividadListController', ActividadListController)
+    .controller('ActividadTipoLugarListController', ActividadTipoLugarListController)
+    .controller('ActividadTipoLugarCreateController', ActividadTipoLugarCreateController)
+    .controller('CalificacionActividadListController', CalificacionActividadListController)
+    .controller('CalificacionActividadCreateController', CalificacionActividadCreateController)
+    .controller('CategoriaVehiculoCreateController', CategoriaVehiculoCreateController)
+    .controller('CategoriaVehiculoListController', CategoriaVehiculoListController)
+    .controller('EvaluacionListController', EvaluacionListController)
+    .controller('LoginController', LoginController)
+    .controller('LugarCreateController', LugarCreateController)
+    .controller('LugarListController', LugarListController)
+    .controller('PersonaCreateController', PersonaCreateController)
+    .controller('PersonaListController', PersonaListController)
+    .controller('SupervisionListController', SupervisionListController)
+    .controller('TipoLugarCreateController', TipoLugarCreateController)
+    .controller('TipoLugarListController', TipoLugarListController)
+    .controller('TipoIdentificacionCreateController', TipoIdentificacionCreateController)
+    .controller('TipoIdentificacionListController', TipoIdentificacionListController)
+    .controller('TipoEmpleadoCreateController', TipoEmpleadoCreateController)
+    .controller('TipoEmpleadoListController', TipoEmpleadoListController);
 
 })();
