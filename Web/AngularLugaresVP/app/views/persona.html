@@ -1,1 +1,44 @@
-<div id="wrapper" ng-controller="PersonaCreateController as perCreateCtrl">    <form name="personaCreate" role="form" ng-submit="perCreateCtrl.create()">    </br>      <div align="center" style="font-size:20px;">REGISTRO DE EMPLEADOS</div>    </br>        <fieldset class="form-group">      <label>Tipo de Identificacion:        <select class="js-example-basic-single" id="categ" style="width: 100%" ng-controller="TipoIdentificacionListController as tiidListCtrl" ng-model="perCreateCtrl.persona.tipo_identificacion_id">        <option ng-repeat="tip in tiidListCtrl.tipos" value="{{tip.id}}">{{tip.codigo}}</option>      </select></label>    </fieldset>    <fieldset class="form-group">      <label>Identificacion:</label>      <input class="form-control input-lg" type="text" placeholder="Identificacion"        ng-model="perCreateCtrl.persona.identificacion">    </fieldset>    <fieldset class="form-group">      <label>Nombres:</label>      <input class="form-control input-lg" type="text" placeholder="Nombres"        ng-model="perCreateCtrl.persona.nombres">    </fieldset>    <fieldset class="form-group">      <label>Apellidos:</label>      <input class="form-control input-lg" type="text" placeholder="Apellidos"        ng-model="perCreateCtrl.persona.apellidos">    </fieldset>     <fieldset class="form-group">      <label>Tipo de Usuario/Empleado:        <select class="js-example-basic-single" id="categ" style="width: 100%"         ng-controller="TipoEmpleadoListController as tiemListCtrl"         ng-model="perCreateCtrl.persona.tipoempleado">        <option ng-repeat="tiem in tiemListCtrl.tipos" value="{{tiem.id}}">{{tiem.nombre}}</option>      </select></label>    </fieldset>    <fieldset class="form-group">      <label>Registrar Usuario?</label>      <input type="checkbox" ng-model="string" class="js-example-basic-single" >          </fieldset>            <fieldset class="form-group">      <label>Usuario:</label>      <input class="form-control input-lg" type="text" placeholder="Usuario"        ng-model="perCreateCtrl.persona.usuario">    </fieldset>    <fieldset class="form-group">      <label>Contraseña:</label>      <input class="form-control input-lg" type="password" placeholder="Escriba aqui su contraseña"        ng-model="perCreateCtrl.persona.password">    </fieldset>    <fieldset class="form-group">      <label>Repetir Contraseña:</label>      <input class="form-control input-lg" type="password" placeholder="Repita aqui su contraseña"        ng-model="perCreateCtrl.persona.passwordrep">    </fieldset>        <button class="btn btn-primary btn-lg" type="submit" >      Guardar    </button>  </form>  <div ui-grid="perCreateCtrl.gridOptions1" ui-grid-selection ui-grid-pagination class="myGrid"></div>  </br>  <button class="btn btn-primary btn-lg" type="button" ng-click="tipCreateCtrl.editar()">Editar</button>  <button class="btn btn-primary btn-lg" type="button" ng-click="tipCreateCtrl.editar()">Eliminar</button></div>
+<div ng-include="'views/common/sidemenu.tpl.html'"></div>
+<div class="gray-bg dashbard-1" id="page-wrapper">
+  <div ng-include="'views/common/topbar.tpl.html'"></div>
+  <div class="container-fluid" id="wrapper" ng-controller="PersonaCreateController as perCreateCtrl">
+    <div class="row">
+      <form name="personaCreate" ng-submit="perCreateCtrl.create()" role="form">
+        <div align="center" style="font-size:20px;">REGISTRO DE EMPLEADOS</div>
+        <fieldset class="form-group">
+          <label>Tipo de Identificacion:</label>
+          <select class="js-example-basic-single" id="categ" ng-controller="TipoIdentificacionListController as tiidListCtrl" ng-model="perCreateCtrl.persona.tipo_identificacion_id" style="width: 100%">
+            <option ng-repeat="tip in tiidListCtrl.tipos" value="{{tip.id}}">{{tip.codigo}}</option>
+          </select>
+          <label>Identificacion:</label>
+          <input class="form-control input-lg" ng-model="perCreateCtrl.persona.identificacion" placeholder="Identificacion" type="text">
+          <label>Nombres:</label>
+          <input class="form-control input-lg" ng-model="perCreateCtrl.persona.nombres" placeholder="Nombres" type="text">
+          <label>Apellidos:</label>
+          <input class="form-control input-lg" ng-model="perCreateCtrl.persona.apellidos" placeholder="Apellidos" type="text">
+          <label>Tipo de Usuario/Empleado:
+          </label>
+          <select class="js-example-basic-single" id="categ" ng-controller="TipoEmpleadoListController as tiemListCtrl" ng-model="perCreateCtrl.persona.tipoempleado" style="width: 100%">
+            <option ng-repeat="tiem in tiemListCtrl.tipos" value="{{tiem.id}}">{{tiem.nombre}}</option>
+          </select>
+          <label>Registrar Usuario?</label>
+          <input class="js-example-basic-single" ng-model="string" type="checkbox">
+          <label>Usuario:</label>
+          <input class="form-control input-lg" ng-model="perCreateCtrl.persona.usuario" placeholder="Usuario" type="text">
+          <label>Contraseña:</label>
+          <input class="form-control input-lg" ng-model="perCreateCtrl.persona.password" placeholder="Escriba aqui su contraseña" type="password">
+          <label>Repetir Contraseña:</label>
+          <input class="form-control input-lg" ng-model="perCreateCtrl.persona.passwordrep" placeholder="Repita aqui su contraseña" type="password">
+        </fieldset>
+        <button class="btn btn-primary btn-lg" type="submit">
+          Guardar
+        </button>
+      </form>
+    </div>
+    <div class="row top3">
+      <div class="myGrid" ui-grid-pagination ui-grid-selection ui-grid="perCreateCtrl.gridOptions1"></div>
+      <button class="btn btn-primary btn-lg" ng-click="tipCreateCtrl.editar()" type="button">Editar</button>
+      <button class="btn btn-primary btn-lg" ng-click="tipCreateCtrl.editar()" type="button">Eliminar</button>
+    </div>
+  </div>
+</div>
