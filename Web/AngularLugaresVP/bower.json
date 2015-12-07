@@ -13,6 +13,7 @@
     "fontawesome": "~4.3.0",
     "jquery.gritter": "~1.7.4",
     "metisMenu": "~2.1.0",
-    "toastr": "~2.1.2"
+    "toastr": "~2.1.2",
+    "angular-qrcode": "monospaced/angular-qrcode#~6.1.3"
   }
 }

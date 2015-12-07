@@ -1,0 +1,16 @@
+<div class="modal fade" >
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button aria-hidden="true" class="close" data-dismiss="modal" ng-click="close()" type="button">&times;</button>
+        <h4 class="modal-title">Codigo QR</h4>
+      </div>
+      <div class="modal-body">
+        <qrcode data="{{qrCtrl.qrCodeId}}" download error-correction-level="M" size="274" version="4"></qrcode>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary" data-dismiss="modal" ng-click="qrCtrl.close()" type="button">Salir</button>
+      </div>
+    </div>
+  </div>
+</div>

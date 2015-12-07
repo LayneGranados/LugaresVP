@@ -43,7 +43,7 @@
     $scope.showComplex = function() {
       ModalService.showModal({
         templateUrl: 'views/agregarCalificacion.html',
-        controller: 'ComplexController',
+        controller: '',
         inputs: {
           title: 'A More Complex Example'
         }
@@ -242,39 +242,38 @@
     this.evaluaciones = Evaluacion.query();
   }
 
-  function LugarCreateController(Lugar, uiGridConstants) {
+  function LugarCreateController(Lugar, uiGridConstants, ModalService) {
 
     var self = this;
 
-    self.create =
-      function() {
-        var lugar = new Lugar();
-        lugar.nombre = self.lugar.nombre;
-        lugar.descripcion = self.lugar.descripcion;
-        lugar.tipolugar = parseInt(self.lugar.tipo_lugar_id, 10);
-        lugar.id = self.lugar.id;
+    self.create = function() {
+      var lugar = new Lugar();
+      lugar.nombre = self.lugar.nombre;
+      lugar.descripcion = self.lugar.descripcion;
+      lugar.tipolugar = parseInt(self.lugar.tipo_lugar_id, 10);
+      lugar.id = self.lugar.id;
 
-        if (lugar.id !== undefined) {
-          lugar.$update();
-          self.filas[0].nombre = lugar.nombre;
-          self.filas[0].descripcion = lugar.descripcion;
-          self.filas[0].tipolugar = lugar.tipolugar;
-          self.filas = null;
-        } else {
-          lugar.$save();
-          self.gridOptions1.data.push({
-            'nombre': lugar.nombre,
-            'descripcion': lugar.descripcion,
-            'tipolugar': lugar.tipolugar,
-            'id': 0
-          });
-        }
+      if (lugar.id !== undefined) {
+        lugar.$update();
+        self.filas[0].nombre = lugar.nombre;
+        self.filas[0].descripcion = lugar.descripcion;
+        self.filas[0].tipolugar = lugar.tipolugar;
+        self.filas = null;
+      } else {
+        lugar.$save();
+        self.gridOptions1.data.push({
+          'nombre': lugar.nombre,
+          'descripcion': lugar.descripcion,
+          'tipolugar': lugar.tipolugar,
+          'id': 0
+        });
+      }
 
-        self.lugar.nombre = '';
-        self.lugar.descripcion = '';
-        self.lugar.tipolugar = '';
+      self.lugar.nombre = '';
+      self.lugar.descripcion = '';
+      self.lugar.tipolugar = '';
 
-      };
+    };
 
     this.lugares = Lugar.query();
 
@@ -299,7 +298,7 @@
       self.gridApi = gridApi;
     };
 
-    self.tugar = {};
+    self.lugar = {};
     self.filas = {};
     this.editar = function() {
       self.filas = self.gridApi.selection.getSelectedRows();
@@ -307,8 +306,31 @@
       self.lugar.descripcion = self.filas[0].descripcion;
       self.lugar.tipolugar = self.filas[0].tipolugar;
       self.lugar.id = self.filas[0].id;
-
     };
+
+    this.showComplex = function() {
+      var filas = self.gridApi.selection.getSelectedRows();
+      if( filas[0] === undefined){
+        return ;
+      }
+      var id=filas[0].id;
+      if( id === undefined){
+        return ;
+      }
+      ModalService.showModal({
+        templateUrl: 'views/modalQR.html',
+        controller: 'ModalQRController',
+        inputs: {
+          title: 'Codigo QR',
+          qrCodeId: id
+        },
+        controllerAs: 'qrCtrl'
+      }).then(function(modal) {
+        modal.element.modal();
+        modal.close.then(function(result) {});
+      });
+    };
+
   }
 
   function LugarListController(Lugar) {
@@ -319,7 +341,18 @@
     this.login = function() {
       $location.path('actividad');
     };
+    this.logout = function() {
+      $location.path('login/');
+    };
+  }
 
+  function ModalQRController(title,qrCodeId,$scope) {
+    this.title = title;
+    this.qrCodeId=qrCodeId;
+    console.log('qrCodeId: '+qrCodeId)
+    this.close = function ( ) {
+      console.log('cierra esta ventana');
+    }
   }
 
   function PersonaCreateController(Persona, uiGridConstants) {
@@ -438,7 +471,7 @@
     $scope.showComplex = function() {
       ModalService.showModal({
         templateUrl: 'views/modalCalificaciones.html',
-        controller: 'ComplexController',
+        controller: 'SupervisionListController',
         inputs: {
           title: 'A More Complex Example'
         }
@@ -483,7 +516,7 @@
     };
 
 
-    self.create=function() {
+    self.create = function() {
 
     };
 
@@ -692,6 +725,7 @@
     .controller('LoginController', LoginController)
     .controller('LugarCreateController', LugarCreateController)
     .controller('LugarListController', LugarListController)
+    .controller('ModalQRController', ModalQRController)
     .controller('PersonaCreateController', PersonaCreateController)
     .controller('PersonaListController', PersonaListController)
     .controller('SupervisionListController', SupervisionListController)
