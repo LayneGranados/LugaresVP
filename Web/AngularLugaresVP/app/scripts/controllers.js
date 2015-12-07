@@ -355,6 +355,9 @@
     }
   }
 
+  function modalActividades() {
+
+  }
   function PersonaCreateController(Persona, uiGridConstants) {
 
     var self = this;
@@ -557,7 +560,8 @@
     $scope.showComplex = function() {
       ModalService.showModal({
         templateUrl: 'views/modalActividades.html',
-        controller: 'ComplexController',
+        controller: 'modalActividades',
+        controllerAs: 'actividadesCtrl',
         inputs: {
           title: 'A More Complex Example'
         }
@@ -725,6 +729,7 @@
     .controller('LoginController', LoginController)
     .controller('LugarCreateController', LugarCreateController)
     .controller('LugarListController', LugarListController)
+    .controller('modalActividades', modalActividades)
     .controller('ModalQRController', ModalQRController)
     .controller('PersonaCreateController', PersonaCreateController)
     .controller('PersonaListController', PersonaListController)
