@@ -32,7 +32,7 @@
     <string name="description_title_placeholder">Cool Title Of Some Movie</string>
     <string name="social_2_placeholder">Hotels &amp; Clubs</string>
     <string name="social_3_placeholder">From 2 PM</string>
-    <string name="app_title">Lugares - CC Ventura Plaza</string>
+    <string name="app_title">Inspección Zonas-Ventura Plaza</string>
     <string name="explore">Explore</string>
     <string name="buy">"  Buy  "</string>
     <string name="hidden_view_text">Click Me</string>
@@ -55,6 +55,13 @@
     <string name="estado">Estado: </string>
     <string name="fecha_hora">Fecha y Hora:</string>
     <string name="direccion_recogida">Dirección:</string>
+
+    <string name="action_nuevo_usuario">Nuevo Usuario</string>
+    <string name="action_usuario_activo">Usuario activo</string>
+    <string name="action_actualizar_eventos">Actualizar Supervisiones</string>
+    <string name="action_actualizar">Actualizar</string>
+    <string name="action_cerrar_sesion_de_usuario">Cerrar sesión de Usuario</string>
+    <string name="action_cerrar_sesion">Cerrar Sesión</string>
 
 
 

@@ -7,11 +7,13 @@ import co.gapx.lugaresvp.business.EmpleadoBusiness;
 import co.gapx.lugaresvp.domain.Lugar;
 import co.gapx.lugaresvp.domain.Supervision;
 import co.gapx.lugaresvp.domain.Empleado;
+import java.text.Format;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 import javax.servlet.http.HttpServletResponse;
 import org.json.simple.JSONValue;
@@ -111,7 +113,15 @@ public class SupervisionController {
             this.crudS.refresh(c.getEmpleado());
             this.crudS.refresh(c.getEmpleado().getPersona());
             map.put("supervisor", c.getEmpleado().getPersona().getNombres() + " "+ c.getEmpleado().getPersona().getApellidos());
-            map.put("fecha", dateFormatter.format(c.getFecha()));            
+            String fecha="";
+            
+            try{
+                Format formatter = new SimpleDateFormat("EEEE, dd MMMM yyyy HH:mm",new Locale("es", "ES"));
+                fecha = formatter.format(c.getFecha());
+           
+            }catch(Exception e){
+            }
+            map.put("fecha", fecha);            
             l.add(map);
         }
         return l;

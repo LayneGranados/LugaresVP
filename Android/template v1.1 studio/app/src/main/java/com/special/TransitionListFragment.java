@@ -82,7 +82,7 @@ public class TransitionListFragment extends Fragment {
         title.setText(t);
         desc.setText(d);
 
-        listView.setOnItemClickListener(new OnItemClickListener() {
+        /*listView.setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View viewa, int i, long l) { 
                 ListItem item = (ListItem) listView.getAdapter().getItem(i);
@@ -99,7 +99,7 @@ public class TransitionListFragment extends Fragment {
                 startActivity(intent);
                 getActivity().overridePendingTransition(0, 0);
             }
-        });
+        });*/
     }
 
     private void getListData(){
