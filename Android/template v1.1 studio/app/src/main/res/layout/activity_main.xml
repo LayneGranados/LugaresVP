@@ -46,7 +46,7 @@
                     		android:padding="7dp"
                     		android:fontFamily="sans-serif-light" 
                     		android:text="@string/app_title"
-                   			android:textSize="@dimen/textsize_large"
+                   			android:textSize="@dimen/textsize_medium_large"
                     		android:textColor="@android:color/white"
                     		android:layout_gravity="center"/>
 
