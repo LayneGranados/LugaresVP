@@ -554,6 +554,77 @@
     };
   }
 
+  function TipoEmpleadoCreateController(TipoEmpleado, uiGridConstants) {
+    var self = this;
+
+    self.create =
+      function() {
+        var tipoEmpleado = new TipoEmpleado();
+        tipoEmpleado.nombre = self.tipoEmpleado.nombre;
+        tipoEmpleado.descripcion = self.tipoEmpleado.descripcion;
+        tipoEmpleado.id = self.tipoEmpleado.id;
+        if (tipoEmpleado.id !== undefined) {
+          tipoEmpleado.$update();
+          self.filas[0].nombre = tipoEmpleado.nombre;
+          self.filas[0].descripcion = tipoEmpleado.descripcion;
+          self.filas = null;
+        } else {
+          tipoEmpleado.$save();
+          self.gridOptions1.data.push({
+            'nombre': tipoEmpleado.nombre,
+            'descripcion': tipoEmpleado.descripcion,
+            'id': 0
+          });
+        }
+
+        self.tipoEmpleado.nombre = '';
+        self.tipoEmpleado.descripcion = '';
+
+      };
+
+    this.tipos = TipoEmpleado.query();
+
+    this.gridOptions1 = {
+      paginationPageSize: 15,
+      data: self.tipos,
+      columnDefs: [{
+        field: 'id'
+      }, {
+        field: 'nombre'
+      }, {
+        field: 'descripcion'
+      }],
+      multiSelect: false,
+      enableRowSelection: true,
+      enableRowHeaderSelection: false
+    };
+
+    this.gridOptions1.onRegisterApi = function(gridApi) {
+      self.gridApi = gridApi;
+    };
+
+    self.tipoEmpleado = {};
+    self.filas = {};
+    this.editar = function() {
+      self.filas = self.gridApi.selection.getSelectedRows();
+      self.tipoEmpleado.nombre = self.filas[0].nombre;
+      self.tipoEmpleado.descripcion = self.filas[0].descripcion;
+      self.tipoEmpleado.id = self.filas[0].id;
+    };
+
+    this.eliminar = function (){
+      self.filas = self.gridApi.selection.getSelectedRows();
+      var tipoEmpleado = new TipoEmpleado();
+      tipoEmpleado.id = self.filas[0].id;
+    }
+
+  }
+
+  function TipoEmpleadoListController(TipoEmpleado) {
+    this.tipos = TipoEmpleado.query();
+  }
+
+
   function TipoLugarCreateController(TipoLugar, uiGridConstants, $scope, ModalService) {
     var self = this;
 
@@ -635,70 +706,7 @@
     this.tipos = TipoLugar.query();
   }
 
-  function TipoEmpleadoCreateController(TipoEmpleado, uiGridConstants) {
-    var self = this;
 
-    self.create =
-      function() {
-        var tipoEmpleado = new TipoEmpleado();
-        tipoEmpleado.nombre = self.tipoEmpleado.nombre;
-        tipoEmpleado.descripcion = self.tipoEmpleado.descripcion;
-        tipoEmpleado.id = self.tipoEmpleado.id;
-        if (tipoEmpleado.id !== undefined) {
-          tipoEmpleado.$update();
-          self.filas[0].nombre = tipoEmpleado.nombre;
-          self.filas[0].descripcion = tipoEmpleado.descripcion;
-          self.filas = null;
-        } else {
-          tipoEmpleado.$save();
-          self.gridOptions1.data.push({
-            'nombre': tipoEmpleado.nombre,
-            'descripcion': tipoEmpleado.descripcion,
-            'id': 0
-          });
-        }
-
-        self.tipoEmpleado.nombre = '';
-        self.tipoEmpleado.descripcion = '';
-
-      };
-
-    this.tipos = TipoEmpleado.query();
-
-    this.gridOptions1 = {
-      paginationPageSize: 15,
-      data: self.tipos,
-      columnDefs: [{
-        field: 'id'
-      }, {
-        field: 'nombre'
-      }, {
-        field: 'descripcion'
-      }],
-      multiSelect: false,
-      enableRowSelection: true,
-      enableRowHeaderSelection: false
-    };
-
-    this.gridOptions1.onRegisterApi = function(gridApi) {
-      self.gridApi = gridApi;
-    };
-
-    self.tipoEmpleado = {};
-    self.filas = {};
-    this.editar = function() {
-      self.filas = self.gridApi.selection.getSelectedRows();
-      self.tipoEmpleado.nombre = self.filas[0].nombre;
-      self.tipoEmpleado.descripcion = self.filas[0].descripcion;
-      self.tipoEmpleado.id = self.filas[0].id;
-
-    };
-
-  }
-
-  function TipoEmpleadoListController(TipoEmpleado) {
-    this.tipos = TipoEmpleado.query();
-  }
 
   function TipoIdentificacionCreateController(TipoIdentificacion) {
     var self = this;
