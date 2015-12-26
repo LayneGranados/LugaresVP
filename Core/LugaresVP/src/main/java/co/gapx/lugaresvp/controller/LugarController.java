@@ -4,6 +4,7 @@ import co.gapx.lugaresvp.business.CRUDService;
 import co.gapx.lugaresvp.business.LugarBusiness;
 import co.gapx.lugaresvp.business.TipoLugarBusiness;
 import co.gapx.lugaresvp.domain.Lugar;
+import co.gapx.lugaresvp.domain.TipoEmpleado;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -65,27 +66,27 @@ public class LugarController {
     
     @RequestMapping(value = "/lugar", method = RequestMethod.POST)
     @Transactional
-    public @ResponseBody boolean save(@RequestBody String json, HttpServletResponse response) {
+    public @ResponseBody Lugar save(@RequestBody String json, HttpServletResponse response) {
         Map obj=(Map) JSONValue.parse(json);
         System.out.println("json: "+json);
         Lugar cv = new Lugar();
         cv.setNombre((String)obj.get("nombre"));
         cv.setDescripcion((String)obj.get("descripcion"));
         cv.setTipoLugar(this.tipolugarB.get(((Long)obj.get("tipolugar")).intValue()));
-        boolean saved = this.lugarB.save(cv);
+        Lugar saved = this.lugarB.save(cv);
         return saved;
     }
     
     @RequestMapping(value = "/lugar", method = RequestMethod.PUT)
     @Transactional
-    public @ResponseBody boolean put(@RequestBody String json, HttpServletResponse response) {
+    public @ResponseBody Lugar put(@RequestBody String json, HttpServletResponse response) {
         Map obj=(Map) JSONValue.parse(json);
         int id = Integer.parseInt((String)obj.get("id"));
         Lugar update =this.lugarB.get(id); 
         update.setNombre((String)obj.get("nombre"));
         update.setDescripcion((String)obj.get("descripcion"));
         update.setTipoLugar(this.tipolugarB.get(((Long)obj.get("tipolugar")).intValue()));
-        boolean saved = this.lugarB.save(update);
+        Lugar saved = this.lugarB.save(update);
         return saved;
     }
     
@@ -127,6 +128,23 @@ public class LugarController {
 
 		outStream.flush();
 		outStream.close();
+    }
+    
+    @RequestMapping(value = "/lugar/del", method = RequestMethod.POST)
+    @Transactional
+    public @ResponseBody Lugar delete(@RequestBody String json, HttpServletResponse response) {
+        Map obj=(Map) JSONValue.parse(json);
+        Lugar toDelete =this.lugarB.get(((Long)obj.get("id")).intValue()); 
+        try{
+            System.out.println("json: "+json);
+            boolean deleted = this.lugarB.delete(toDelete);
+            if(deleted){
+                toDelete.setId(-1);
+            }
+            return toDelete;
+        } catch (Exception ex){
+            return toDelete;
+        }
     }
     
     

@@ -21,7 +21,7 @@ public class ActividadBusinessImpl implements ActividadBusiness, Serializable{
 
     @Override
     @Transactional
-    public boolean save(Actividad e) {
+    public Actividad save(Actividad e) {
         return this.actividadDAO.save(e);
     }
     
@@ -35,6 +35,12 @@ public class ActividadBusinessImpl implements ActividadBusiness, Serializable{
     @Transactional
     public Actividad get(int id) {
         return this.actividadDAO.get(id);
+    }
+    
+    @Override
+    @Transactional
+    public boolean delete(Actividad e) {
+        return this.actividadDAO.delete(e);
     }
 
 }

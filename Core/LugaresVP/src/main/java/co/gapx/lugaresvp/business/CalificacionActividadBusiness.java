@@ -12,10 +12,13 @@ public interface CalificacionActividadBusiness {
     
     public List<CalificacionActividad> listALl();
     
-    public boolean save(CalificacionActividad calificacionActividad);
+    public CalificacionActividad save(CalificacionActividad calificacionActividad);
     
     public CalificacionActividad get(int id);
     
     public List<CalificacionActividad> getDeActividad(Actividad id);
+    
+  
+    public boolean delete(CalificacionActividad e);
     
 }

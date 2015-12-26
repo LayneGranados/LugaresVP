@@ -11,8 +11,10 @@ public interface TipoLugarDAO {
     
     public List<TipoLugar> listALl();
     
-    public boolean save(TipoLugar tipoLugar);
+    public TipoLugar save(TipoLugar tipoLugar);
     
     public TipoLugar get(int id);
+    
+    public boolean delete(TipoLugar tipoLugar);
     
 }

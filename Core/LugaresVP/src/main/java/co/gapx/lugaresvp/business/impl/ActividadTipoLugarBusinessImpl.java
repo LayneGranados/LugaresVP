@@ -23,7 +23,7 @@ public class ActividadTipoLugarBusinessImpl implements ActividadTipoLugarBusines
 
     @Override
     @Transactional
-    public boolean save(ActividadTipoLugar e) {
+    public ActividadTipoLugar save(ActividadTipoLugar e) {
         return this.actividadTipoLugarDAO.save(e);
     }
     
@@ -49,6 +49,12 @@ public class ActividadTipoLugarBusinessImpl implements ActividadTipoLugarBusines
     @Transactional
     public ActividadTipoLugar getDeTipoLugarActividad(TipoLugar tipoLugar, Actividad actividad){
         return this.actividadTipoLugarDAO.getDeTipoLugarActividad(tipoLugar, actividad);
+    }
+    
+    @Override
+    @Transactional
+    public boolean delete(ActividadTipoLugar e) {
+        return this.actividadTipoLugarDAO.delete(e);
     }
 
 }

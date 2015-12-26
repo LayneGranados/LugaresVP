@@ -21,8 +21,14 @@ public class TipoIdentificacionBusinessImpl implements TipoIdentificacionBusines
 
     @Override
     @Transactional
-    public boolean save(TipoIdentificacion e) {
+    public TipoIdentificacion save(TipoIdentificacion e) {
         return this.tipoIdentificacionDAO.save(e);
+    }
+    
+    @Override
+    @Transactional
+    public boolean delete(TipoIdentificacion e) {
+        return this.tipoIdentificacionDAO.delete(e);
     }
     
     @Override

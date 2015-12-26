@@ -12,12 +12,15 @@ public interface SupervisionDAO {
     
     public List<Supervision> listALl();
     
-    public boolean save(Supervision supervision);
+    public Supervision save(Supervision supervision);
     
     public Supervision get(int id);
     
     public List<Supervision> getDeLugar(Lugar id);
     
     public Supervision saveWithGet(Supervision supervision);
+    
+    public boolean delete(Supervision supervision);
+    
     
 }

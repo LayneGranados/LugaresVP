@@ -22,7 +22,7 @@ public class CalificacionActividadBusinessImpl implements CalificacionActividadB
 
     @Override
     @Transactional
-    public boolean save(CalificacionActividad e) {
+    public CalificacionActividad save(CalificacionActividad e) {
         return this.calificacionActividadDAO.save(e);
     }
     
@@ -42,6 +42,12 @@ public class CalificacionActividadBusinessImpl implements CalificacionActividadB
     @Transactional
     public List<CalificacionActividad> getDeActividad(Actividad id){
         return this.calificacionActividadDAO.getDeActividad(id);
+    }
+    
+    @Override
+    @Transactional
+    public boolean delete(CalificacionActividad e) {
+        return this.calificacionActividadDAO.delete(e);
     }
 
 }

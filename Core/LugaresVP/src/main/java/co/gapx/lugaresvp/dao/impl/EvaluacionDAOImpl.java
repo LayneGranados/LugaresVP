@@ -34,19 +34,19 @@ public class EvaluacionDAOImpl implements EvaluacionDAO, Serializable{
     
     @Override
     @Transactional
-    public boolean save(Evaluacion evaluacion) {
+    public Evaluacion save(Evaluacion evaluacion) {
         boolean x=false;
         try {
             this.getCurrentSession().saveOrUpdate(evaluacion);
-            if(evaluacion.getId()!=null){
-                x = true;
+            if(evaluacion.getId()==null){
+                return null;
             }
         } catch (HibernateException ex) {
             this.logger.error("Error Guardando Evaluacion");
             this.logger.error("Mensaje: "+ ex.getMessage());
             throw ex;
         }
-        return x;
+        return evaluacion;
     }
 
     @Override
@@ -63,6 +63,19 @@ public class EvaluacionDAOImpl implements EvaluacionDAO, Serializable{
         Evaluacion evaluacion= (Evaluacion) getCurrentSession().createQuery("from Evaluacion e where e.id= :id").setParameter("id", id).list().get(0);
         this.evictUnProxy(evaluacion);
         return evaluacion;
+    }
+    
+    @Override
+    @Transactional
+    public boolean delete(Evaluacion evaluacion) {
+        try {
+            this.getCurrentSession().delete(evaluacion);
+            return true;
+        } catch (HibernateException hb){
+            return false;
+        } catch (Exception ex) {
+            return false;
+        }
     }
     
     private void evictUnProxy(List lista) {

@@ -49,25 +49,42 @@ public class TipoEmpleadoController {
     
     @RequestMapping(value = "/tipoEmpleado", method = RequestMethod.POST)
     @Transactional
-    public @ResponseBody boolean save(@RequestBody String json, HttpServletResponse response) {
+    public @ResponseBody TipoEmpleado save(@RequestBody String json, HttpServletResponse response) {
         Map obj=(Map) JSONValue.parse(json);
         TipoEmpleado cv = new TipoEmpleado();
         cv.setNombre((String)obj.get("nombre"));
         cv.setDescripcion((String)obj.get("descripcion"));
      // aqui sacar los parametros del json y setearlo en el nuevo objeto
-        boolean saved = this.tipoEmpleadoB.save(cv);
+        TipoEmpleado saved = this.tipoEmpleadoB.save(cv);
         return saved;
     }
     
     @RequestMapping(value = "/tipoEmpleado", method = RequestMethod.PUT)
     @Transactional
-    public @ResponseBody boolean put(@RequestBody String json, HttpServletResponse response) {
+    public @ResponseBody TipoEmpleado put(@RequestBody String json, HttpServletResponse response) {
         Map obj=(Map) JSONValue.parse(json);
         TipoEmpleado update =this.tipoEmpleadoB.get(((Long)obj.get("id")).intValue()); 
         update.setNombre((String)obj.get("nombre"));
         update.setDescripcion((String)obj.get("descripcion"));
-        boolean saved = this.tipoEmpleadoB.save(update);
+        TipoEmpleado saved = this.tipoEmpleadoB.save(update);
         return saved;
+    }
+    
+    @RequestMapping(value = "/tipoEmpleado/del", method = RequestMethod.POST)
+    @Transactional
+    public @ResponseBody TipoEmpleado delete(@RequestBody String json, HttpServletResponse response) {
+        Map obj=(Map) JSONValue.parse(json);
+        TipoEmpleado toDelete =this.tipoEmpleadoB.get(((Long)obj.get("id")).intValue()); 
+        try{
+            System.out.println("json: "+json);
+            boolean deleted = this.tipoEmpleadoB.delete(toDelete);
+            if(deleted){
+                toDelete.setId(-1);
+            }
+            return toDelete;
+        } catch (Exception ex){
+            return toDelete;
+        }
     }
     
 }

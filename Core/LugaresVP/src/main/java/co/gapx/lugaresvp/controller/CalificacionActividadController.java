@@ -63,26 +63,26 @@ public class CalificacionActividadController {
     
     @RequestMapping(value = "/calificacionActividad", method = RequestMethod.POST)
     @Transactional
-    public @ResponseBody boolean save(@RequestBody String json, HttpServletResponse response) {
+    public @ResponseBody CalificacionActividad save(@RequestBody String json, HttpServletResponse response) {
         Map obj=(Map) JSONValue.parse(json);
         CalificacionActividad cv = new CalificacionActividad();
         int idActividad = ((Long)obj.get("actividad")).intValue();
         cv.setActividad(this.actividadB.get(idActividad));
         cv.setNombre((String)obj.get("nombre"));
-        boolean saved = this.calificacionActividadB.save(cv);
+        CalificacionActividad saved = this.calificacionActividadB.save(cv);
         return saved;
     }
     
     @RequestMapping(value = "/calificacionActividad", method = RequestMethod.PUT)
     @Transactional
-    public @ResponseBody boolean put(@RequestBody String json, HttpServletResponse response) {
+    public @ResponseBody CalificacionActividad put(@RequestBody String json, HttpServletResponse response) {
         Map obj=(Map) JSONValue.parse(json);
         int id = Integer.parseInt((String)obj.get("id"));
         CalificacionActividad update =this.calificacionActividadB.get(id); 
         int idActividad = ((Long)obj.get("actividad")).intValue();
         update.setActividad(this.actividadB.get(idActividad));
         update.setNombre((String)obj.get("nombre"));
-        boolean saved = this.calificacionActividadB.save(update);
+        CalificacionActividad saved = this.calificacionActividadB.save(update);
         return saved;
     }
     
@@ -113,6 +113,23 @@ public class CalificacionActividadController {
                 }
         }
         return l;
+    }
+    
+    @RequestMapping(value = "/calificacionActividad/del", method = RequestMethod.POST)
+    @Transactional
+    public @ResponseBody CalificacionActividad delete(@RequestBody String json, HttpServletResponse response) {
+        Map obj=(Map) JSONValue.parse(json);
+        CalificacionActividad toDelete =this.calificacionActividadB.get(((Long)obj.get("id")).intValue()); 
+        try{
+            System.out.println("json: "+json);
+            boolean deleted = this.calificacionActividadB.delete(toDelete);
+            if(deleted){
+                toDelete.setId(-1);
+            }
+            return toDelete;
+        } catch (Exception ex){
+            return toDelete;
+        }
     }
     
 }

@@ -64,7 +64,7 @@ public class SupervisionController {
     
     @RequestMapping(value = "/supervision", method = RequestMethod.POST)
     @Transactional
-    public @ResponseBody boolean save(@RequestBody String json, HttpServletResponse response) {
+    public @ResponseBody Supervision save(@RequestBody String json, HttpServletResponse response) {
         Map obj=(Map) JSONValue.parse(json);
         Supervision cv = new Supervision();
         Lugar l = this.lugarB.get(((Long)obj.get("lugar")).intValue());
@@ -72,13 +72,13 @@ public class SupervisionController {
         cv.setLugar(l);
         cv.setEmpleado(s);
         cv.setFecha(new Date((String)obj.get("fecha")));
-        boolean saved = this.supervisionB.save(cv);
+        Supervision saved = this.supervisionB.save(cv);
         return saved;
     }
     
     @RequestMapping(value = "/supervision", method = RequestMethod.PUT)
     @Transactional
-    public @ResponseBody boolean put(@RequestBody String json, HttpServletResponse response) {
+    public @ResponseBody Supervision put(@RequestBody String json, HttpServletResponse response) {
         Map obj=(Map) JSONValue.parse(json);
         int id = Integer.parseInt((String)obj.get("id"));
         Supervision update =this.supervisionB.get(id); 
@@ -87,7 +87,7 @@ public class SupervisionController {
         update.setLugar(l);
         update.setEmpleado(s);
         update.setFecha(new Date((String)obj.get("fecha")));
-        boolean saved = this.supervisionB.save(update);
+        Supervision saved = this.supervisionB.save(update);
         return saved;
     }
     
@@ -125,6 +125,22 @@ public class SupervisionController {
             l.add(map);
         }
         return l;
+    }
+    
+    @RequestMapping(value = "/supervision/del", method = RequestMethod.POST)
+    @Transactional
+    public @ResponseBody Supervision delete(@RequestBody String json, HttpServletResponse response) {
+        Map obj=(Map) JSONValue.parse(json);
+        Supervision toDelete =this.supervisionB.get(((Long)obj.get("id")).intValue()); 
+        try{
+            boolean deleted = this.supervisionB.delete(toDelete);
+            if(deleted){
+                toDelete.setId(-1);
+            }
+            return toDelete;
+        } catch (Exception ex){
+            return toDelete;
+        }
     }
     
 }

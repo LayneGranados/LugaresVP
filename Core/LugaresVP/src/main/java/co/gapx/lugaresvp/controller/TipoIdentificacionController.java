@@ -3,6 +3,7 @@ package co.gapx.lugaresvp.controller;
 import co.gapx.lugaresvp.business.CRUDService;
 import co.gapx.lugaresvp.business.TipoIdentificacionBusiness;
 import co.gapx.lugaresvp.domain.TipoIdentificacion;
+import co.gapx.lugaresvp.domain.TipoLugar;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -49,26 +50,43 @@ public class TipoIdentificacionController {
     
     @RequestMapping(value = "/tipoIdentificacion", method = RequestMethod.POST)
     @Transactional
-    public @ResponseBody boolean save(@RequestBody String json, HttpServletResponse response) {
+    public @ResponseBody TipoIdentificacion save(@RequestBody String json, HttpServletResponse response) {
         Map obj=(Map) JSONValue.parse(json);
         TipoIdentificacion cv = new TipoIdentificacion();
         cv.setNombre((String)obj.get("nombre"));
         cv.setCodigo((String)obj.get("codigo"));
      // aqui sacar los parametros del json y setearlo en el nuevo objeto
-        boolean saved = this.tipoIdentificacionB.save(cv);
+        TipoIdentificacion saved = this.tipoIdentificacionB.save(cv);
         return saved;
     }
     
     @RequestMapping(value = "/tipoIdentificacion", method = RequestMethod.PUT)
     @Transactional
-    public @ResponseBody boolean put(@RequestBody String json, HttpServletResponse response) {
+    public @ResponseBody TipoIdentificacion put(@RequestBody String json, HttpServletResponse response) {
         Map obj=(Map) JSONValue.parse(json);
         TipoIdentificacion update =this.tipoIdentificacionB.get(((Long)obj.get("id")).intValue()); 
         update.setNombre((String)obj.get("nombre"));
         update.setCodigo((String)obj.get("codigo"));
        //Aqui se deben sacar del json los parametros y seterarlos en el objeto update 
-        boolean saved = this.tipoIdentificacionB.save(update);
+        TipoIdentificacion saved = this.tipoIdentificacionB.save(update);
         return saved;
+    }
+    
+    @RequestMapping(value = "/tipoIdentificacion/del", method = RequestMethod.POST)
+    @Transactional
+    public @ResponseBody TipoIdentificacion delete(@RequestBody String json, HttpServletResponse response) {
+        Map obj=(Map) JSONValue.parse(json);
+        TipoIdentificacion toDelete =this.tipoIdentificacionB.get(((Long)obj.get("id")).intValue()); 
+        try{
+            System.out.println("json: "+json);
+            boolean deleted = this.tipoIdentificacionB.delete(toDelete);
+            if(deleted){
+                toDelete.setId(-1);
+            }
+            return toDelete;
+        } catch (Exception ex){
+            return toDelete;
+        }
     }
     
 }

@@ -35,19 +35,19 @@ public class EmpleadoDAOImpl implements EmpleadoDAO, Serializable{
     
     @Override
     @Transactional
-    public boolean save(Empleado supervisor) {
+    public Empleado save(Empleado supervisor) {
         boolean x=false;
         try {
             this.getCurrentSession().saveOrUpdate(supervisor);
-            if(supervisor.getId()!=null){
-                x = true;
+            if(supervisor.getId()==null){
+                return null;
             }
         } catch (HibernateException ex) {
             this.logger.error("Error Guardando Supervisor");
             this.logger.error("Mensaje: "+ ex.getMessage());
             throw ex;
         }
-        return x;
+        return supervisor;
     }
 
     @Override
@@ -72,6 +72,19 @@ public class EmpleadoDAOImpl implements EmpleadoDAO, Serializable{
         List<Empleado> empleados= (List<Empleado>) getCurrentSession().createQuery("from Empleado e where e.login= :login").setParameter("login", login).list();
         this.evictUnProxy(empleados);
         return empleados;
+    }
+    
+    @Override
+    @Transactional
+    public boolean delete(Empleado empleado) {
+        try {
+            this.getCurrentSession().delete(empleado);
+            return true;
+        } catch (HibernateException hb){
+            return false;
+        } catch (Exception ex) {
+            return false;
+        }
     }
     
     private void evictUnProxy(List lista) {

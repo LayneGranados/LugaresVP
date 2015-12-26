@@ -22,7 +22,7 @@ public class EmpleadoBusinessImpl implements EmpleadoBusiness, Serializable{
 
     @Override
     @Transactional
-    public boolean save(Empleado e) {
+    public Empleado save(Empleado e) {
         return this.empleadoDAO.save(e);
     }
     
@@ -42,6 +42,12 @@ public class EmpleadoBusinessImpl implements EmpleadoBusiness, Serializable{
     @Transactional
     public List<Empleado> getForLogin(Login login){
         return this.empleadoDAO.getForLogin(login);
+    }
+    
+    @Override
+    @Transactional
+    public boolean delete(Empleado e) {
+        return this.empleadoDAO.delete(e);
     }
 
 }

@@ -80,6 +80,23 @@ public class LoginController {
         return log;
     }
     
+    @RequestMapping(value = "/login/del", method = RequestMethod.POST)
+    @Transactional
+    public @ResponseBody Login delete(@RequestBody String json, HttpServletResponse response) {
+        Map obj=(Map) JSONValue.parse(json);
+        Login toDelete =this.loginB.get(((Long)obj.get("id")).intValue()); 
+        try{
+            System.out.println("json: "+json);
+            boolean deleted = this.loginB.delete(toDelete);
+            if(deleted){
+                toDelete.setId(-1);
+            }
+            return toDelete;
+        } catch (Exception ex){
+            return toDelete;
+        }
+    }
+    
     
     
 }

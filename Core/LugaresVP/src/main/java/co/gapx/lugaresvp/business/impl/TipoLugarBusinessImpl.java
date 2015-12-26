@@ -21,7 +21,7 @@ public class TipoLugarBusinessImpl implements TipoLugarBusiness, Serializable{
 
     @Override
     @Transactional
-    public boolean save(TipoLugar e) {
+    public TipoLugar save(TipoLugar e) {
         return this.tipoLugarDAO.save(e);
     }
     
@@ -37,4 +37,9 @@ public class TipoLugarBusinessImpl implements TipoLugarBusiness, Serializable{
         return this.tipoLugarDAO.get(id);
     }
 
+    @Override
+    @Transactional
+    public boolean delete(TipoLugar tipoLugar){
+        return this.tipoLugarDAO.delete(tipoLugar);
+    }
 }

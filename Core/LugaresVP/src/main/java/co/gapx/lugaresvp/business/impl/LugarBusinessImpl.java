@@ -21,7 +21,7 @@ public class LugarBusinessImpl implements LugarBusiness, Serializable{
 
     @Override
     @Transactional
-    public boolean save(Lugar e) {
+    public Lugar save(Lugar e) {
         return this.lugarDAO.save(e);
     }
     
@@ -35,6 +35,12 @@ public class LugarBusinessImpl implements LugarBusiness, Serializable{
     @Transactional
     public Lugar get(int id) {
         return this.lugarDAO.get(id);
+    }
+    
+    @Override
+    @Transactional
+    public boolean delete(Lugar e) {
+        return this.lugarDAO.delete(e);
     }
 
 }

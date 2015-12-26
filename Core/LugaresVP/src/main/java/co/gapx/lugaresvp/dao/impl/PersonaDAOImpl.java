@@ -65,6 +65,19 @@ public class PersonaDAOImpl implements PersonaDAO, Serializable{
         return persona;
     }
     
+    @Override
+    @Transactional
+    public boolean delete(Persona persona) {
+        try {
+            this.getCurrentSession().delete(persona);
+            return true;
+        } catch (HibernateException hb){
+            return false;
+        } catch (Exception ex) {
+            return false;
+        }
+    }
+    
     private void evictUnProxy(List lista) {
         for (int i = 0; i < lista.size(); getCurrentSession().evict(lista.get(i)), ++i);
         for (int i = 0; i < lista.size(); hibernateUtil.initializeAndUnproxy(lista.get(i)), ++i);

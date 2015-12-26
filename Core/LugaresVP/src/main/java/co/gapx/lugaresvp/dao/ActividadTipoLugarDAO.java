@@ -13,12 +13,14 @@ public interface ActividadTipoLugarDAO {
     
     public List<ActividadTipoLugar> listALl();
     
-    public boolean save(ActividadTipoLugar actividadTipoLugar);
+    public ActividadTipoLugar save(ActividadTipoLugar actividadTipoLugar);
     
     public ActividadTipoLugar get(int id);
     
     public List<ActividadTipoLugar> getDeTipoLugar(TipoLugar id) ;
     
     public ActividadTipoLugar getDeTipoLugarActividad(TipoLugar tipoLugar, Actividad actividad);
+    
+    public boolean delete(ActividadTipoLugar actividadTipoLugar);
     
 }

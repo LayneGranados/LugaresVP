@@ -15,4 +15,6 @@ public interface PersonaDAO {
     
     public Persona get(int id);
     
+    public boolean delete(Persona persona);
+    
 }

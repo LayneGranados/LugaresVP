@@ -34,19 +34,18 @@ public class TipoEmpleadoDAOImpl implements TipoEmpleadoDAO, Serializable{
     
     @Override
     @Transactional
-    public boolean save(TipoEmpleado tipoLugar) {
-        boolean x=false;
+    public TipoEmpleado save(TipoEmpleado tipoEmpleado) {
         try {
-            this.getCurrentSession().saveOrUpdate(tipoLugar);
-            if(tipoLugar.getId()!=null){
-                x = true;
+            this.getCurrentSession().saveOrUpdate(tipoEmpleado);
+            if(tipoEmpleado.getId()==null){
+                return null;
             }
         } catch (HibernateException ex) {
             this.logger.error("Error Guardando TipoEmpleado");
             this.logger.error("Mensaje: "+ ex.getMessage());
             throw ex;
         }
-        return x;
+        return tipoEmpleado;
     }
 
     @Override
@@ -63,6 +62,19 @@ public class TipoEmpleadoDAOImpl implements TipoEmpleadoDAO, Serializable{
         TipoEmpleado tipoLugar= (TipoEmpleado) getCurrentSession().createQuery("from TipoEmpleado e where e.id= :id").setParameter("id", id).list().get(0);
         this.evictUnProxy(tipoLugar);
         return tipoLugar;
+    }
+    
+    @Override
+    @Transactional
+    public boolean delete(TipoEmpleado tipoEmpleado) {
+        try {
+            this.getCurrentSession().delete(tipoEmpleado);
+            return true;
+        } catch (HibernateException hb){
+            return false;
+        } catch (Exception ex) {
+            return false;
+        }
     }
     
     private void evictUnProxy(List lista) {

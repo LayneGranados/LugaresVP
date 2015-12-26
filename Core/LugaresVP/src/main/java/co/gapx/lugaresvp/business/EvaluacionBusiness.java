@@ -11,8 +11,10 @@ public interface EvaluacionBusiness {
     
     public List<Evaluacion> listALl();
     
-    public boolean save(Evaluacion evaluacion);
+    public Evaluacion save(Evaluacion evaluacion);
     
     public Evaluacion get(int id);
+    
+    public boolean delete(Evaluacion evaluacion);
     
 }

@@ -10,6 +10,7 @@ import org.apache.commons.logging.LogFactory;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.postgresql.util.PSQLException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -34,19 +35,18 @@ public class TipoLugarDAOImpl implements TipoLugarDAO, Serializable{
     
     @Override
     @Transactional
-    public boolean save(TipoLugar tipoLugar) {
-        boolean x=false;
+    public TipoLugar save(TipoLugar tipoLugar) {
         try {
             this.getCurrentSession().saveOrUpdate(tipoLugar);
-            if(tipoLugar.getId()!=null){
-                x = true;
+            if(tipoLugar.getId()==null){
+                return null;
             }
         } catch (HibernateException ex) {
             this.logger.error("Error Guardando TipoLugar");
             this.logger.error("Mensaje: "+ ex.getMessage());
             throw ex;
         }
-        return x;
+        return tipoLugar;
     }
 
     @Override
@@ -63,6 +63,19 @@ public class TipoLugarDAOImpl implements TipoLugarDAO, Serializable{
         TipoLugar tipoLugar= (TipoLugar) getCurrentSession().createQuery("from TipoLugar e where e.id= :id").setParameter("id", id).list().get(0);
         this.evictUnProxy(tipoLugar);
         return tipoLugar;
+    }
+    
+    @Override
+    @Transactional
+    public boolean delete(TipoLugar tipoLugar) {
+        try {
+            this.getCurrentSession().delete(tipoLugar);
+            return true;
+        } catch (HibernateException hb){
+            return false;
+        } catch (Exception ex) {
+            return false;
+        }
     }
     
     private void evictUnProxy(List lista) {

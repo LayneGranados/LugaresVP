@@ -34,19 +34,19 @@ public class TipoIdentificacionDAOImpl implements TipoIdentificacionDAO, Seriali
     
     @Override
     @Transactional
-    public boolean save(TipoIdentificacion tipoIdentificacion) {
-        boolean x=false;
+    public TipoIdentificacion save(TipoIdentificacion tipoIdentificacion) {
+      
         try {
             this.getCurrentSession().saveOrUpdate(tipoIdentificacion);
-            if(tipoIdentificacion.getId()!=null){
-                x = true;
+            if(tipoIdentificacion.getId()==null){
+                return null;
             }
         } catch (HibernateException ex) {
             this.logger.error("Error Guardando TipoIdentificacion");
             this.logger.error("Mensaje: "+ ex.getMessage());
             throw ex;
         }
-        return x;
+        return tipoIdentificacion;
     }
 
     @Override
@@ -63,6 +63,19 @@ public class TipoIdentificacionDAOImpl implements TipoIdentificacionDAO, Seriali
         TipoIdentificacion tipoIdentificacion= (TipoIdentificacion) getCurrentSession().createQuery("from TipoIdentificacion e where e.id= :id").setParameter("id", id).list().get(0);
         this.evictUnProxy(tipoIdentificacion);
         return tipoIdentificacion;
+    }
+    
+    @Override
+    @Transactional
+    public boolean delete(TipoIdentificacion tipoIdentificacion) {
+        try {
+            this.getCurrentSession().delete(tipoIdentificacion);
+            return true;
+        } catch (HibernateException hb){
+            return false;
+        } catch (Exception ex) {
+            return false;
+        }
     }
     
     private void evictUnProxy(List lista) {
