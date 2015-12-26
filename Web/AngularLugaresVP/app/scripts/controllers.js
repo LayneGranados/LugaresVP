@@ -310,12 +310,12 @@
 
     this.showComplex = function() {
       var filas = self.gridApi.selection.getSelectedRows();
-      if( filas[0] === undefined){
-        return ;
+      if (filas[0] === undefined) {
+        return;
       }
-      var id=filas[0].id;
-      if( id === undefined){
-        return ;
+      var id = filas[0].id;
+      if (id === undefined) {
+        return;
       }
       ModalService.showModal({
         templateUrl: 'views/modalQR.html',
@@ -346,11 +346,11 @@
     };
   }
 
-  function ModalQRController(title,qrCodeId,$scope) {
+  function ModalQRController(title, qrCodeId, $scope) {
     this.title = title;
-    this.qrCodeId=qrCodeId;
-    console.log('qrCodeId: '+qrCodeId)
-    this.close = function ( ) {
+    this.qrCodeId = qrCodeId;
+    console.log('qrCodeId: ' + qrCodeId)
+    this.close = function() {
       console.log('cierra esta ventana');
     }
   }
@@ -358,6 +358,7 @@
   function modalActividades() {
 
   }
+
   function PersonaCreateController(Persona, uiGridConstants) {
 
     var self = this;
@@ -572,34 +573,34 @@
         });
       });
     };
-
-    self.create =
-      function() {
-        var tipoLugar = new TipoLugar();
-        tipoLugar.nombre = self.tipoLugar.nombre;
-        tipoLugar.descripcion = self.tipoLugar.descripcion;
-        tipoLugar.id = self.tipoLugar.id;
-
-        if (tipoLugar.id !== undefined) {
-          tipoLugar.$update();
-          self.filas[0].nombre = tipoLugar.nombre;
-          self.filas[0].descripcion = tipoLugar.descripcion;
-          self.filas = null;
-        } else {
-          tipoLugar.$save();
+    self.create = function() {
+      var tipoLugar = new TipoLugar();
+      tipoLugar.nombre = self.tipoLugar.nombre;
+      tipoLugar.descripcion = self.tipoLugar.descripcion;
+      tipoLugar.id = self.tipoLugar.id;
+      console.log("TipoLugarID:", tipoLugar.id);
+      if (tipoLugar.id !== undefined) {
+        tipoLugar.$update();
+        self.filas[0].nombre = tipoLugar.nombre;
+        self.filas[0].descripcion = tipoLugar.descripcion;
+        self.filas = null;
+      } else {
+        tipoLugar.$save(null, function(object) {
           self.gridOptions1.data.push({
-            'nombre': tipoLugar.nombre,
-            'descripcion': tipoLugar.descripcion,
-            'id': 0
+            'nombre': object.nombre,
+            'descripcion': object.descripcion,
+            'id': object.id
           });
-        }
+        });
 
-        self.tipoLugar.nombre = '';
-        self.tipoLugar.descripcion = '';
+      }
+      self.tipoLugar = null
 
-      };
+
+    };
 
     this.tipos = TipoLugar.query();
+
 
     this.gridOptions1 = {
       paginationPageSize: 15,
@@ -620,15 +621,35 @@
       self.gridApi = gridApi;
     };
 
-    self.tipoLugar = {};
-    self.filas = {};
+
     this.editar = function() {
+      this.tipoLugar = {};
+      this.filas = {};
       self.filas = self.gridApi.selection.getSelectedRows();
       self.tipoLugar.nombre = self.filas[0].nombre;
       self.tipoLugar.descripcion = self.filas[0].descripcion;
       self.tipoLugar.id = self.filas[0].id;
 
     };
+
+    this.delete = function() {
+      self.filas = {};
+      self.filas = self.gridApi.selection.getSelectedRows();
+      var tipoLugar = new TipoLugar();
+      tipoLugar.id = self.filas[0].id;
+      tipoLugar.$delete(null, function(object) {
+        var index = self.gridOptions1.data.indexOf(self.filas[0]);
+        self.gridOptions1.data.splice(index, 1);
+      });
+
+    }
+
+    this.clear = function() {
+      console.log("Entro en Clear");
+      self.filas = null;
+      self.tipoLugar = null
+      self.gridApi.selection.clearSelectedRows();
+    }
   }
 
   function TipoLugarListController(TipoLugar) {
