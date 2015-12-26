@@ -21,8 +21,14 @@ public class TipoEmpleadoBusinessImpl implements TipoEmpleadoBusiness, Serializa
 
     @Override
     @Transactional
-    public boolean save(TipoEmpleado e) {
+    public TipoEmpleado save(TipoEmpleado e) {
         return this.tipoLugarDAO.save(e);
+    }
+    
+    @Override
+    @Transactional
+    public boolean delete(TipoEmpleado e) {
+        return this.tipoLugarDAO.delete(e);
     }
     
     @Override

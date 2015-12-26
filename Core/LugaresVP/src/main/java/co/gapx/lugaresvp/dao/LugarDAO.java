@@ -11,8 +11,9 @@ public interface LugarDAO {
     
     public List<Lugar> listALl();
     
-    public boolean save(Lugar lugar);
+    public Lugar save(Lugar lugar);
     
     public Lugar get(int id);
     
+    public boolean delete(Lugar lugar);
 }

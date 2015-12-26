@@ -34,7 +34,7 @@ public class ActividadDAOImpl implements ActividadDAO, Serializable{
     
     @Override
     @Transactional
-    public boolean save(Actividad actividad) {
+    public Actividad save(Actividad actividad) {
         boolean x=false;
         try {
             this.getCurrentSession().saveOrUpdate(actividad);
@@ -46,7 +46,7 @@ public class ActividadDAOImpl implements ActividadDAO, Serializable{
             this.logger.error("Mensaje: "+ ex.getMessage());
             throw ex;
         }
-        return x;
+        return actividad;
     }
 
     @Override
@@ -63,6 +63,19 @@ public class ActividadDAOImpl implements ActividadDAO, Serializable{
         Actividad actividad= (Actividad) getCurrentSession().createQuery("from Actividad e where e.id= :id").setParameter("id", id).list().get(0);
         this.evictUnProxy(actividad);
         return actividad;
+    }
+    
+    @Override
+    @Transactional
+    public boolean delete(Actividad actividad) {
+        try {
+            this.getCurrentSession().delete(actividad);
+            return true;
+        } catch (HibernateException hb){
+            return false;
+        } catch (Exception ex) {
+            return false;
+        }
     }
     
     private void evictUnProxy(List lista) {

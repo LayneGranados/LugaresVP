@@ -35,19 +35,18 @@ public class CalificacionActividadDAOImpl implements CalificacionActividadDAO, S
     
     @Override
     @Transactional
-    public boolean save(CalificacionActividad calificacionActividad) {
-        boolean x=false;
+    public CalificacionActividad save(CalificacionActividad calificacionActividad) {
         try {
             this.getCurrentSession().saveOrUpdate(calificacionActividad);
-            if(calificacionActividad.getId()!=null){
-                x = true;
+            if(calificacionActividad.getId()==null){
+                return null;
             }
         } catch (HibernateException ex) {
             this.logger.error("Error Guardando CalificacionActividad");
             this.logger.error("Mensaje: "+ ex.getMessage());
             throw ex;
         }
-        return x;
+        return calificacionActividad;
     }
 
     @Override
@@ -86,6 +85,19 @@ public class CalificacionActividadDAOImpl implements CalificacionActividadDAO, S
                 "WHERE L.ID=1 where e.id= :id").setParameter("id", id).list().get(0);
         this.evictUnProxy(calificacionActividad);
         return calificacionActividad;
+    }
+    
+    @Override
+    @Transactional
+    public boolean delete(CalificacionActividad calificacionActividad) {
+        try {
+            this.getCurrentSession().delete(calificacionActividad);
+            return true;
+        } catch (HibernateException hb){
+            return false;
+        } catch (Exception ex) {
+            return false;
+        }
     }
     
     private void evictUnProxy(List lista) {

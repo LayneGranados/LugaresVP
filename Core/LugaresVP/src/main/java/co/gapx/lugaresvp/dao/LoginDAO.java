@@ -19,4 +19,6 @@ public interface LoginDAO {
     
     public Login login(String login);
     
+    public boolean delete(Login login);
+    
 }

@@ -7,6 +7,7 @@ import co.gapx.lugaresvp.business.EmpleadoBusiness;
 import co.gapx.lugaresvp.domain.Login;
 import co.gapx.lugaresvp.domain.Persona;
 import co.gapx.lugaresvp.domain.Empleado;
+import co.gapx.lugaresvp.domain.TipoEmpleado;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -62,28 +63,46 @@ public class EmpleadoController {
     
     @RequestMapping(value = "/empleado", method = RequestMethod.POST)
     @Transactional
-    public @ResponseBody boolean save(@RequestBody String json, HttpServletResponse response) {
+    public @ResponseBody Empleado save(@RequestBody String json, HttpServletResponse response) {
         Map obj=(Map) JSONValue.parse(json);
         Empleado cv = new Empleado();
         Login l = this.loginB.get(((Long)obj.get("login")).intValue());
         Persona p = this.personaB.get(((Long)obj.get("persona")).intValue());
         cv.setLogin(l);
         cv.setPersona(p);
-        boolean saved = this.supervisorB.save(cv);
+        Empleado saved = this.supervisorB.save(cv);
         return saved;
     }
     
     @RequestMapping(value = "/empleado", method = RequestMethod.PUT)
     @Transactional
-    public @ResponseBody boolean put(@RequestBody String json, HttpServletResponse response) {
+    public @ResponseBody Empleado put(@RequestBody String json, HttpServletResponse response) {
         Map obj=(Map) JSONValue.parse(json);
         Empleado update =this.supervisorB.get(((Long)obj.get("id")).intValue()); 
         Login l = this.loginB.get(((Long)obj.get("login")).intValue());
         Persona p = this.personaB.get(((Long)obj.get("persona")).intValue());
         update.setLogin(l);
         update.setPersona(p);
-        boolean saved = this.supervisorB.save(update);
+        Empleado saved = this.supervisorB.save(update);
         return saved;
+    }
+    
+    
+    @RequestMapping(value = "/empleado/del", method = RequestMethod.POST)
+    @Transactional
+    public @ResponseBody Empleado delete(@RequestBody String json, HttpServletResponse response) {
+        Map obj=(Map) JSONValue.parse(json);
+        Empleado toDelete =this.supervisorB.get(((Long)obj.get("id")).intValue()); 
+        try{
+            System.out.println("json: "+json);
+            boolean deleted = this.supervisorB.delete(toDelete);
+            if(deleted){
+                toDelete.setId(-1);
+            }
+            return toDelete;
+        } catch (Exception ex){
+            return toDelete;
+        }
     }
     
 }

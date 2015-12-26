@@ -59,20 +59,20 @@ public class ActividadTipoLugarController {
     
     @RequestMapping(value = "/actividadTipoLugar", method = RequestMethod.POST)
     @Transactional
-    public @ResponseBody boolean save(@RequestBody String json, HttpServletResponse response) {
+    public @ResponseBody ActividadTipoLugar save(@RequestBody String json, HttpServletResponse response) {
         Map obj=(Map) JSONValue.parse(json);
         ActividadTipoLugar cv = new ActividadTipoLugar();
         int idTipoLugar = ((Long)obj.get("tipolugar")).intValue();
         int idActividad = ((Long)obj.get("actividad")).intValue();
         cv.setActividad(this.actividadB.get(idActividad));
         cv.setTipoLugar(this.tipoLugarB.get(idTipoLugar));
-        boolean saved = this.actividadTipoLugarB.save(cv);
+        ActividadTipoLugar saved = this.actividadTipoLugarB.save(cv);
         return saved;
     }
     
     @RequestMapping(value = "/actividadTipoLugar", method = RequestMethod.PUT)
     @Transactional
-    public @ResponseBody boolean put(@RequestBody String json, HttpServletResponse response) {
+    public @ResponseBody ActividadTipoLugar put(@RequestBody String json, HttpServletResponse response) {
         Map obj=(Map) JSONValue.parse(json);
         int id = ((Long)obj.get("id")).intValue();
         int idTipoLugar = ((Long)obj.get("tipolugar")).intValue();
@@ -80,8 +80,25 @@ public class ActividadTipoLugarController {
         ActividadTipoLugar update =this.actividadTipoLugarB.get(id); 
         update.setActividad(this.actividadB.get(idActividad));
         update.setTipoLugar(this.tipoLugarB.get(idTipoLugar));
-        boolean saved = this.actividadTipoLugarB.save(update);
+        ActividadTipoLugar saved = this.actividadTipoLugarB.save(update);
         return saved;
+    }
+    
+    @RequestMapping(value = "/actividadTipoLugar/del", method = RequestMethod.POST)
+    @Transactional
+    public @ResponseBody ActividadTipoLugar delete(@RequestBody String json, HttpServletResponse response) {
+        Map obj=(Map) JSONValue.parse(json);
+        ActividadTipoLugar toDelete =this.actividadTipoLugarB.get(((Long)obj.get("id")).intValue()); 
+        try{
+            System.out.println("json: "+json);
+            boolean deleted = this.actividadTipoLugarB.delete(toDelete);
+            if(deleted){
+                toDelete.setId(-1);
+            }
+            return toDelete;
+        } catch (Exception ex){
+            return toDelete;
+        }
     }
     
 }

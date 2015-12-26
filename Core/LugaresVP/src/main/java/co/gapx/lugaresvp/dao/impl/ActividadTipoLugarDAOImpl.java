@@ -36,19 +36,19 @@ public class ActividadTipoLugarDAOImpl implements ActividadTipoLugarDAO, Seriali
     
     @Override
     @Transactional
-    public boolean save(ActividadTipoLugar actividadTipoLugar) {
-        boolean x=false;
+    public ActividadTipoLugar save(ActividadTipoLugar actividadTipoLugar) {
+        
         try {
             this.getCurrentSession().saveOrUpdate(actividadTipoLugar);
-            if(actividadTipoLugar.getId()!=null){
-                x = true;
+            if(actividadTipoLugar.getId()==null){
+                return null;
             }
         } catch (HibernateException ex) {
             this.logger.error("Error Guardando ActividadTipoLugar");
             this.logger.error("Mensaje: "+ ex.getMessage());
             throw ex;
         }
-        return x;
+        return actividadTipoLugar;
     }
 
     @Override
@@ -81,6 +81,19 @@ public class ActividadTipoLugarDAOImpl implements ActividadTipoLugarDAO, Seriali
         ActividadTipoLugar actividadTipoLugar = (ActividadTipoLugar) getCurrentSession().createQuery("from ActividadTipoLugar e where e.tipoLugar= :tipoLugar and e.actividad= :actividad").setParameter("tipoLugar", tipoLugar).setParameter("actividad", actividad).list().get(0);
         this.evictUnProxy(actividadTipoLugar);
         return actividadTipoLugar;
+    }
+    
+    @Override
+    @Transactional
+    public boolean delete(ActividadTipoLugar actividadTipoLugar) {
+        try {
+            this.getCurrentSession().delete(actividadTipoLugar);
+            return true;
+        } catch (HibernateException hb){
+            return false;
+        } catch (Exception ex) {
+            return false;
+        }
     }
     
     private void evictUnProxy(List lista) {

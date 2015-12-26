@@ -18,6 +18,7 @@ import co.gapx.lugaresvp.domain.Evaluacion;
 import co.gapx.lugaresvp.domain.Login;
 import co.gapx.lugaresvp.domain.Lugar;
 import co.gapx.lugaresvp.domain.Supervision;
+import co.gapx.lugaresvp.domain.TipoEmpleado;
 import java.lang.ProcessBuilder.Redirect.Type;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -90,8 +91,7 @@ public class EvaluacionController {
     
     @RequestMapping(value = "/evaluacion", method = RequestMethod.POST)
     @Transactional
-    public @ResponseBody boolean save(@RequestBody String json, HttpServletResponse response) {
-        System.out.println("json: "+json);
+    public @ResponseBody Evaluacion save(@RequestBody String json, HttpServletResponse response) {
         
         Map obj=(Map) JSONValue.parse(json);
         Evaluacion eva = new Evaluacion();
@@ -137,19 +137,35 @@ public class EvaluacionController {
                 }
             }
         }
-        boolean saved = this.evaluacionB.save(eva);
+        Evaluacion saved = this.evaluacionB.save(eva);
         return saved;
     }
     
     @RequestMapping(value = "/evaluacion", method = RequestMethod.PUT)
     @Transactional
-    public @ResponseBody boolean put(@RequestBody String json, HttpServletResponse response) {
+    public @ResponseBody Evaluacion put(@RequestBody String json, HttpServletResponse response) {
         Map obj=(Map) JSONValue.parse(json);
         int id = Integer.parseInt((String)obj.get("id"));
         Evaluacion update =this.evaluacionB.get(id); 
        //Aqui se deben sacar del json los parametros y seterarlos en el objeto update 
-        boolean saved = this.evaluacionB.save(update);
+        Evaluacion saved = this.evaluacionB.save(update);
         return saved;
     }
     
+    @RequestMapping(value = "/evaluacion/del", method = RequestMethod.POST)
+    @Transactional
+    public @ResponseBody Evaluacion delete(@RequestBody String json, HttpServletResponse response) {
+        Map obj=(Map) JSONValue.parse(json);
+        Evaluacion toDelete =this.evaluacionB.get(((Long)obj.get("id")).intValue()); 
+        try{
+            System.out.println("json: "+json);
+            boolean deleted = this.evaluacionB.delete(toDelete);
+            if(deleted){
+                toDelete.setId(-1);
+            }
+            return toDelete;
+        } catch (Exception ex){
+            return toDelete;
+        }
+    }
 }

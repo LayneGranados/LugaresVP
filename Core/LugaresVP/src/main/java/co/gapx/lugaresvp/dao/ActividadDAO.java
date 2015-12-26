@@ -11,8 +11,10 @@ public interface ActividadDAO {
     
     public List<Actividad> listALl();
     
-    public boolean save(Actividad actividad);
+    public Actividad save(Actividad actividad);
     
     public Actividad get(int id);
+    
+    public boolean delete(Actividad actividad);
     
 }

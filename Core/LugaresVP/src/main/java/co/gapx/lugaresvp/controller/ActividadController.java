@@ -48,24 +48,41 @@ public class ActividadController {
     
     @RequestMapping(value = "/actividad", method = RequestMethod.POST)
     @Transactional
-    public @ResponseBody boolean save(@RequestBody String json, HttpServletResponse response) {
+    public @ResponseBody Actividad save(@RequestBody String json, HttpServletResponse response) {
         Map obj=(Map) JSONValue.parse(json);
         Actividad cv = new Actividad();
         cv.setNombre((String)obj.get("nombre"));
         cv.setDescripcion((String)obj.get("descripcion"));
-        boolean saved = this.actividadB.save(cv);
+        Actividad saved = this.actividadB.save(cv);
         return saved;
     }
     
     @RequestMapping(value = "/actividad", method = RequestMethod.PUT)
     @Transactional
-    public @ResponseBody boolean put(@RequestBody String json, HttpServletResponse response) {
+    public @ResponseBody Actividad put(@RequestBody String json, HttpServletResponse response) {
         Map obj=(Map) JSONValue.parse(json);
         Actividad update =this.actividadB.get(((Long)obj.get("id")).intValue()); 
         update.setNombre((String)obj.get("nombre"));
         update.setDescripcion((String)obj.get("descripcion"));
-        boolean saved = this.actividadB.save(update);
+        Actividad saved = this.actividadB.save(update);
         return saved;
+    }
+    
+    @RequestMapping(value = "/actividad/del", method = RequestMethod.POST)
+    @Transactional
+    public @ResponseBody Actividad delete(@RequestBody String json, HttpServletResponse response) {
+        Map obj=(Map) JSONValue.parse(json);
+        Actividad toDelete =this.actividadB.get(((Long)obj.get("id")).intValue()); 
+        try{
+            System.out.println("json: "+json);
+            boolean deleted = this.actividadB.delete(toDelete);
+            if(deleted){
+                toDelete.setId(-1);
+            }
+            return toDelete;
+        } catch (Exception ex){
+            return toDelete;
+        }
     }
     
 }

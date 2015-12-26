@@ -36,5 +36,11 @@ public class PersonaBusinessImpl implements PersonaBusiness, Serializable{
     public Persona get(int id) {
         return this.personaDAO.get(id);
     }
+    
+    @Override
+    @Transactional
+    public boolean delete(Persona e) {
+        return this.personaDAO.delete(e);
+    }
 
 }

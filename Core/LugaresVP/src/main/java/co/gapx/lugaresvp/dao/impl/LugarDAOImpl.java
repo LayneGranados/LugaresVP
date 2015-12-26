@@ -34,19 +34,18 @@ public class LugarDAOImpl implements LugarDAO, Serializable{
     
     @Override
     @Transactional
-    public boolean save(Lugar lugar) {
-        boolean x=false;
+    public Lugar save(Lugar lugar) {
         try {
             this.getCurrentSession().saveOrUpdate(lugar);
-            if(lugar.getId()!=null){
-                x = true;
+            if(lugar.getId()==null){
+                return null;
             }
         } catch (HibernateException ex) {
             this.logger.error("Error Guardando Lugar");
             this.logger.error("Mensaje: "+ ex.getMessage());
             throw ex;
         }
-        return x;
+        return lugar;
     }
 
     @Override
@@ -63,6 +62,19 @@ public class LugarDAOImpl implements LugarDAO, Serializable{
         Lugar lugar= (Lugar) getCurrentSession().createQuery("from Lugar e where e.id= :id").setParameter("id", id).list().get(0);
         this.evictUnProxy(lugar);
         return lugar;
+    }
+    
+    @Override
+    @Transactional
+    public boolean delete(Lugar lugar) {
+        try {
+            this.getCurrentSession().delete(lugar);
+            return true;
+        } catch (HibernateException hb){
+            return false;
+        } catch (Exception ex) {
+            return false;
+        }
     }
     
     private void evictUnProxy(List lista) {

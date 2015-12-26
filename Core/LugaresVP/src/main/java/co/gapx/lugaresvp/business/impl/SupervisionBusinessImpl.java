@@ -22,7 +22,7 @@ public class SupervisionBusinessImpl implements SupervisionBusiness, Serializabl
 
     @Override
     @Transactional
-    public boolean save(Supervision e) {
+    public Supervision save(Supervision e) {
         return this.supervisionDAO.save(e);
     }
     
@@ -49,5 +49,11 @@ public class SupervisionBusinessImpl implements SupervisionBusiness, Serializabl
     public Supervision saveWithGet(Supervision supervision){
         return this.supervisionDAO.saveWithGet(supervision);
     }
-
+    
+    @Override
+    @Transactional
+    public boolean delete(Supervision supervision) {
+        return this.supervisionDAO.delete(supervision);
+    }
+    
 }

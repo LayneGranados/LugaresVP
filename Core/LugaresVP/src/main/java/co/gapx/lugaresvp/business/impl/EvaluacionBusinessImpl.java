@@ -21,7 +21,7 @@ public class EvaluacionBusinessImpl implements EvaluacionBusiness, Serializable{
 
     @Override
     @Transactional
-    public boolean save(Evaluacion e) {
+    public Evaluacion save(Evaluacion e) {
         return this.evaluacionDAO.save(e);
     }
     
@@ -35,6 +35,12 @@ public class EvaluacionBusinessImpl implements EvaluacionBusiness, Serializable{
     @Transactional
     public Evaluacion get(int id) {
         return this.evaluacionDAO.get(id);
+    }
+    
+    @Override
+    @Transactional
+    public boolean delete(Evaluacion e) {
+        return this.evaluacionDAO.delete(e);
     }
 
 }

@@ -35,19 +35,18 @@ public class SupervisionDAOImpl implements SupervisionDAO, Serializable{
     
     @Override
     @Transactional
-    public boolean save(Supervision supervision) {
-        boolean x=false;
+    public Supervision save(Supervision supervision) {
         try {
             this.getCurrentSession().saveOrUpdate(supervision);
-            if(supervision.getId()!=null){
-                x = true;
+            if(supervision.getId()==null){
+                return null;
             }
         } catch (HibernateException ex) {
             this.logger.error("Error Guardando Supervision");
             this.logger.error("Mensaje: "+ ex.getMessage());
             throw ex;
         }
-        return x;
+        return supervision;
     }
     
     @Override
@@ -90,6 +89,19 @@ public class SupervisionDAOImpl implements SupervisionDAO, Serializable{
         List lista = getCurrentSession().createQuery("from Supervision e where e.lugar= :id").setParameter("id", id).list();
         this.evictUnProxy(lista);
         return lista;
+    }
+    
+    @Override
+    @Transactional
+    public boolean delete(Supervision supervision) {
+        try {
+            this.getCurrentSession().delete(supervision);
+            return true;
+        } catch (HibernateException hb){
+            return false;
+        } catch (Exception ex) {
+            return false;
+        }
     }
     
     private void evictUnProxy(List lista) {

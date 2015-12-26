@@ -11,7 +11,9 @@ public interface TipoEmpleadoDAO {
     
     public List<TipoEmpleado> listALl();
     
-    public boolean save(TipoEmpleado tipoLugar);
+    public TipoEmpleado save(TipoEmpleado tipoEmpleado);
+    
+    public boolean delete(TipoEmpleado tipoEmpleado);
     
     public TipoEmpleado get(int id);
     

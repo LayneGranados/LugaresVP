@@ -15,4 +15,6 @@ public interface PersonaBusiness {
     
     public Persona get(int id);
     
+    public boolean delete(Persona persona);
+    
 }

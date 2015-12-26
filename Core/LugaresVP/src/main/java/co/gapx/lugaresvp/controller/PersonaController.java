@@ -67,7 +67,7 @@ public class PersonaController {
     
     @RequestMapping(value = "/persona", method = RequestMethod.POST)
     @Transactional
-    public @ResponseBody boolean save(@RequestBody String json, HttpServletResponse response) {
+    public @ResponseBody Empleado save(@RequestBody String json, HttpServletResponse response) {
         System.out.println("json Persona: "+json);
         Map obj=(Map) JSONValue.parse(json);
         Persona persona = new Persona();
@@ -92,7 +92,7 @@ public class PersonaController {
         empleado.setLogin(loginSaved);
         empleado.setPersona(personaSaved);
         empleado.setTipoEmpleado(tipoEmpleado);
-        boolean empleadoSaved = this.empleadoB.save(empleado);
+        Empleado empleadoSaved = this.empleadoB.save(empleado);
         return empleadoSaved;
     }
     
@@ -108,6 +108,23 @@ public class PersonaController {
         update.setIdentificacion((String)obj.get("identificacion"));
         Persona saved = this.personaB.save(update);
         return saved.getId();
+    }
+    
+    @RequestMapping(value = "/persona/del", method = RequestMethod.POST)
+    @Transactional
+    public @ResponseBody Persona delete(@RequestBody String json, HttpServletResponse response) {
+        Map obj=(Map) JSONValue.parse(json);
+        Persona toDelete =this.personaB.get(((Long)obj.get("id")).intValue()); 
+        try{
+            System.out.println("json: "+json);
+            boolean deleted = this.personaB.delete(toDelete);
+            if(deleted){
+                toDelete.setId(-1);
+            }
+            return toDelete;
+        } catch (Exception ex){
+            return toDelete;
+        }
     }
     
 }
