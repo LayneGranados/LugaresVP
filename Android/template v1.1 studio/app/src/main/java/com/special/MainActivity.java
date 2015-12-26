@@ -82,17 +82,17 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         resideMenu.setScaleValue(0.6f);
 
         itemHome     = new ResideMenuItem(this, R.drawable.ic_home,     "Menu Principal");
-        //itemElements  = new ResideMenuItem(this, R.drawable.ic_elements_alternative,  "Elements");
+        itemElements  = new ResideMenuItem(this, R.drawable.ic_elements_alternative,  "Configuración");
         //itemList1 = new ResideMenuItem(this, R.drawable.ic_list_2, "List 1");
         //itemList2 = new ResideMenuItem(this, R.drawable.ic_list_1, "List 2");
 
         itemHome.setOnClickListener(this);
-        //itemElements.setOnClickListener(this);
+        itemElements.setOnClickListener(this);
         //itemList1.setOnClickListener(this);
         //itemList2.setOnClickListener(this);
 
         resideMenu.addMenuItem(itemHome);
-        //resideMenu.addMenuItem(itemElements);
+        resideMenu.addMenuItem(itemElements);
         //resideMenu.addMenuItem(itemList1);
         //resideMenu.addMenuItem(itemList2);
 
@@ -118,7 +118,7 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
             //changeFragment(new HomeFragment());
             changeFragment(new ScanCode());
         }else if (view == itemElements){
-            //changeFragment(new ElementsFragment());
+            changeFragment(new ConfiguracionFragment());
         }else if (view == itemList1){
             //changeFragment(new ListFragment());
         }else if (view == itemList2){
@@ -184,20 +184,26 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
 						.getSystemService(Context.WINDOW_SERVICE);
 				switch (manager.getDefaultDisplay().getRotation()) {
 				case Surface.ROTATION_90:
-					rightPadding += size;
+                    System.out.println("entro en el 90");
+					//rightPadding += size;
 					break;
 				case Surface.ROTATION_180:
 					// topPadding += size;
+                    System.out.println("entro en el 180");
 					break;
 				case Surface.ROTATION_270:
-					rightPadding += size;
+                    System.out.println("entro en el 270");
+					//rightPadding += size;
 					break;
 				default:
-					bottomPadding += size;
+                    System.out.println("entro en el default");
+					//bottomPadding += size;
 				}
 			} else if (size > 0) {
 				// on tablets, the navigationbar is always at the bottom.
-				bottomPadding += size;
+                //System.out.println("entro en el else");
+                //size=0;
+				//bottomPadding += size;
 			}
 
 			View scrollViewMenu = findViewById(R.id.sv_left_menu);

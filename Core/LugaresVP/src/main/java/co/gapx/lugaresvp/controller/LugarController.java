@@ -29,6 +29,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import net.glxn.qrgen.QRCode;
 import net.glxn.qrgen.image.ImageType;
+import org.springframework.web.bind.annotation.RequestParam;
 /**
  *
  * @author laynegranadosmogollon
@@ -105,13 +106,13 @@ public class LugarController {
         return l;
     }
     
-    @RequestMapping(value = "/lugar/generarImagen", method = RequestMethod.POST)
+    @RequestMapping(value = "/lugar/generarImagen", method = RequestMethod.GET)
     @Transactional
-    public void login(@RequestBody String json, HttpServletRequest request,
+    public void login(@RequestBody String json, @RequestParam(value = "idLugar", defaultValue = "-1") int idlugar,
             HttpServletResponse response) throws ServletException, FileNotFoundException, IOException {
 
-		System.out.println("json id lugar: "+json);
-                String qrtext = "qrtext";
+		System.out.println("json id lugar: "+idlugar);
+                String qrtext = String.valueOf(idlugar);
                 ImageType png = ImageType.PNG;
                 QRCode from = QRCode.from(qrtext);
                 QRCode to = from.to(png);
