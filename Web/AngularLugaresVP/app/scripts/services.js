@@ -134,7 +134,7 @@
         headers: {
           'Content-Type': 'application/json'
         }
-      },
+      }
     });
   }
 
@@ -153,12 +153,21 @@
   }
 
   function TipoLugar($resource, BaseUrl) {
-    return $resource(BaseUrl + '/tipoLugar/:tipolugarId', {
-      tipolugarId: '@_id'
+    return $resource(BaseUrl + 'tipoLugar/:tipolugarId', {
+      tipolugarId: '@id'
     }, {
-      'save': {
+      'update': {
+        method: 'PUT',
+        isArray: false,
+        url: BaseUrl + 'tipoLugar',
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      },
+      'delete': {
         method: 'POST',
         isArray: false,
+        url: BaseUrl + 'tipoLugar/del',
         headers: {
           'Content-Type': 'application/json'
         }
