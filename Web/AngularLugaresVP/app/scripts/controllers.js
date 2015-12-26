@@ -310,12 +310,12 @@
 
     this.showComplex = function() {
       var filas = self.gridApi.selection.getSelectedRows();
-      if( filas[0] === undefined){
-        return ;
+      if (filas[0] === undefined) {
+        return;
       }
-      var id=filas[0].id;
-      if( id === undefined){
-        return ;
+      var id = filas[0].id;
+      if (id === undefined) {
+        return;
       }
       ModalService.showModal({
         templateUrl: 'views/modalQR.html',
@@ -346,11 +346,11 @@
     };
   }
 
-  function ModalQRController(title,qrCodeId,$scope) {
+  function ModalQRController(title, qrCodeId, $scope) {
     this.title = title;
-    this.qrCodeId=qrCodeId;
-    console.log('qrCodeId: '+qrCodeId)
-    this.close = function ( ) {
+    this.qrCodeId = qrCodeId;
+    console.log('qrCodeId: ' + qrCodeId)
+    this.close = function() {
       console.log('cierra esta ventana');
     }
   }
@@ -358,6 +358,7 @@
   function modalActividades() {
 
   }
+
   function PersonaCreateController(Persona, uiGridConstants) {
 
     var self = this;
@@ -554,159 +555,6 @@
     };
   }
 
-  function TipoEmpleadoCreateController(TipoEmpleado, uiGridConstants) {
-    var self = this;
-
-    self.create =
-      function() {
-        var tipoEmpleado = new TipoEmpleado();
-        tipoEmpleado.nombre = self.tipoEmpleado.nombre;
-        tipoEmpleado.descripcion = self.tipoEmpleado.descripcion;
-        tipoEmpleado.id = self.tipoEmpleado.id;
-        if (tipoEmpleado.id !== undefined) {
-          tipoEmpleado.$update();
-          self.filas[0].nombre = tipoEmpleado.nombre;
-          self.filas[0].descripcion = tipoEmpleado.descripcion;
-          self.filas = null;
-        } else {
-          tipoEmpleado.$save();
-          self.gridOptions1.data.push({
-            'nombre': tipoEmpleado.nombre,
-            'descripcion': tipoEmpleado.descripcion,
-            'id': 0
-          });
-        }
-
-        self.tipoEmpleado.nombre = '';
-        self.tipoEmpleado.descripcion = '';
-
-      };
-
-    this.tipos = TipoEmpleado.query();
-
-    this.gridOptions1 = {
-      paginationPageSize: 15,
-      data: self.tipos,
-      columnDefs: [{
-        field: 'id'
-      }, {
-        field: 'nombre'
-      }, {
-        field: 'descripcion'
-      }],
-      multiSelect: false,
-      enableRowSelection: true,
-      enableRowHeaderSelection: false
-    };
-
-    this.gridOptions1.onRegisterApi = function(gridApi) {
-      self.gridApi = gridApi;
-    };
-
-    self.tipoEmpleado = {};
-    self.filas = {};
-    this.editar = function() {
-      self.filas = self.gridApi.selection.getSelectedRows();
-      self.tipoEmpleado.nombre = self.filas[0].nombre;
-      self.tipoEmpleado.descripcion = self.filas[0].descripcion;
-      self.tipoEmpleado.id = self.filas[0].id;
-    };
-
-    this.eliminar = function (){
-      self.filas = self.gridApi.selection.getSelectedRows();
-      var tipoEmpleado = new TipoEmpleado();
-      tipoEmpleado.id = self.filas[0].id;
-    }
-
-  }
-
-  function TipoEmpleadoListController(TipoEmpleado) {
-    this.tipos = TipoEmpleado.query();
-  }
-
-
-  function TipoLugarCreateController(TipoLugar, uiGridConstants, $scope, ModalService) {
-    var self = this;
-
-    $scope.showComplex = function() {
-      ModalService.showModal({
-        templateUrl: 'views/modalActividades.html',
-        controller: 'modalActividades',
-        controllerAs: 'actividadesCtrl',
-        inputs: {
-          title: 'A More Complex Example'
-        }
-      }).then(function(modal) {
-        modal.element.modal();
-        modal.close.then(function() {
-
-        });
-      });
-    };
-
-    self.create =
-      function() {
-        var tipoLugar = new TipoLugar();
-        tipoLugar.nombre = self.tipoLugar.nombre;
-        tipoLugar.descripcion = self.tipoLugar.descripcion;
-        tipoLugar.id = self.tipoLugar.id;
-
-        if (tipoLugar.id !== undefined) {
-          tipoLugar.$update();
-          self.filas[0].nombre = tipoLugar.nombre;
-          self.filas[0].descripcion = tipoLugar.descripcion;
-          self.filas = null;
-        } else {
-          tipoLugar.$save();
-          self.gridOptions1.data.push({
-            'nombre': tipoLugar.nombre,
-            'descripcion': tipoLugar.descripcion,
-            'id': 0
-          });
-        }
-
-        self.tipoLugar.nombre = '';
-        self.tipoLugar.descripcion = '';
-
-      };
-
-    this.tipos = TipoLugar.query();
-
-    this.gridOptions1 = {
-      paginationPageSize: 15,
-      data: self.tipos,
-      columnDefs: [{
-        field: 'id'
-      }, {
-        field: 'nombre'
-      }, {
-        field: 'descripcion'
-      }],
-      multiSelect: false,
-      enableRowSelection: true,
-      enableRowHeaderSelection: false
-    };
-
-    this.gridOptions1.onRegisterApi = function(gridApi) {
-      self.gridApi = gridApi;
-    };
-
-    self.tipoLugar = {};
-    self.filas = {};
-    this.editar = function() {
-      self.filas = self.gridApi.selection.getSelectedRows();
-      self.tipoLugar.nombre = self.filas[0].nombre;
-      self.tipoLugar.descripcion = self.filas[0].descripcion;
-      self.tipoLugar.id = self.filas[0].id;
-
-    };
-  }
-
-  function TipoLugarListController(TipoLugar) {
-    this.tipos = TipoLugar.query();
-  }
-
-
 
   function TipoIdentificacionCreateController(TipoIdentificacion) {
     var self = this;
@@ -724,7 +572,7 @@
   }
 
   angular
-    .module('blog.controllers', ['blog.services', 'angularModalService'])
+    .module('blog.controllers')
     .controller('ActividadCreateController', ActividadCreateController)
     .controller('ActividadListController', ActividadListController)
     .controller('ActividadTipoLugarListController', ActividadTipoLugarListController)
@@ -742,11 +590,7 @@
     .controller('PersonaCreateController', PersonaCreateController)
     .controller('PersonaListController', PersonaListController)
     .controller('SupervisionListController', SupervisionListController)
-    .controller('TipoLugarCreateController', TipoLugarCreateController)
-    .controller('TipoLugarListController', TipoLugarListController)
     .controller('TipoIdentificacionCreateController', TipoIdentificacionCreateController)
-    .controller('TipoIdentificacionListController', TipoIdentificacionListController)
-    .controller('TipoEmpleadoCreateController', TipoEmpleadoCreateController)
-    .controller('TipoEmpleadoListController', TipoEmpleadoListController);
+    .controller('TipoIdentificacionListController', TipoIdentificacionListController);
 
 })();
