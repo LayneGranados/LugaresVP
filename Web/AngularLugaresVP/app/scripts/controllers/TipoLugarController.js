@@ -5,13 +5,17 @@
     var self = this;
 
     //Popup de actividades
-    $scope.showComplex = function() {
+    this.showComplex = function() {
+      self.filas = self.gridApi.selection.getSelectedRows();
+      if (self.filas.length !== 1) {
+        return;
+      }
       ModalService.showModal({
         templateUrl: 'views/modalActividades.html',
-        controller: 'modalActividades',
-        controllerAs: 'actividadesCtrl',
+        controller: 'ModalActividadesController',
+        controllerAs: 'modalActCtrl',
         inputs: {
-          title: 'A More Complex Example'
+          tipoLugar: self.filas[0]
         }
       }).then(function(modal) {
         modal.element.modal();

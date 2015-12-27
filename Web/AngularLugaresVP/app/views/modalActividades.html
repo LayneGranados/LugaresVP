@@ -1,63 +1,27 @@
 <div class="modal fade">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" ng-click="close()" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title">Agregar y/o quitar Actividades</h4>
-      </div>
+      <header class="modal-header">
+        <button aria-hidden="true" class="close" data-dismiss="modal" ng-click="close()" type="button">&times;</button>
+        <h4 class="modal-title">Actividades Para El Tipo De Lugar {{modalActCtrl.tipoLugar.nombre}}</h4>
+      </header>
       <div class="modal-body">
-        <p>Por favor, utilice los botones para agregar y/o quitar actividades a los tipos de Lugares</p>
-        <form>
-        <div>
-  		  <table class="table table-condensed" >
-          <thead>
-            <tr>
-              <th>Actividades agregadas al Tipo de Lugar</th>
-            </tr>
-            <thead>
-            <tbody>
-              <tr >
-                <td >Retiro de Papeleras</td>
-              </tr>
-              <tr >
-                <td >Desinfección de Sanitarios</td>
-              </tr>
-              <tr >
-                <td > Desinfección de Orinales</td>
-              </tr>
-            <tbody>
-        </table>
-    </div>
-    <div align="center">
-        <button type="button" class="btn btn-primary">Agregar</button>
-        <button type="button" class="btn btn-primary">Eliminar</button>
+        <div class="row">
+          <form ng-submit="modalActCtrl.addActividad()">
+            <div class="form-group row">
+              <label class="col-sm-2 form-control-label" for="inputPassword">Actividad</label>
+              <div class="col-sm-10">
+                <select class="form-control" ng-model="modalActCtrl.actividadSelected" ng-options="option.actividadnombre for option in modalActCtrl.listActividades track by option.actividadid"></select>
+              </div>
+            </div>
+            <input class="btn btn-primary btn-lg" type="submit" value="Guardar" />
+          </form>
+        </div>
+        <div class="row">
+          <div class="myGrid" ui-grid-pagination ui-grid-selection ui-grid="modalActCtrl.gridOptions1"></div>
+            <button class="btn btn-primary btn-lg" ng-click="modalActCtrl.delActividad()" >Eliminar </button>
+        </div>
       </div>
-    <div>
-        <table class="table table-condensed" >
-          <thead>
-            <tr>
-              <th>Actividad por Agregar</th>
-            </tr>
-            <thead>
-            <tbody>
-              <tr >
-                <td >Limpieza de Lavamanos</td>
-              </tr>
-              <tr >
-                <td >Limpieza de Espejos</td>
-              </tr>
-              <tr >
-                <td >Estado del Piso</td>
-              </tr>
-              <tr >
-                <td >Lavado de Papeleras</td>
-              </tr>
-            <tbody>
-        </table>
-    </div>
-  </form>
-    </div>
-    
     </div>
   </div>
 </div>
