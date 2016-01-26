@@ -355,9 +355,7 @@
     }
   }
 
-  function modalActividades() {
 
-  }
 
   function PersonaCreateController(Persona, uiGridConstants) {
 
@@ -585,7 +583,6 @@
     .controller('LoginController', LoginController)
     .controller('LugarCreateController', LugarCreateController)
     .controller('LugarListController', LugarListController)
-    .controller('modalActividades', modalActividades)
     .controller('ModalQRController', ModalQRController)
     .controller('PersonaCreateController', PersonaCreateController)
     .controller('PersonaListController', PersonaListController)
