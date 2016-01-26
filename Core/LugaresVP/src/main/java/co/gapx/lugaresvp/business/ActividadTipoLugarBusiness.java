@@ -22,4 +22,6 @@ public interface ActividadTipoLugarBusiness {
     public ActividadTipoLugar getDeTipoLugarActividad(TipoLugar tipoLugar, Actividad actividad);
     
     public boolean delete(ActividadTipoLugar actividadTipoLugar);
+    
+    public List<ActividadTipoLugar> getDeNoTipoLugar(TipoLugar id);
 }

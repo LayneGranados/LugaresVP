@@ -77,6 +77,14 @@ public class ActividadTipoLugarDAOImpl implements ActividadTipoLugarDAO, Seriali
     
     @Override
     @Transactional
+    public List<ActividadTipoLugar> getDeNoTipoLugar(TipoLugar id) {
+        List<ActividadTipoLugar> actividadTipoLugar = (List<ActividadTipoLugar>) getCurrentSession().createQuery("from ActividadTipoLugar e where e.tipoLugar<> :id").setParameter("id", id).list();
+        this.evictUnProxy(actividadTipoLugar);
+        return actividadTipoLugar;
+    }
+    
+    @Override
+    @Transactional
     public ActividadTipoLugar getDeTipoLugarActividad(TipoLugar tipoLugar, Actividad actividad) {
         ActividadTipoLugar actividadTipoLugar = (ActividadTipoLugar) getCurrentSession().createQuery("from ActividadTipoLugar e where e.tipoLugar= :tipoLugar and e.actividad= :actividad").setParameter("tipoLugar", tipoLugar).setParameter("actividad", actividad).list().get(0);
         this.evictUnProxy(actividadTipoLugar);

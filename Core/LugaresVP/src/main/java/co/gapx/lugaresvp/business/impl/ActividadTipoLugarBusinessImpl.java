@@ -56,5 +56,11 @@ public class ActividadTipoLugarBusinessImpl implements ActividadTipoLugarBusines
     public boolean delete(ActividadTipoLugar e) {
         return this.actividadTipoLugarDAO.delete(e);
     }
+    
+    @Override
+    @Transactional
+    public List<ActividadTipoLugar> getDeNoTipoLugar(TipoLugar id){
+        return this.actividadTipoLugarDAO.getDeNoTipoLugar(id);
+    }
 
 }

@@ -23,4 +23,6 @@ public interface ActividadTipoLugarDAO {
     
     public boolean delete(ActividadTipoLugar actividadTipoLugar);
     
+    public List<ActividadTipoLugar> getDeNoTipoLugar(TipoLugar id);
+    
 }
