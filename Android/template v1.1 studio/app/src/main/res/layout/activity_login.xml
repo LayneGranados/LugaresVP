@@ -5,7 +5,7 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="@android:color/white"
-    tools:context="com.special.LoginActivity">
+    tools:context="com.gapxventuraplaza.LoginActivity">
 
     <ProgressBar android:id="@+id/login_progress"
         style="?android:attr/progressBarStyleLarge"
