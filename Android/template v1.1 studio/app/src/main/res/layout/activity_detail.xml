@@ -3,9 +3,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="com.special.DetailActivity" >    
+    tools:context="com.gapxventuraplaza.DetailActivity" >
    	         
-    <com.special.utils.UIParallaxScroll
+    <com.gapxventuraplaza.utils.UIParallaxScroll
             android:id="@+id/scroller"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -65,7 +65,7 @@
        			
        				</LinearLayout>
 
-       				<com.special.utils.UICircularImage
+       				<com.gapxventuraplaza.utils.UICircularImage
        				    android:id="@+id/action1"
        				    android:layout_width="50dp"
        				    android:layout_height="50dp"
@@ -168,7 +168,7 @@
 
 		</LinearLayout>
 		
-    </com.special.utils.UIParallaxScroll>
+    </com.gapxventuraplaza.utils.UIParallaxScroll>
     
     <!-- "ActionBar"  -->
     

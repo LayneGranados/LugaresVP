@@ -4,7 +4,7 @@
               xmlns:app="http://schemas.android.com/apk/res-auto"
     		  xmlns:tools="http://schemas.android.com/tools"
               android:layout_width="match_parent"
-              tools:context="com.special.MenuActivity$ProfileFragment"
+              tools:context="com.gapxventuraplaza.MenuActivity$ProfileFragment"
               android:background="@android:color/white"
               android:layout_height="match_parent">
 
@@ -71,7 +71,7 @@
                 android:fontFamily="sans-serif-light" 
                 android:text="@string/checkbox" />
 
-        	<com.special.utils.UITabs
+        	<com.gapxventuraplaza.utils.UITabs
     			android:id="@+id/toggle"
     			android:layout_gravity="center"
     			android:layout_width="wrap_content"
@@ -95,11 +95,11 @@
         			android:layout_gravity="bottom"
         			style="@style/UITabs" />
 
-			</com.special.utils.UITabs>
+			</com.gapxventuraplaza.utils.UITabs>
 
         </LinearLayout>
         
-        <com.special.utils.UITabs
+        <com.gapxventuraplaza.utils.UITabs
     		android:id="@+id/tabs"
     		android:layout_width="wrap_content"
     		android:layout_height="wrap_content"
@@ -139,7 +139,7 @@
         		android:layout_gravity="bottom"
         		style="@style/UITabs" />
     		
-		</com.special.utils.UITabs>
+		</com.gapxventuraplaza.utils.UITabs>
 		
         <EditText
             android:id="@+id/editText1"
@@ -252,7 +252,7 @@
             android:gravity="center"
             android:orientation="horizontal" >
          
-         <com.special.utils.UICircularImage
+         <com.gapxventuraplaza.utils.UICircularImage
     		android:id="@+id/rounded_image"
     		android:layout_margin="5dp"
     		android:layout_width="75dp"
@@ -264,7 +264,7 @@
     		app:line_color_press="@color/green"
     		app:line_color="@color/theme_color"/>
          
-         <com.special.utils.UICircularImage
+         <com.gapxventuraplaza.utils.UICircularImage
     		android:id="@+id/rounded_image2"
     		android:layout_margin="5dp"
     		android:layout_width="75dp"

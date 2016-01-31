@@ -1,5 +1,5 @@
 <resources>
-    <string name="title_activity_login">Iniciar Sesión</string>
+    <string name="title_activity_login">Inspección Zonas - Ventura Plaza</string>
 
     <!-- Strings related to login -->
     <string name="prompt_email">Usuario</string>

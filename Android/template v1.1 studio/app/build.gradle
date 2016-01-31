@@ -5,7 +5,7 @@ android {
     buildToolsVersion "21.1.2"
 
     defaultConfig {
-        applicationId "com.special"
+        applicationId "com.gapxventuraplaza"
         minSdkVersion 14
         targetSdkVersion 17
     }
