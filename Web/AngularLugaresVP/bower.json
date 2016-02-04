@@ -14,6 +14,7 @@
     "jquery.gritter": "~1.7.4",
     "metisMenu": "~2.1.0",
     "toastr": "~2.1.2",
-    "angular-qrcode": "monospaced/angular-qrcode#~6.1.3"
+    "angular-qrcode": "monospaced/angular-qrcode#~6.1.3",
+    "pdfmake": "~0.1.20"
   }
 }
