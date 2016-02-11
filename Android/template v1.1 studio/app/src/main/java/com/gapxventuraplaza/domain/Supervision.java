@@ -9,8 +9,9 @@ import java.util.Date;
 public class Supervision {
 
     private ArrayList<Evaluacion> evaluaciones;
+    private int id;
     private int supervisor;
-    private Date fecha;
+    private String fecha;
     private int lugar;
 
     public Supervision() {
@@ -32,11 +33,11 @@ public class Supervision {
         this.supervisor = supervisor;
     }
 
-    public Date getFecha() {
+    public String getFecha() {
         return fecha;
     }
 
-    public void setFecha(Date fecha) {
+    public void setFecha(String fecha) {
         this.fecha = fecha;
     }
 
@@ -46,6 +47,14 @@ public class Supervision {
 
     public void setLugar(int lugar) {
         this.lugar = lugar;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }
 
