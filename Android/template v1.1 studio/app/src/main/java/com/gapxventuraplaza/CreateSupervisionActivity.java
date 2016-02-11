@@ -297,7 +297,7 @@ public class CreateSupervisionActivity extends Activity {
                 //pasar.putExtra("escaneado", String.valueOf(globales.getLugar()));
                 startActivity(pasar);
             } else {
-                Toast.makeText(CreateSupervisionActivity.this, "Usuario y/ Contraseña Incorrectos. Por favor, intentelo nuevamente.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(CreateSupervisionActivity.this, "Se produjo un error al guardar la supervisión, por favor, confirme con el administrador del sistema.", Toast.LENGTH_SHORT).show();
             }
         }
 
@@ -313,8 +313,8 @@ public class CreateSupervisionActivity extends Activity {
                 String x = String.valueOf(observaciones[0]);
                 x = x.replace("\n", "");
                 res[1] = String.valueOf(observaciones[1]);
-
-                if(x.equalsIgnoreCase("true")) {
+                System.out.println("Resultado de guardar supervision"+x);
+                if(!x.equalsIgnoreCase("null")) {
                     res[3] = true;
                 }
                 else {

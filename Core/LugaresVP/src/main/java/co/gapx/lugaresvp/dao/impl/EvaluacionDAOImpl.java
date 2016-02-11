@@ -38,6 +38,7 @@ public class EvaluacionDAOImpl implements EvaluacionDAO, Serializable{
         boolean x=false;
         try {
             this.getCurrentSession().saveOrUpdate(evaluacion);
+            System.out.println("entro"+evaluacion.getId());
             if(evaluacion.getId()==null){
                 return null;
             }

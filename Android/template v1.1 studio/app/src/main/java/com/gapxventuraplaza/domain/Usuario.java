@@ -5,42 +5,54 @@ import java.util.List;
 
 
 public class Usuario implements Serializable{
-    private String name;
-    private String email;
-    private String pass;
-    private List<Usuarios> friends;
- 
-    public String getName() {
-        return name;
-    }
- 
-    public void setName(String name) {
-        this.name = name;
-    }
- 
-    public String getEmail() {
-        return email;
-    }
- 
-    public void setEmail(String email) {
-        this.email = email;
-    }
- 
-    public List<Usuarios> getFriends() {
-        return friends;
-    }
- 
-    public void setFriends(List<Usuarios> friends) {
-        this.friends = friends;
-    }
- 
-    public String getPass() {
-        return pass;
-    }
- 
-    public void setPass(String pass) {
-        this.pass = pass;
+
+    private Integer id;
+    private String login;
+    private String password;
+    private String roldb;
+    private Integer activo;
+
+    public Usuario() {
     }
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getLogin() {
+        return login;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getRoldb() {
+        return roldb;
+    }
+
+    public void setRoldb(String roldb) {
+        this.roldb = roldb;
+    }
+
+    public Integer getActivo() {
+        return activo;
+    }
+
+    public void setActivo(Integer activo) {
+        this.activo = activo;
+    }
 }
 
