@@ -60,6 +60,27 @@ public class EmpleadoController {
         }
         return l;
     }
+   
+    @RequestMapping(value = "/empleadoUsuario", method = RequestMethod.GET)
+    @Transactional
+    public @ResponseBody List getListLoginFull(HttpServletResponse response) {
+        List<Empleado> empleados = this.supervisorB.listALl();
+        List l = new ArrayList();
+        for (Empleado e: empleados) {
+            Map<String, Object> map = new HashMap();
+            map.put("empleado_id", e.getId());
+            this.crudS.refresh(e.getPersona());
+            this.crudS.refresh(e.getLogin());
+            this.crudS.refresh(e.getTipoEmpleado());
+            map.put("identificacion", e.getPersona().getIdentificacion());
+            map.put("nombres", e.getPersona().getNombres());
+            map.put("apellidos", e.getPersona().getApellidos());
+            map.put("tipo_empleado", e.getTipoEmpleado().getNombre());
+            map.put("login", e.getLogin().getLogin());
+            l.add(map);
+        }
+        return l;
+    }
     
     @RequestMapping(value = "/empleado", method = RequestMethod.POST)
     @Transactional
