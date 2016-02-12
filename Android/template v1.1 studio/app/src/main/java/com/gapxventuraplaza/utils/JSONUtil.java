@@ -21,6 +21,9 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 
 public class JSONUtil {
@@ -99,9 +102,13 @@ public class JSONUtil {
         try {
             post.setHeader("content-type", "application/json");
             JSONObject dato = new JSONObject();
+            DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            Date date = new Date();
             dato.put("idlugar", idlugar);
             dato.put("usuario", usuario);
             dato.put("evaluacion", evaluacion.toString());
+            dato.put("fecha", dateFormat.format(date));
+            System.out.println("dato.toString()"+dato.toString());
             StringEntity entity = new StringEntity(dato.toString());
             post.setEntity(entity);
 

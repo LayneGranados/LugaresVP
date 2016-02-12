@@ -36,6 +36,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import com.google.gson.*;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -91,11 +93,12 @@ public class EvaluacionController {
     
     @RequestMapping(value = "/evaluacion", method = RequestMethod.POST)
     @Transactional
-    public @ResponseBody Evaluacion save(@RequestBody String json, HttpServletResponse response) {
+    public @ResponseBody Supervision save(@RequestBody String json, HttpServletResponse response) {
         
         Map obj=(Map) JSONValue.parse(json);
-        Evaluacion eva = new Evaluacion();
+        
         String idlugar = (String)obj.get("idlugar");
+        String fecha = (String)obj.get("fecha");
         
         Lugar lugar = this.lugarB.get(Integer.parseInt(idlugar)) ;
         this.crudS.refresh(lugar.getTipoLugar());
@@ -110,16 +113,25 @@ public class EvaluacionController {
                 em = e;
             }
         }
-        
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+	String dateInString = fecha;
+        Date date;
+
+	try {
+		date = formatter.parse(dateInString);
+	} catch (ParseException e) {
+		date = new Date();
+	}
         Supervision supervision = new Supervision();
-        supervision.setFecha(new Date());
+        supervision.setFecha(date);
         supervision.setLugar(lugar);
         supervision.setEmpleado(em);
         
         Supervision sup = this.supervisionB.saveWithGet(supervision);
-        eva.setSupervision(sup);
+        
         
         String cadenaEvaluacion = (String)obj.get("evaluacion");
+        System.out.println("cadenaEvaluacion: "+cadenaEvaluacion);
         JsonParser parser = new JsonParser();
         JsonElement element = parser.parse(cadenaEvaluacion);
         JsonArray jasonArray = element.getAsJsonArray();
@@ -128,17 +140,21 @@ public class EvaluacionController {
             Map ca = (Map) JSONValue.parse(String.valueOf(j));
             Actividad acti = this.actividadB.get(Integer.parseInt((String)ca.get("idactividad")));
             ActividadTipoLugar atl = this.actividadTipoLugarB.getDeTipoLugarActividad(lugar.getTipoLugar(), acti);
+            Evaluacion eva = new Evaluacion();
+            eva.setSupervision(sup);
             eva.setActividadTipoLugar(atl);
-            
+            Evaluacion saved = new Evaluacion();
             List<CalificacionActividad> calificaciones = this.calificacionActividadB.getDeActividad(acti);
             for(CalificacionActividad cali: calificaciones){
                 if(cali.getNombre().equalsIgnoreCase((String)ca.get("nombrecalificacion"))){
                     eva.setCalificacionActividad(cali);
+                    break;
                 }
             }
+             saved = this.evaluacionB.save(eva);
         }
-        Evaluacion saved = this.evaluacionB.save(eva);
-        return saved;
+        this.crudS.refresh(sup);
+        return sup;
     }
     
     @RequestMapping(value = "/evaluacion", method = RequestMethod.PUT)
