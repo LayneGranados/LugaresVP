@@ -1,12 +1,12 @@
 package co.gapx.lugaresvp.controller;
 
 import co.gapx.lugaresvp.business.CRUDService;
+import co.gapx.lugaresvp.business.EmpleadoBusiness;
 import co.gapx.lugaresvp.business.LugarBusiness;
 import co.gapx.lugaresvp.business.SupervisionBusiness;
-import co.gapx.lugaresvp.business.EmpleadoBusiness;
+import co.gapx.lugaresvp.domain.Empleado;
 import co.gapx.lugaresvp.domain.Lugar;
 import co.gapx.lugaresvp.domain.Supervision;
-import co.gapx.lugaresvp.domain.Empleado;
 import java.text.Format;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;

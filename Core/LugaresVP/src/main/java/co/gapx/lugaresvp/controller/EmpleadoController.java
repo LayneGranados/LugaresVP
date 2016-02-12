@@ -1,13 +1,12 @@
 package co.gapx.lugaresvp.controller;
 
 import co.gapx.lugaresvp.business.CRUDService;
+import co.gapx.lugaresvp.business.EmpleadoBusiness;
 import co.gapx.lugaresvp.business.LoginBusiness;
 import co.gapx.lugaresvp.business.PersonaBusiness;
-import co.gapx.lugaresvp.business.EmpleadoBusiness;
+import co.gapx.lugaresvp.domain.Empleado;
 import co.gapx.lugaresvp.domain.Login;
 import co.gapx.lugaresvp.domain.Persona;
-import co.gapx.lugaresvp.domain.Empleado;
-import co.gapx.lugaresvp.domain.TipoEmpleado;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
