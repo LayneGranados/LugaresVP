@@ -1,7 +1,6 @@
 package com.gapxventuraplaza.domain;
 
 import java.util.ArrayList;
-import java.util.Date;
 
 /**
  * Created by laygrana on 14/08/15.
@@ -10,9 +9,12 @@ public class Supervision {
 
     private ArrayList<Evaluacion> evaluaciones;
     private int id;
-    private int supervisor;
-    private String fecha;
     private int lugar;
+    private String usuario;
+    private int actividad;
+    private String nombreCalificacion;
+    private String fecha;
+
 
     public Supervision() {
     }
@@ -25,12 +27,28 @@ public class Supervision {
         this.evaluaciones = evaluaciones;
     }
 
-    public int getSupervisor() {
-        return supervisor;
+    public String getUsuario() {
+        return usuario;
     }
 
-    public void setSupervisor(int supervisor) {
-        this.supervisor = supervisor;
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
+    }
+
+    public int getActividad() {
+        return actividad;
+    }
+
+    public void setActividad(int actividad) {
+        this.actividad = actividad;
+    }
+
+    public String getNombreCalificacion() {
+        return nombreCalificacion;
+    }
+
+    public void setNombreActividad(String nombreActividad) {
+        this.nombreCalificacion = nombreActividad;
     }
 
     public String getFecha() {

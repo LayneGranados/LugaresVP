@@ -17,13 +17,18 @@ import java.util.List;
  */
 public class SupervisionDataSource {
 
-    // Database fields
+    /*
+    *
+    *
+    */
     private SQLiteDatabase database;
     private SQLiteHelper dbHelper;
     private String[] allColumns = {
                                     SQLiteHelper.COLUMN_SUPERVISION_ID,
                                     SQLiteHelper.COLUMN_LUGAR_ID,
-                                    SQLiteHelper.COLUMN_EMPLEADO_ID,
+                                    SQLiteHelper.COLUMN_USUARIO_ID,
+                                    SQLiteHelper.COLUMN_ACTIVIDAD_ID,
+                                    SQLiteHelper.COLUMN_NOMBRE_CALIFICACION,
                                     SQLiteHelper.COLUMN_FECHA
                                   };
 
@@ -39,10 +44,12 @@ public class SupervisionDataSource {
         dbHelper.close();
     }
 
-    public Supervision createSupervision(Integer lugar, Integer empleado, String fecha) {
+    public Supervision createSupervision(Integer lugar, String usuario, Integer actividad, String nombreCalificacion, String fecha) {
         ContentValues values = new ContentValues();
         values.put(SQLiteHelper.COLUMN_LUGAR_ID, lugar);
-        values.put(SQLiteHelper.COLUMN_EMPLEADO_ID, empleado);
+        values.put(SQLiteHelper.COLUMN_USUARIO_ID, usuario);
+        values.put(SQLiteHelper.COLUMN_ACTIVIDAD_ID, actividad);
+        values.put(SQLiteHelper.COLUMN_NOMBRE_CALIFICACION, nombreCalificacion);
         values.put(SQLiteHelper.COLUMN_FECHA, fecha);
 
         long insertId = database.insert(SQLiteHelper.TABLE_SUPERVISIONGUARDAR, null, values);
@@ -54,7 +61,7 @@ public class SupervisionDataSource {
                 SQLiteHelper.COLUMN_SUPERVISION_ID+ " = " + id, null);
     }
 
-    public List<Supervision> getAllEvents() {
+    public List<Supervision> getAllSupervisiones() {
         List<Supervision> comments = new ArrayList<Supervision>();
 
         Cursor cursor = database.query(SQLiteHelper.TABLE_SUPERVISIONGUARDAR,
@@ -74,8 +81,10 @@ public class SupervisionDataSource {
         Supervision supervision = new Supervision();
         supervision.setId(cursor.getInt(0));
         supervision.setLugar(cursor.getInt(1));
-        supervision.setSupervisor(cursor.getInt(2));
-        supervision.setFecha(cursor.getString(3));
+        supervision.setUsuario(cursor.getString(2));
+        supervision.setActividad(cursor.getInt(3));
+        supervision.setNombreActividad(cursor.getString(4));
+        supervision.setFecha(cursor.getString(5));
         return supervision;
     }
 }

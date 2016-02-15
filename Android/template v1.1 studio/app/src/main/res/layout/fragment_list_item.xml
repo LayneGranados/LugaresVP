@@ -12,33 +12,51 @@
         android:orientation="horizontal"
         android:background="@color/white_transparent" >
 
-        <TextView
-            android:id="@+id/item_id_actividad"
-            android:layout_width="wrap_content"
+        <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="0dp"
-            android:paddingLeft="0dp"
-            android:fontFamily="sans-serif-light"
-            android:textSize="2dp"
-            android:textColor="@color/gray"
-            android:visibility="invisible"/>
+            android:shrinkColumns="*"
+            android:layout_weight="1">
 
-        <TextView
-                android:id="@+id/item_nombre_actividad"
+            <TableRow
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:paddingLeft="5dp"
-                android:fontFamily="sans-serif-light"
-                android:textSize="@dimen/textsize_medium_large"
-                android:textColor="@color/gray"/>
+                android:padding="5dip"
+                android:maxLines="4">
 
-            <Spinner
-                android:id="@+id/calificaciones"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical|right"
-                style="@style/UIButtonSupervision" />
+                <TextView
+                    android:id="@+id/item_id_actividad"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-light"
+                    android:textSize="2dp"
+                    android:textColor="@color/gray"
+                    android:visibility="invisible"/>
+
+                <TextView
+                    android:id="@+id/item_nombre_actividad"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:paddingLeft="5dp"
+                    android:padding="10dp"
+                    android:ellipsize="end"
+                    android:maxLines="5"
+                    android:singleLine="false"
+                    android:fontFamily="sans-serif-light"
+                    android:textSize="@dimen/textsize_medium"
+                    android:textColor="@color/gray"/>
+            </TableRow>
+        </TableLayout>
+
+        <Spinner
+            android:id="@+id/calificaciones"
+            android:layout_width="match_parent"
+            android:layout_weight="2"
+            android:padding="5dip"
+            android:layout_marginRight="5dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|right"
+            style="@style/UIButtonSupervision" />
 
     </LinearLayout>
 

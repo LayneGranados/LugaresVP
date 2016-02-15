@@ -20,22 +20,13 @@ public class DetailListAdapterCrearSupervision {
 
     @SuppressLint("InflateParams")
 		public static View getView(CalificacionActividad item, Context context, Context app) {
- 
-            // 1. Create inflater 
-            LayoutInflater inflater = (LayoutInflater) context
-                .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
- 
-            // 2. Get rowView from inflater
+
+            LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+
             View rowView = inflater.inflate(R.layout.fragment_list_item, null, false);
- 
-            // 3. Get the two text view from the rowView
+
             TextView labelViewNombre = (TextView) rowView.findViewById(R.id.item_nombre_actividad);
             TextView labelViewId = (TextView) rowView.findViewById(R.id.item_id_actividad);
-            //TextView valueView = (TextView) rowView.findViewById(R.id.item_rol);
-
-
- 
-            // 4. Set the text for textView 
             labelViewNombre.setText(item.getNombreActividad());
             labelViewId.setText(String.valueOf(item.getActividadId()));
 
