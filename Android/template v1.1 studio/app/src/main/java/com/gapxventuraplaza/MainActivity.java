@@ -1,8 +1,5 @@
 package com.gapxventuraplaza;
 
-import com.gapxventuraplaza.menu.ResideMenu;
-import com.gapxventuraplaza.menu.ResideMenuItem;
-
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
@@ -20,6 +17,9 @@ import android.view.Surface;
 import android.view.View;
 import android.view.ViewConfiguration;
 import android.view.WindowManager;
+
+import com.gapxventuraplaza.menu.ResideMenu;
+import com.gapxventuraplaza.menu.ResideMenuItem;
 
 public class MainActivity extends FragmentActivity implements View.OnClickListener{
 

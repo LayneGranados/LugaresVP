@@ -85,6 +85,7 @@ public class SupervisionDataSource {
         supervision.setActividad(cursor.getInt(3));
         supervision.setNombreActividad(cursor.getString(4));
         supervision.setFecha(cursor.getString(5));
+        supervision.setEncontrado(true);
         return supervision;
     }
 }

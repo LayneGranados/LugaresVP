@@ -8,10 +8,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.*;
-
-import java.io.Serializable;
-import java.util.ArrayList;
+import android.widget.Button;
+import android.widget.TextView;
 
 import com.gapxventuraplaza.domain.Calificacion;
 import com.gapxventuraplaza.domain.CalificacionActividad;
@@ -21,6 +19,9 @@ import com.gapxventuraplaza.utils.UISwipableList;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
+
+import java.io.Serializable;
+import java.util.ArrayList;
 
 public class TransitionListFragment extends Fragment {
 
@@ -74,25 +75,6 @@ public class TransitionListFragment extends Fragment {
         listView.setIgnoredViewHandler(resideMenu);
         title.setText(t);
         desc.setText(d);
-
-        /*listView.setOnItemClickListener(new OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View viewa, int i, long l) { 
-                ListItem item = (ListItem) listView.getAdapter().getItem(i);
-        
-                Intent intent = new Intent(getActivity(), TransitionDetailActivity.class);
-                
-                Bundle bundle = new Bundle();
-                bundle.putString("title", "Fecha: "+item.getNombreActividad());
-                bundle.putString("descr", "Supervisado por: "+item.getNombreActividad());
-                int[] screen_location = new int[2];
-                bundle.putInt(PACKAGE + ".left", screen_location[0]);
-                bundle.putInt(PACKAGE + ".top", screen_location[1]);
-                intent.putExtras(bundle);
-                startActivity(intent);
-                getActivity().overridePendingTransition(0, 0);
-            }
-        });*/
     }
 
     private void getListData(){

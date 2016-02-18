@@ -102,8 +102,8 @@ public class JSONUtil {
 
             dato.put("idlugar", idlugar);
             dato.put("usuario", usuario);
-            dato.put("evaluacion", evaluacion.toString());
             dato.put("fecha", fecha);
+            dato.put("evaluacion", evaluacion.toString());
             System.out.println("dato.toString()"+dato.toString());
             StringEntity entity = new StringEntity(dato.toString());
             post.setEntity(entity);

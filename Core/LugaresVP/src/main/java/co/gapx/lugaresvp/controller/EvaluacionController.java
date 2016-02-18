@@ -93,7 +93,7 @@ public class EvaluacionController {
     
     @RequestMapping(value = "/evaluacion", method = RequestMethod.POST)
     @Transactional
-    public @ResponseBody Supervision save(@RequestBody String json, HttpServletResponse response) {
+    public @ResponseBody Boolean save(@RequestBody String json, HttpServletResponse response) {
         
         Map obj=(Map) JSONValue.parse(json);
         
@@ -138,7 +138,7 @@ public class EvaluacionController {
         
         for(Object j : jasonArray){
             Map ca = (Map) JSONValue.parse(String.valueOf(j));
-            Actividad acti = this.actividadB.get(Integer.parseInt((String)ca.get("idactividad")));
+            Actividad acti = this.actividadB.get(((Long)(ca.get("idactividad"))).intValue());
             ActividadTipoLugar atl = this.actividadTipoLugarB.getDeTipoLugarActividad(lugar.getTipoLugar(), acti);
             Evaluacion eva = new Evaluacion();
             eva.setSupervision(sup);
@@ -154,7 +154,12 @@ public class EvaluacionController {
              saved = this.evaluacionB.save(eva);
         }
         this.crudS.refresh(sup);
-        return sup;
+        System.out.println("Id de Supervisión: "+sup.getId());
+        if(sup.getId()!=null){
+            return true;
+        }else{
+            return false;
+        }
     }
     
     @RequestMapping(value = "/evaluacion", method = RequestMethod.PUT)

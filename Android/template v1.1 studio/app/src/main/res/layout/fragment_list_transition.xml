@@ -13,66 +13,70 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="fill_parent"
-        android:padding="19dp"
-        android:layout_marginRight="@dimen/list_horizontal_margin"
-        android:layout_marginLeft="@dimen/list_horizontal_margin"
-        android:orientation="vertical" >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:padding="15dp"
+            android:layout_marginRight="@dimen/list_horizontal_margin"
+            android:layout_marginLeft="@dimen/list_horizontal_margin"
+            android:orientation="vertical" >
 
-        <TextView
-            android:id="@+id/title"
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-light"
+                android:layout_margin="5dp"
+                android:padding="5dp"
+                android:paddingTop="2dp"
+                android:layout_gravity="center"
+                android:gravity="center_horizontal"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/textsize_medium_large" />
+
+            <TextView
+                android:id="@+id/desc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-light"
+                android:layout_margin="5dp"
+                android:padding="5dp"
+                android:paddingTop="2dp"
+                android:layout_gravity="center"
+                android:gravity="center_horizontal"
+                android:textSize="@dimen/textsize_medium_small"
+                android:textColor="@color/white_transparent" />
+
+            <Button
+                android:id="@+id/buttonCreateEvaluacion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="3dp"
+                android:layout_gravity="center"
+                android:text="@string/crear_supervisión"
+                android:textSize="@dimen/textsize_medium_large"
+                style="@style/UIButtonInverse" />
+
+        </LinearLayout>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="2.5dp"
+            android:background="@color/theme_color"/>
+
+        <LinearLayout android:id="@+id/email_login_form"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-light"
-            android:layout_margin="5dp"
-            android:padding="5dp"
-            android:paddingTop="15dp"
-            android:layout_gravity="center"
-            android:gravity="center_horizontal"
-            android:textColor="@android:color/white"
-            android:textSize="@dimen/textsize_xlarge" />
+            android:orientation="vertical"
+            android:background="@drawable/listview_corners">
 
-        <TextView
-            android:id="@+id/desc"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-light"
-            android:layout_margin="5dp"
-            android:padding="5dp"
-            android:paddingTop="5dp"
-            android:layout_gravity="center"
-            android:gravity="center_horizontal"
-            android:textSize="@dimen/textsize_large"
-            android:textColor="@color/white_transparent" />
-
-        <Button
-            android:id="@+id/buttonCreateEvaluacion"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="3dp"
-            android:layout_gravity="center"
-            android:text="@string/crear_supervisión"
-            android:textSize="@dimen/textsize_large"
-            style="@style/UIButtonInverse" />
-
-    </LinearLayout>
-
-    <LinearLayout android:id="@+id/email_login_form"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:background="@drawable/listview_corners">
-
-        <com.gapxventuraplaza.utils.UISwipableList
-            android:id="@+id/listView"
-            android:layout_width="match_parent"
-            android:divider="@drawable/divider"
-            android:dividerHeight="0.5dp"
-            android:layout_height="match_parent"
-            />
-    </LinearLayout>
+            <com.gapxventuraplaza.utils.UISwipableList
+                android:id="@+id/listView"
+                android:layout_width="match_parent"
+                android:divider="@drawable/divider"
+                android:dividerHeight="0.8dp"
+                android:layout_height="match_parent"
+                />
+        </LinearLayout>
 
     </LinearLayout>
 

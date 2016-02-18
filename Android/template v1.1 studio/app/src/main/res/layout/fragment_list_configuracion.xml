@@ -52,6 +52,7 @@
             android:layout_marginTop="@dimen/textsize_medium">
 
             <TextView
+                android:id="@+id/textoActualizarSupervisiones"
                 android:layout_width="wrap_content"
                 android:layout_height="fill_parent"
                 android:fontFamily="sans-serif-light"
@@ -59,11 +60,11 @@
                 android:padding="5dp"
                 android:layout_gravity="left"
                 android:gravity="center_vertical"
-                android:text="@string/action_actualizar_eventos"
                 android:textColor="@android:color/white"
                 android:textSize="@dimen/textsize_medium"
                 android:layout_weight="1"
                 android:textStyle="bold"/>
+
             <Button
                 android:id="@+id/btnActualizarEventos"
                 android:layout_width="wrap_content"

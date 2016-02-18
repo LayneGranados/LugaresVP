@@ -86,7 +86,7 @@ public class SupervisionDAOImpl implements SupervisionDAO, Serializable{
     @Override
     @Transactional
     public List<Supervision> getDeLugar(Lugar id) {
-        List lista = getCurrentSession().createQuery("from Supervision e where e.lugar= :id").setParameter("id", id).list();
+        List lista = getCurrentSession().createQuery("from Supervision e where e.lugar= :id order by fecha desc").setParameter("id", id).list();
         this.evictUnProxy(lista);
         return lista;
     }

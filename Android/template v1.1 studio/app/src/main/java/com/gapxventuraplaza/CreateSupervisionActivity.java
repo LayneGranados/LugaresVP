@@ -307,7 +307,6 @@ public class CreateSupervisionActivity extends Activity {
             String msg = (String)result[1];
             if (res) {
                 pasar = new Intent(getApplicationContext(), MainActivity.class);
-                final Globales globales = (Globales) getApplicationContext();
                 startActivity(pasar);
             } else {
                 Toast.makeText(CreateSupervisionActivity.this, "Se produjo un error al guardar la supervisión, por favor, confirme con el administrador del sistema.", Toast.LENGTH_SHORT).show();

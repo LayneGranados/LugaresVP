@@ -14,6 +14,7 @@ public class Supervision {
     private int actividad;
     private String nombreCalificacion;
     private String fecha;
+    private Boolean encontrado;
 
 
     public Supervision() {
@@ -73,6 +74,18 @@ public class Supervision {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public Boolean getEncontrado() {
+        return encontrado;
+    }
+
+    public void setEncontrado(Boolean encontrado) {
+        this.encontrado = encontrado;
+    }
+
+    public void setNombreCalificacion(String nombreCalificacion) {
+        this.nombreCalificacion = nombreCalificacion;
     }
 }
 

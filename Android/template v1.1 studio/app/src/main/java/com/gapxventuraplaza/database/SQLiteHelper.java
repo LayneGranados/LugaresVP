@@ -37,7 +37,7 @@ public class SQLiteHelper extends SQLiteOpenHelper {
     public static final String COLUMN_FECHA = "fecha";
 
     private static final String DATABASE_NAME = "vyv.db";
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 3;
 
     // Database creation sql statement
     private static final String TABLE_USER_CREATE = "create table " + TABLE_USER
