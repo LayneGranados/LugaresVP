@@ -25,9 +25,9 @@
 
     this.clear = function() {
       self.filas = null;
-      self.tipoEmpleado = null
+      self.tipoEmpleado = null;
       self.gridApi.selection.clearSelectedRows();
-    }
+    };
 
     this.edit = function() {
       this.tipoEmpleado = {};

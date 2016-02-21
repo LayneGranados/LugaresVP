@@ -148,95 +148,7 @@
 
   }
 
-  function CalificacionActividadListController(CalificacionActividad) {
-    this.calificaciones = CalificacionActividad.query();
-  }
 
-  function CalificacionActividadCreateController(CalificacionActividad, uiGridConstants) {
-
-    var self = this;
-
-    self.create =
-      function() {
-        var calificacion = new CalificacionActividad();
-        calificacion.nombre = self.calificacion.nombre;
-        calificacion.actividad = parseInt(self.calificacion.actividad, 10);
-        calificacion.id = self.calificacion.id;
-
-        if (calificacion.id !== undefined) {
-          calificacion.$update();
-          self.filas[0].nombre = calificacion.nombre;
-          self.filas[0].actividad = calificacion.actividad;
-          self.filas = null;
-        } else {
-          calificacion.$save();
-          self.gridOptions1.data.push({
-            'nombre': calificacion.nombre,
-            'actividad': calificacion.actividad,
-            'id': 0
-          });
-        }
-
-        self.calificacion.nombre = '';
-        self.calificacion.actividad = '';
-
-      };
-
-    this.calificaciones = CalificacionActividad.query();
-
-    this.gridOptions1 = {
-      paginationPageSize: 15,
-      data: self.calificaciones,
-      columnDefs: [{
-        field: 'id'
-      }, {
-        field: 'actividad'
-      }, {
-        field: 'nombre'
-      }],
-      multiSelect: false,
-      enableRowSelection: true,
-      enableRowHeaderSelection: false
-    };
-
-    this.gridOptions1.onRegisterApi = function(gridApi) {
-      self.gridApi = gridApi;
-    };
-
-    self.calificacionActividad = {};
-    self.filas = {};
-    this.editar = function() {
-      self.filas = self.gridApi.selection.getSelectedRows();
-      self.calificacion.nombre = self.filas[0].nombre;
-      self.calificacion.descripcion = self.filas[0].actividad;
-      self.calificacion.id = self.filas[0].id;
-
-    };
-  }
-
-  function CategoriaVehiculoListController(CategoriaVehiculo) {
-    this.categorias = CategoriaVehiculo.query();
-  }
-
-  function CategoriaVehiculoCreateController(CategoriaVehiculo) {
-
-    var self = this;
-    this.create =
-      function() {
-
-        var categoria = new CategoriaVehiculo();
-        categoria.nombre = self.categoria.nombre;
-        categoria.descripcion = self.categoria.descripcion;
-        categoria.calendario = self.categoria.calendario;
-        if (self.categoria.nivel_servicio_id === undefined) {
-          categoria.nivel_servicio_id = false;
-        } else {
-          categoria.nivel_servicio_id = self.categoria.nivel_servicio_id;
-        }
-        categoria.incluyeProtocolo = self.categoria.incluyeProtocolo;
-        categoria.$save();
-      };
-  }
 
   function EvaluacionListController(Evaluacion) {
     this.evaluaciones = Evaluacion.query();
@@ -380,10 +292,6 @@
     .controller('ActividadListController', ActividadListController)
     .controller('ActividadTipoLugarListController', ActividadTipoLugarListController)
     .controller('ActividadTipoLugarCreateController', ActividadTipoLugarCreateController)
-    .controller('CalificacionActividadListController', CalificacionActividadListController)
-    .controller('CalificacionActividadCreateController', CalificacionActividadCreateController)
-    .controller('CategoriaVehiculoCreateController', CategoriaVehiculoCreateController)
-    .controller('CategoriaVehiculoListController', CategoriaVehiculoListController)
     .controller('EvaluacionListController', EvaluacionListController)
     .controller('LoginController', LoginController)
     .controller('LugarCreateController', LugarCreateController)
@@ -391,5 +299,4 @@
     .controller('ModalQRController', ModalQRController)
     .controller('TipoIdentificacionCreateController', TipoIdentificacionCreateController)
     .controller('TipoIdentificacionListController', TipoIdentificacionListController);
-
 })();
