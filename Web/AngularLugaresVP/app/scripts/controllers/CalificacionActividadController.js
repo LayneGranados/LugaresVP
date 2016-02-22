@@ -4,29 +4,31 @@
   function CalificacionActividadController(CalificacionActividad) {
     var self = this;
     this.selectedCA = new CalificacionActividad();
-    this.indexOf = undefined;
     this.save = function() {
       if (self.selectedCA.id === undefined) {
         self.selectedCA.$save();
         self.gridOptions.data.push(self.selectedCA);
         self.selectedCA = new CalificacionActividad();
       } else {
-        self.selectedCA.$update();
+        self.selectedCA.$update({}, function(data) {
+          self.gridOptions.data.splice(self.indexOf, 1);
+          self.gridOptions.data.push(data);
+        });
       }
 
     };
 
     this.edit = function() {
-      var calificacionesSeleted = self.gridApi.selection.getSelectedRows();
-      self.indexOf = self.gridOptions.data.indexOf(calificacionesSeleted[0]);
-      self.selectedCA = calificacionesSeleted[0];
+      var rows = self.gridApi.selection.getSelectedRows();
+      self.selectedCA = angular.copy(rows[0]);
+      self.indexOf = self.gridOptions.data.indexOf(rows[0]);
 
     };
     this.delete = function() {
       var calificacionesSeleted = self.gridApi.selection.getSelectedRows();
-      var indexOf = self.gridOptions.data.indexOf(calificacionesSeleted[0]);
+      var indexOfDelete = self.gridOptions.data.indexOf(calificacionesSeleted[0]);
       calificacionesSeleted[0].$delete({}, function() {
-        self.gridOptions.data.splice(indexOf, 1);
+        self.gridOptions.data.splice(indexOfDelete, 1);
       });
     };
 
