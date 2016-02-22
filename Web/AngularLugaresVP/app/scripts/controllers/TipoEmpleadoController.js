@@ -1,10 +1,13 @@
 (function() {
-  function TipoEmpleadoCRUDController(TipoEmpleado, uiGridConstants) {
+  'use strict';
+
+  function TipoEmpleadoController(TipoEmpleado) {
     var self = this;
     //lista todos los Tipos de empleados
     this.tipos = TipoEmpleado.query();
+    this.selectedTE = new TipoEmpleado();
     //opciones del grid
-    this.gridOptions1 = {
+    this.gridOptions = {
       paginationPageSize: 15,
       data: self.tipos,
       columnDefs: [{
@@ -19,66 +22,45 @@
       enableRowHeaderSelection: false
     };
 
-    this.gridOptions1.onRegisterApi = function(gridApi) {
+    this.gridOptions.onRegisterApi = function(gridApi) {
       self.gridApi = gridApi;
     };
 
     this.clear = function() {
-      self.filas = null;
-      self.tipoEmpleado = null;
+      this.selectedTE = new TipoEmpleado();
       self.gridApi.selection.clearSelectedRows();
     };
 
     this.edit = function() {
-      this.tipoEmpleado = {};
-      this.filas = {};
-      self.filas = self.gridApi.selection.getSelectedRows();
-      self.tipoEmpleado.nombre = self.filas[0].nombre;
-      self.tipoEmpleado.descripcion = self.filas[0].descripcion;
-      self.tipoEmpleado.id = self.filas[0].id;
+      var rows = self.gridApi.selection.getSelectedRows();
+      self.selectedTE = angular.copy(rows[0]);
+      self.indexOf = self.gridOptions.data.indexOf(rows[0]);
     };
     self.save = function() {
-      var tipoEmpleado = new TipoEmpleado();
-      tipoEmpleado.nombre = self.tipoEmpleado.nombre;
-      tipoEmpleado.descripcion = self.tipoEmpleado.descripcion;
-      tipoEmpleado.id = self.tipoEmpleado.id;
-      if (tipoEmpleado.id !== undefined) {
-        tipoEmpleado.$update();
-        self.filas[0].nombre = tipoEmpleado.nombre;
-        self.filas[0].descripcion = tipoEmpleado.descripcion;
-        self.filas = null;
+      if (self.selectedTE.id === undefined) {
+        self.selectedTE.$save({}, function(data) {
+          self.gridOptions.data.push(data);
+          self.selectedTE = new TipoEmpleado();
+        });
       } else {
-        tipoEmpleado.$save(null, function(object) {
-          self.gridOptions1.data.push({
-            'nombre': object.nombre,
-            'descripcion': object.descripcion,
-            'id': object.id
-          });
+        self.selectedTE.$update({}, function(data) {
+          self.selectedTE = new TipoEmpleado();
+          self.gridOptions.data.splice(self.indexOf, 1);
+          self.gridOptions.data.push(data);
         });
       }
-      self.tipoEmpleado = null
     };
 
     this.delete = function() {
-      self.filas = {};
-      self.filas = self.gridApi.selection.getSelectedRows();
-      var tipoEmpleado = new TipoEmpleado();
-      tipoEmpleado.id = self.filas[0].id;
-      tipoEmpleado.$delete(null, function(object) {
-        var index = self.gridOptions1.data.indexOf(self.filas[0]);
-        self.gridOptions1.data.splice(index, 1);
+      var rows = self.gridApi.selection.getSelectedRows();
+      var indexOfDelete = self.indexOf = self.gridOptions.data.indexOf(rows[0]);
+      rows[0].$delete({}, function() {
+        self.gridOptions.data.splice(indexOfDelete, 1);
       });
-
-    }
-
+    };
   }
 
-  function TipoEmpleadoListController(TipoEmpleado) {
-    this.tipos = TipoEmpleado.query();
-  }
+  angular.module('blog.controllers').controller('TipoEmpleadoController', TipoEmpleadoController);
 
-  angular.module('blog.controllers')
-    .controller('TipoEmpleadoCRUDController', TipoEmpleadoCRUDController)
-    .controller('TipoEmpleadoListController', TipoEmpleadoListController);
 
 }());

@@ -100,28 +100,6 @@
     });
   }
 
-
-  function TipoEmpleado($resource, BaseUrl) {
-    return $resource(BaseUrl + '/tipoEmpleado/:tipoempleadoId', {
-      tipoempleadoId: '@_id'
-    }, {
-      'save': {
-        method: 'POST',
-        isArray: false,
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      },
-      'update': {
-        method: 'PUT',
-        isArray: false,
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      }
-    });
-  }
-
   function TipoIdentificacion($resource, BaseUrl) {
     return $resource(BaseUrl + '/tipoIdentificacion/:tipoIdentificacionId', {
       tipoIdentificacionId: '@_id'
@@ -138,7 +116,6 @@
   angular
     .module('blog.services')
     .constant('BaseUrl', 'http://192.168.0.50:8080/InspeccionZonas/rest/')
-    .factory('TipoEmpleado', TipoEmpleado)
     .factory('TipoIdentificacion', TipoIdentificacion)
     .factory('Login', Login)
     .factory('Supervision', Supervision)
