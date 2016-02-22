@@ -120,22 +120,10 @@ public class LoginActivity extends Activity {
                 Object[] observaciones = JSONUtil.login(usuario, password);
                 String x = String.valueOf(observaciones[0]);
                 x = x.replace("\n", "");
-                System.out.println("Json devuelto de login: "+x);
                 res[1] = String.valueOf(observaciones[1]);
 
                 if(x.equalsIgnoreCase("true")) {
                     res[3] = true;
-                    /*if(id!=null){
-                        if(!logged){
-                            datasource.createUsuario(id, logi, passw, roldb, 1);
-                        }
-                    }else {
-                        if(logged){
-                            for(int i=0;i<values.size();i++){
-                                datasource.deleteUsuario(values.get(i).getId());
-                            };
-                        }
-                    }*/
                 }
                 else {
                     res[3] = false;

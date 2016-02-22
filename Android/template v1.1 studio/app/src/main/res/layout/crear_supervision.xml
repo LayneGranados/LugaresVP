@@ -133,8 +133,8 @@
 				android:fontFamily="sans-serif-light"
 				android:ellipsize="marquee"
 				android:singleLine="false"
-				android:text="xasdfghj"
-				android:textSize="@dimen/textsize_large"
+				android:text="Calificar el Lugar"
+				android:textSize="@dimen/textsize_medium_large"
 				android:textColor="@android:color/white"
 				android:layout_gravity="center"/>
 

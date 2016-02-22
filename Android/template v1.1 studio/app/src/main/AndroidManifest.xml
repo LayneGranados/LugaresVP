@@ -35,11 +35,6 @@
             android:theme="@style/AppTheme" >
         </activity>
         <activity
-            android:name="com.gapxventuraplaza.DetailActivity"
-            android:label="@string/title_activity_detail_view"
-            android:theme="@style/AppTheme" >
-        </activity>
-        <activity
             android:name="com.gapxventuraplaza.TransitionDetailActivity"
             android:label="@string/title_activity_detail_view"
             android:theme="@style/AppThemeTrans" >

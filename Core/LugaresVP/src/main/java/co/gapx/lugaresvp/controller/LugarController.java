@@ -4,7 +4,6 @@ import co.gapx.lugaresvp.business.CRUDService;
 import co.gapx.lugaresvp.business.LugarBusiness;
 import co.gapx.lugaresvp.business.TipoLugarBusiness;
 import co.gapx.lugaresvp.domain.Lugar;
-import co.gapx.lugaresvp.domain.TipoEmpleado;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -25,11 +24,9 @@ import java.io.IOException;
 import java.io.OutputStream;
 
 import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import net.glxn.qrgen.QRCode;
-import net.glxn.qrgen.image.ImageType;
+import org.hibernate.type.ImageType;
 import org.springframework.web.bind.annotation.RequestParam;
 /**
  *
@@ -58,7 +55,11 @@ public class LugarController {
             map.put("nombre", c.getNombre());
             map.put("descripcion", c.getDescripcion());
             this.crudS.refresh(c.getTipoLugar());
-            map.put("tipolugar", c.getTipoLugar().getNombre());         
+            Map<String, Object> mapTipoLugar = new HashMap();
+            mapTipoLugar.put("id", c.getTipoLugar().getId());         
+            mapTipoLugar.put("nombre", c.getTipoLugar().getNombre());         
+            mapTipoLugar.put("descripcion", c.getTipoLugar().getDescripcion());         
+            map.put("tipo_lugar", mapTipoLugar);
             l.add(map);
         }
         return l;
@@ -106,30 +107,7 @@ public class LugarController {
         l.add(map);
         return l;
     }
-    
-    @RequestMapping(value = "/lugar/generarImagen", method = RequestMethod.GET)
-    @Transactional
-    public void login(@RequestBody String json, @RequestParam(value = "idLugar", defaultValue = "-1") int idlugar,
-            HttpServletResponse response) throws ServletException, FileNotFoundException, IOException {
-
-		System.out.println("json id lugar: "+idlugar);
-                String qrtext = String.valueOf(idlugar);
-                ImageType png = ImageType.PNG;
-                QRCode from = QRCode.from(qrtext);
-                QRCode to = from.to(png);
-		ByteArrayOutputStream out = to.stream();
-		
-		response.setContentType("image/png");
-		response.setContentLength(out.size());
-		
-		OutputStream outStream = response.getOutputStream();
-
-		outStream.write(out.toByteArray());
-
-		outStream.flush();
-		outStream.close();
-    }
-    
+        
     @RequestMapping(value = "/lugar/del", method = RequestMethod.POST)
     @Transactional
     public @ResponseBody Lugar delete(@RequestBody String json, HttpServletResponse response) {
