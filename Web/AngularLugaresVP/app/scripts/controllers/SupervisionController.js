@@ -71,8 +71,10 @@
 
     this.supervisiones = Supervision.query();
 
+
     this.gridOptions1 = {
       paginationPageSize: 15,
+      enableFiltering: true,
       data: self.supervisiones,
       columnDefs: [{
         field: 'id'
@@ -84,24 +86,47 @@
         field: 'fecha'
       }],
       enableGridMenu: true,
-     enableSelectAll: true,
-     exporterCsvFilename: 'myFile.csv',
-     exporterPdfDefaultStyle: {fontSize: 9},
-     exporterPdfTableStyle: {margin: [10, 10, 10, 0]},
-     exporterPdfTableHeaderStyle: {alignment:'center',fontSize: 10, bold: true, italics: true, color: 'red'},
-     exporterPdfHeader: { text: "Supervisiones", style: 'headerStyle' },
-     exporterPdfFooter: function ( currentPage, pageCount ) {
-       return { text: currentPage.toString() + ' of ' + pageCount.toString(), style: 'footerStyle' };
-     },
-     exporterPdfCustomFormatter: function ( docDefinition ) {
-       docDefinition.styles.headerStyle = { fontSize: 22, bold: true,alignment:'center' };
-       docDefinition.styles.footerStyle = { fontSize: 10, bold: true };
-       return docDefinition;
-     },
-     exporterPdfOrientation: 'portrait',
-     exporterPdfPageSize: 'LETTER',
-     exporterPdfMaxGridWidth: 500,
-     exporterCsvLinkElement: angular.element(document.querySelectorAll(".custom-csv-link-location")),
+      enableSelectAll: true,
+      exporterCsvFilename: 'myFile.csv',
+      exporterPdfDefaultStyle: {
+        fontSize: 9
+      },
+      exporterPdfTableStyle: {
+        margin: [10, 10, 10, 0]
+      },
+      exporterPdfTableHeaderStyle: {
+        alignment: 'center',
+        fontSize: 10,
+        bold: true,
+        italics: true,
+        color: 'red'
+      },
+      exporterPdfHeader: {
+        text: "Supervisiones",
+        style: 'headerStyle'
+      },
+      exporterPdfFooter: function(currentPage, pageCount) {
+        return {
+          text: currentPage.toString() + ' of ' + pageCount.toString(),
+          style: 'footerStyle'
+        };
+      },
+      exporterPdfCustomFormatter: function(docDefinition) {
+        docDefinition.styles.headerStyle = {
+          fontSize: 22,
+          bold: true,
+          alignment: 'center'
+        };
+        docDefinition.styles.footerStyle = {
+          fontSize: 10,
+          bold: true
+        };
+        return docDefinition;
+      },
+      exporterPdfOrientation: 'portrait',
+      exporterPdfPageSize: 'LETTER',
+      exporterPdfMaxGridWidth: 500,
+      exporterCsvLinkElement: angular.element(document.querySelectorAll(".custom-csv-link-location")),
     };
 
     this.gridOptions1.onRegisterApi = function(gridApi) {

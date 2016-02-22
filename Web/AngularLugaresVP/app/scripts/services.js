@@ -3,20 +3,6 @@
 
   angular.module('blog.services', ['ngResource']);
 
-  function Actividad($resource, BaseUrl) {
-    return $resource(BaseUrl + '/actividad/:actividadId', {
-      lugarId: '@_id'
-    }, {
-      'save': {
-        method: 'POST',
-        isArray: false,
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      }
-    });
-  }
-
   function ActividadTipoLugar($resource, BaseUrl) {
     return $resource(BaseUrl + '/actividadTipoLugar/:actividadTipoLugarId', {
       actividadTipoLugarId: '@id'
@@ -28,43 +14,29 @@
           'Content-Type': 'application/json'
         }
       },
-      'queryLugar':{
+      'queryLugar': {
         method: 'GET',
         isArray: true,
-        headers:{
-            'Content-Type': 'application/json'
+        headers: {
+          'Content-Type': 'application/json'
         },
-        url: BaseUrl+'/actividadTipoLugar/lugar'
+        url: BaseUrl + '/actividadTipoLugar/lugar'
       },
-      'noLugar':{
-        method:'GET',
-        isArray:true,
-        headers:{
-          'Content-Type':'application/json'
+      'noLugar': {
+        method: 'GET',
+        isArray: true,
+        headers: {
+          'Content-Type': 'application/json'
         },
-        url: BaseUrl+'actividadTipoLugar/nolugar'
+        url: BaseUrl + 'actividadTipoLugar/nolugar'
       },
-      'eliminar':{
-        method: 'POST',
-        isArray: false,
-        headers:{
-            'Content-Type':'application/json'
-        },
-        url: BaseUrl+'actividadTipoLugar/del'
-      }
-    });
-  }
-
-  function CalificacionActividad($resource, BaseUrl) {
-    return $resource(BaseUrl + '/calificacionActividad/:calificacionActividadId', {
-      lugarId: '@_id'
-    }, {
-      'save': {
+      'eliminar': {
         method: 'POST',
         isArray: false,
         headers: {
           'Content-Type': 'application/json'
-        }
+        },
+        url: BaseUrl + 'actividadTipoLugar/del'
       }
     });
   }
@@ -198,23 +170,6 @@
       }
     });
   }
-
-
-
-  function Persona($resource, BaseUrl) {
-    return $resource(BaseUrl + '/persona/:personaId', {
-      lugarId: '@_id'
-    }, {
-      'save': {
-        method: 'POST',
-        isArray: false,
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      }
-    });
-  }
-
   angular
     .module('blog.services')
     .constant('BaseUrl', 'http://192.168.0.50:8080/InspeccionZonas/rest/')
@@ -223,11 +178,8 @@
     .factory('TipoIdentificacion', TipoIdentificacion)
     .factory('Lugar', Lugar)
     .factory('Login', Login)
-    .factory('Actividad', Actividad)
-    .factory('Persona', Persona)
     .factory('Supervision', Supervision)
     .factory('Evaluacion', Evaluacion)
     .factory('ActividadTipoLugar', ActividadTipoLugar)
-    .factory('CalificacionActividad', CalificacionActividad)
     .factory('CategoriaVehiculo', CategoriaVehiculo);
 })();
