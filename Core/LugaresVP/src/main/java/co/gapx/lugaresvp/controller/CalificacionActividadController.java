@@ -14,6 +14,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import javax.servlet.http.HttpServletResponse;
+import org.json.simple.JSONObject;
 import org.json.simple.JSONValue;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -45,7 +46,7 @@ public class CalificacionActividadController {
     @Autowired
     private CRUDService crudS;
     
-    @RequestMapping(value = "/calificacionActividad", method = RequestMethod.GET)
+    @RequestMapping(value = "/calificacion-actividad", method = RequestMethod.GET)
     @Transactional
     public @ResponseBody List getList(HttpServletResponse response) {
         List<CalificacionActividad> calificacionActividads = this.calificacionActividadB.listALl();
@@ -53,36 +54,42 @@ public class CalificacionActividadController {
         for (CalificacionActividad c: calificacionActividads) {
             Map<String, Object> map = new HashMap();
             map.put("id", c.getId());
+            map.put("nombre", c.getNombre()); 
             this.crudS.refresh(c.getActividad());
-            map.put("nombre", c.getNombre());
-            map.put("actividad", c.getActividad().getNombre());
+            Map<String, Object> mapActividad = new HashMap();
+            mapActividad.put("id", c.getActividad().getId());
+            mapActividad.put("nombre", c.getActividad().getNombre());
+            mapActividad.put("descripcion", c.getActividad().getDescripcion());
+            map.put("actividad",mapActividad);
             l.add(map);
         }
         return l;
     }
     
-    @RequestMapping(value = "/calificacionActividad", method = RequestMethod.POST)
+    @RequestMapping(value = "/calificacion-actividad", method = RequestMethod.POST)
     @Transactional
     public @ResponseBody CalificacionActividad save(@RequestBody String json, HttpServletResponse response) {
         Map obj=(Map) JSONValue.parse(json);
         CalificacionActividad cv = new CalificacionActividad();
-        int idActividad = ((Long)obj.get("actividad")).intValue();
+        Map actividad = (Map)((JSONObject)obj.get("actividad"));
+        int idActividad = ((Long)actividad.get("id")).intValue();
         cv.setActividad(this.actividadB.get(idActividad));
         cv.setNombre((String)obj.get("nombre"));
         CalificacionActividad saved = this.calificacionActividadB.save(cv);
         return saved;
     }
     
-    @RequestMapping(value = "/calificacionActividad", method = RequestMethod.PUT)
+    @RequestMapping(value = "/calificacion-actividad", method = RequestMethod.PUT)
     @Transactional
     public @ResponseBody CalificacionActividad put(@RequestBody String json, HttpServletResponse response) {
         Map obj=(Map) JSONValue.parse(json);
-        int id = Integer.parseInt((String)obj.get("id"));
-        CalificacionActividad update =this.calificacionActividadB.get(id); 
-        int idActividad = ((Long)obj.get("actividad")).intValue();
-        update.setActividad(this.actividadB.get(idActividad));
-        update.setNombre((String)obj.get("nombre"));
-        CalificacionActividad saved = this.calificacionActividadB.save(update);
+        int id = ((Long)obj.get("id")).intValue();
+        CalificacionActividad updated =this.calificacionActividadB.get(id);
+        Map actividad = (Map)((JSONObject)obj.get("actividad"));
+        int idActividad = ((Long)actividad.get("id")).intValue();
+        updated.setActividad(this.actividadB.get(idActividad));
+        updated.setNombre((String)obj.get("nombre"));
+        CalificacionActividad saved = this.calificacionActividadB.save(updated);
         return saved;
     }
     
@@ -115,20 +122,19 @@ public class CalificacionActividadController {
         return l;
     }
     
-    @RequestMapping(value = "/calificacionActividad/del", method = RequestMethod.POST)
+    @RequestMapping(value = "/calificacion-actividad-delete", method = RequestMethod.POST)
     @Transactional
-    public @ResponseBody CalificacionActividad delete(@RequestBody String json, HttpServletResponse response) {
+    public @ResponseBody Boolean delete(@RequestBody String json, HttpServletResponse response) {
         Map obj=(Map) JSONValue.parse(json);
         CalificacionActividad toDelete =this.calificacionActividadB.get(((Long)obj.get("id")).intValue()); 
+        if(toDelete == null){
+            return false;
+        }
         try{
-            System.out.println("json: "+json);
             boolean deleted = this.calificacionActividadB.delete(toDelete);
-            if(deleted){
-                toDelete.setId(-1);
-            }
-            return toDelete;
+            return deleted;
         } catch (Exception ex){
-            return toDelete;
+            return false;
         }
     }
     

@@ -60,9 +60,14 @@ public class CalificacionActividadDAOImpl implements CalificacionActividadDAO, S
     @Override
     @Transactional
     public CalificacionActividad get(int id) {
-        CalificacionActividad calificacionActividad= (CalificacionActividad) getCurrentSession().createQuery("from CalificacionActividad e where e.id= :id").setParameter("id", id).list().get(0);
-        this.evictUnProxy(calificacionActividad);
-        return calificacionActividad;
+        List<CalificacionActividad> list = (List<CalificacionActividad>) getCurrentSession().createQuery("from CalificacionActividad e where e.id= :id").setParameter("id", id).list();
+        if(list != null || !list.isEmpty()){
+            CalificacionActividad calificacion = list.get(0);
+            this.evictUnProxy(calificacion);
+            return calificacion;
+        }else{
+            return null;
+        }
     }
     
     @Override

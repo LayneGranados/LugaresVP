@@ -53,7 +53,7 @@ public class EmpleadoDAOImpl implements EmpleadoDAO, Serializable{
     @Override
     @Transactional
     public List<Empleado> listALl() {
-        List lista = getCurrentSession().createQuery("from Supervisor p").list();
+        List lista = getCurrentSession().createQuery("from Empleado e").list();
         this.evictUnProxy(lista);
         return lista;
     }
@@ -61,9 +61,17 @@ public class EmpleadoDAOImpl implements EmpleadoDAO, Serializable{
     @Override
     @Transactional
     public Empleado get(int id) {
-        Empleado supervisor= (Empleado) getCurrentSession().createQuery("from Supervisor e where e.id= :id").setParameter("id", id).list().get(0);
-        this.evictUnProxy(supervisor);
-        return supervisor;
+        List<Empleado> empleados = (List<Empleado>) getCurrentSession().createQuery("from Supervisor e where e.id= :id").setParameter("id", id).list();
+        if(empleados != null || !empleados.isEmpty()){
+            Empleado supervisor= empleados.get(0);
+            this.evictUnProxy(supervisor);
+            return supervisor;
+        }else{
+            return null;
+        }
+        
+        
+        
     }
     
     @Override
