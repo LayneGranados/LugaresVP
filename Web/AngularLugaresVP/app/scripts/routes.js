@@ -32,7 +32,9 @@ function config($locationProvider, $routeProvider) {
       templateUrl: 'views/tipoIdentificacion.html'
     }).when('/tipo-lugar', {
       templateUrl: 'views/tipoLugar.html'
-    }).when('/tipo-usuario', {
+    }).when('/tipo-empleado', {
+      controller: 'TipoEmpleadoController',
+      controllerAs: 'controller',
       templateUrl: 'views/tipoEmpleado.html'
     });
 }
