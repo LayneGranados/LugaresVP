@@ -5,6 +5,8 @@ function config($locationProvider, $routeProvider) {
     .when('/', {
       templateUrl: 'views/Login.html'
     }).when('/actividad', {
+      controller: 'ActividadController',
+      controllerAs: 'controller',
       templateUrl: 'views/actividad.html'
     }).when('/actividadTipoLugar', {
       templateUrl: 'views/actividadTipoLugar.html'
