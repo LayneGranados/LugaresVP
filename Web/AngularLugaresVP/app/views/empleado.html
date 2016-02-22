@@ -7,15 +7,14 @@
         <div align="center" style="font-size:20px;">REGISTRO DE EMPLEADOS</div>
         <fieldset class="form-group">
           <label>Tipo de Identificacion:</label>
-          <select class="js-example-basic-single form-control" id="categ" ng-controller="TipoIdentificacionListController as tiidListCtrl" ng-model="empCreateCtrl.persona.tipoIdentificacionId" style="width: 100%">
-            <option ng-repeat="tip in tiidListCtrl.tipos" value="{{tip.id}}">{{tip.codigo}}</option>
-          </select>
+          <select-tipo-identificacion object="controller.selectedEmpleado.tipoIdentificacion"></select-tipo-identificacion>
+
           <label>Identificacion:</label>
-          <input class="form-control input-lg" ng-model="controller.selected.identificacion" placeholder="Identificacion" type="text">
+          <input class="form-control input-lg" ng-model="controller.selectedEmpleado.identificacion" placeholder="Identificacion" type="text">
           <label>Nombres:</label>
-          <input class="form-control input-lg" ng-model="controller.selected.nombres" placeholder="Nombres" type="text">
+          <input class="form-control input-lg" ng-model="controller.selectedEmpleado.nombres" placeholder="Nombres" type="text">
           <label>Apellidos:</label>
-          <input class="form-control input-lg" ng-model="controller.selected.apellidos" placeholder="Apellidos" type="text">
+          <input class="form-control input-lg" ng-model="controller.selectedEmpleado.apellidos" placeholder="Apellidos" type="text">
           <label>Tipo de Usuario/Empleado:
           </label>
           <select class="js-example-basic-single form-control" id="categ" ng-controller="TipoEmpleadoListController as tiemListCtrl" ng-model="empCreateCtrl.persona.tipoempleado" style="width: 100%">
