@@ -6,9 +6,10 @@
     this.selectedCA = new CalificacionActividad();
     this.save = function() {
       if (self.selectedCA.id === undefined) {
-        self.selectedCA.$save();
-        self.gridOptions.data.push(self.selectedCA);
-        self.selectedCA = new CalificacionActividad();
+        self.selectedCA.$save({},function () {
+          self.gridOptions.data.push(self.selectedCA);
+          self.selectedCA = new CalificacionActividad();
+        });
       } else {
         self.selectedCA.$update({}, function(data) {
           self.gridOptions.data.splice(self.indexOf, 1);

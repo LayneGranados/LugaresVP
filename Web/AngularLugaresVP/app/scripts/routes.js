@@ -23,6 +23,8 @@ function config($locationProvider, $routeProvider) {
     }).when('/login', {
       templateUrl: 'views/Login.html'
     }).when('/lugar', {
+      controller: 'LugarController',
+      controllerAs: 'controller',
       templateUrl: 'views/lugar.html'
     }).when('/supervision', {
       templateUrl: 'views/supervision.html'
@@ -33,5 +35,5 @@ function config($locationProvider, $routeProvider) {
     }).when('/tipo-usuario', {
       templateUrl: 'views/tipoEmpleado.html'
     });
-};
+}
 angular.module('blog').config(config);

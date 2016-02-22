@@ -7,9 +7,9 @@
 
     this.actividades = Actividad.query();
     self.selectedActividad = new Actividad();
+
     this.cancel = function() {
       self.selectedActividad = new Actividad();
-
     };
 
     this.save = function() {
@@ -39,7 +39,7 @@
         self.gridOptions.data.splice(indexOfDelete, 1);
       });
     };
-    
+
     this.gridOptions = {
       paginationPageSize: 15,
       data: self.actividades,
