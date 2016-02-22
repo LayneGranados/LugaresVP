@@ -70,19 +70,7 @@
     });
   }
 
-  function Lugar($resource, BaseUrl) {
-    return $resource(BaseUrl + '/lugar/:lugarId', {
-      lugarId: '@_id'
-    }, {
-      'save': {
-        method: 'POST',
-        isArray: false,
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      }
-    });
-  }
+
 
   function Login($resource, BaseUrl) {
     return $resource(BaseUrl + '/login/:loginId', {
@@ -147,36 +135,11 @@
       }
     });
   }
-
-  function TipoLugar($resource, BaseUrl) {
-    return $resource(BaseUrl + 'tipoLugar/:tipolugarId', {
-      tipolugarId: '@id'
-    }, {
-      'update': {
-        method: 'PUT',
-        isArray: false,
-        url: BaseUrl + 'tipoLugar',
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      },
-      'delete': {
-        method: 'POST',
-        isArray: false,
-        url: BaseUrl + 'tipoLugar/del',
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      }
-    });
-  }
   angular
     .module('blog.services')
     .constant('BaseUrl', 'http://192.168.0.50:8080/InspeccionZonas/rest/')
-    .factory('TipoLugar', TipoLugar)
     .factory('TipoEmpleado', TipoEmpleado)
     .factory('TipoIdentificacion', TipoIdentificacion)
-    .factory('Lugar', Lugar)
     .factory('Login', Login)
     .factory('Supervision', Supervision)
     .factory('Evaluacion', Evaluacion)
