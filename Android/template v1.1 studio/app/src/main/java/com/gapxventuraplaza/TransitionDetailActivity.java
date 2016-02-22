@@ -78,7 +78,6 @@ public class TransitionDetailActivity extends Activity {
         mLayoutContainer = (RelativeLayout) findViewById(R.id.bg_layout);
 	    mTitleView = (TextView) findViewById(R.id.title);
 	    mNavigationBackBtn = (Button) findViewById(R.id.title_bar_left_menu);
-	    TextView mSum = (TextView) findViewById(R.id.sumary);
 	    mShare = (UICircularImage) findViewById(R.id.action1);
 	    UITabs tab = (UITabs) findViewById(R.id.toggle);      
         
@@ -94,7 +93,6 @@ public class TransitionDetailActivity extends Activity {
         final int width = bundle.getInt(PACKAGE + ".width");
         final int height = bundle.getInt(PACKAGE + ".height");     
 	    title = bundle.getString("title");
-	    String sum = bundle.getString("descr");
 	    imgId = bundle.getInt("img");
         
 	    //Our Animation initialization
@@ -131,7 +129,6 @@ public class TransitionDetailActivity extends Activity {
 
 
 	    mTitleView.setText(title);
-	    mSum.setText(sum);
 	    mImageView.setImageResource(imgId);
 	    mNavigationTitle.setText(title);
 	    

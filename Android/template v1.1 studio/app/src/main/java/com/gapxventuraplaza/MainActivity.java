@@ -1,8 +1,5 @@
 package com.gapxventuraplaza;
 
-import com.gapxventuraplaza.menu.ResideMenu;
-import com.gapxventuraplaza.menu.ResideMenuItem;
-
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
@@ -20,6 +17,9 @@ import android.view.Surface;
 import android.view.View;
 import android.view.ViewConfiguration;
 import android.view.WindowManager;
+
+import com.gapxventuraplaza.menu.ResideMenu;
+import com.gapxventuraplaza.menu.ResideMenuItem;
 
 public class MainActivity extends FragmentActivity implements View.OnClickListener{
 
@@ -198,10 +198,6 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
 					//bottomPadding += size;
 				}
 			} else if (size > 0) {
-				// on tablets, the navigationbar is always at the bottom.
-                //System.out.println("entro en el else");
-                //size=0;
-				//bottomPadding += size;
 			}
 
 			View scrollViewMenu = findViewById(R.id.sv_left_menu);

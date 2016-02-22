@@ -2,6 +2,7 @@ package com.gapxventuraplaza;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -21,6 +22,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.gapxventuraplaza.database.SupervisionDataSource;
 import com.nineoldandroids.animation.Animator;
 import com.nineoldandroids.animation.AnimatorListenerAdapter;
 import com.nineoldandroids.animation.ObjectAnimator;
@@ -37,12 +39,18 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.Serializable;
+import java.text.DateFormat;
+import java.text.Format;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 import static com.nineoldandroids.view.ViewPropertyAnimator.animate;
 
 public class CreateSupervisionActivity extends Activity {
 
+    private static Context mContext;
+    private SupervisionDataSource datasource;
     //Configuration
     public static final int DURATION = 500; // in ms
     public static final String PACKAGE = "IDENTIFY";
@@ -70,9 +78,15 @@ public class CreateSupervisionActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        mContext = getApplicationContext();
+        datasource = new SupervisionDataSource(this);
+        datasource.open();
+
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
             getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
         }
+
         setContentView(R.layout.crear_supervision);
         Intent myIntent = getIntent();
         calificaciones = (ArrayList<CalificacionActividad>)getIntent().getSerializableExtra("calificaciones");
@@ -110,7 +124,7 @@ public class CreateSupervisionActivity extends Activity {
                     JSONObject obj = new JSONObject();
 
                     try {
-                        obj.put("idactividad", x);
+                        obj.put("idactividad", Integer.parseInt(x));
                         obj.put("nombrecalificacion", nombreCalificacion);
                     } catch (JSONException e) {
                         e.printStackTrace();
@@ -288,13 +302,11 @@ public class CreateSupervisionActivity extends Activity {
         private Intent pasar;
 
         protected void onPostExecute(Object[] result) {
-
+            datasource.close();
             Boolean res = (Boolean) result[3];
             String msg = (String)result[1];
             if (res) {
                 pasar = new Intent(getApplicationContext(), MainActivity.class);
-                final Globales globales = (Globales) getApplicationContext();
-                //pasar.putExtra("escaneado", String.valueOf(globales.getLugar()));
                 startActivity(pasar);
             } else {
                 Toast.makeText(CreateSupervisionActivity.this, "Se produjo un error al guardar la supervisión, por favor, confirme con el administrador del sistema.", Toast.LENGTH_SHORT).show();
@@ -305,19 +317,28 @@ public class CreateSupervisionActivity extends Activity {
         protected Object[] doInBackground(Void... arg0) {
             Object[] res = new Object[5];
 
+
             res[0] = false;
             try {
                 final Globales globales = (Globales) getApplicationContext();
+                DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                Date date = new Date();
 
-                Object[] observaciones = JSONUtil.guardarEvaluacion(String.valueOf(globales.getLugar()), globales.getUsuario(), arrayevaluaciones);
+                Object[] observaciones = JSONUtil.guardarEvaluacion(String.valueOf(globales.getLugar()), globales.getUsuario(), arrayevaluaciones, dateFormat.format(date));
                 String x = String.valueOf(observaciones[0]);
                 x = x.replace("\n", "");
                 res[1] = String.valueOf(observaciones[1]);
-                System.out.println("Resultado de guardar supervision"+x);
                 if(!x.equalsIgnoreCase("null")) {
-                    res[3] = true;
+
+                        if(x.equalsIgnoreCase("false")){
+                            guardarSupervisiones();
+                            res[3] = false;
+                        }else if(x.equalsIgnoreCase("true")){
+                            res[3] = true;
+                        }
                 }
                 else {
+                    guardarSupervisiones();
                     res[3] = false;
                 }
             } catch (Exception e) {
@@ -326,6 +347,21 @@ public class CreateSupervisionActivity extends Activity {
             }
             return res;
         }
+    }
+
+    private void guardarSupervisiones(){
+        final Globales globales = (Globales) getApplicationContext();
+        Format formatter = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ");
+        String date = formatter.format(new Date());
+        for(int i=0;i<arrayevaluaciones.length();i++){
+            try {
+                JSONObject obj = arrayevaluaciones.getJSONObject(i);
+                datasource.createSupervision(globales.getLugar() , globales.getUsuario(), obj.getInt("idactividad"), obj.getString("nombrecalificacion"), date);
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+
     }
 
 

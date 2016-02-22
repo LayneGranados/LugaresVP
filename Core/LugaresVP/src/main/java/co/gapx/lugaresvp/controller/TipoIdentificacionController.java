@@ -3,7 +3,6 @@ package co.gapx.lugaresvp.controller;
 import co.gapx.lugaresvp.business.CRUDService;
 import co.gapx.lugaresvp.business.TipoIdentificacionBusiness;
 import co.gapx.lugaresvp.domain.TipoIdentificacion;
-import co.gapx.lugaresvp.domain.TipoLugar;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;

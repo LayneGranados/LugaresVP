@@ -19,16 +19,25 @@ public class SQLiteHelper extends SQLiteOpenHelper {
     public static final String COLUMN_USER_ROLDB = "roldb";
     public static final String COLUMN_USER_ACTIVO = "activo";
 
-    /*          TABLA EVENTO    */
+    /*          TABLA SUPERVISION    */
+    /*
+    *   idlugar
+        usuario
+        idactividad
+        nombrecalificacion
+        fecha
+    */
 
     public static final String TABLE_SUPERVISIONGUARDAR = "supervisionguardar";
     public static final String COLUMN_SUPERVISION_ID = "supervision_id";
-    public static final String COLUMN_LUGAR_ID = "lugar_i";
-    public static final String COLUMN_EMPLEADO_ID = "empleado_id";
+    public static final String COLUMN_LUGAR_ID = "lugar_id";
+    public static final String COLUMN_USUARIO_ID = "usuario_id";
+    public static final String COLUMN_ACTIVIDAD_ID = "actividad_id";
+    public static final String COLUMN_NOMBRE_CALIFICACION = "nombre_calificacion";
     public static final String COLUMN_FECHA = "fecha";
 
     private static final String DATABASE_NAME = "vyv.db";
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 3;
 
     // Database creation sql statement
     private static final String TABLE_USER_CREATE = "create table " + TABLE_USER
@@ -44,7 +53,9 @@ public class SQLiteHelper extends SQLiteOpenHelper {
                                                 + "("
                                                 + COLUMN_SUPERVISION_ID + " integer primary key AUTOINCREMENT, "
                                                 + COLUMN_LUGAR_ID + " integer, "
-                                                + COLUMN_EMPLEADO_ID + " integer, "
+                                                + COLUMN_USUARIO_ID + " text, "
+                                                + COLUMN_ACTIVIDAD_ID + " integer, "
+                                                + COLUMN_NOMBRE_CALIFICACION + " text, "
                                                 + COLUMN_FECHA + " text"
                                                 + ");";
 

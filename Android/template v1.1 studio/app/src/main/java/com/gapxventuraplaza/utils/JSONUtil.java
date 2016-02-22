@@ -1,10 +1,5 @@
 package com.gapxventuraplaza.utils;
 
-import java.io.BufferedReader;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.SocketTimeoutException;
-
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
@@ -19,11 +14,13 @@ import org.apache.http.params.HttpConnectionParams;
 import org.apache.http.params.HttpParams;
 import org.json.JSONArray;
 import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.SocketTimeoutException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 
 public class JSONUtil {
@@ -96,19 +93,17 @@ public class JSONUtil {
         return getJSON(post,2);
     }
 
-    public static Object[] guardarEvaluacion(String idlugar, String usuario, JSONArray evaluacion) {
+    public static Object[] guardarEvaluacion(String idlugar, String usuario, JSONArray evaluacion, String fecha) {
         HttpPost post = new HttpPost(ConstantsUtils.URL_EVALUACION);
 
         try {
             post.setHeader("content-type", "application/json");
             JSONObject dato = new JSONObject();
-            DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-            Date date = new Date();
+
             dato.put("idlugar", idlugar);
             dato.put("usuario", usuario);
+            dato.put("fecha", fecha);
             dato.put("evaluacion", evaluacion.toString());
-            dato.put("fecha", dateFormat.format(date));
-            System.out.println("dato.toString()"+dato.toString());
             StringEntity entity = new StringEntity(dato.toString());
             post.setEntity(entity);
 
@@ -175,7 +170,7 @@ public class JSONUtil {
 			error = true;
 		} catch (Exception e) {
             error = true;
-			System.out.println("Error haciendo Http Get");
+            res[1] = "Error haciendo Http Get";
 		}
 
 		if (!error) {
