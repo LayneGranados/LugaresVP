@@ -3,6 +3,7 @@ package co.gapx.lugaresvp.dao.impl;
 import co.gapx.lugaresvp.dao.LoginDAO;
 import co.gapx.lugaresvp.dao.HibernateUtil;
 import co.gapx.lugaresvp.domain.Login;
+import co.gapx.lugaresvp.util.Util;
 import java.io.Serializable;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -41,7 +42,7 @@ public class LoginDAOImpl implements LoginDAO, Serializable{
     public Login save(Login login) {
         Login x=new Login();
         try {
-            login.setPassword(this.encriptar(login.getPassword()));
+            login.setPassword(Util.encriptar(login.getPassword()));
             this.getCurrentSession().saveOrUpdate(login);
             if(login.getId()!=null){
                 x = login;
@@ -117,17 +118,5 @@ public class LoginDAOImpl implements LoginDAO, Serializable{
         hibernateUtil.initializeAndUnproxy(obj);
     }    
     
-    private String encriptar(String password) throws NoSuchAlgorithmException{
-
-    MessageDigest md = MessageDigest.getInstance("MD5");
-    md.update(password.getBytes());
-
-    byte byteData[] = md.digest();
-
-    StringBuffer sb = new StringBuffer();
-    for (int i = 0; i < byteData.length; i++)
-        sb.append(Integer.toString((byteData[i] & 0xff) + 0x100, 16).substring(1));
-
-        return sb.toString();
-    }
+    
 }
