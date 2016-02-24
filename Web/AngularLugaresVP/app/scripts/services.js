@@ -103,7 +103,7 @@
 
   angular
     .module('blog.services')
-    .constant('BaseUrl', 'http://192.168.0.50:8080/InspeccionZonas/rest/')
+    .constant('BaseUrl', 'http://colegios.sytes.net:18181/InspeccionZonas/rest/')
     .factory('Login', Login)
     .factory('Supervision', Supervision)
     .factory('Evaluacion', Evaluacion)

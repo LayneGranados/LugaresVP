@@ -2,9 +2,16 @@
   'use strict';
   angular.module('blog.services').factory('Empleado', function($resource, BaseUrl) {
     return $resource(BaseUrl + 'empleado/', {}, {
+      delete: {
+        method: 'POST',
+        url: BaseUrl + 'empleado-delete'
+      },
       query: {
-        method: 'GET',
-        isArray: true
+        isArray: true,
+        method: 'GET'
+      },
+      update: {
+        method: 'PUT'
       }
     });
   });

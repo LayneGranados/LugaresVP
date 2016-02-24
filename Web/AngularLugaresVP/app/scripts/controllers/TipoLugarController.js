@@ -46,9 +46,9 @@
 
     this.clear = function() {
       self.filas = null;
-      self.tipoLugar = null
+      self.tipoLugar = null;
       self.gridApi.selection.clearSelectedRows();
-    }
+    };
     this.edit = function() {
       this.tipoLugar = {};
       this.filas = {};
@@ -63,19 +63,17 @@
       var tipoLugar = new TipoLugar();
       tipoLugar.id = self.filas[0].id;
       tipoLugar.$delete(null, function(object) {
-        console.log("Objecto Despues de eliminar: " + object.id);
         if (object.id === -1) {
           var index = self.gridOptions1.data.indexOf(self.filas[0]);
           self.gridOptions1.data.splice(index, 1);
         }
       });
-    }
+    };
     self.save = function() {
       var tipoLugar = new TipoLugar();
       tipoLugar.nombre = self.tipoLugar.nombre;
       tipoLugar.descripcion = self.tipoLugar.descripcion;
       tipoLugar.id = self.tipoLugar.id;
-      console.log("TipoLugarID:", tipoLugar.id);
       if (tipoLugar.id !== undefined) {
         tipoLugar.$update();
         self.filas[0].nombre = tipoLugar.nombre;
@@ -90,7 +88,7 @@
           });
         });
       }
-      self.tipoLugar = null
+      self.tipoLugar = null;
     };
   }
 

@@ -15,18 +15,22 @@ function config($locationProvider, $routeProvider) {
       controllerAs: 'controller',
       templateUrl: 'views/calificacionActividad.html'
     }).when('/empleado', {
-      templateUrl: 'views/empleado.html',
       controller: 'EmpleadoController',
-      controllerAs: 'controller'
+      controllerAs: 'controller',
+      templateUrl: 'views/empleado.html'
     }).when('/evaluacion', {
       templateUrl: 'views/evaluacion.html'
     }).when('/login', {
-      templateUrl: 'views/Login.html'
+      controller:'LoginController',
+      controllerAs:'controller',
+      templateUrl: 'views/login.html'
     }).when('/lugar', {
       controller: 'LugarController',
       controllerAs: 'controller',
       templateUrl: 'views/lugar.html'
     }).when('/supervision', {
+      controller: 'SupervisionController',
+      controllerAs: 'controller',
       templateUrl: 'views/supervision.html'
     }).when('/tipoIdentificacion', {
       templateUrl: 'views/tipoIdentificacion.html'

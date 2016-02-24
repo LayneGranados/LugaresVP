@@ -1,5 +1,6 @@
 (function() {
-  function ModalActividadesController(tipoLugar, Actividad, ActividadTipoLugar, uiGridConstants) {
+  'use strict';
+  function ModalActividadesController(tipoLugar, Actividad, ActividadTipoLugar) {
     var self = this;
     this.tipoLugar = tipoLugar;
     this.actividadSelected = null;
@@ -36,8 +37,6 @@
           'id': object.id,
           'actividadnombre': object.actividad.nombre
         });
-        //eliminar elemento del select
-        var indice = self.listActividades.indexOf(self.actividadSelected);
         var counter = 0;
         self.listActividades.forEach(function(entry) {
           if (entry.actividadid === self.actividadSelected.actividadid) {
@@ -45,7 +44,7 @@
             return;
           }
           counter++;
-        })
+        });
       });
     };
 
@@ -59,7 +58,6 @@
       var actividadTipoLugar = new ActividadTipoLugar();
       actividadTipoLugar.id =filas[0].id;
       actividadTipoLugar.$eliminar(null,function (object) {
-        console.log("Borrado: "+object.deleted);
         if (object.deleted){
           self.listActividades.push({'actividadid':filas[0].actividadid,'actividadnombre':filas[0].actividadnombre});
           var index = self.gridOptions1.data.indexOf(filas[0]);
