@@ -70,20 +70,19 @@ public class TipoEmpleadoController {
         return saved;
     }
     
-    @RequestMapping(value = "/tipoEmpleado/del", method = RequestMethod.POST)
+    @RequestMapping(value = "/tipo-empleado-delete", method = RequestMethod.POST)
     @Transactional
-    public @ResponseBody TipoEmpleado delete(@RequestBody String json, HttpServletResponse response) {
+    public @ResponseBody Boolean delete(@RequestBody String json, HttpServletResponse response) {
         Map obj=(Map) JSONValue.parse(json);
         TipoEmpleado toDelete =this.tipoEmpleadoB.get(((Long)obj.get("id")).intValue()); 
+        if(toDelete == null){
+            return false;
+        }
         try{
-            System.out.println("json: "+json);
             boolean deleted = this.tipoEmpleadoB.delete(toDelete);
-            if(deleted){
-                toDelete.setId(-1);
-            }
-            return toDelete;
+            return deleted;
         } catch (Exception ex){
-            return toDelete;
+            return false;
         }
     }
     

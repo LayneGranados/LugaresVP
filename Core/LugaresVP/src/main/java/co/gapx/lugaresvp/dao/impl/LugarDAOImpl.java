@@ -59,9 +59,14 @@ public class LugarDAOImpl implements LugarDAO, Serializable{
     @Override
     @Transactional
     public Lugar get(int id) {
-        Lugar lugar= (Lugar) getCurrentSession().createQuery("from Lugar e where e.id= :id").setParameter("id", id).list().get(0);
-        this.evictUnProxy(lugar);
-        return lugar;
+        List<Lugar> list = (List<Lugar>)getCurrentSession().createQuery("from Lugar e where e.id= :id").setParameter("id", id).list();
+        if(list != null || !list.isEmpty()){
+            Lugar lugar= list.get(0);
+            this.evictUnProxy(lugar);
+            return lugar;
+        }else{
+            return null;
+        }
     }
     
     @Override

@@ -74,7 +74,7 @@ public class EmpleadoController {
                 mapTipoIdentificacion.put("codigo", "");
                 mapTipoIdentificacion.put("nombre", "");
             }
-            map.put("tipo_identificacion", mapTipoIdentificacion);
+            map.put("tipoIdentificacion", mapTipoIdentificacion);
             
             Map<String, Object> mapPersona = new HashMap();
             if(e.getPersona() != null){
@@ -100,7 +100,7 @@ public class EmpleadoController {
                 mapTipoEmpleado.put("nombre", "");
                 mapTipoEmpleado.put("descripcion", "");
             }
-            map.put("tipo_empleado", mapTipoEmpleado);
+            map.put("tipoEmpleado", mapTipoEmpleado);
             
             Map<String, Object> mapLogin = new HashMap();
             if(e.getLogin() != null){
@@ -136,10 +136,10 @@ public class EmpleadoController {
         persona.setApellidos((String)mapPersona.get("apellidos"));
         persona.setIdentificacion((String)mapPersona.get("identificacion"));
         
-        Map mapTipoIdentificacion = (Map)((JSONObject)obj.get("tipo_identificacion"));
+        Map mapTipoIdentificacion = (Map)((JSONObject)obj.get("tipoIdentificacion"));
         TipoIdentificacion tipoIdentificacion = this.tipoIdentificacionB.get(((Long)mapTipoIdentificacion.get("id")).intValue());
         
-        Map mapTipEmpleado = (Map)((JSONObject)obj.get("tipo_empleado"));
+        Map mapTipEmpleado = (Map)((JSONObject)obj.get("tipoEmpleado"));
         TipoEmpleado tipoEmpleado = this.tipoEmpleadoB.get(((Long)mapTipEmpleado.get("id")).intValue());
     
         empleado.setLogin(login);
@@ -167,10 +167,10 @@ public class EmpleadoController {
         persona.setApellidos((String)mapPersona.get("apellidos"));
         persona.setIdentificacion((String)mapPersona.get("identificacion"));
         
-        Map mapTipoIdentificacion = (Map)((JSONObject)obj.get("tipo_identificacion"));
+        Map mapTipoIdentificacion = (Map)((JSONObject)obj.get("tipoIdentificacion"));
         TipoIdentificacion tipoIdentificacion = this.tipoIdentificacionB.get(((Long)mapTipoIdentificacion.get("id")).intValue());
         
-        Map mapTipEmpleado = (Map)((JSONObject)obj.get("tipo_empleado"));
+        Map mapTipEmpleado = (Map)((JSONObject)obj.get("tipoEmpleado"));
         TipoEmpleado tipoEmpleado = this.tipoEmpleadoB.get(((Long)mapTipEmpleado.get("id")).intValue());
         
         updated.setLogin(login);
