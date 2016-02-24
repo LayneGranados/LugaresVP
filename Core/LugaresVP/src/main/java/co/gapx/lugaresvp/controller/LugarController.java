@@ -27,6 +27,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletResponse;
 
 import org.hibernate.type.ImageType;
+import org.json.simple.JSONObject;
 import org.springframework.web.bind.annotation.RequestParam;
 /**
  *
@@ -59,7 +60,7 @@ public class LugarController {
             mapTipoLugar.put("id", c.getTipoLugar().getId());         
             mapTipoLugar.put("nombre", c.getTipoLugar().getNombre());         
             mapTipoLugar.put("descripcion", c.getTipoLugar().getDescripcion());         
-            map.put("tipo_lugar", mapTipoLugar);
+            map.put("tipoLugar", mapTipoLugar);
             l.add(map);
         }
         return l;
@@ -70,11 +71,12 @@ public class LugarController {
     public @ResponseBody Lugar save(@RequestBody String json, HttpServletResponse response) {
         Map obj=(Map) JSONValue.parse(json);
         System.out.println("json: "+json);
-        Lugar cv = new Lugar();
-        cv.setNombre((String)obj.get("nombre"));
-        cv.setDescripcion((String)obj.get("descripcion"));
-        cv.setTipoLugar(this.tipolugarB.get(((Long)obj.get("tipolugar")).intValue()));
-        Lugar saved = this.lugarB.save(cv);
+        Lugar updated = new Lugar();
+        updated.setNombre((String)obj.get("nombre"));
+        updated.setDescripcion((String)obj.get("descripcion"));
+        Map mapLugar = (Map)((JSONObject)obj.get("tipoLugar"));
+        updated.setTipoLugar(this.tipolugarB.get(((Long)mapLugar.get("id")).intValue()));
+        Lugar saved = this.lugarB.save(updated);
         return saved;
     }
     
@@ -82,11 +84,13 @@ public class LugarController {
     @Transactional
     public @ResponseBody Lugar put(@RequestBody String json, HttpServletResponse response) {
         Map obj=(Map) JSONValue.parse(json);
-        int id = Integer.parseInt((String)obj.get("id"));
-        Lugar update =this.lugarB.get(id); 
+      
+        Lugar update = this.lugarB.get(((Long)obj.get("id")).intValue()); 
         update.setNombre((String)obj.get("nombre"));
         update.setDescripcion((String)obj.get("descripcion"));
-        update.setTipoLugar(this.tipolugarB.get(((Long)obj.get("tipolugar")).intValue()));
+        Map mapLugar = (Map)((JSONObject)obj.get("tipoLugar"));
+        update.setTipoLugar(this.tipolugarB.get(((Long)mapLugar.get("id")).intValue()));
+        
         Lugar saved = this.lugarB.save(update);
         return saved;
     }
@@ -108,20 +112,19 @@ public class LugarController {
         return l;
     }
         
-    @RequestMapping(value = "/lugar/del", method = RequestMethod.POST)
+    @RequestMapping(value = "/lugar-delete", method = RequestMethod.POST)
     @Transactional
-    public @ResponseBody Lugar delete(@RequestBody String json, HttpServletResponse response) {
+    public @ResponseBody Boolean delete(@RequestBody String json, HttpServletResponse response) {
         Map obj=(Map) JSONValue.parse(json);
         Lugar toDelete =this.lugarB.get(((Long)obj.get("id")).intValue()); 
+        if(toDelete == null){
+            return false;
+        }
         try{
-            System.out.println("json: "+json);
             boolean deleted = this.lugarB.delete(toDelete);
-            if(deleted){
-                toDelete.setId(-1);
-            }
-            return toDelete;
+            return deleted;
         } catch (Exception ex){
-            return toDelete;
+            return false;
         }
     }
     
