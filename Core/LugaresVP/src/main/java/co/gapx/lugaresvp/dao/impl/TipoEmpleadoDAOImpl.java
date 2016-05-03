@@ -59,9 +59,14 @@ public class TipoEmpleadoDAOImpl implements TipoEmpleadoDAO, Serializable{
     @Override
     @Transactional
     public TipoEmpleado get(int id) {
-        TipoEmpleado tipoLugar= (TipoEmpleado) getCurrentSession().createQuery("from TipoEmpleado e where e.id= :id").setParameter("id", id).list().get(0);
-        this.evictUnProxy(tipoLugar);
-        return tipoLugar;
+        List<TipoEmpleado> list = (List<TipoEmpleado>)getCurrentSession().createQuery("from TipoEmpleado e where e.id= :id").setParameter("id", id).list();
+        if(list != null || !list.isEmpty()){
+            TipoEmpleado tipoEmpleado= list.get(0);
+            this.evictUnProxy(tipoEmpleado);
+            return tipoEmpleado;
+        }else{
+            return null;
+        }
     }
     
     @Override
