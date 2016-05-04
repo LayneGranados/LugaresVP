@@ -22,29 +22,13 @@
     this.evaluaciones = Evaluacion.query();
   }
 
-
-
-  function LoginController($location) {
-    this.login = function() {
-      $location.path('actividad');
-    };
-    this.logout = function() {
-      $location.path('login/');
-    };
-  }
-
-  function ModalQRController(title, qrCodeId, $scope) {
+  function ModalQRController(title, qrCodeId) {
     this.title = title;
     this.qrCodeId = qrCodeId;
-    console.log('qrCodeId: ' + qrCodeId)
     this.close = function() {
       console.log('cierra esta ventana');
-    }
+    };
   }
-
-
-
-
 
   function TipoIdentificacionCreateController(TipoIdentificacion) {
     var self = this;
@@ -66,7 +50,6 @@
     .controller('ActividadTipoLugarListController', ActividadTipoLugarListController)
     .controller('ActividadTipoLugarCreateController', ActividadTipoLugarCreateController)
     .controller('EvaluacionListController', EvaluacionListController)
-    .controller('LoginController', LoginController)
     .controller('ModalQRController', ModalQRController)
     .controller('TipoIdentificacionCreateController', TipoIdentificacionCreateController)
     .controller('TipoIdentificacionListController', TipoIdentificacionListController);

@@ -100,23 +100,10 @@
     });
   }
 
-  function TipoIdentificacion($resource, BaseUrl) {
-    return $resource(BaseUrl + '/tipoIdentificacion/:tipoIdentificacionId', {
-      tipoIdentificacionId: '@_id'
-    }, {
-      'save': {
-        method: 'POST',
-        isArray: false,
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      }
-    });
-  }
+
   angular
     .module('blog.services')
-    .constant('BaseUrl', 'http://192.168.0.50:8080/InspeccionZonas/rest/')
-    .factory('TipoIdentificacion', TipoIdentificacion)
+    .constant('BaseUrl', '/REST/core/')
     .factory('Login', Login)
     .factory('Supervision', Supervision)
     .factory('Evaluacion', Evaluacion)

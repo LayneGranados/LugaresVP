@@ -1,9 +1,9 @@
 (function() {
   'use strict';
-  angular.module('blog').directive('selectTipoLugar', function(TipoLugar) {
+  angular.module('blog').directive('selectTipoIdentificacion', function(TipoIdentificacion) {
     return {
-      link: function($scope) {
-        $scope.list = TipoLugar.query();
+      link: function(scope) {
+        scope.list = TipoIdentificacion.query();
       },
       restrict: 'E',
       scope: {

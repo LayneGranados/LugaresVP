@@ -1,0 +1,3 @@
+{
+	"tipoLugar":[{"nombre":"Pasillos primer piso","id":25,"descripcion":"Pasillos de circulacion y emergencia del primer piso"},{"nombre":"Pasillos segundo piso","id":26,"descripcion":"Pasillo de circulacion y emergencia del segundo piso"},{"nombre":"Pasillo tercer piso","id":27,"descripcion":"Pasillo de circulacion y emergencia del tercer piso"},{"nombre":"BaÃ±os","id":23,"descripcion":"BaÃ±os de las zonas comunes del centro comercial"},{"nombre":"Plazoleta de comidas","id":24,"descripcion":"Plazoletas ubicadas en el tercer piso del centro comercial"}]
+}

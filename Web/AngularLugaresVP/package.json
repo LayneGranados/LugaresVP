@@ -19,6 +19,7 @@
   "devDependencies": {
     "gulp-inject": "^1.2.0",
     "gulp-webserver": "^0.9.1",
+    "http-proxy-middleware": "^0.15.0",
     "jshint-stylish": "^2.0.0",
     "wiredep": "^2.2.2"
   },

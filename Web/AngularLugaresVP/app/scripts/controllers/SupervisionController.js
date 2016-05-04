@@ -1,78 +1,35 @@
 (function() {
-  function SupervisionListController(Supervision, uiGridConstants, $scope, ModalService) {
+  'use strict';
+  function SupervisionController(Supervision, uiGridConstants, $scope, ModalService) {
 
     var self = this;
     $scope.name = null;
 
-    $scope.close = function() {
-      close({
-        name: $scope.name,
-      }, 500);
-    };
-
-    $scope.cancel = function() {
-      $element.modal('hide');
-      close({
-        name: $scope.name,
-      }, 500);
-    };
-
+    
     $scope.showComplex = function() {
+      var rows = self.gridApi.selection.getSelectedRows();
       ModalService.showModal({
         templateUrl: 'views/modalCalificaciones.html',
-        controller: 'SupervisionListController',
+        controller: function(EvaulacionSupervicion,supervision){
+          this.evaluacion = new EvaulacionSupervicion();
+          this.evaluacion.id = supervision.id;
+          this.evaluacion.$query();
+          console.log(supervision);
+        },
+        controllerAS: 'controller',
         inputs: {
-          title: 'A More Complex Example'
+          supervision: rows[0]
         }
       }).then(function(modal) {
         modal.element.modal();
-        modal.close.then(function(result) {
-          $scope.complexResult = 'Name: ' + result.name + ', age: ' + result.age;
-          var calificacion = new Supervision();
-          calificacion.nombre = result.name;
-          calificacion.actividad_id = 1;
-          calificacion.$save();
-          self.gridOptions1.data.push({
-            'nombre': self.actividad.nombre,
-            'descripcion': self.actividad.descripcion,
-            'id': 0
-          });
 
-        });
       });
-    };
-
-    $scope.showList = function() {
-      ModalService.showModal({
-        templateUrl: 'views/verCalificaciones.html',
-        controller: 'ComplexController',
-        inputs: {
-          title: 'A More Complex Example'
-        }
-      }).then(function(modal) {
-        modal.element.modal();
-        modal.close.then(function(result) {
-          $scope.complexResult = 'Name: ' + result.name + ', age: ' + result.age;
-
-          self.gridOptions1.data.push({
-            'nombre': self.actividad.nombre,
-            'descripcion': self.actividad.descripcion,
-            'id': 0
-          });
-
-        });
-      });
-    };
-
-
-    self.create = function() {
-
     };
 
     this.supervisiones = Supervision.query();
 
 
-    this.gridOptions1 = {
+    this.gridOptions = {
       paginationPageSize: 15,
       enableFiltering: true,
       data: self.supervisiones,
@@ -102,7 +59,7 @@
         color: 'red'
       },
       exporterPdfHeader: {
-        text: "Supervisiones",
+        text: 'Supervisiones',
         style: 'headerStyle'
       },
       exporterPdfFooter: function(currentPage, pageCount) {
@@ -126,10 +83,10 @@
       exporterPdfOrientation: 'portrait',
       exporterPdfPageSize: 'LETTER',
       exporterPdfMaxGridWidth: 500,
-      exporterCsvLinkElement: angular.element(document.querySelectorAll(".custom-csv-link-location")),
+      exporterCsvLinkElement: angular.element(document.querySelectorAll('.custom-csv-link-location')),
     };
 
-    this.gridOptions1.onRegisterApi = function(gridApi) {
+    this.gridOptions.onRegisterApi = function(gridApi) {
       self.gridApi = gridApi;
     };
 
@@ -140,6 +97,6 @@
 
     };
   }
-  angular.module('blog.controllers').controller('SupervisionListController', SupervisionListController);
+  angular.module('blog.controllers').controller('SupervisionController', SupervisionController);
 
 })();
