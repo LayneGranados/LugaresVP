@@ -17,6 +17,8 @@
     "nib": "^1.1.0"
   },
   "devDependencies": {
+    "gulp-angular-filesort": "^1.1.1",
+    "gulp-connect": "^2.3.1",
     "gulp-inject": "^1.2.0",
     "gulp-webserver": "^0.9.1",
     "http-proxy-middleware": "^0.15.0",

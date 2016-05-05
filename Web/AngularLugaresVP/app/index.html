@@ -7,82 +7,73 @@
     <title></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Coloca favicon.ico y apple-touch-icon(s) en el directorio raíz -->
     <!-- bower:css -->
-    <link rel="stylesheet" href="lib/angular-ui-grid/ui-grid.css" />
-    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="lib/fontawesome/css/font-awesome.css" />
-    <link rel="stylesheet" href="lib/jquery.gritter/css/jquery.gritter.css" />
-    <link rel="stylesheet" href="lib/metisMenu/dist/metisMenu.css" />
-    <link rel="stylesheet" href="lib/toastr/toastr.css" />
+    <link rel="stylesheet" href="bower_components/angular-ui-grid/ui-grid.css" />
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="bower_components/fontawesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="bower_components/jquery.gritter/css/jquery.gritter.css" />
+    <link rel="stylesheet" href="bower_components/metisMenu/dist/metisMenu.css" />
+    <link rel="stylesheet" href="bower_components/toastr/toastr.css" />
     <!-- endbower -->
     <!-- inject:css -->
-    <link rel="stylesheet" href="stylesheets/animate.css">
-    <link rel="stylesheet" href="stylesheets/main.css">
-    <link rel="stylesheet" href="stylesheets/style.min.css">
+    <link rel="stylesheet" href="/assets/css/animate.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/style.min.css">
     <!-- endinject -->
   </head>
   <body ng-app="blog">
     <div class="container-fluid">
-
-      <div class="row">
-        <!--<aside class="col-sm-3">
-      <a ng-href="/new">Crear Entrada</a>
-    </aside>-->
-
-      </div>
+      <div class="row"></div>
     </div>
     <div id="wrapper">
       <section ng-view></section>
     </div>
-
     <!-- bower:js -->
-    <script src="lib/jquery/dist/jquery.js"></script>
-    <script src="lib/angular/angular.js"></script>
-    <script src="lib/angular-modal-service/dst/angular-modal-service.js"></script>
-    <script src="lib/angular-resource/angular-resource.js"></script>
-    <script src="lib/angular-route/angular-route.js"></script>
-    <script src="lib/angular-slimscroll/angular-slimscroll.js"></script>
-    <script src="lib/angular-ui-grid/ui-grid.js"></script>
-    <script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="lib/jquery.gritter/js/jquery.gritter.js"></script>
-    <script src="lib/metisMenu/dist/metisMenu.js"></script>
-    <script src="lib/toastr/toastr.js"></script>
-    <script src="lib/qrcode-generator/js/qrcode.js"></script>
-    <script src="lib/angular-qrcode/angular-qrcode.js"></script>
-    <script src="lib/pdfmake/build/pdfmake.js"></script>
-    <script src="lib/pdfmake/build/vfs_fonts.js"></script>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-modal-service/dst/angular-modal-service.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-slimscroll/angular-slimscroll.js"></script>
+    <script src="bower_components/angular-ui-grid/ui-grid.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bower_components/jquery.gritter/js/jquery.gritter.js"></script>
+    <script src="bower_components/metisMenu/dist/metisMenu.js"></script>
+    <script src="bower_components/toastr/toastr.js"></script>
+    <script src="bower_components/qrcode-generator/js/qrcode.js"></script>
+    <script src="bower_components/angular-qrcode/angular-qrcode.js"></script>
+    <script src="bower_components/pdfmake/build/pdfmake.js"></script>
+    <script src="bower_components/pdfmake/build/vfs_fonts.js"></script>
     <!-- endbower -->
     <!-- inject:js -->
-    <script src="scripts/app.js"></script>
-    <script src="scripts/controllers.js"></script>
-    <script src="scripts/inspinia.js"></script>
-    <script src="scripts/routes.js"></script>
-    <script src="scripts/services.js"></script>
-    <script src="scripts/controllers/ActividadController.js"></script>
-    <script src="scripts/controllers/CalificacionActividadController.js"></script>
-    <script src="scripts/controllers/EmpleadoController.js"></script>
-    <script src="scripts/controllers/LoginController.js"></script>
-    <script src="scripts/controllers/LugarController.js"></script>
-    <script src="scripts/controllers/ModalActividadesController.js"></script>
-    <script src="scripts/controllers/SupervisionController.js"></script>
-    <script src="scripts/controllers/TipoEmpleadoController.js"></script>
-    <script src="scripts/controllers/TipoLugarController.js"></script>
-    <script src="scripts/directives/SelectActividades.js"></script>
-    <script src="scripts/directives/SelectTipoEmpleado.js"></script>
-    <script src="scripts/directives/SelectTipoIdentificacion.js"></script>
-    <script src="scripts/directives/SelectTipoLugar.js"></script>
-    <script src="scripts/services/Actividad.js"></script>
-    <script src="scripts/services/CalificacionActividad.js"></script>
-    <script src="scripts/services/Empleado.js"></script>
-    <script src="scripts/services/EvaluacionSupervicion.js"></script>
-    <script src="scripts/services/Lugar.js"></script>
-    <script src="scripts/services/Persona.js"></script>
-    <script src="scripts/services/TipoEmpleado.js"></script>
-    <script src="scripts/services/TipoIdentificacion.js"></script>
-    <script src="scripts/services/TipoLugar.js"></script>
+    <script src="/assets/js/services.js"></script>
+    <script src="/assets/js/services/TipoLugar.js"></script>
+    <script src="/assets/js/services/TipoIdentificacion.js"></script>
+    <script src="/assets/js/services/TipoEmpleado.js"></script>
+    <script src="/assets/js/services/Persona.js"></script>
+    <script src="/assets/js/services/Lugar.js"></script>
+    <script src="/assets/js/services/EvaluacionSupervicion.js"></script>
+    <script src="/assets/js/services/Empleado.js"></script>
+    <script src="/assets/js/services/CalificacionActividad.js"></script>
+    <script src="/assets/js/services/Actividad.js"></script>
+    <script src="/assets/js/app.js"></script>
+    <script src="/assets/js/directives/SelectTipoLugar.js"></script>
+    <script src="/assets/js/directives/SelectTipoIdentificacion.js"></script>
+    <script src="/assets/js/directives/SelectTipoEmpleado.js"></script>
+    <script src="/assets/js/directives/SelectActividades.js"></script>
+    <script src="/assets/js/controllers/TipoLugarController.js"></script>
+    <script src="/assets/js/controllers/TipoEmpleadoController.js"></script>
+    <script src="/assets/js/controllers/SupervisionController.js"></script>
+    <script src="/assets/js/controllers/ModalActividadesController.js"></script>
+    <script src="/assets/js/controllers/LugarController.js"></script>
+    <script src="/assets/js/controllers/LoginController.js"></script>
+    <script src="/assets/js/controllers/EmpleadoController.js"></script>
+    <script src="/assets/js/controllers/CalificacionActividadController.js"></script>
+    <script src="/assets/js/controllers/ActividadController.js"></script>
+    <script src="/assets/js/routes.js"></script>
+    <script src="/assets/js/inspinia.js"></script>
+    <script src="/assets/js/controllers.js"></script>
     <!-- endinject -->
-
     <script>
       $(document).ready(function() {
         setTimeout(function() {
@@ -92,9 +83,7 @@
             showMethod: 'slideDown',
             timeOut: 4000
           };
-
         }, 1300);
-
       });
     </script>
   </body>
