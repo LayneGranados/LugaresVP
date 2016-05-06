@@ -46,7 +46,7 @@
   }
 
   angular
-    .module('blog.controllers')
+    .module('vp.controllers')
     .controller('ActividadTipoLugarListController', ActividadTipoLugarListController)
     .controller('ActividadTipoLugarCreateController', ActividadTipoLugarCreateController)
     .controller('EvaluacionListController', EvaluacionListController)

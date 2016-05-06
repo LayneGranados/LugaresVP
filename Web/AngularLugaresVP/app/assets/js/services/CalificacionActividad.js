@@ -19,5 +19,5 @@
       }
     });
   }
-  angular.module('blog.services').factory('CalificacionActividad', CalificacionActividad);
+  angular.module('vp.services').factory('CalificacionActividad', CalificacionActividad);
 })();

@@ -86,6 +86,6 @@
       self.gridApi = gridApi;
     };
   }
-  angular.module('blog.controllers').controller('EmpleadoController', EmpleadoController);
+  angular.module('vp.controllers').controller('EmpleadoController', EmpleadoController);
 
 }());

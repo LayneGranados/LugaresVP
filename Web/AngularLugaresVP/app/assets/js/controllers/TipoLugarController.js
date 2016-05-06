@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  function TipoLugarCRUDController(TipoLugar, uiGridConstants, $scope, ModalService) {
+  function TipoLugarCRUDController(TipoLugar, $uibModal, $scope) {
     var self = this;
 
     //Popup de actividades
@@ -10,7 +10,7 @@
       if (self.filas.length !== 1) {
         return;
       }
-      ModalService.showModal({
+     /* ModalService.showModal({
         templateUrl: 'templates/modalActividades.html',
         controller: 'ModalActividadesController',
         controllerAs: 'modalActCtrl',
@@ -20,7 +20,7 @@
       }).then(function(modal) {
         modal.element.modal();
         modal.close.then(function() {});
-      });
+      });*/
     };
     //cargar Inicial de los tipos
     this.tipos = TipoLugar.query();
@@ -97,7 +97,7 @@
   }
 
   angular
-    .module('blog.controllers')
+    .module('vp.controllers')
     .controller('TipoLugarCRUDController', TipoLugarCRUDController)
     .controller('TipoLugarListController', TipoLugarListController);
 })();

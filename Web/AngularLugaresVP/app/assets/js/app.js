@@ -1,1 +1,16 @@
-(function() {  'use strict';  angular.module('blog.controllers', ['blog.services']);  angular.module('blog', [    'ngRoute',    'ui.grid',    'ui.grid.pagination',    'ui.grid.selection',    'ui.grid.exporter',    'blog.controllers',    'monospaced.qrcode'  ]);})();
+(function() {
+  'use strict';
+  angular.module('vp.controllers', ['vp.services', 'ui.bootstrap']);
+  angular.module('vp', [
+    'vp.controllers',
+    'ui.bootstrap',
+    'ui.router',
+    'ui.grid',
+    'ui.grid.pagination',
+    'ui.grid.selection',
+    'ui.grid.exporter',
+    'monospaced.qrcode'
+  ]);
+
+
+})();

@@ -1,6 +1,6 @@
 (function() {
   'use strict';
-  angular.module('blog.services').factory('Empleado', function($resource, BaseUrl) {
+  angular.module('vp.services').factory('Empleado', function($resource, BaseUrl) {
     return $resource(BaseUrl + 'empleado/', {}, {
       delete: {
         method: 'POST',

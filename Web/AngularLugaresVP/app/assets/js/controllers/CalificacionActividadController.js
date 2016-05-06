@@ -59,5 +59,5 @@
       self.gridApi = gridApi;
     };
   }
-  angular.module('blog.controllers').controller('CalificacionActividadController', CalificacionActividadController);
+  angular.module('vp.controllers').controller('CalificacionActividadController', CalificacionActividadController);
 })();

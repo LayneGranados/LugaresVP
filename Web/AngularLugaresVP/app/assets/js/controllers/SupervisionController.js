@@ -1,14 +1,14 @@
 (function() {
   'use strict';
-  function SupervisionController(Supervision, uiGridConstants, $scope, ModalService) {
+  function SupervisionController(Supervision, uiGridConstants, $scope) {
 
     var self = this;
     $scope.name = null;
 
-    
+
     $scope.showComplex = function() {
       var rows = self.gridApi.selection.getSelectedRows();
-      ModalService.showModal({
+      /*ModalService.showModal({
         templateUrl: 'templates/modalCalificaciones.html',
         controller: function(EvaulacionSupervicion,supervision){
           this.evaluacion = new EvaulacionSupervicion();
@@ -23,7 +23,7 @@
       }).then(function(modal) {
         modal.element.modal();
 
-      });
+      });*/
     };
 
     this.supervisiones = Supervision.query();
@@ -97,6 +97,6 @@
 
     };
   }
-  angular.module('blog.controllers').controller('SupervisionController', SupervisionController);
+  angular.module('vp.controllers').controller('SupervisionController', SupervisionController);
 
 })();

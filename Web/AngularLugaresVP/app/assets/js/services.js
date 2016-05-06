@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  angular.module('blog.services', ['ngResource']);
+  angular.module('vp.services', ['ngResource']);
 
   function ActividadTipoLugar($resource, BaseUrl) {
     return $resource(BaseUrl + '/actividadTipoLugar/:actividadTipoLugarId', {
@@ -102,7 +102,7 @@
 
 
   angular
-    .module('blog.services')
+    .module('vp.services')
     .constant('BaseUrl', '/REST/core/')
     .factory('Login', Login)
     .factory('Supervision', Supervision)

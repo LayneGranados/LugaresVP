@@ -1,25 +1,21 @@
-<div ng-include="'templates/common/sidemenu.tpl.html'"></div>
-<div class="gray-bg dashbard-1" id="page-wrapper">
-  <div ng-include="'templates/common/topbar.tpl.html'"></div>
-  <div class="container-fluid" id="wrapper" ng-controller="TipoLugarCRUDController as tipCreateCtrl">
-    <div class="row">
-      <form name="tipoLugarCreate" ng-submit="tipCreateCtrl.save()" role="form">
-        <div align="center" style="font-size:20px;">TIPOS DE LUGARES</div>
-        <fieldset class="form-group">
-          <label>Nombre:</label>
-          <input class="form-control input-lg" ng-model="tipCreateCtrl.tipoLugar.nombre" placeholder="Nombre del tipo de lugar" type="text"/>
-          <label>Descripción:</label>
-          <input class="form-control input-lg" ng-model="tipCreateCtrl.tipoLugar.descripcion" placeholder="Descripción del tipo de Lugar" type="text"/>
-          <input class="btn btn-primary btn-lg" type="submit" value="Guardar" />
-          <div class="btn btn-primary btn-lg" ng-click="tipCreateCtrl.clear()">Limpiar Formulario</div>
-        </fieldset>
-      </form>
-    </div>
-    <div class="row">
-      <div class="myGrid" ui-grid-pagination ui-grid-selection ui-grid="tipCreateCtrl.gridOptions1"></div>
-      <button class="btn btn-primary btn-lg" ng-click="tipCreateCtrl.edit()" type="button">Editar</button>
-      <button class="btn btn-primary btn-lg" ng-really-message="¿Esta Seguro?" ng-really-click="tipCreateCtrl.delete()" type="button">Eliminar</button>
-      <a class="btn btn-primary btn-lg" href ng-click="tipCreateCtrl.showComplex()">Actividades</a>
-    </div>
+<div class="container-fluid" id="wrapper">
+  <div class="row">
+    <form name="tipoLugarCreate" ng-submit="tipCreateCtrl.save()" role="form">
+      <div align="center" style="font-size:20px;">TIPOS DE LUGARES</div>
+      <fieldset class="form-group">
+        <label>Nombre:</label>
+        <input class="form-control input-lg" ng-model="tipCreateCtrl.tipoLugar.nombre" placeholder="Nombre del tipo de lugar" type="text"/>
+        <label>Descripción:</label>
+        <input class="form-control input-lg" ng-model="tipCreateCtrl.tipoLugar.descripcion" placeholder="Descripción del tipo de Lugar" type="text"/>
+        <input class="btn btn-primary btn-lg" type="submit" value="Guardar" />
+        <div class="btn btn-primary btn-lg" ng-click="tipCreateCtrl.clear()">Limpiar Formulario</div>
+      </fieldset>
+    </form>
+  </div>
+  <div class="row">
+    <div class="myGrid" ui-grid-pagination ui-grid-selection ui-grid="tipCreateCtrl.gridOptions1"></div>
+    <button class="btn btn-primary btn-lg" ng-click="tipCreateCtrl.edit()" type="button">Editar</button>
+    <button class="btn btn-primary btn-lg" ng-really-message="¿Esta Seguro?" ng-really-click="tipCreateCtrl.delete()" type="button">Eliminar</button>
+    <a class="btn btn-primary btn-lg" href ng-click="tipCreateCtrl.showComplex()">Actividades</a>
   </div>
 </div>

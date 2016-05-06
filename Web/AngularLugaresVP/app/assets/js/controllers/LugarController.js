@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  function LugarController(Lugar, ModalService) {
+  function LugarController(Lugar) {
 
     var self = this;
     this.lugares = Lugar.query();
@@ -72,7 +72,8 @@
       if (id === undefined) {
         return;
       }
-      ModalService.showModal({
+
+      /*ModalService.showModal({
         templateUrl: 'templates/modalQR.html',
         controller: 'ModalQRController',
         inputs: {
@@ -83,10 +84,10 @@
       }).then(function(modal) {
         modal.element.modal();
         modal.close.then(function() {});
-      });
+      });*/
     };
 
   }
 
-  angular.module('blog.controllers').controller('LugarController', LugarController);
+  angular.module('vp.controllers').controller('LugarController', LugarController);
 })();

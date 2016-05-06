@@ -60,7 +60,7 @@
     };
   }
 
-  angular.module('blog.controllers').controller('TipoEmpleadoController', TipoEmpleadoController);
+  angular.module('vp.controllers').controller('TipoEmpleadoController', TipoEmpleadoController);
 
 
 }());

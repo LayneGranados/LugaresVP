@@ -1,6 +1,6 @@
 (function() {
   'use strict';
-  angular.module('blog').directive('selectTipoIdentificacion', function(TipoIdentificacion) {
+  angular.module('vp').directive('selectTipoIdentificacion', function(TipoIdentificacion) {
     return {
       link: function(scope) {
         scope.list = TipoIdentificacion.query();

@@ -1,6 +1,6 @@
 (function() {
   'use strict';
-  angular.module('blog').directive('selectActividad', function(Actividad) {
+  angular.module('vp').directive('selectActividad', function(Actividad) {
     return {
       link: function($scope) {
         $scope.list = Actividad.query();

@@ -1,29 +1,23 @@
-<div ng-include="'templates/common/sidemenu.tpl.html'"></div>
-<div class="gray-bg dashbard-1" id="page-wrapper">
-  <div ng-include="'templates/common/topbar.tpl.html'"></div>
-  <div class="container-fluid" id="wrapper">
-    <div class="row ">
-
-      <form name="tipoEmpleadoCreate" ng-submit="controller.save()" role="form">
-        <div align="center" style="font-size:20px;">TIPOS DE USUARIO/EMPLEADO</div>
-
-        <fieldset class="form-group">
-          <label>Nombre:</label>
-          <input class="form-control input-lg" ng-model="controller.selectedTE.nombre" placeholder="Nombre del tipo de Empleado" type="text">
-        </fieldset>
-        <fieldset class="form-group">
-          <label>Descripción:
-          </label>
-          <input class="form-control input-lg" ng-model="controller.selectedTE.descripcion" placeholder="Descripción del tipo de Empleado" type="text">
-        </fieldset>
-        <button class="btn btn-primary btn-lg" type="submit">Guardar</button>
-        <div class="btn btn-primary btn-lg" ng-click="controller.clear()">Limpiar Formulario</div>
-      </form>
-    </div>
-    <div class="row top3">
-      <div class="myGrid" ui-grid-pagination ui-grid-selection ui-grid="controller.gridOptions"></div>
-      <button class="btn btn-primary btn-lg" ng-click="controller.edit()" type="button">Editar</button>
-      <button class="btn btn-primary btn-lg" ng-really-click="controller.delete()" ng-really-message="¿Esta Seguro?" type="button">Eliminar</button>
-    </div>
+<div class="container-fluid" id="wrapper">
+  <div class="row ">
+    <form name="tipoEmpleadoCreate" ng-submit="controller.save()" role="form">
+      <div align="center" style="font-size:20px;">TIPOS DE USUARIO/EMPLEADO</div>
+      <fieldset class="form-group">
+        <label>Nombre:</label>
+        <input class="form-control input-lg" ng-model="controller.selectedTE.nombre" placeholder="Nombre del tipo de Empleado" type="text">
+      </fieldset>
+      <fieldset class="form-group">
+        <label>Descripción:
+        </label>
+        <input class="form-control input-lg" ng-model="controller.selectedTE.descripcion" placeholder="Descripción del tipo de Empleado" type="text">
+      </fieldset>
+      <button class="btn btn-primary btn-lg" type="submit">Guardar</button>
+      <div class="btn btn-primary btn-lg" ng-click="controller.clear()">Limpiar Formulario</div>
+    </form>
+  </div>
+  <div class="row top3">
+    <div class="myGrid" ui-grid-pagination ui-grid-selection ui-grid="controller.gridOptions"></div>
+    <button class="btn btn-primary btn-lg" ng-click="controller.edit()" type="button">Editar</button>
+    <button class="btn btn-primary btn-lg" ng-really-click="controller.delete()" ng-really-message="¿Esta Seguro?" type="button">Eliminar</button>
   </div>
 </div>

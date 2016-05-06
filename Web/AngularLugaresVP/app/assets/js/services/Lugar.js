@@ -1,6 +1,6 @@
 (function() {
   'use strict';
-  angular.module('blog.services').factory('Lugar', function($resource, BaseUrl) {
+  angular.module('vp.services').factory('Lugar', function($resource, BaseUrl) {
     return $resource(BaseUrl + 'lugar/:lugarId', {
       lugarId: '@_id'
     }, {

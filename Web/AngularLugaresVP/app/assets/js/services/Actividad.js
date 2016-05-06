@@ -1,6 +1,6 @@
 (function() {
   'use strict';
-  angular.module('blog.services').factory('Actividad', function($resource, BaseUrl) {
+  angular.module('vp.services').factory('Actividad', function($resource, BaseUrl) {
     return $resource(BaseUrl + 'actividad/', {}, {
       query: {
         isArray: true,

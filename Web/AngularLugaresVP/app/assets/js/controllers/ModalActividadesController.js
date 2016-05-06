@@ -67,5 +67,5 @@
     };
 
   }
-  angular.module('blog.controllers').controller('ModalActividadesController', ModalActividadesController);
+  angular.module('vp.controllers').controller('ModalActividadesController', ModalActividadesController);
 }());

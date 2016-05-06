@@ -1,3 +1,3129 @@
 {
-	"tipoLugar":[{"nombre":"Pasillos primer piso","id":25,"descripcion":"Pasillos de circulacion y emergencia del primer piso"},{"nombre":"Pasillos segundo piso","id":26,"descripcion":"Pasillo de circulacion y emergencia del segundo piso"},{"nombre":"Pasillo tercer piso","id":27,"descripcion":"Pasillo de circulacion y emergencia del tercer piso"},{"nombre":"BaÃ±os","id":23,"descripcion":"BaÃ±os de las zonas comunes del centro comercial"},{"nombre":"Plazoleta de comidas","id":24,"descripcion":"Plazoletas ubicadas en el tercer piso del centro comercial"}]
+  "tipoLugar": [
+    {
+      "nombre": "Pasillos primer piso",
+      "id": 25,
+      "descripcion": "Pasillos de circulacion y emergencia del primer piso"
+    },
+    {
+      "nombre": "Pasillos segundo piso",
+      "id": 26,
+      "descripcion": "Pasillo de circulacion y emergencia del segundo piso"
+    },
+    {
+      "nombre": "Pasillo tercer piso",
+      "id": 27,
+      "descripcion": "Pasillo de circulacion y emergencia del tercer piso"
+    },
+    {
+      "nombre": "Baños",
+      "id": 23,
+      "descripcion": "Baños de las zonas comunes del centro comercial"
+    },
+    {
+      "nombre": "Plazoleta de comidas",
+      "id": 24,
+      "descripcion": "Plazoletas ubicadas en el tercer piso del centro comercial"
+    }
+  ],
+  "tipoEmpleado": [
+    {
+      "nombre": "ADMINISTRADOR",
+      "id": 11,
+      "descripcion": "Administrador del sistema"
+    },
+    {
+      "nombre": "Supervisor",
+      "id": 15,
+      "descripcion": "Supervisor"
+    },
+    {
+      "nombre": "Supervisor primer piso",
+      "id": 16,
+      "descripcion": "supervisor del primer piso VP"
+    },
+    {
+      "nombre": "SUPERVISOR",
+      "id": 19,
+      "descripcion": "Supervisor delegado de la empresa de contratista"
+    },
+    {
+      "nombre": "ADMINISTRATIVO",
+      "id": 20,
+      "descripcion": "Administrativo del Centro Comercial"
+    },
+    {
+      "nombre": null,
+      "id": 21,
+      "descripcion": null
+    }
+  ],
+  "empleado": [
+    {
+      "tipoEmpleado": {
+        "nombre": "Supervisor",
+        "id": 15,
+        "descripcion": "Supervisor"
+      },
+      "id": 16,
+      "tipoIdentificacion": {
+        "nombre": "Cedula de Ciudadania",
+        "codigo": "CC",
+        "id": 1
+      },
+      "login": {
+        "id": 14,
+        "login": "andres",
+        "password": ""
+      },
+      "persona": {
+        "id": 13,
+        "identificacion": "109245789",
+        "nombres": "Andres",
+        "apellidos": "Orduz"
+      }
+    },
+    {
+      "tipoEmpleado": {
+        "nombre": "Supervisor primer piso",
+        "id": 16,
+        "descripcion": "supervisor del primer piso VP"
+      },
+      "id": 18,
+      "tipoIdentificacion": {
+        "nombre": "Cedula de Ciudadania",
+        "codigo": "CC",
+        "id": 1
+      },
+      "login": {
+        "id": 16,
+        "login": "steph",
+        "password": ""
+      },
+      "persona": {
+        "id": 15,
+        "identificacion": "123456789",
+        "nombres": "Sthephanie",
+        "apellidos": "Cespedes"
+      }
+    },
+    {
+      "tipoEmpleado": {
+        "nombre": "Supervisor",
+        "id": 15,
+        "descripcion": "Supervisor"
+      },
+      "id": 19,
+      "tipoIdentificacion": {
+        "nombre": "Cedula de Ciudadania",
+        "codigo": "CC",
+        "id": 1
+      },
+      "login": {
+        "id": 17,
+        "login": "cesar",
+        "password": ""
+      },
+      "persona": {
+        "id": 16,
+        "identificacion": "12345",
+        "nombres": "Cesar",
+        "apellidos": "Moros"
+      }
+    },
+    {
+      "tipoEmpleado": {
+        "nombre": "ADMINISTRADOR",
+        "id": 11,
+        "descripcion": "Administrador del sistema"
+      },
+      "id": 14,
+      "tipoIdentificacion": {
+        "nombre": "NIT",
+        "codigo": "NIT",
+        "id": 2
+      },
+      "login": {
+        "id": 1,
+        "login": "admin",
+        "password": ""
+      },
+      "persona": {
+        "id": 11,
+        "identificacion": "900168865",
+        "nombres": "Ventura",
+        "apellidos": "Plaza"
+      }
+    },
+    {
+      "tipoEmpleado": {
+        "nombre": "ADMINISTRATIVO",
+        "id": 20,
+        "descripcion": "Administrativo del Centro Comercial"
+      },
+      "id": 17,
+      "tipoIdentificacion": {
+        "nombre": "Cedula de Ciudadania",
+        "codigo": "CC",
+        "id": 1
+      },
+      "login": {
+        "id": 15,
+        "login": "elvis",
+        "password": ""
+      },
+      "persona": {
+        "id": 14,
+        "identificacion": "88267637",
+        "nombres": "Elvis",
+        "apellidos": "Suarez"
+      }
+    },
+    {
+      "tipoEmpleado": {
+        "nombre": "SUPERVISOR",
+        "id": 19,
+        "descripcion": "Supervisor delegado de la empresa de contratista"
+      },
+      "id": 21,
+      "tipoIdentificacion": {
+        "nombre": "Cedula de Ciudadania",
+        "codigo": "CC",
+        "id": 1
+      },
+      "login": {
+        "id": 19,
+        "login": "gabriel",
+        "password": ""
+      },
+      "persona": {
+        "id": 18,
+        "identificacion": "88234862",
+        "nombres": "GRABRIEL",
+        "apellidos": "GOMEZ"
+      }
+    },
+    {
+      "tipoEmpleado": {
+        "nombre": "Supervisor",
+        "id": 15,
+        "descripcion": "Supervisor"
+      },
+      "id": 22,
+      "tipoIdentificacion": {
+        "nombre": "Cedula de Ciudadania",
+        "codigo": "CC",
+        "id": 1
+      },
+      "login": {
+        "id": 20,
+        "login": "leonardo",
+        "password": ""
+      },
+      "persona": {
+        "id": 19,
+        "identificacion": "1092154842",
+        "nombres": "LEONARDO",
+        "apellidos": "PIÑA"
+      }
+    },
+    {
+      "tipoEmpleado": {
+        "nombre": "Supervisor",
+        "id": 15,
+        "descripcion": "Supervisor"
+      },
+      "id": 20,
+      "tipoIdentificacion": {
+        "nombre": "Cedula de Ciudadania",
+        "codigo": "CC",
+        "id": 1
+      },
+      "login": {
+        "id": 18,
+        "login": "liliana",
+        "password": ""
+      },
+      "persona": {
+        "id": 17,
+        "identificacion": "1090383554",
+        "nombres": "LILIANA LISSETT",
+        "apellidos": "CHONA CRUZ"
+      }
+    }
+  ],
+  "tipoIdentificacion": [
+    {
+      "codigo": "CC",
+      "nombre": "Cedula de Ciudadania",
+      "id": 1
+    },
+    {
+      "codigo": "NIT",
+      "nombre": "NIT",
+      "id": 2
+    },
+    {
+      "codigo": "PAS",
+      "nombre": "Pasaporte",
+      "id": 3
+    }
+  ],
+  "lugar": [
+    {
+      "nombre": "Plazoleta comidas",
+      "id": 10,
+      "descripcion": "Plazoleta comidas 3 piso",
+      "tipoLugar": {
+        "nombre": "Plazoleta de comidas",
+        "id": 24,
+        "descripcion": "Plazoletas ubicadas en el tercer piso del centro comercial"
+      }
+    },
+    {
+      "nombre": "BAÑOS BURGOS H",
+      "id": 11,
+      "descripcion": "Baño de hombres torre A primer piso",
+      "tipoLugar": {
+        "nombre": "Baños",
+        "id": 23,
+        "descripcion": "Baños de las zonas comunes del centro comercial"
+      }
+    },
+    {
+      "nombre": "Baños BURGOS M",
+      "id": 12,
+      "descripcion": "Baños de mujeres torre A primer piso",
+      "tipoLugar": {
+        "nombre": "Baños",
+        "id": 23,
+        "descripcion": "Baños de las zonas comunes del centro comercial"
+      }
+    },
+    {
+      "nombre": "BAÑOS JOYERIA H",
+      "id": 13,
+      "descripcion": "Baños de hombres torre B primer piso",
+      "tipoLugar": {
+        "nombre": "Baños",
+        "id": 23,
+        "descripcion": "Baños de las zonas comunes del centro comercial"
+      }
+    },
+    {
+      "nombre": "BAÑOS JOYERIA M",
+      "id": 14,
+      "descripcion": "Baños de mujeres torre B primer piso",
+      "tipoLugar": {
+        "nombre": "Baños",
+        "id": 23,
+        "descripcion": "Baños de las zonas comunes del centro comercial"
+      }
+    },
+    {
+      "nombre": "BAÑOS CASINO M",
+      "id": 16,
+      "descripcion": "Baño de mujeres torre A segundo piso",
+      "tipoLugar": {
+        "nombre": "Baños",
+        "id": 23,
+        "descripcion": "Baños de las zonas comunes del centro comercial"
+      }
+    },
+    {
+      "nombre": "BAÑOS CASINO H",
+      "id": 15,
+      "descripcion": "Baños de hombres torre A segundo piso",
+      "tipoLugar": {
+        "nombre": "Baños",
+        "id": 23,
+        "descripcion": "Baños de las zonas comunes del centro comercial"
+      }
+    },
+    {
+      "nombre": "BAÑOS PANAMERICANA H",
+      "id": 17,
+      "descripcion": "Baños de hombres torre B segundo piso",
+      "tipoLugar": {
+        "nombre": "Baños",
+        "id": 23,
+        "descripcion": "Baños de las zonas comunes del centro comercial"
+      }
+    },
+    {
+      "nombre": "BAÑOS PANAMERICANA M",
+      "id": 18,
+      "descripcion": "Baños de mujeres torre B segundo piso",
+      "tipoLugar": {
+        "nombre": "Baños",
+        "id": 23,
+        "descripcion": "Baños de las zonas comunes del centro comercial"
+      }
+    },
+    {
+      "nombre": "BAÑOS CINE H",
+      "id": 19,
+      "descripcion": "Baños de hombres torre A tercer piso",
+      "tipoLugar": {
+        "nombre": "Baños",
+        "id": 23,
+        "descripcion": "Baños de las zonas comunes del centro comercial"
+      }
+    },
+    {
+      "nombre": "BAÑOS CINE M",
+      "id": 20,
+      "descripcion": "Baños de mujeres torre A tercer piso",
+      "tipoLugar": {
+        "nombre": "Baños",
+        "id": 23,
+        "descripcion": "Baños de las zonas comunes del centro comercial"
+      }
+    },
+    {
+      "nombre": "BAÑOS PLAZOLETA H",
+      "id": 21,
+      "descripcion": "Baños de hombres torre B tercer piso",
+      "tipoLugar": {
+        "nombre": "Baños",
+        "id": 23,
+        "descripcion": "Baños de las zonas comunes del centro comercial"
+      }
+    },
+    {
+      "nombre": "BAÑOS PLAZOLETA M",
+      "id": 22,
+      "descripcion": "Baños de mujeres torrre B tercer piso",
+      "tipoLugar": {
+        "nombre": "Baños",
+        "id": 23,
+        "descripcion": "Baños de las zonas comunes del centro comercial"
+      }
+    },
+    {
+      "nombre": "BAÑOS HUB M",
+      "id": 24,
+      "descripcion": "Baños de mujeres Hub segundo piso",
+      "tipoLugar": {
+        "nombre": "Baños",
+        "id": 23,
+        "descripcion": "Baños de las zonas comunes del centro comercial"
+      }
+    },
+    {
+      "nombre": "BAÑOS HUB H",
+      "id": 23,
+      "descripcion": "Baños de hombres Hub segundo piso",
+      "tipoLugar": {
+        "nombre": "Baños",
+        "id": 23,
+        "descripcion": "Baños de las zonas comunes del centro comercial"
+      }
+    },
+    {
+      "nombre": "BAÑOS BURGOS H",
+      "id": 9,
+      "descripcion": "Baños del primer piso de la torre A",
+      "tipoLugar": {
+        "nombre": "Pasillos primer piso",
+        "id": 25,
+        "descripcion": "Pasillos de circulacion y emergencia del primer piso"
+      }
+    },
+    {
+      "nombre": "Pasillo primer piso",
+      "id": 25,
+      "descripcion": "Pasillo primer piso",
+      "tipoLugar": {
+        "nombre": "Pasillos primer piso",
+        "id": 25,
+        "descripcion": "Pasillos de circulacion y emergencia del primer piso"
+      }
+    },
+    {
+      "nombre": "Pasillo segundo piso",
+      "id": 26,
+      "descripcion": "Pasillo segundo piso",
+      "tipoLugar": {
+        "nombre": "Pasillos segundo piso",
+        "id": 26,
+        "descripcion": "Pasillo de circulacion y emergencia del segundo piso"
+      }
+    },
+    {
+      "nombre": "Pasillo tercer piso",
+      "id": 27,
+      "descripcion": "Pasillo tercer piso",
+      "tipoLugar": {
+        "nombre": "Pasillo tercer piso",
+        "id": 27,
+        "descripcion": "Pasillo de circulacion y emergencia del tercer piso"
+      }
+    },
+    {
+      "nombre": "Plazoleta de comidas",
+      "id": 29,
+      "descripcion": "Estado en el que se encuentra la plazoleta de comidas",
+      "tipoLugar": {
+        "nombre": "Plazoleta de comidas",
+        "id": 24,
+        "descripcion": "Plazoletas ubicadas en el tercer piso del centro comercial"
+      }
+    }
+  ],
+  "actividad": [
+    {
+      "nombre": "Desinfección de sanitarios",
+      "id": 16,
+      "descripcion": "Desinfección de sanitarios"
+    },
+    {
+      "nombre": "Desinfección de orinales",
+      "id": 17,
+      "descripcion": "Desinfección de orinales"
+    },
+    {
+      "nombre": "Limpieza de lavamanos",
+      "id": 18,
+      "descripcion": "Limpieza de lavamanos"
+    },
+    {
+      "nombre": "Limpieza de espejos",
+      "id": 19,
+      "descripcion": "Limpieza de espejos"
+    },
+    {
+      "nombre": "Estado del piso",
+      "id": 20,
+      "descripcion": "Estado del piso"
+    },
+    {
+      "nombre": "Limpieza de las divisiones de acero",
+      "id": 21,
+      "descripcion": "Limpieza de las divisiones de acero"
+    },
+    {
+      "nombre": "Estado de las papeleras",
+      "id": 22,
+      "descripcion": "Estado de las papeleras"
+    },
+    {
+      "nombre": "Estado de las ceniceras",
+      "id": 28,
+      "descripcion": "Estado de las ceniceras"
+    },
+    {
+      "nombre": "Pasillos despejados",
+      "id": 29,
+      "descripcion": "Pasillos despejados"
+    },
+    {
+      "nombre": "Estado del piso de granito",
+      "id": 27,
+      "descripcion": "Estado dEstado del piso de granitoe las ceniceras"
+    },
+    {
+      "nombre": "Limpieza de mesas",
+      "id": 30,
+      "descripcion": "Se encuentran las mesas de la plazoleta limpias"
+    },
+    {
+      "nombre": "Personal",
+      "id": 31,
+      "descripcion": "El personal de limpieza se encuentra distribuido"
+    },
+    {
+      "nombre": "Temperatura",
+      "id": 32,
+      "descripcion": "La temperatura del ambientes es agradable"
+    },
+    {
+      "nombre": "Estado de las ceniceras",
+      "id": 23,
+      "descripcion": "Estado de las ceniceras"
+    },
+    {
+      "nombre": "Pasillos despejados",
+      "id": 24,
+      "descripcion": "Pasillos despejados"
+    },
+    {
+      "nombre": "Estado del piso de Granito",
+      "id": 25,
+      "descripcion": "Estado del piso de Granito"
+    },
+    {
+      "nombre": "Estado de las ceniceras",
+      "id": 26,
+      "descripcion": "Estado de las ceniceras"
+    },
+    {
+      "nombre": "Contenedores de basura",
+      "id": 15,
+      "descripcion": "Contenedores de basura"
+    }
+  ],
+  "calificacion-actividad": [
+    {
+      "nombre": "Completa",
+      "id": 25,
+      "actividad": {
+        "nombre": "Contenedores de basura",
+        "id": 15,
+        "descripcion": "Contenedores de basura"
+      }
+    },
+    {
+      "nombre": "Completa",
+      "id": 28,
+      "actividad": {
+        "nombre": "Desinfección de sanitarios",
+        "id": 16,
+        "descripcion": "Desinfección de sanitarios"
+      }
+    },
+    {
+      "nombre": "Incompleta",
+      "id": 27,
+      "actividad": {
+        "nombre": "Contenedores de basura",
+        "id": 15,
+        "descripcion": "Contenedores de basura"
+      }
+    },
+    {
+      "nombre": "Completa",
+      "id": 26,
+      "actividad": {
+        "nombre": "Desinfección de sanitarios",
+        "id": 16,
+        "descripcion": "Desinfección de sanitarios"
+      }
+    },
+    {
+      "nombre": "Completa",
+      "id": 29,
+      "actividad": {
+        "nombre": "Desinfección de orinales",
+        "id": 17,
+        "descripcion": "Desinfección de orinales"
+      }
+    },
+    {
+      "nombre": "Incompleta",
+      "id": 30,
+      "actividad": {
+        "nombre": "Desinfección de orinales",
+        "id": 17,
+        "descripcion": "Desinfección de orinales"
+      }
+    },
+    {
+      "nombre": "Completa",
+      "id": 31,
+      "actividad": {
+        "nombre": "Limpieza de lavamanos",
+        "id": 18,
+        "descripcion": "Limpieza de lavamanos"
+      }
+    },
+    {
+      "nombre": "Incompleta",
+      "id": 32,
+      "actividad": {
+        "nombre": "Limpieza de lavamanos",
+        "id": 18,
+        "descripcion": "Limpieza de lavamanos"
+      }
+    },
+    {
+      "nombre": "Completa",
+      "id": 33,
+      "actividad": {
+        "nombre": "Limpieza de espejos",
+        "id": 19,
+        "descripcion": "Limpieza de espejos"
+      }
+    },
+    {
+      "nombre": "Incompleta",
+      "id": 34,
+      "actividad": {
+        "nombre": "Limpieza de espejos",
+        "id": 19,
+        "descripcion": "Limpieza de espejos"
+      }
+    },
+    {
+      "nombre": "Completa",
+      "id": 35,
+      "actividad": {
+        "nombre": "Estado del piso",
+        "id": 20,
+        "descripcion": "Estado del piso"
+      }
+    },
+    {
+      "nombre": "Incompleta",
+      "id": 36,
+      "actividad": {
+        "nombre": "Estado del piso",
+        "id": 20,
+        "descripcion": "Estado del piso"
+      }
+    },
+    {
+      "nombre": "Completa",
+      "id": 37,
+      "actividad": {
+        "nombre": "Limpieza de las divisiones de acero",
+        "id": 21,
+        "descripcion": "Limpieza de las divisiones de acero"
+      }
+    },
+    {
+      "nombre": "Incompleta",
+      "id": 38,
+      "actividad": {
+        "nombre": "Limpieza de las divisiones de acero",
+        "id": 21,
+        "descripcion": "Limpieza de las divisiones de acero"
+      }
+    },
+    {
+      "nombre": "Completa",
+      "id": 39,
+      "actividad": {
+        "nombre": "Estado de las papeleras",
+        "id": 22,
+        "descripcion": "Estado de las papeleras"
+      }
+    },
+    {
+      "nombre": "Incompleta",
+      "id": 40,
+      "actividad": {
+        "nombre": "Estado de las papeleras",
+        "id": 22,
+        "descripcion": "Estado de las papeleras"
+      }
+    },
+    {
+      "nombre": "Limpia",
+      "id": 41,
+      "actividad": {
+        "nombre": "Estado de las ceniceras",
+        "id": 28,
+        "descripcion": "Estado de las ceniceras"
+      }
+    },
+    {
+      "nombre": "Sucia",
+      "id": 42,
+      "actividad": {
+        "nombre": "Estado de las ceniceras",
+        "id": 28,
+        "descripcion": "Estado de las ceniceras"
+      }
+    },
+    {
+      "nombre": "Despejado",
+      "id": 43,
+      "actividad": {
+        "nombre": "Pasillos despejados",
+        "id": 29,
+        "descripcion": "Pasillos despejados"
+      }
+    },
+    {
+      "nombre": "Obstruidos",
+      "id": 44,
+      "actividad": {
+        "nombre": "Pasillos despejados",
+        "id": 29,
+        "descripcion": "Pasillos despejados"
+      }
+    },
+    {
+      "nombre": "Limpio",
+      "id": 45,
+      "actividad": {
+        "nombre": "Estado del piso de granito",
+        "id": 27,
+        "descripcion": "Estado dEstado del piso de granitoe las ceniceras"
+      }
+    },
+    {
+      "nombre": "Sucio",
+      "id": 46,
+      "actividad": {
+        "nombre": "Estado del piso de granito",
+        "id": 27,
+        "descripcion": "Estado dEstado del piso de granitoe las ceniceras"
+      }
+    },
+    {
+      "nombre": "limpias",
+      "id": 47,
+      "actividad": {
+        "nombre": "Limpieza de mesas",
+        "id": 30,
+        "descripcion": "Se encuentran las mesas de la plazoleta limpias"
+      }
+    },
+    {
+      "nombre": "Sucias",
+      "id": 48,
+      "actividad": {
+        "nombre": "Limpieza de mesas",
+        "id": 30,
+        "descripcion": "Se encuentran las mesas de la plazoleta limpias"
+      }
+    },
+    {
+      "nombre": "Ocupadas",
+      "id": 49,
+      "actividad": {
+        "nombre": "Limpieza de mesas",
+        "id": 30,
+        "descripcion": "Se encuentran las mesas de la plazoleta limpias"
+      }
+    },
+    {
+      "nombre": "Completo",
+      "id": 50,
+      "actividad": {
+        "nombre": "Personal",
+        "id": 31,
+        "descripcion": "El personal de limpieza se encuentra distribuido"
+      }
+    },
+    {
+      "nombre": "Incompleto",
+      "id": 51,
+      "actividad": {
+        "nombre": "Personal",
+        "id": 31,
+        "descripcion": "El personal de limpieza se encuentra distribuido"
+      }
+    },
+    {
+      "nombre": "Agradable",
+      "id": 52,
+      "actividad": {
+        "nombre": "Temperatura",
+        "id": 32,
+        "descripcion": "La temperatura del ambientes es agradable"
+      }
+    },
+    {
+      "nombre": "Alta",
+      "id": 53,
+      "actividad": {
+        "nombre": "Temperatura",
+        "id": 32,
+        "descripcion": "La temperatura del ambientes es agradable"
+      }
+    },
+    {
+      "nombre": "limpias",
+      "id": 54,
+      "actividad": {
+        "nombre": "Contenedores de basura",
+        "id": 15,
+        "descripcion": "Contenedores de basura"
+      }
+    },
+    {
+      "nombre": "Llenas",
+      "id": 55,
+      "actividad": {
+        "nombre": "Contenedores de basura",
+        "id": 15,
+        "descripcion": "Contenedores de basura"
+      }
+    }
+  ],
+  "supervision": [
+    {
+      "id": 58,
+      "fecha": "2016-02-24 17:37:50.0",
+      "supervisor": "Andres Orduz",
+      "lugar": "BAÑOS BURGOS H"
+    },
+    {
+      "id": 59,
+      "fecha": "2016-02-24 17:37:53.0",
+      "supervisor": "Andres Orduz",
+      "lugar": "BAÑOS BURGOS H"
+    },
+    {
+      "id": 60,
+      "fecha": "2016-02-24 17:38:58.0",
+      "supervisor": "Andres Orduz",
+      "lugar": "Plazoleta comidas"
+    },
+    {
+      "id": 61,
+      "fecha": "2016-02-24 17:39:00.0",
+      "supervisor": "Andres Orduz",
+      "lugar": "Plazoleta comidas"
+    },
+    {
+      "id": 62,
+      "fecha": "2016-02-24 17:40:48.0",
+      "supervisor": "Andres Orduz",
+      "lugar": "BAÑOS BURGOS H"
+    },
+    {
+      "id": 63,
+      "fecha": "2016-02-24 18:02:12.0",
+      "supervisor": "Ventura Plaza",
+      "lugar": "Plazoleta comidas"
+    },
+    {
+      "id": 64,
+      "fecha": "2016-02-25 10:40:54.0",
+      "supervisor": "Sthephanie Cespedes",
+      "lugar": "Plazoleta comidas"
+    },
+    {
+      "id": 65,
+      "fecha": "2016-03-02 11:45:46.0",
+      "supervisor": "Elvis Suarez",
+      "lugar": "BAÑOS HUB M"
+    },
+    {
+      "id": 66,
+      "fecha": "2016-03-02 11:47:58.0",
+      "supervisor": "Elvis Suarez",
+      "lugar": "BAÑOS HUB M"
+    },
+    {
+      "id": 67,
+      "fecha": "2016-03-02 14:59:09.0",
+      "supervisor": "Elvis Suarez",
+      "lugar": "BAÑOS PLAZOLETA M"
+    },
+    {
+      "id": 68,
+      "fecha": "2016-03-02 14:59:26.0",
+      "supervisor": "Elvis Suarez",
+      "lugar": "BAÑOS JOYERIA M"
+    },
+    {
+      "id": 69,
+      "fecha": "2016-03-04 18:11:14.0",
+      "supervisor": "Elvis Suarez",
+      "lugar": "BAÑOS BURGOS H"
+    },
+    {
+      "id": 70,
+      "fecha": "2016-03-16 08:25:54.0",
+      "supervisor": "LILIANA LISSETT CHONA CRUZ",
+      "lugar": "BAÑOS PLAZOLETA H"
+    },
+    {
+      "id": 71,
+      "fecha": "2016-03-16 08:31:25.0",
+      "supervisor": "LILIANA LISSETT CHONA CRUZ",
+      "lugar": "Baños BURGOS M"
+    },
+    {
+      "id": 72,
+      "fecha": "2016-03-16 08:32:37.0",
+      "supervisor": "LILIANA LISSETT CHONA CRUZ",
+      "lugar": "Pasillo tercer piso"
+    },
+    {
+      "id": 73,
+      "fecha": "2016-03-16 09:45:20.0",
+      "supervisor": "LILIANA LISSETT CHONA CRUZ",
+      "lugar": "BAÑOS CINE M"
+    },
+    {
+      "id": 74,
+      "fecha": "2016-03-16 09:49:05.0",
+      "supervisor": "LILIANA LISSETT CHONA CRUZ",
+      "lugar": "BAÑOS CASINO M"
+    },
+    {
+      "id": 75,
+      "fecha": "2016-04-01 10:59:01.0",
+      "supervisor": "Elvis Suarez",
+      "lugar": "Baños BURGOS M"
+    },
+    {
+      "id": 76,
+      "fecha": "2016-04-01 11:32:24.0",
+      "supervisor": "Elvis Suarez",
+      "lugar": "Plazoleta comidas"
+    },
+    {
+      "id": 77,
+      "fecha": "2016-04-01 11:50:14.0",
+      "supervisor": "Elvis Suarez",
+      "lugar": "Plazoleta comidas"
+    },
+    {
+      "id": 78,
+      "fecha": "2016-04-08 09:44:41.0",
+      "supervisor": "Elvis Suarez",
+      "lugar": "BAÑOS BURGOS H"
+    },
+    {
+      "id": 79,
+      "fecha": "2016-04-11 15:23:20.0",
+      "supervisor": "LILIANA LISSETT CHONA CRUZ",
+      "lugar": "BAÑOS BURGOS H"
+    },
+    {
+      "id": 80,
+      "fecha": "2016-04-11 15:25:58.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS BURGOS H"
+    },
+    {
+      "id": 81,
+      "fecha": "2016-04-11 15:42:59.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS BURGOS H"
+    },
+    {
+      "id": 82,
+      "fecha": "2016-04-11 15:44:13.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "Baños BURGOS M"
+    },
+    {
+      "id": 83,
+      "fecha": "2016-04-11 15:46:25.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS CASINO M"
+    },
+    {
+      "id": 84,
+      "fecha": "2016-04-11 15:47:30.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS CASINO H"
+    },
+    {
+      "id": 85,
+      "fecha": "2016-04-11 15:50:24.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS CINE H"
+    },
+    {
+      "id": 86,
+      "fecha": "2016-04-11 15:51:01.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS CINE M"
+    },
+    {
+      "id": 87,
+      "fecha": "2016-04-11 16:06:27.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS PLAZOLETA M"
+    },
+    {
+      "id": 88,
+      "fecha": "2016-04-11 16:08:03.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS PANAMERICANA M"
+    },
+    {
+      "id": 89,
+      "fecha": "2016-04-11 16:28:36.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS HUB H"
+    },
+    {
+      "id": 90,
+      "fecha": "2016-04-12 14:40:44.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS BURGOS H"
+    },
+    {
+      "id": 91,
+      "fecha": "2016-04-12 14:42:15.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "Baños BURGOS M"
+    },
+    {
+      "id": 92,
+      "fecha": "2016-04-12 14:43:55.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS CASINO H"
+    },
+    {
+      "id": 93,
+      "fecha": "2016-04-12 14:44:39.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS CASINO M"
+    },
+    {
+      "id": 94,
+      "fecha": "2016-04-12 14:46:27.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS CINE M"
+    },
+    {
+      "id": 95,
+      "fecha": "2016-04-12 14:47:29.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS CINE H"
+    },
+    {
+      "id": 96,
+      "fecha": "2016-04-12 14:53:49.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS HUB H"
+    },
+    {
+      "id": 97,
+      "fecha": "2016-04-13 16:19:12.147",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS HUB H"
+    },
+    {
+      "id": 98,
+      "fecha": "2016-04-13 16:24:01.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS HUB H"
+    },
+    {
+      "id": 99,
+      "fecha": "2016-04-13 16:27:25.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS CASINO H"
+    },
+    {
+      "id": 100,
+      "fecha": "2016-04-13 16:28:08.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS CASINO M"
+    },
+    {
+      "id": 101,
+      "fecha": "2016-04-13 16:29:43.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS CINE H"
+    },
+    {
+      "id": 102,
+      "fecha": "2016-04-13 16:30:17.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS CINE M"
+    },
+    {
+      "id": 103,
+      "fecha": "2016-04-13 16:37:30.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS BURGOS H"
+    },
+    {
+      "id": 104,
+      "fecha": "2016-04-13 16:38:47.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "Baños BURGOS M"
+    },
+    {
+      "id": 105,
+      "fecha": "2016-04-13 16:50:49.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS PANAMERICANA M"
+    },
+    {
+      "id": 106,
+      "fecha": "2016-04-13 16:52:45.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS PLAZOLETA M"
+    },
+    {
+      "id": 107,
+      "fecha": "2016-04-14 15:08:54.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS BURGOS H"
+    },
+    {
+      "id": 108,
+      "fecha": "2016-04-14 15:09:37.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "Baños BURGOS M"
+    },
+    {
+      "id": 109,
+      "fecha": "2016-04-14 15:11:01.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS CASINO H"
+    },
+    {
+      "id": 110,
+      "fecha": "2016-04-14 15:12:14.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS CASINO M"
+    },
+    {
+      "id": 111,
+      "fecha": "2016-04-14 15:13:37.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS CINE M"
+    },
+    {
+      "id": 112,
+      "fecha": "2016-04-14 15:14:06.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS CINE H"
+    },
+    {
+      "id": 113,
+      "fecha": "2016-04-14 15:20:41.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS HUB H"
+    },
+    {
+      "id": 114,
+      "fecha": "2016-04-15 07:55:44.0",
+      "supervisor": "LEONARDO PIÑA",
+      "lugar": "BAÑOS BURGOS H"
+    },
+    {
+      "id": 115,
+      "fecha": "2016-04-15 14:47:59.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS JOYERIA H"
+    },
+    {
+      "id": 116,
+      "fecha": "2016-04-15 14:48:47.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS JOYERIA M"
+    },
+    {
+      "id": 117,
+      "fecha": "2016-04-15 14:52:19.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS PANAMERICANA H"
+    },
+    {
+      "id": 118,
+      "fecha": "2016-04-15 14:58:55.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS PLAZOLETA H"
+    },
+    {
+      "id": 119,
+      "fecha": "2016-04-15 14:59:30.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS PLAZOLETA M"
+    },
+    {
+      "id": 120,
+      "fecha": "2016-04-15 15:15:11.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS HUB H"
+    },
+    {
+      "id": 121,
+      "fecha": "2016-04-15 15:15:48.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS HUB M"
+    },
+    {
+      "id": 122,
+      "fecha": "2016-04-15 15:19:51.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS CASINO H"
+    },
+    {
+      "id": 123,
+      "fecha": "2016-04-15 15:20:58.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS CASINO M"
+    },
+    {
+      "id": 124,
+      "fecha": "2016-04-15 15:24:37.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS CINE H"
+    },
+    {
+      "id": 125,
+      "fecha": "2016-04-15 15:25:22.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS CINE M"
+    },
+    {
+      "id": 126,
+      "fecha": "2016-04-15 15:27:02.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS BURGOS H"
+    },
+    {
+      "id": 127,
+      "fecha": "2016-04-15 15:27:53.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "Baños BURGOS M"
+    },
+    {
+      "id": 128,
+      "fecha": "2016-04-17 15:55:01.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS PLAZOLETA H"
+    },
+    {
+      "id": 129,
+      "fecha": "2016-04-17 15:55:49.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS PLAZOLETA M"
+    },
+    {
+      "id": 130,
+      "fecha": "2016-04-17 15:58:23.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS PANAMERICANA H"
+    },
+    {
+      "id": 131,
+      "fecha": "2016-04-17 16:00:31.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS JOYERIA M"
+    },
+    {
+      "id": 132,
+      "fecha": "2016-04-17 16:01:25.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS JOYERIA H"
+    },
+    {
+      "id": 133,
+      "fecha": "2016-04-17 16:26:30.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS BURGOS H"
+    },
+    {
+      "id": 134,
+      "fecha": "2016-04-17 16:27:20.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "Baños BURGOS M"
+    },
+    {
+      "id": 135,
+      "fecha": "2016-04-17 16:27:25.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "Baños BURGOS M"
+    },
+    {
+      "id": 136,
+      "fecha": "2016-04-17 16:28:54.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS CASINO H"
+    },
+    {
+      "id": 137,
+      "fecha": "2016-04-17 16:31:44.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS CINE H"
+    },
+    {
+      "id": 138,
+      "fecha": "2016-04-17 16:32:19.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS CINE M"
+    },
+    {
+      "id": 139,
+      "fecha": "2016-04-17 16:42:38.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS HUB H"
+    },
+    {
+      "id": 140,
+      "fecha": "2016-04-17 16:42:46.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS HUB H"
+    },
+    {
+      "id": 141,
+      "fecha": "2016-04-17 16:43:20.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS HUB M"
+    },
+    {
+      "id": 142,
+      "fecha": "2016-04-17 16:43:24.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS HUB M"
+    },
+    {
+      "id": 143,
+      "fecha": "2016-04-17 19:50:31.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS HUB H"
+    },
+    {
+      "id": 144,
+      "fecha": "2016-04-17 19:51:32.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS HUB M"
+    },
+    {
+      "id": 145,
+      "fecha": "2016-04-17 19:51:38.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS HUB M"
+    },
+    {
+      "id": 146,
+      "fecha": "2016-04-17 19:58:42.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS CASINO H"
+    },
+    {
+      "id": 147,
+      "fecha": "2016-04-17 20:00:53.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS CINE H"
+    },
+    {
+      "id": 148,
+      "fecha": "2016-04-17 20:01:44.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS CINE M"
+    },
+    {
+      "id": 149,
+      "fecha": "2016-04-17 20:03:53.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS BURGOS H"
+    },
+    {
+      "id": 150,
+      "fecha": "2016-04-17 20:04:55.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "Baños BURGOS M"
+    },
+    {
+      "id": 151,
+      "fecha": "2016-04-17 20:31:22.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS JOYERIA H"
+    },
+    {
+      "id": 152,
+      "fecha": "2016-04-17 20:32:04.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS JOYERIA M"
+    },
+    {
+      "id": 153,
+      "fecha": "2016-04-17 20:33:45.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS PANAMERICANA H"
+    },
+    {
+      "id": 154,
+      "fecha": "2016-04-17 20:35:53.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS PLAZOLETA H"
+    },
+    {
+      "id": 155,
+      "fecha": "2016-04-17 20:36:37.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS PLAZOLETA M"
+    },
+    {
+      "id": 156,
+      "fecha": "2016-04-17 21:31:43.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS PLAZOLETA H"
+    },
+    {
+      "id": 157,
+      "fecha": "2016-04-17 21:32:31.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS PLAZOLETA M"
+    },
+    {
+      "id": 158,
+      "fecha": "2016-04-17 21:33:23.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS PANAMERICANA H"
+    },
+    {
+      "id": 159,
+      "fecha": "2016-04-17 21:34:39.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS JOYERIA M"
+    },
+    {
+      "id": 160,
+      "fecha": "2016-04-17 21:35:04.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS JOYERIA H"
+    },
+    {
+      "id": 161,
+      "fecha": "2016-04-17 21:39:17.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS BURGOS H"
+    },
+    {
+      "id": 162,
+      "fecha": "2016-04-17 21:44:44.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS CASINO H"
+    },
+    {
+      "id": 163,
+      "fecha": "2016-04-17 21:46:29.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS CINE H"
+    },
+    {
+      "id": 164,
+      "fecha": "2016-04-17 21:46:58.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS CINE M"
+    },
+    {
+      "id": 165,
+      "fecha": "2016-04-18 15:51:32.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS PLAZOLETA H"
+    },
+    {
+      "id": 166,
+      "fecha": "2016-04-18 15:52:04.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS PLAZOLETA M"
+    },
+    {
+      "id": 167,
+      "fecha": "2016-04-18 15:53:41.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS PANAMERICANA H"
+    },
+    {
+      "id": 168,
+      "fecha": "2016-04-18 15:54:58.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS JOYERIA M"
+    },
+    {
+      "id": 169,
+      "fecha": "2016-04-18 15:55:29.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS JOYERIA H"
+    },
+    {
+      "id": 170,
+      "fecha": "2016-04-18 15:58:40.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS BURGOS H"
+    },
+    {
+      "id": 171,
+      "fecha": "2016-04-18 15:59:13.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "Baños BURGOS M"
+    },
+    {
+      "id": 172,
+      "fecha": "2016-04-18 15:59:17.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "Baños BURGOS M"
+    },
+    {
+      "id": 173,
+      "fecha": "2016-04-18 16:05:14.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS CASINO H"
+    },
+    {
+      "id": 174,
+      "fecha": "2016-04-18 16:05:50.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS CASINO M"
+    },
+    {
+      "id": 175,
+      "fecha": "2016-04-18 16:07:51.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS CINE H"
+    },
+    {
+      "id": 176,
+      "fecha": "2016-04-18 16:08:29.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS CINE M"
+    },
+    {
+      "id": 177,
+      "fecha": "2016-04-19 11:08:51.0",
+      "supervisor": "LEONARDO PIÑA",
+      "lugar": "BAÑOS PLAZOLETA H"
+    },
+    {
+      "id": 178,
+      "fecha": "2016-04-19 11:10:43.0",
+      "supervisor": "LEONARDO PIÑA",
+      "lugar": "BAÑOS PLAZOLETA M"
+    },
+    {
+      "id": 179,
+      "fecha": "2016-04-19 11:16:20.0",
+      "supervisor": "LEONARDO PIÑA",
+      "lugar": "BAÑOS JOYERIA M"
+    },
+    {
+      "id": 180,
+      "fecha": "2016-04-19 11:17:23.0",
+      "supervisor": "LEONARDO PIÑA",
+      "lugar": "BAÑOS JOYERIA H"
+    },
+    {
+      "id": 181,
+      "fecha": "2016-04-19 11:28:38.0",
+      "supervisor": "LEONARDO PIÑA",
+      "lugar": "Baños BURGOS M"
+    },
+    {
+      "id": 182,
+      "fecha": "2016-04-19 11:29:33.0",
+      "supervisor": "LEONARDO PIÑA",
+      "lugar": "BAÑOS BURGOS H"
+    },
+    {
+      "id": 183,
+      "fecha": "2016-04-19 11:33:06.0",
+      "supervisor": "LEONARDO PIÑA",
+      "lugar": "BAÑOS CASINO M"
+    },
+    {
+      "id": 184,
+      "fecha": "2016-04-19 11:33:12.0",
+      "supervisor": "LEONARDO PIÑA",
+      "lugar": "BAÑOS CASINO M"
+    },
+    {
+      "id": 185,
+      "fecha": "2016-04-19 11:34:27.0",
+      "supervisor": "LEONARDO PIÑA",
+      "lugar": "BAÑOS CASINO H"
+    },
+    {
+      "id": 186,
+      "fecha": "2016-04-19 11:36:57.0",
+      "supervisor": "LEONARDO PIÑA",
+      "lugar": "BAÑOS CINE H"
+    },
+    {
+      "id": 187,
+      "fecha": "2016-04-19 11:39:06.0",
+      "supervisor": "LEONARDO PIÑA",
+      "lugar": "BAÑOS CINE M"
+    },
+    {
+      "id": 188,
+      "fecha": "2016-04-19 13:15:46.0",
+      "supervisor": "LEONARDO PIÑA",
+      "lugar": "BAÑOS HUB H"
+    },
+    {
+      "id": 189,
+      "fecha": "2016-04-19 13:17:05.0",
+      "supervisor": "LEONARDO PIÑA",
+      "lugar": "BAÑOS HUB M"
+    },
+    {
+      "id": 190,
+      "fecha": "2016-04-19 16:37:44.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS HUB H"
+    },
+    {
+      "id": 191,
+      "fecha": "2016-04-19 16:37:53.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS HUB H"
+    },
+    {
+      "id": 192,
+      "fecha": "2016-04-19 16:37:55.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS HUB H"
+    },
+    {
+      "id": 193,
+      "fecha": "2016-04-19 16:38:02.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS HUB H"
+    },
+    {
+      "id": 194,
+      "fecha": "2016-04-19 16:38:43.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS HUB M"
+    },
+    {
+      "id": 195,
+      "fecha": "2016-04-19 16:41:19.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS CASINO H"
+    },
+    {
+      "id": 196,
+      "fecha": "2016-04-19 16:41:50.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS CASINO M"
+    },
+    {
+      "id": 197,
+      "fecha": "2016-04-19 16:42:54.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS CINE H"
+    },
+    {
+      "id": 198,
+      "fecha": "2016-04-19 16:43:33.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS CINE M"
+    },
+    {
+      "id": 199,
+      "fecha": "2016-04-19 16:45:30.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS BURGOS H"
+    },
+    {
+      "id": 200,
+      "fecha": "2016-04-19 16:46:14.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "Baños BURGOS M"
+    },
+    {
+      "id": 201,
+      "fecha": "2016-04-19 16:50:56.553",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "Baños BURGOS M"
+    },
+    {
+      "id": 202,
+      "fecha": "2016-04-19 16:50:57.739",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS HUB H"
+    },
+    {
+      "id": 203,
+      "fecha": "2016-04-19 16:50:58.878",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS HUB H"
+    },
+    {
+      "id": 204,
+      "fecha": "2016-04-19 16:51:00.032",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS BURGOS H"
+    },
+    {
+      "id": 205,
+      "fecha": "2016-04-19 16:51:01.202",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS HUB M"
+    },
+    {
+      "id": 206,
+      "fecha": "2016-04-19 16:51:02.388",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS HUB H"
+    },
+    {
+      "id": 207,
+      "fecha": "2016-04-19 16:59:13.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS JOYERIA M"
+    },
+    {
+      "id": 208,
+      "fecha": "2016-04-19 16:59:50.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS JOYERIA H"
+    },
+    {
+      "id": 209,
+      "fecha": "2016-04-19 17:45:29.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS PANAMERICANA H"
+    },
+    {
+      "id": 210,
+      "fecha": "2016-04-19 17:46:31.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS PLAZOLETA M"
+    },
+    {
+      "id": 211,
+      "fecha": "2016-04-19 17:46:55.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS PLAZOLETA H"
+    },
+    {
+      "id": 212,
+      "fecha": "2016-04-19 20:39:07.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS HUB H"
+    },
+    {
+      "id": 213,
+      "fecha": "2016-04-19 20:39:53.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS HUB M"
+    },
+    {
+      "id": 214,
+      "fecha": "2016-04-19 20:46:22.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS CASINO H"
+    },
+    {
+      "id": 215,
+      "fecha": "2016-04-19 20:47:02.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS CASINO M"
+    },
+    {
+      "id": 216,
+      "fecha": "2016-04-19 20:48:22.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS CINE H"
+    },
+    {
+      "id": 217,
+      "fecha": "2016-04-19 20:48:52.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS CINE M"
+    },
+    {
+      "id": 218,
+      "fecha": "2016-04-19 20:52:05.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS BURGOS H"
+    },
+    {
+      "id": 219,
+      "fecha": "2016-04-19 20:52:09.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS BURGOS H"
+    },
+    {
+      "id": 220,
+      "fecha": "2016-04-19 20:52:37.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "Baños BURGOS M"
+    },
+    {
+      "id": 221,
+      "fecha": "2016-04-19 20:57:00.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS JOYERIA H"
+    },
+    {
+      "id": 222,
+      "fecha": "2016-04-19 20:57:31.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS JOYERIA M"
+    },
+    {
+      "id": 223,
+      "fecha": "2016-04-19 21:00:23.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS PANAMERICANA H"
+    },
+    {
+      "id": 224,
+      "fecha": "2016-04-19 21:02:06.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS PLAZOLETA M"
+    },
+    {
+      "id": 225,
+      "fecha": "2016-04-19 21:02:27.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS PLAZOLETA H"
+    },
+    {
+      "id": 226,
+      "fecha": "2016-04-20 14:47:36.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS PLAZOLETA H"
+    },
+    {
+      "id": 227,
+      "fecha": "2016-04-20 14:48:11.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS PLAZOLETA M"
+    },
+    {
+      "id": 228,
+      "fecha": "2016-04-20 16:09:40.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS HUB H"
+    },
+    {
+      "id": 229,
+      "fecha": "2016-04-20 16:10:43.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS HUB M"
+    },
+    {
+      "id": 230,
+      "fecha": "2016-04-20 19:21:05.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS PLAZOLETA H"
+    },
+    {
+      "id": 231,
+      "fecha": "2016-04-20 19:21:59.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS PLAZOLETA M"
+    },
+    {
+      "id": 232,
+      "fecha": "2016-04-20 19:22:58.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS PANAMERICANA H"
+    },
+    {
+      "id": 233,
+      "fecha": "2016-04-20 19:22:59.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS PANAMERICANA H"
+    },
+    {
+      "id": 234,
+      "fecha": "2016-04-20 19:24:45.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS JOYERIA H"
+    },
+    {
+      "id": 235,
+      "fecha": "2016-04-20 19:25:25.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS JOYERIA M"
+    },
+    {
+      "id": 236,
+      "fecha": "2016-04-20 19:39:04.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS BURGOS H"
+    },
+    {
+      "id": 237,
+      "fecha": "2016-04-20 19:39:37.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "Baños BURGOS M"
+    },
+    {
+      "id": 238,
+      "fecha": "2016-04-20 19:42:45.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS CASINO H"
+    },
+    {
+      "id": 239,
+      "fecha": "2016-04-20 19:47:50.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS CINE H"
+    },
+    {
+      "id": 240,
+      "fecha": "2016-04-20 19:49:23.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS CINE M"
+    },
+    {
+      "id": 241,
+      "fecha": "2016-04-20 21:13:56.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS PLAZOLETA H"
+    },
+    {
+      "id": 242,
+      "fecha": "2016-04-20 21:14:43.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS PLAZOLETA M"
+    },
+    {
+      "id": 243,
+      "fecha": "2016-04-20 21:16:27.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS PANAMERICANA H"
+    },
+    {
+      "id": 244,
+      "fecha": "2016-04-20 21:21:15.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS HUB H"
+    },
+    {
+      "id": 245,
+      "fecha": "2016-04-20 21:22:03.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS HUB M"
+    },
+    {
+      "id": 246,
+      "fecha": "2016-04-20 21:25:15.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS CASINO H"
+    },
+    {
+      "id": 247,
+      "fecha": "2016-04-20 21:25:59.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS CASINO M"
+    },
+    {
+      "id": 248,
+      "fecha": "2016-04-20 21:27:46.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS CINE H"
+    },
+    {
+      "id": 249,
+      "fecha": "2016-04-20 21:29:26.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS CINE M"
+    },
+    {
+      "id": 250,
+      "fecha": "2016-04-20 21:32:16.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS BURGOS H"
+    },
+    {
+      "id": 251,
+      "fecha": "2016-04-20 21:33:04.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "Baños BURGOS M"
+    },
+    {
+      "id": 252,
+      "fecha": "2016-04-21 11:24:38.0",
+      "supervisor": "LEONARDO PIÑA",
+      "lugar": "BAÑOS PLAZOLETA M"
+    },
+    {
+      "id": 253,
+      "fecha": "2016-04-21 11:25:32.0",
+      "supervisor": "LEONARDO PIÑA",
+      "lugar": "BAÑOS PLAZOLETA H"
+    },
+    {
+      "id": 254,
+      "fecha": "2016-04-21 11:28:45.0",
+      "supervisor": "LEONARDO PIÑA",
+      "lugar": "BAÑOS PANAMERICANA M"
+    },
+    {
+      "id": 255,
+      "fecha": "2016-04-21 11:32:15.0",
+      "supervisor": "LEONARDO PIÑA",
+      "lugar": "BAÑOS PANAMERICANA H"
+    },
+    {
+      "id": 256,
+      "fecha": "2016-04-21 11:34:22.0",
+      "supervisor": "LEONARDO PIÑA",
+      "lugar": "BAÑOS JOYERIA M"
+    },
+    {
+      "id": 257,
+      "fecha": "2016-04-21 11:35:48.0",
+      "supervisor": "LEONARDO PIÑA",
+      "lugar": "BAÑOS JOYERIA H"
+    },
+    {
+      "id": 258,
+      "fecha": "2016-04-21 11:41:49.0",
+      "supervisor": "LEONARDO PIÑA",
+      "lugar": "BAÑOS CASINO H"
+    },
+    {
+      "id": 259,
+      "fecha": "2016-04-21 11:41:53.0",
+      "supervisor": "LEONARDO PIÑA",
+      "lugar": "BAÑOS CASINO H"
+    },
+    {
+      "id": 260,
+      "fecha": "2016-04-21 11:45:48.0",
+      "supervisor": "LEONARDO PIÑA",
+      "lugar": "BAÑOS CASINO M"
+    },
+    {
+      "id": 261,
+      "fecha": "2016-04-21 11:48:31.0",
+      "supervisor": "LEONARDO PIÑA",
+      "lugar": "BAÑOS CINE H"
+    },
+    {
+      "id": 262,
+      "fecha": "2016-04-21 11:50:23.0",
+      "supervisor": "LEONARDO PIÑA",
+      "lugar": "BAÑOS CINE M"
+    },
+    {
+      "id": 263,
+      "fecha": "2016-04-21 11:52:31.0",
+      "supervisor": "LEONARDO PIÑA",
+      "lugar": "Baños BURGOS M"
+    },
+    {
+      "id": 264,
+      "fecha": "2016-04-21 11:55:05.0",
+      "supervisor": "LEONARDO PIÑA",
+      "lugar": "BAÑOS BURGOS H"
+    },
+    {
+      "id": 265,
+      "fecha": "2016-04-21 12:45:39.0",
+      "supervisor": "LEONARDO PIÑA",
+      "lugar": "BAÑOS HUB H"
+    },
+    {
+      "id": 266,
+      "fecha": "2016-04-21 12:46:32.0",
+      "supervisor": "LEONARDO PIÑA",
+      "lugar": "BAÑOS HUB M"
+    },
+    {
+      "id": 267,
+      "fecha": "2016-04-21 12:46:35.0",
+      "supervisor": "LEONARDO PIÑA",
+      "lugar": "BAÑOS HUB M"
+    },
+    {
+      "id": 268,
+      "fecha": "2016-04-21 14:58:24.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS HUB H"
+    },
+    {
+      "id": 269,
+      "fecha": "2016-04-21 14:59:02.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS HUB M"
+    },
+    {
+      "id": 270,
+      "fecha": "2016-04-21 15:56:00.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS PLAZOLETA H"
+    },
+    {
+      "id": 271,
+      "fecha": "2016-04-21 15:56:32.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS PLAZOLETA M"
+    },
+    {
+      "id": 272,
+      "fecha": "2016-04-21 15:57:38.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS PANAMERICANA H"
+    },
+    {
+      "id": 273,
+      "fecha": "2016-04-21 16:41:52.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS CASINO H"
+    },
+    {
+      "id": 274,
+      "fecha": "2016-04-21 16:44:40.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS BURGOS H"
+    },
+    {
+      "id": 275,
+      "fecha": "2016-04-21 16:45:30.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "Baños BURGOS M"
+    },
+    {
+      "id": 276,
+      "fecha": "2016-04-21 16:53:47.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS JOYERIA M"
+    },
+    {
+      "id": 277,
+      "fecha": "2016-04-21 16:54:18.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS JOYERIA H"
+    },
+    {
+      "id": 278,
+      "fecha": "2016-04-22 14:58:08.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS HUB H"
+    },
+    {
+      "id": 279,
+      "fecha": "2016-04-22 14:58:14.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS HUB H"
+    },
+    {
+      "id": 280,
+      "fecha": "2016-04-22 15:00:00.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS HUB M"
+    },
+    {
+      "id": 281,
+      "fecha": "2016-04-22 15:03:30.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS CASINO H"
+    },
+    {
+      "id": 282,
+      "fecha": "2016-04-22 15:04:07.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS CASINO M"
+    },
+    {
+      "id": 283,
+      "fecha": "2016-04-22 15:05:46.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS CINE H"
+    },
+    {
+      "id": 284,
+      "fecha": "2016-04-22 15:06:40.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS CINE M"
+    },
+    {
+      "id": 285,
+      "fecha": "2016-04-22 15:08:56.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS BURGOS H"
+    },
+    {
+      "id": 286,
+      "fecha": "2016-04-22 15:09:37.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "Baños BURGOS M"
+    },
+    {
+      "id": 287,
+      "fecha": "2016-04-22 15:39:08.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS PLAZOLETA H"
+    },
+    {
+      "id": 288,
+      "fecha": "2016-04-22 15:43:19.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS PLAZOLETA M"
+    },
+    {
+      "id": 289,
+      "fecha": "2016-04-22 15:44:30.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS PANAMERICANA H"
+    },
+    {
+      "id": 290,
+      "fecha": "2016-04-22 15:45:56.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS JOYERIA M"
+    },
+    {
+      "id": 291,
+      "fecha": "2016-04-22 15:46:35.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS JOYERIA H"
+    },
+    {
+      "id": 292,
+      "fecha": "2016-04-22 19:17:52.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS HUB H"
+    },
+    {
+      "id": 293,
+      "fecha": "2016-04-22 19:18:30.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS HUB M"
+    },
+    {
+      "id": 294,
+      "fecha": "2016-04-22 19:21:26.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS CASINO H"
+    },
+    {
+      "id": 295,
+      "fecha": "2016-04-22 19:23:56.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS CINE H"
+    },
+    {
+      "id": 296,
+      "fecha": "2016-04-22 19:24:49.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS CINE M"
+    },
+    {
+      "id": 297,
+      "fecha": "2016-04-22 19:27:02.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS BURGOS H"
+    },
+    {
+      "id": 298,
+      "fecha": "2016-04-22 19:27:38.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "Baños BURGOS M"
+    },
+    {
+      "id": 299,
+      "fecha": "2016-04-22 19:30:53.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS JOYERIA H"
+    },
+    {
+      "id": 300,
+      "fecha": "2016-04-22 19:31:40.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS JOYERIA M"
+    },
+    {
+      "id": 301,
+      "fecha": "2016-04-22 19:39:48.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS PANAMERICANA H"
+    },
+    {
+      "id": 302,
+      "fecha": "2016-04-22 19:41:33.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS PLAZOLETA H"
+    },
+    {
+      "id": 303,
+      "fecha": "2016-04-22 19:42:20.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS PLAZOLETA M"
+    },
+    {
+      "id": 304,
+      "fecha": "2016-04-23 15:19:16.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS HUB H"
+    },
+    {
+      "id": 305,
+      "fecha": "2016-04-23 15:20:05.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS HUB M"
+    },
+    {
+      "id": 306,
+      "fecha": "2016-04-23 15:20:10.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS HUB M"
+    },
+    {
+      "id": 307,
+      "fecha": "2016-04-23 15:20:15.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS HUB M"
+    },
+    {
+      "id": 308,
+      "fecha": "2016-04-23 15:23:36.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS CINE H"
+    },
+    {
+      "id": 309,
+      "fecha": "2016-04-23 15:24:11.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS CINE M"
+    },
+    {
+      "id": 310,
+      "fecha": "2016-04-23 15:25:58.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS CASINO H"
+    },
+    {
+      "id": 311,
+      "fecha": "2016-04-23 15:26:52.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS CASINO M"
+    },
+    {
+      "id": 312,
+      "fecha": "2016-04-23 15:28:49.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS BURGOS H"
+    },
+    {
+      "id": 313,
+      "fecha": "2016-04-23 15:29:35.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "Baños BURGOS M"
+    },
+    {
+      "id": 314,
+      "fecha": "2016-04-23 15:45:32.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS PANAMERICANA H"
+    },
+    {
+      "id": 315,
+      "fecha": "2016-04-23 15:47:20.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS PLAZOLETA M"
+    },
+    {
+      "id": 316,
+      "fecha": "2016-04-23 15:48:06.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS PLAZOLETA H"
+    },
+    {
+      "id": 317,
+      "fecha": "2016-04-23 21:17:13.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS PLAZOLETA H"
+    },
+    {
+      "id": 318,
+      "fecha": "2016-04-23 21:17:55.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS PLAZOLETA M"
+    },
+    {
+      "id": 319,
+      "fecha": "2016-04-23 21:22:42.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS PANAMERICANA H"
+    },
+    {
+      "id": 320,
+      "fecha": "2016-04-23 21:24:06.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS PANAMERICANA M"
+    },
+    {
+      "id": 321,
+      "fecha": "2016-04-23 21:25:27.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS JOYERIA H"
+    },
+    {
+      "id": 322,
+      "fecha": "2016-04-23 21:26:00.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS JOYERIA M"
+    },
+    {
+      "id": 323,
+      "fecha": "2016-04-23 21:34:01.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS BURGOS H"
+    },
+    {
+      "id": 324,
+      "fecha": "2016-04-23 21:34:30.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "Baños BURGOS M"
+    },
+    {
+      "id": 325,
+      "fecha": "2016-04-23 21:35:49.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS CASINO H"
+    },
+    {
+      "id": 326,
+      "fecha": "2016-04-23 21:36:26.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS CASINO M"
+    },
+    {
+      "id": 327,
+      "fecha": "2016-04-23 21:37:49.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS CINE H"
+    },
+    {
+      "id": 328,
+      "fecha": "2016-04-23 21:38:25.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS CINE M"
+    },
+    {
+      "id": 329,
+      "fecha": "2016-04-23 21:42:14.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS HUB H"
+    },
+    {
+      "id": 330,
+      "fecha": "2016-04-23 21:42:44.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS HUB M"
+    },
+    {
+      "id": 331,
+      "fecha": "2016-04-23 21:42:47.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS HUB M"
+    },
+    {
+      "id": 332,
+      "fecha": "2016-04-25 16:43:01.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS PLAZOLETA H"
+    },
+    {
+      "id": 333,
+      "fecha": "2016-04-25 16:43:30.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS PLAZOLETA M"
+    },
+    {
+      "id": 334,
+      "fecha": "2016-04-25 16:56:06.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS PANAMERICANA H"
+    },
+    {
+      "id": 335,
+      "fecha": "2016-04-25 16:59:55.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS JOYERIA M"
+    },
+    {
+      "id": 336,
+      "fecha": "2016-04-25 17:00:14.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS JOYERIA H"
+    },
+    {
+      "id": 337,
+      "fecha": "2016-04-25 17:03:23.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS BURGOS H"
+    },
+    {
+      "id": 338,
+      "fecha": "2016-04-25 17:03:28.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS BURGOS H"
+    },
+    {
+      "id": 339,
+      "fecha": "2016-04-25 17:03:29.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS BURGOS H"
+    },
+    {
+      "id": 340,
+      "fecha": "2016-04-25 17:04:04.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "Baños BURGOS M"
+    },
+    {
+      "id": 341,
+      "fecha": "2016-04-25 17:05:20.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS CASINO M"
+    },
+    {
+      "id": 342,
+      "fecha": "2016-04-25 17:05:48.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS CASINO H"
+    },
+    {
+      "id": 343,
+      "fecha": "2016-04-25 17:07:56.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS CINE H"
+    },
+    {
+      "id": 344,
+      "fecha": "2016-04-25 17:08:26.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS CINE M"
+    },
+    {
+      "id": 345,
+      "fecha": "2016-04-25 17:13:20.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS HUB H"
+    },
+    {
+      "id": 346,
+      "fecha": "2016-04-25 17:13:50.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS HUB M"
+    },
+    {
+      "id": 347,
+      "fecha": "2016-04-25 19:42:09.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS HUB H"
+    },
+    {
+      "id": 348,
+      "fecha": "2016-04-25 19:42:56.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS HUB M"
+    },
+    {
+      "id": 349,
+      "fecha": "2016-04-25 19:48:52.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS CASINO H"
+    },
+    {
+      "id": 350,
+      "fecha": "2016-04-25 19:51:06.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS CINE H"
+    },
+    {
+      "id": 351,
+      "fecha": "2016-04-25 19:51:39.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS CINE M"
+    },
+    {
+      "id": 352,
+      "fecha": "2016-04-25 19:55:09.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS BURGOS H"
+    },
+    {
+      "id": 353,
+      "fecha": "2016-04-25 19:55:49.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "Baños BURGOS M"
+    },
+    {
+      "id": 354,
+      "fecha": "2016-04-25 21:19:59.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS PANAMERICANA H"
+    },
+    {
+      "id": 355,
+      "fecha": "2016-04-25 21:22:32.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS JOYERIA M"
+    },
+    {
+      "id": 356,
+      "fecha": "2016-04-25 21:22:50.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS JOYERIA H"
+    },
+    {
+      "id": 357,
+      "fecha": "2016-04-25 21:24:44.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS PLAZOLETA M"
+    },
+    {
+      "id": 358,
+      "fecha": "2016-04-25 21:25:02.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS PLAZOLETA H"
+    },
+    {
+      "id": 359,
+      "fecha": "2016-04-25 21:29:11.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS CINE H"
+    },
+    {
+      "id": 360,
+      "fecha": "2016-04-25 21:29:53.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS CINE M"
+    },
+    {
+      "id": 361,
+      "fecha": "2016-04-25 21:31:24.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS CASINO H"
+    },
+    {
+      "id": 362,
+      "fecha": "2016-04-25 21:34:07.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS BURGOS H"
+    },
+    {
+      "id": 363,
+      "fecha": "2016-04-25 21:34:32.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "Baños BURGOS M"
+    },
+    {
+      "id": 364,
+      "fecha": "2016-04-25 21:41:33.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS HUB H"
+    },
+    {
+      "id": 365,
+      "fecha": "2016-04-25 21:41:39.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS HUB H"
+    },
+    {
+      "id": 366,
+      "fecha": "2016-04-25 21:41:24.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS HUB H"
+    },
+    {
+      "id": 367,
+      "fecha": "2016-04-25 21:42:07.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS HUB M"
+    },
+    {
+      "id": 368,
+      "fecha": "2016-04-25 21:42:11.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS HUB M"
+    },
+    {
+      "id": 369,
+      "fecha": "2016-04-25 21:42:15.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS HUB M"
+    },
+    {
+      "id": 370,
+      "fecha": "2016-05-05 08:51:22.0",
+      "supervisor": "LILIANA LISSETT CHONA CRUZ",
+      "lugar": "Pasillo segundo piso"
+    },
+    {
+      "id": 371,
+      "fecha": "2016-05-05 14:36:46.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS PLAZOLETA H"
+    },
+    {
+      "id": 372,
+      "fecha": "2016-05-05 14:37:23.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS PLAZOLETA M"
+    },
+    {
+      "id": 373,
+      "fecha": "2016-05-05 14:47:31.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS PANAMERICANA H"
+    },
+    {
+      "id": 374,
+      "fecha": "2016-05-05 14:49:14.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS JOYERIA H"
+    },
+    {
+      "id": 375,
+      "fecha": "2016-05-05 14:49:45.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS JOYERIA M"
+    },
+    {
+      "id": 376,
+      "fecha": "2016-05-05 15:58:36.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS HUB H"
+    },
+    {
+      "id": 377,
+      "fecha": "2016-05-05 15:59:06.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS HUB M"
+    },
+    {
+      "id": 378,
+      "fecha": "2016-05-05 16:09:35.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS CASINO H"
+    },
+    {
+      "id": 379,
+      "fecha": "2016-05-05 16:10:22.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS CASINO M"
+    },
+    {
+      "id": 380,
+      "fecha": "2016-05-05 16:12:28.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS CINE H"
+    },
+    {
+      "id": 381,
+      "fecha": "2016-05-05 16:12:55.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS CINE M"
+    },
+    {
+      "id": 382,
+      "fecha": "2016-05-05 16:19:12.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS BURGOS H"
+    },
+    {
+      "id": 383,
+      "fecha": "2016-05-05 16:20:13.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "Baños BURGOS M"
+    },
+    {
+      "id": 384,
+      "fecha": "2016-05-05 16:20:17.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "Baños BURGOS M"
+    },
+    {
+      "id": 385,
+      "fecha": "2016-05-05 16:20:17.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "Baños BURGOS M"
+    },
+    {
+      "id": 386,
+      "fecha": "2016-05-05 16:20:05.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "Baños BURGOS M"
+    },
+    {
+      "id": 387,
+      "fecha": "2016-05-05 19:24:40.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS BURGOS H"
+    },
+    {
+      "id": 388,
+      "fecha": "2016-05-05 19:25:25.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "Baños BURGOS M"
+    },
+    {
+      "id": 389,
+      "fecha": "2016-05-05 19:26:42.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS CASINO H"
+    },
+    {
+      "id": 390,
+      "fecha": "2016-05-05 19:28:51.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS CINE H"
+    },
+    {
+      "id": 391,
+      "fecha": "2016-05-05 19:29:23.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS CINE M"
+    },
+    {
+      "id": 392,
+      "fecha": "2016-05-05 19:35:42.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS PLAZOLETA H"
+    },
+    {
+      "id": 393,
+      "fecha": "2016-05-05 19:36:28.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS PLAZOLETA M"
+    },
+    {
+      "id": 394,
+      "fecha": "2016-05-05 19:43:27.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS JOYERIA H"
+    },
+    {
+      "id": 395,
+      "fecha": "2016-05-05 19:44:41.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS JOYERIA M"
+    },
+    {
+      "id": 396,
+      "fecha": "2016-05-05 19:49:44.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS PANAMERICANA H"
+    },
+    {
+      "id": 397,
+      "fecha": "2016-05-05 19:50:24.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS PANAMERICANA M"
+    },
+    {
+      "id": 398,
+      "fecha": "2016-05-05 20:08:09.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS HUB H"
+    },
+    {
+      "id": 399,
+      "fecha": "2016-05-05 20:08:43.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS HUB M"
+    },
+    {
+      "id": 400,
+      "fecha": "2016-05-05 21:08:58.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS PLAZOLETA H"
+    },
+    {
+      "id": 401,
+      "fecha": "2016-05-05 21:09:26.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS PLAZOLETA M"
+    },
+    {
+      "id": 402,
+      "fecha": "2016-05-05 21:10:33.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS PANAMERICANA H"
+    },
+    {
+      "id": 403,
+      "fecha": "2016-05-05 21:11:40.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS JOYERIA M"
+    },
+    {
+      "id": 404,
+      "fecha": "2016-05-05 21:11:58.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS JOYERIA H"
+    },
+    {
+      "id": 405,
+      "fecha": "2016-05-05 21:14:54.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS BURGOS H"
+    },
+    {
+      "id": 406,
+      "fecha": "2016-05-05 21:15:23.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "Baños BURGOS M"
+    },
+    {
+      "id": 407,
+      "fecha": "2016-05-05 21:16:44.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS CASINO H"
+    },
+    {
+      "id": 408,
+      "fecha": "2016-05-05 21:17:07.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS CASINO M"
+    },
+    {
+      "id": 409,
+      "fecha": "2016-05-05 21:18:34.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS CINE H"
+    },
+    {
+      "id": 410,
+      "fecha": "2016-05-05 21:18:59.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS CINE M"
+    },
+    {
+      "id": 411,
+      "fecha": "2016-05-05 21:22:50.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS HUB H"
+    },
+    {
+      "id": 412,
+      "fecha": "2016-05-05 21:22:54.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS HUB H"
+    },
+    {
+      "id": 413,
+      "fecha": "2016-05-05 21:23:33.0",
+      "supervisor": "GRABRIEL GOMEZ",
+      "lugar": "BAÑOS HUB M"
+    },
+    {
+      "id": 414,
+      "fecha": "2016-05-06 09:18:54.0",
+      "supervisor": "LILIANA LISSETT CHONA CRUZ",
+      "lugar": "BAÑOS JOYERIA H"
+    },
+    {
+      "id": 415,
+      "fecha": "2016-05-06 09:19:35.0",
+      "supervisor": "LILIANA LISSETT CHONA CRUZ",
+      "lugar": "BAÑOS JOYERIA M"
+    },
+    {
+      "id": 416,
+      "fecha": "2016-05-06 09:21:27.0",
+      "supervisor": "LILIANA LISSETT CHONA CRUZ",
+      "lugar": "BAÑOS PLAZOLETA M"
+    },
+    {
+      "id": 417,
+      "fecha": "2016-05-06 09:22:40.0",
+      "supervisor": "LILIANA LISSETT CHONA CRUZ",
+      "lugar": "BAÑOS PLAZOLETA H"
+    },
+    {
+      "id": 418,
+      "fecha": "2016-05-06 09:29:55.0",
+      "supervisor": "LILIANA LISSETT CHONA CRUZ",
+      "lugar": "BAÑOS PANAMERICANA H"
+    },
+    {
+      "id": 419,
+      "fecha": "2016-05-06 09:31:23.0",
+      "supervisor": "LILIANA LISSETT CHONA CRUZ",
+      "lugar": "BAÑOS PANAMERICANA M"
+    },
+    {
+      "id": 420,
+      "fecha": "2016-05-06 09:35:18.0",
+      "supervisor": "LILIANA LISSETT CHONA CRUZ",
+      "lugar": "BAÑOS HUB M"
+    },
+    {
+      "id": 421,
+      "fecha": "2016-05-06 09:35:57.0",
+      "supervisor": "LILIANA LISSETT CHONA CRUZ",
+      "lugar": "BAÑOS HUB H"
+    },
+    {
+      "id": 422,
+      "fecha": "2016-05-06 09:40:20.0",
+      "supervisor": "LILIANA LISSETT CHONA CRUZ",
+      "lugar": "BAÑOS CASINO H"
+    },
+    {
+      "id": 423,
+      "fecha": "2016-05-06 09:41:09.0",
+      "supervisor": "LILIANA LISSETT CHONA CRUZ",
+      "lugar": "BAÑOS CASINO M"
+    },
+    {
+      "id": 424,
+      "fecha": "2016-05-06 09:42:57.0",
+      "supervisor": "LILIANA LISSETT CHONA CRUZ",
+      "lugar": "BAÑOS CINE M"
+    },
+    {
+      "id": 425,
+      "fecha": "2016-05-06 09:51:12.0",
+      "supervisor": "LILIANA LISSETT CHONA CRUZ",
+      "lugar": "Baños BURGOS M"
+    },
+    {
+      "id": 426,
+      "fecha": "2016-05-06 09:52:13.0",
+      "supervisor": "LILIANA LISSETT CHONA CRUZ",
+      "lugar": "BAÑOS BURGOS H"
+    },
+    {
+      "id": 427,
+      "fecha": "2016-05-06 12:05:18.0",
+      "supervisor": "LILIANA LISSETT CHONA CRUZ",
+      "lugar": "BAÑOS CASINO M"
+    },
+    {
+      "id": 428,
+      "fecha": "2016-05-06 12:05:19.0",
+      "supervisor": "LILIANA LISSETT CHONA CRUZ",
+      "lugar": "BAÑOS CASINO M"
+    },
+    {
+      "id": 429,
+      "fecha": "2016-05-06 12:06:02.0",
+      "supervisor": "LILIANA LISSETT CHONA CRUZ",
+      "lugar": "BAÑOS CASINO H"
+    },
+    {
+      "id": 430,
+      "fecha": "2016-05-06 12:07:24.0",
+      "supervisor": "LILIANA LISSETT CHONA CRUZ",
+      "lugar": "BAÑOS CINE M"
+    },
+    {
+      "id": 431,
+      "fecha": "2016-05-06 12:12:49.0",
+      "supervisor": "LILIANA LISSETT CHONA CRUZ",
+      "lugar": "Baños BURGOS M"
+    },
+    {
+      "id": 432,
+      "fecha": "2016-05-06 12:13:21.0",
+      "supervisor": "LILIANA LISSETT CHONA CRUZ",
+      "lugar": "BAÑOS BURGOS H"
+    },
+    {
+      "id": 433,
+      "fecha": "2016-05-06 12:17:18.0",
+      "supervisor": "LILIANA LISSETT CHONA CRUZ",
+      "lugar": "BAÑOS JOYERIA H"
+    },
+    {
+      "id": 434,
+      "fecha": "2016-05-06 12:17:53.0",
+      "supervisor": "LILIANA LISSETT CHONA CRUZ",
+      "lugar": "BAÑOS JOYERIA M"
+    },
+    {
+      "id": 435,
+      "fecha": "2016-05-06 12:21:10.0",
+      "supervisor": "LILIANA LISSETT CHONA CRUZ",
+      "lugar": "BAÑOS PANAMERICANA H"
+    },
+    {
+      "id": 436,
+      "fecha": "2016-05-06 12:24:16.0",
+      "supervisor": "LILIANA LISSETT CHONA CRUZ",
+      "lugar": "BAÑOS PLAZOLETA M"
+    },
+    {
+      "id": 437,
+      "fecha": "2016-05-06 12:25:12.0",
+      "supervisor": "LILIANA LISSETT CHONA CRUZ",
+      "lugar": "BAÑOS PLAZOLETA H"
+    }
+  ]
 }

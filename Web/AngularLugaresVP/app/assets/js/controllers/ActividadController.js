@@ -61,6 +61,6 @@
 
   }
 
-  angular.module('blog.controllers').controller('ActividadController', ActividadController);
+  angular.module('vp.controllers').controller('ActividadController', ActividadController);
 
 })();

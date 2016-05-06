@@ -1,16 +1,20 @@
 (function() {
   'use strict';
-  function LoginController($location) {
+  var loginController = function($state) {
     this.user = {};
     var self = this;
     this.login = function() {
       if (self.usuario === 'admin' && self.password === 'venturaplaza2016') {
-        $location.path('actividad');
+        $state.go('app.dashboard', {}, {
+          reload: true
+        });
       }
     };
     this.logout = function() {
-      $location.path('login/');
+      $locati$state.go('login', {}, {
+        reload: true
+      });
     };
   }
-  angular.module('blog.controllers').controller('LoginController', LoginController);
+  angular.module('vp.controllers').controller('LoginController', loginController);
 })();

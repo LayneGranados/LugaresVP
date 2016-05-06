@@ -1,1 +1,71 @@
-'use strict';var gulp = require('gulp'),  connect = require('gulp-connect'),  jshint = require('gulp-jshint'),  inject = require('gulp-inject'),  wiredep = require('wiredep').stream,  angularFilesort = require('gulp-angular-filesort');    var dir = {    dev: {      path: 'app',      js: 'app/assets/**/*.js',      devcss: 'app/assets/**/*.css',      templates:'app/templates/**/*'    }  };gulp.task('server-dev', function() {  connect.server({    root: dir.dev.path,    livereload: true,    port: 18080  });});gulp.task('lint', function() {  return gulp.src(dir.dev.js)    .pipe(jshint.reporter('jshint-stylish'));});gulp.task('html', function() {  gulp.src('./app/**/*.html')    .pipe(connect.reload());});gulp.task('watch', function() {  gulp.watch([dir.dev.stylus, dir.dev.scss], ['compilecss', 'inject', 'html']);  gulp.watch(dir.dev.css, ['inject', 'html']);  gulp.watch([dir.dev.js, './Gulpfile.js'], ['lint', 'inject', 'html']);  gulp.watch(dir.dev.templates, ['html']);});gulp.task('inject', function() {  return gulp.src('index.html', {      cwd: './app'    })    .pipe(inject(      gulp.src([dir.dev.js]).pipe(angularFilesort()), {        ignorePath: '/app/'      }))    .pipe(inject(      gulp.src([dir.dev.devcss]), {        ignorePath: '/app/'      }))    .pipe(wiredep({}))    .pipe(gulp.dest('app/'));});// Vigila cambios que se produzcan en el código// y lanza las tareas relacionadasgulp.task('watch', function() {  gulp.watch(['./app/**/*.html'], ['html']);  gulp.watch(['./app/scripts/**/*.js'], ['jshint']);  gulp.watch(['./bower.json'], ['wiredep']);  gulp.watch(['./app/scripts/**/*.js', './Gulpfile.js'], ['jshint', 'inject']);  gulp.watch(['./app/stylesheets/**/*.styl'], ['css', 'inject']);});gulp.task('default', ['server-dev', 'lint', 'inject', 'watch']);
+'use strict';
+var gulp = require('gulp'),
+  connect = require('gulp-connect'),
+  jshint = require('gulp-jshint'),
+  inject = require('gulp-inject'),
+  wiredep = require('wiredep').stream,
+  angularFilesort = require('gulp-angular-filesort');
+var proxy = require('http-proxy-middleware');
+
+var dir = {
+  dev: {
+    path: 'app',
+    js: 'app/assets/js/**/*.js',
+    devcss: 'app/assets/**/*.css',
+    templates: 'app/templates/**/*'
+  }
+};
+
+gulp.task('server-dev', function() {
+  connect.server({
+    root: dir.dev.path,
+    livereload: true,
+    port: 18080,
+    middleware: function(connect, opt) {
+      return [
+        proxy('/REST/core', {
+          target: 'http://localhost:3000',
+          changeOrigin: true
+        })
+      ]
+    }
+
+  });
+});
+
+
+gulp.task('lint', function() {
+  return gulp.src([dir.dev.js])
+    .pipe(jshint('.jshintrc'))
+    .pipe(jshint.reporter('jshint-stylish'));
+});
+
+gulp.task('html', function() {
+  gulp.src('./app/**/*.html')
+    .pipe(connect.reload());
+});
+
+gulp.task('watch', function() {
+  gulp.watch(dir.dev.css, ['inject', 'html']);
+  gulp.watch([dir.dev.js, './Gulpfile.js'], ['lint', 'inject', 'html']);
+  gulp.watch(dir.dev.templates, ['html']);
+});
+
+
+gulp.task('inject', function() {
+  return gulp.src('index.html', {
+      cwd: './app'
+    })
+    .pipe(inject(
+      gulp.src([dir.dev.js]).pipe(angularFilesort()), {
+        ignorePath: '/app/'
+      }))
+    .pipe(inject(
+      gulp.src([dir.dev.devcss]), {
+        ignorePath: '/app/'
+      }))
+    .pipe(wiredep({}))
+    .pipe(gulp.dest('app/'));
+});
+
+gulp.task('default', ['server-dev', 'lint', 'inject', 'watch']);

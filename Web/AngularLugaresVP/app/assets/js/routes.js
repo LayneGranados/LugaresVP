@@ -1,47 +1,74 @@
-function config($locationProvider, $routeProvider) {
+(function() {
   'use strict';
-  $locationProvider.html5Mode(true);
-  $routeProvider
-    .when('/', {
-		controller:'LoginController',
-		controllerAs:'controller',
-		templateUrl: 'templates/login.html'
-    }).when('/actividad', {
+  var config = function($stateProvider, $urlRouterProvider) {
+    $urlRouterProvider.otherwise('/login');
+    $stateProvider.state('app', {
+      url: '/vp',
+      templateUrl: 'templates/app.html',
+      abstract: true
+    }).state('app.dashboard', {
+      url: '/dashboard',
+      templateUrl: 'templates/dashboard.html',
+      title: 'Dashboard',
+      ncyBreadcrumb: {
+        label: 'Dashboard'
+      }
+    }).state('login', {
+      url: '/login',
+      templateUrl: 'templates/login.html',
+      controller: 'LoginController',
+      controllerAs: 'controller',
+      title: 'Dashboard',
+      ncyBreadcrumb: {
+        label: 'login'
+      }
+    }).state('app.actividad', {
+      url: '/actividad',
       controller: 'ActividadController',
       controllerAs: 'controller',
       templateUrl: 'templates/actividad.html'
-    }).when('/actividadTipoLugar', {
+    }).state('app.actividad-tipo-lugar', {
+
+      url: '/actividad-tipo-lugar',
       templateUrl: 'templates/actividadTipoLugar.html'
-    }).when('/calificacionActividad', {
+
+    }).state('app.calificacion-actividad', {
+      url: '/calificacion-actividad',
       controller: 'CalificacionActividadController',
       controllerAs: 'controller',
       templateUrl: 'templates/calificacionActividad.html'
-    }).when('/empleado', {
+    }).state('app.empleado', {
+      url: '/empleado',
       controller: 'EmpleadoController',
       controllerAs: 'controller',
       templateUrl: 'templates/empleado.html'
-    }).when('/evaluacion', {
+    }).state('app.evaluacion', {
+      url: '/evaluacion',
       templateUrl: 'templates/evaluacion.html'
-    }).when('/login', {
-      controller:'LoginController',
-      controllerAs:'controller',
-      templateUrl: 'templates/login.html'
-    }).when('/lugar', {
+    }).state('app.lugar', {
+      url: '/lugar',
       controller: 'LugarController',
       controllerAs: 'controller',
       templateUrl: 'templates/lugar.html'
-    }).when('/supervision', {
+    }).state('app.supervision', {
+      url: '/supervision',
       controller: 'SupervisionController',
       controllerAs: 'controller',
       templateUrl: 'templates/supervision.html'
-    }).when('/tipoIdentificacion', {
+    }).state('app.tipo-identificacion', {
+      url: '/tipo-identificacion',
       templateUrl: 'templates/tipoIdentificacion.html'
-    }).when('/tipo-lugar', {
-      templateUrl: 'templates/tipoLugar.html'
-    }).when('/tipo-empleado', {
+    }).state('app.tipo-lugar', {
+      controller: 'TipoLugarCRUDController',
+      controllerAs: 'tipCreateCtrl',
+      templateUrl: 'templates/tipoLugar.html',
+      url: '/tipo-lugar'
+    }).state('app.tipo-empleado', {
+      url: '/tipo-empleado',
       controller: 'TipoEmpleadoController',
       controllerAs: 'controller',
       templateUrl: 'templates/tipoEmpleado.html'
     });
-}
-angular.module('blog').config(config);
+  };
+  angular.module('vp').config(config);
+})();
