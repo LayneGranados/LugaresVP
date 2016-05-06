@@ -9,7 +9,7 @@
     $scope.showComplex = function() {
       var rows = self.gridApi.selection.getSelectedRows();
       ModalService.showModal({
-        templateUrl: 'views/modalCalificaciones.html',
+        templateUrl: 'templates/modalCalificaciones.html',
         controller: function(EvaulacionSupervicion,supervision){
           this.evaluacion = new EvaulacionSupervicion();
           this.evaluacion.id = supervision.id;

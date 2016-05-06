@@ -9,7 +9,7 @@
       scope: {
         object: '='
       },
-      templateUrl: 'views/directives/selectGeneral.html'
+      templateUrl: 'templates/directives/selectGeneral.html'
     };
   });
 })();

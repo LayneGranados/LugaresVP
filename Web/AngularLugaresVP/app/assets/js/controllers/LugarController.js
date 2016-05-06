@@ -73,7 +73,7 @@
         return;
       }
       ModalService.showModal({
-        templateUrl: 'views/modalQR.html',
+        templateUrl: 'templates/modalQR.html',
         controller: 'ModalQRController',
         inputs: {
           title: 'Codigo QR',

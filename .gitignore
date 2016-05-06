@@ -7,4 +7,5 @@ Android/template v1.1 studio/.idea/*
 Android/template v1.1 studio/.gradle/*
 Web/AngularLugaresVP/app/bower_components
 Web/AngularLugaresVP/node_modules
+Web/AngularLugaresVP/app/lib
 /**/.DS_Store

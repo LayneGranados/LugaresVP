@@ -5,43 +5,43 @@ function config($locationProvider, $routeProvider) {
     .when('/', {
 		controller:'LoginController',
 		controllerAs:'controller',
-		templateUrl: 'views/login.html'
+		templateUrl: 'templates/login.html'
     }).when('/actividad', {
       controller: 'ActividadController',
       controllerAs: 'controller',
-      templateUrl: 'views/actividad.html'
+      templateUrl: 'templates/actividad.html'
     }).when('/actividadTipoLugar', {
-      templateUrl: 'views/actividadTipoLugar.html'
+      templateUrl: 'templates/actividadTipoLugar.html'
     }).when('/calificacionActividad', {
       controller: 'CalificacionActividadController',
       controllerAs: 'controller',
-      templateUrl: 'views/calificacionActividad.html'
+      templateUrl: 'templates/calificacionActividad.html'
     }).when('/empleado', {
       controller: 'EmpleadoController',
       controllerAs: 'controller',
-      templateUrl: 'views/empleado.html'
+      templateUrl: 'templates/empleado.html'
     }).when('/evaluacion', {
-      templateUrl: 'views/evaluacion.html'
+      templateUrl: 'templates/evaluacion.html'
     }).when('/login', {
       controller:'LoginController',
       controllerAs:'controller',
-      templateUrl: 'views/login.html'
+      templateUrl: 'templates/login.html'
     }).when('/lugar', {
       controller: 'LugarController',
       controllerAs: 'controller',
-      templateUrl: 'views/lugar.html'
+      templateUrl: 'templates/lugar.html'
     }).when('/supervision', {
       controller: 'SupervisionController',
       controllerAs: 'controller',
-      templateUrl: 'views/supervision.html'
+      templateUrl: 'templates/supervision.html'
     }).when('/tipoIdentificacion', {
-      templateUrl: 'views/tipoIdentificacion.html'
+      templateUrl: 'templates/tipoIdentificacion.html'
     }).when('/tipo-lugar', {
-      templateUrl: 'views/tipoLugar.html'
+      templateUrl: 'templates/tipoLugar.html'
     }).when('/tipo-empleado', {
       controller: 'TipoEmpleadoController',
       controllerAs: 'controller',
-      templateUrl: 'views/tipoEmpleado.html'
+      templateUrl: 'templates/tipoEmpleado.html'
     });
 }
 angular.module('blog').config(config);

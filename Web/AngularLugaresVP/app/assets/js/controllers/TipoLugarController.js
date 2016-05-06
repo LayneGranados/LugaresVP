@@ -11,7 +11,7 @@
         return;
       }
       ModalService.showModal({
-        templateUrl: 'views/modalActividades.html',
+        templateUrl: 'templates/modalActividades.html',
         controller: 'ModalActividadesController',
         controllerAs: 'modalActCtrl',
         inputs: {
