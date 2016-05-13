@@ -43,7 +43,8 @@
           self.selectedTE = new TipoEmpleado();
         });
       } else {
-        self.selectedTE.$update({}, function(data) {
+        console.log("Entro en update");
+        self.selectedTE.$update(function(data) {
           self.selectedTE = new TipoEmpleado();
           self.gridOptions.data.splice(self.indexOf, 1);
           self.gridOptions.data.push(data);

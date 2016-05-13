@@ -24,8 +24,11 @@ gulp.task('server-dev', function() {
     middleware: function(connect, opt) {
       return [
         proxy('/REST/core', {
-          target: 'http://localhost:3000',
-          changeOrigin: true
+          target: 'http://localhost:3000/',
+          changeOrigin: false,
+          pathRewrite: {
+            '^/REST/core' : '/'
+          }
         })
       ]
     }
@@ -48,7 +51,7 @@ gulp.task('html', function() {
 gulp.task('watch', function() {
   gulp.watch(dir.dev.css, ['inject', 'html']);
   gulp.watch([dir.dev.js, './Gulpfile.js'], ['lint', 'inject', 'html']);
-  gulp.watch(dir.dev.templates, ['html']);
+  gulp.watch([dir.dev.templates,'app/index.html'], ['html']);
 });
 
 

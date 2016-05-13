@@ -2,7 +2,9 @@
   'use strict';
 
   function CalificacionActividad($resource, BaseUrl) {
-    return $resource(BaseUrl + 'calificacion-actividad/', {}, {
+    return $resource(BaseUrl + 'calificacion-actividad/:id', {
+      id: '@id'
+    }, {
       delete: {
         method: 'POST',
         url: BaseUrl + 'calificacion-actividad-delete/'

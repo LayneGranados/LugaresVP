@@ -9,7 +9,10 @@
     'ui.grid.pagination',
     'ui.grid.selection',
     'ui.grid.exporter',
-    'monospaced.qrcode'
+    'monospaced.qrcode',
+    'toaster',
+    'ngAnimate',
+    'oitozero.ngSweetAlert'
   ]);
 
 

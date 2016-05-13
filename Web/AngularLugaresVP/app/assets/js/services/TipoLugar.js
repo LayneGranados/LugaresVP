@@ -1,7 +1,9 @@
 (function() {
   'use strict';
   angular.module('vp.services').factory('TipoLugar', function($resource, BaseUrl) {
-    return $resource(BaseUrl + 'tipoLugar/:tipolugarId', {}, {
+    return $resource(BaseUrl + 'tipoLugar/:id', {
+      id: '@id'
+    }, {
       delete: {
         method: 'POST',
         isArray: false,

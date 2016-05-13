@@ -53,9 +53,20 @@
       "descripcion": "Administrativo del Centro Comercial"
     },
     {
-      "nombre": null,
+      "nombre": "ventiun",
       "id": 21,
-      "descripcion": null
+      "descripcion": "ventiun"
+    },
+    {
+      "nombre": "Super",
+      "descripcion": 222,
+      "RESTId": "core",
+      "id": 22
+    },
+    {
+      "id": 23,
+      "nombre": "asdasd",
+      "descripcion": "asdasd"
     }
   ],
   "empleado": [
@@ -79,7 +90,7 @@
       "persona": {
         "id": 13,
         "identificacion": "109245789",
-        "nombres": "Andres",
+        "nombres": "Andres Orlando",
         "apellidos": "Orduz"
       }
     },
@@ -271,7 +282,7 @@
   ],
   "lugar": [
     {
-      "nombre": "Plazoleta comidas",
+      "nombre": "Plazoleta comidas 222",
       "id": 10,
       "descripcion": "Plazoleta comidas 3 piso",
       "tipoLugar": {
@@ -331,7 +342,7 @@
       }
     },
     {
-      "nombre": "BAÑOS CASINO H",
+      "nombre": "BAÑOS CASINO H aaa",
       "id": 15,
       "descripcion": "Baños de hombres torre A segundo piso",
       "tipoLugar": {
@@ -431,7 +442,7 @@
       }
     },
     {
-      "nombre": "Pasillo primer piso",
+      "nombre": "Pasillo primer piso felix",
       "id": 25,
       "descripcion": "Pasillo primer piso",
       "tipoLugar": {
@@ -473,94 +484,34 @@
   ],
   "actividad": [
     {
-      "nombre": "Desinfección de sanitarios",
-      "id": 16,
-      "descripcion": "Desinfección de sanitarios"
+      "nombre": "Nueva En Calse",
+      "descripcion": "Clase",
+      "id": 34
     },
     {
-      "nombre": "Desinfección de orinales",
-      "id": 17,
-      "descripcion": "Desinfección de orinales"
+      "nombre": "nuevo",
+      "descripcion": "nuevo",
+      "id": 37
     },
     {
-      "nombre": "Limpieza de lavamanos",
-      "id": 18,
-      "descripcion": "Limpieza de lavamanos"
+      "nombre": "asdasd",
+      "descripcion": "asdasda",
+      "id": 38
     },
     {
-      "nombre": "Limpieza de espejos",
-      "id": 19,
-      "descripcion": "Limpieza de espejos"
+      "nombre": "asdasd",
+      "descripcion": "asdasd",
+      "id": 39
     },
     {
-      "nombre": "Estado del piso",
-      "id": 20,
-      "descripcion": "Estado del piso"
+      "nombre": "nuevo",
+      "descripcion": "nuevo",
+      "id": 40
     },
     {
-      "nombre": "Limpieza de las divisiones de acero",
-      "id": 21,
-      "descripcion": "Limpieza de las divisiones de acero"
-    },
-    {
-      "nombre": "Estado de las papeleras",
-      "id": 22,
-      "descripcion": "Estado de las papeleras"
-    },
-    {
-      "nombre": "Estado de las ceniceras",
-      "id": 28,
-      "descripcion": "Estado de las ceniceras"
-    },
-    {
-      "nombre": "Pasillos despejados",
-      "id": 29,
-      "descripcion": "Pasillos despejados"
-    },
-    {
-      "nombre": "Estado del piso de granito",
-      "id": 27,
-      "descripcion": "Estado dEstado del piso de granitoe las ceniceras"
-    },
-    {
-      "nombre": "Limpieza de mesas",
-      "id": 30,
-      "descripcion": "Se encuentran las mesas de la plazoleta limpias"
-    },
-    {
-      "nombre": "Personal",
-      "id": 31,
-      "descripcion": "El personal de limpieza se encuentra distribuido"
-    },
-    {
-      "nombre": "Temperatura",
-      "id": 32,
-      "descripcion": "La temperatura del ambientes es agradable"
-    },
-    {
-      "nombre": "Estado de las ceniceras",
-      "id": 23,
-      "descripcion": "Estado de las ceniceras"
-    },
-    {
-      "nombre": "Pasillos despejados",
-      "id": 24,
-      "descripcion": "Pasillos despejados"
-    },
-    {
-      "nombre": "Estado del piso de Granito",
-      "id": 25,
-      "descripcion": "Estado del piso de Granito"
-    },
-    {
-      "nombre": "Estado de las ceniceras",
-      "id": 26,
-      "descripcion": "Estado de las ceniceras"
-    },
-    {
-      "nombre": "Contenedores de basura",
-      "id": 15,
-      "descripcion": "Contenedores de basura"
+      "nombre": "Actividad Layne",
+      "descripcion": "Desc",
+      "id": 41
     }
   ],
   "calificacion-actividad": [

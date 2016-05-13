@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="bower_components/angular-ui-grid/ui-grid.min.css" />
+    <link rel="stylesheet" href="bower_components/AngularJS-Toaster/toaster.min.css" />
+    <link rel="stylesheet" href="bower_components/sweetalert/dist/sweetalert.css" />
     <!-- endbower -->
     <!-- inject:css -->
     <link rel="stylesheet" href="/assets/css/animate.css">
@@ -23,6 +25,7 @@
       <div class="row"></div>
     </div>
     <div id="wrapper">
+    <toaster-container toaster-options="{'close-button': true, 'progressBar': true}"></toaster-container>
       <section ui-view></section>
     </div>
     <!-- bower:js -->
@@ -41,8 +44,11 @@
     <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
     <script src="bower_components/angular-touch/angular-touch.min.js"></script>
     <script src="bower_components/angular-animate/angular-animate.min.js"></script>
-    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
     <script src="bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script src="bower_components/AngularJS-Toaster/toaster.min.js"></script>
+    <script src="bower_components/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="bower_components/ngSweetAlert/SweetAlert.js"></script>
     <!-- endbower -->
     <!-- inject:js -->
     <script src="/assets/js/services.js"></script>
