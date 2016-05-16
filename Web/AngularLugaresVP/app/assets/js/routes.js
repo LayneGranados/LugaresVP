@@ -36,7 +36,7 @@
       url: '/calificacion-actividad',
       controller: 'CalificacionActividadController',
       controllerAs: 'controller',
-      templateUrl: 'templates/calificacionActividad.html'
+      templateUrl: 'templates/calificacion-actividad.html'
     }).state('app.empleado', {
       url: '/empleado',
       controller: 'EmpleadoController',
@@ -59,15 +59,15 @@
       url: '/tipo-identificacion',
       templateUrl: 'templates/tipoIdentificacion.html'
     }).state('app.tipo-lugar', {
-      controller: 'TipoLugarCRUDController',
-      controllerAs: 'tipCreateCtrl',
-      templateUrl: 'templates/tipoLugar.html',
+      controller: 'TipoLugarController',
+      controllerAs: 'controller',
+      templateUrl: 'templates/tipo-lugar.html',
       url: '/tipo-lugar'
     }).state('app.tipo-empleado', {
       url: '/tipo-empleado',
       controller: 'TipoEmpleadoController',
       controllerAs: 'controller',
-      templateUrl: 'templates/tipoEmpleado.html'
+      templateUrl: 'templates/tipo-empleado.html'
     });
   };
   angular.module('vp').config(config);

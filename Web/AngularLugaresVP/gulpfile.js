@@ -24,7 +24,8 @@ gulp.task('server-dev', function() {
     middleware: function(connect, opt) {
       return [
         proxy('/REST/core', {
-          target: 'http://localhost:3000/',
+          //target: 'http://localhost:3000/',
+          target: 'http://192.168.0.50:8080/InspeccionZonas/rest/',
           changeOrigin: false,
           pathRewrite: {
             '^/REST/core' : '/'

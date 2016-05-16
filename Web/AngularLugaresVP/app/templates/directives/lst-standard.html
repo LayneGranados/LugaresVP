@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="col-lg-12">
+    <div class="ibox float-e-margins">
+      <div class="ibox-title">
+        <h5>Lista De {{controller.tfrm}}</h5>
+      </div>
+      <div class="ibox-content">
+        <div ui-grid="controller.gridOptions" ui-grid-pagination="" style="height:352px"></div>
+        <div class="text-center">
+          <uib-pagination class="pagination-sm" boundary-links="true" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;" total-items="controller.gridOptions.totalItems" items-per-page="controller.gridOptions.paginationPageSize" ng-model="controller.gridOptions.paginationCurrentPage" max-size="5" boundary-link-numbers="true" rotate="false"></uib-pagination>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

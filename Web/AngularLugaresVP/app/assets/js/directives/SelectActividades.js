@@ -7,7 +7,8 @@
       },
       restrict: 'E',
       scope: {
-        object: '='
+        object: '=',
+        tabidx: '='
       },
       templateUrl: 'templates/directives/selectGeneral.html'
     };

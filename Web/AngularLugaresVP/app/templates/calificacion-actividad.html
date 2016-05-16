@@ -1,0 +1,38 @@
+<div class="cwrapper wrapper-content animated fadeInRight" id="wrapper">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="ibox float-e-margins">
+        <div class="ibox-title">
+          <h5>Calificacion Actividad - <small>{{controller.mensaje}}</small></h5>
+        </div>
+        <div class="ibox-content">
+          <form class="form-horizontal">
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Actividad</label>
+              <div class="col-sm-10">
+                <select-actividad object="controller.selectedCA.actividad" tabidx="1">
+                </select-actividad>
+              </div>
+            </div>
+            <div class="hr-line-dashed"></div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Calificación</label>
+              <div class="col-sm-10">
+                <input type="text" ng-model="controller.selectedCA.nombre" class="form-control" tabindex=2>
+              </div>
+            </div>
+            <div class="hr-line-dashed"></div>
+            <div class="form-group">
+              <div class="col-sm-4 col-sm-offset-2">
+                <button class="btn btn-white" ng-click="controller.cancel()" type="button" tabindex=3>Cancelar</button>
+                <button class="btn btn-primary" ng-click="controller.save()" type="submit" tabindex=4>Guardar</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <lst-standard controller="controller">
+  </lst-standard>
+</div>

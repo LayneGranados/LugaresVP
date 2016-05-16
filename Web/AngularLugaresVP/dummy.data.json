@@ -484,34 +484,14 @@
   ],
   "actividad": [
     {
-      "nombre": "Nueva En Calse",
-      "descripcion": "Clase",
-      "id": 34
+      "nombre": "Desinfectar Baño",
+      "descripcion": "Se Desinfectan Baños",
+      "id": 1
     },
     {
-      "nombre": "nuevo",
-      "descripcion": "nuevo",
-      "id": 37
-    },
-    {
-      "nombre": "asdasd",
-      "descripcion": "asdasda",
-      "id": 38
-    },
-    {
-      "nombre": "asdasd",
-      "descripcion": "asdasd",
-      "id": 39
-    },
-    {
-      "nombre": "nuevo",
-      "descripcion": "nuevo",
-      "id": 40
-    },
-    {
-      "nombre": "Actividad Layne",
-      "descripcion": "Desc",
-      "id": 41
+      "nombre": "Limpiar Espejos",
+      "descripcion": "Los espejos estan limpios",
+      "id": 2
     }
   ],
   "calificacion-actividad": [

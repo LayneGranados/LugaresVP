@@ -1,15 +1,21 @@
 (function() {
   'use strict';
-  function ModalActividadesController(tipoLugar, Actividad, ActividadTipoLugar) {
+
+  function ModalActividadesController(tipoLugar, Actividad, ActividadTipoLugar, goTwoFields) {
     var self = this;
     this.tipoLugar = tipoLugar;
     this.actividadSelected = null;
-    this.listActividades = ActividadTipoLugar.noLugar({idLugar:this.tipoLugar.id});
+    this.listActividades = ActividadTipoLugar.noLugar({ idLugar: this.tipoLugar.id });
     this.listActivadesLugar = ActividadTipoLugar.queryLugar({
       idLugar: this.tipoLugar.id
     });
+    var fields = [{
+      field: 'actividadnombre',
+      displayName: 'Actividad'
+    }];
+    this.gridOptions = goTwoFields(this.listActivadesLugar, this, fields, null, 5);
     //Opciones para el grid
-    this.gridOptions1 = {
+    /*this.gridOptions = {
       paginationPageSize: 15,
       data: self.listActivadesLugar,
       columnDefs: [{
@@ -23,17 +29,14 @@
       enableRowSelection: true,
       enableRowHeaderSelection: false
     };
-    this.gridOptions1.onRegisterApi = function(gridApi) {
-      self.gridApi = gridApi;
-    };
-
+    */
 
     this.addActividad = function() {
       var actividadTipoLugar = new ActividadTipoLugar();
       actividadTipoLugar.tipolugar = self.tipoLugar.id;
       actividadTipoLugar.actividad = self.actividadSelected.actividadid;
       actividadTipoLugar.$save(null, function(object) {
-        self.gridOptions1.data.push({
+        self.gridOptions.data.push({
           'id': object.id,
           'actividadnombre': object.actividad.nombre
         });
@@ -51,17 +54,17 @@
     this.delActividad = function() {
       var filas = {};
       filas = self.gridApi.selection.getSelectedRows();
-      if(filas.length !== 1){
+      if (filas.length !== 1) {
         return;
       }
       console.log(filas[0]);
       var actividadTipoLugar = new ActividadTipoLugar();
-      actividadTipoLugar.id =filas[0].id;
-      actividadTipoLugar.$eliminar(null,function (object) {
-        if (object.deleted){
-          self.listActividades.push({'actividadid':filas[0].actividadid,'actividadnombre':filas[0].actividadnombre});
-          var index = self.gridOptions1.data.indexOf(filas[0]);
-          self.gridOptions1.data.splice(index, 1);
+      actividadTipoLugar.id = filas[0].id;
+      actividadTipoLugar.$eliminar(null, function(object) {
+        if (object.deleted) {
+          self.listActividades.push({ 'actividadid': filas[0].actividadid, 'actividadnombre': filas[0].actividadnombre });
+          var index = self.gridOptions.data.indexOf(filas[0]);
+          self.gridOptions.data.splice(index, 1);
         }
       });
     };

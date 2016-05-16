@@ -1,25 +1,40 @@
-<div class="modal fade">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <header class="modal-header">
-        <button aria-hidden="true" class="close" data-dismiss="modal" ng-click="close()" type="button">&times;</button>
-        <h4 class="modal-title">Actividades Para El Tipo De Lugar {{modalActCtrl.tipoLugar.nombre}}</h4>
-      </header>
-      <div class="modal-body">
-        <div class="row">
-          <form ng-submit="modalActCtrl.addActividad()">
-            <div class="form-group row">
-              <label class="col-sm-2 form-control-label" for="inputPassword">Actividad</label>
-              <div class="col-sm-10">
-                <select class="form-control" ng-model="modalActCtrl.actividadSelected" ng-options="option.actividadnombre for option in modalActCtrl.listActividades track by option.actividadid"></select>
-              </div>
-            </div>
-            <input class="btn btn-primary btn-lg" type="submit" value="Guardar" />
-          </form>
+<div class="modal-content">
+  <header class="modal-header">
+    <button aria-hidden="true" class="close" data-dismiss="modal" ng-click="close()" type="button">&times;</button>
+    <h4 class="modal-title">Actividades - <small> Agregar actividades al tipo de lugar {{controller.tipoLugar.nombre}}</small></h4>
+  </header>
+  <div class="modal-body">
+    <div class="row">
+
+      <form class="form-horizontal">
+        <div class="form-group">
+          <label class="col-sm-3 control-label">Actividad</label>
+          <div class="col-sm-9">
+            <select class="form-control" ng-model="controller.actividadSelected" ng-options="option.actividadnombre for option in controller.listActividades track by option.actividadid"></select>
+          </div>
         </div>
-        <div class="row">
-          <div class="myGrid" ui-grid-pagination ui-grid-selection ui-grid="modalActCtrl.gridOptions1"></div>
-            <button class="btn btn-primary btn-lg" ng-click="modalActCtrl.delActividad()" >Eliminar </button>
+        <div class="form-group">
+          <div class="text-center">
+            <button class="btn btn-white" ng-click="controller.cancel()" type="button" tabindex=3>Cancelar</button>
+            <button class="btn btn-primary" ng-click="controller.save()" type="submit" tabindex=4>Guardar</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="hr-line-dashed"></div>
+    <div class="row">
+      <div class="">
+        <div class="">
+          <div class="">
+            <h4>Lista De Actividades Asignadas</h4>
+          </div>
+          <div class="text-center">
+            <div ui-grid="controller.gridOptions" ui-grid-pagination="" style="height:200px"></div>
+            <div class="text-center">
+              <uib-pagination class="pagination-sm" boundary-links="true" previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;" total-items="controller.gridOptions.totalItems" items-per-page="controller.gridOptions.paginationPageSize" ng-model="controller.gridOptions.paginationCurrentPage" max-size="5" boundary-link-numbers="true" rotate="false"></uib-pagination>
+            </div>
+
+          </div>
         </div>
       </div>
     </div>
