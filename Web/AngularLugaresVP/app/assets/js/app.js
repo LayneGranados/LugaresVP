@@ -1,5 +1,6 @@
 (function() {
   'use strict';
+  angular.module('vp.services', ['ngResource']).constant('BaseUrl', '/REST/core/');
   angular.module('vp.controllers', ['vp.services', 'ui.bootstrap']);
   angular.module('vp', [
     'vp.controllers',
@@ -14,6 +15,5 @@
     'ngAnimate',
     'oitozero.ngSweetAlert'
   ]);
-
 
 })();
