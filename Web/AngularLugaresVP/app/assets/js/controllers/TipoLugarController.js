@@ -2,7 +2,6 @@
   'use strict';
 
   function TipoLugarController(TipoLugar, stdfrm, goTwoFields, $uibModal) {
-    var self = this;
     this.gridOptions = {};
     this.tipos = TipoLugar.query();
     this.element = new TipoLugar();

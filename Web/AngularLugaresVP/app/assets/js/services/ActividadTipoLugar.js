@@ -1,5 +1,7 @@
-(function(){
-    function ActividadTipoLugar($resource, BaseUrl) {
+(function() {
+  'use strict';
+
+  function ActividadTipoLugar($resource, BaseUrl) {
     return $resource(BaseUrl + 'actividadTipoLugar', {
       actividadTipoLugarId: '@id'
     }, {

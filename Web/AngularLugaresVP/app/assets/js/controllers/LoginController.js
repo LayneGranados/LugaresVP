@@ -11,10 +11,10 @@
       }
     };
     this.logout = function() {
-      $locati$state.go('login', {}, {
+      $state.go('login', {}, {
         reload: true
       });
     };
-  }
+  };
   angular.module('vp.controllers').controller('LoginController', loginController);
 })();
